@@ -167,8 +167,9 @@ select.ans{max-width:15em}
     <li><a href="#u9"><span class="n">9</span>Exam Traps</a></li>
     <li><a href="#u10"><span class="n">10</span>Glossary 中英詞彙</a></li>
     <li><a href="#u11"><span class="n">11</span>Mock Exam (20 Qs)</a></li>
+    <li><a href="#u12"><span class="n">12</span>Comprehensive Problems (IS/SFP/CF)</a></li>
   </ol>
-  <div class="progress"><span id="progTxt">Done 0 / 11</span><div class="bar"><i id="progBar"></i></div></div>
+  <div class="progress"><span id="progTxt">Done 0 / 12</span><div class="bar"><i id="progBar"></i></div></div>
 </nav>
 
 <main>
@@ -907,6 +908,319 @@ select.ans{max-width:15em}
   <div class="score"><span id="examScore">Score 0 / 0</span><button class="btn" id="resetExam" type="button">Restart</button></div>
   <div class="quiz" data-set="exam"></div>
   <label class="done-row"><input type="checkbox" id="done-u11" data-unit="u11"> Mock exam done 模擬考完成</label>
+</section>
+
+<!-- ============ UNIT 12 ============ -->
+<section class="unit" id="u12">
+  <div class="unit-head"><span class="src">Exam-style practice (modelled on Bikes-Are-Us)</span></div>
+  <h2 class="u"><span class="num">12</span>Comprehensive Problems — IS, SFP &amp; Cash Flows</h2>
+  <p>Same format as the exam: a company background, last year's statement of financial position, a list of first-quarter events, then (a) income statement, (b) statement of financial position, (c) statement of cash flows (indirect method). Try the whole problem on paper before opening the solution.<span class="zh">跟考試同題型：背景＋去年底資產負債表＋第一季交易，要編 (a) 損益表 (b) 財務狀況表 (c) 間接法現金流量表。先自己在紙上做完再看解答。</span></p>
+
+  <div class="callout"><strong>Workflow 解題順序</strong>
+    <ol class="steps">
+      <li><span>Depreciation per month for every asset (cost − residual) ÷ life ÷ 12. 先算每項資產每月折舊。</span></li>
+      <li><span>Inventory: units in/out → ending units → cost flow (FIFO / average) → COGS. 存貨數量先對平再算成本。</span></li>
+      <li><span>A/R roll-forward: beginning − collections − write-offs + credit sales (net of returns) → aging → required allowance → bad debt expense. 應收帳款 T 字帳＋帳齡分析。</span></li>
+      <li><span>Interest &amp; other accruals, disposal gain/loss → income statement → tax → NI. 應計、處分損益、所得稅。</span></li>
+      <li><span>Cash T-account (direct list of every cash line) → SFP must balance. 先列現金收付，資產負債表要平。</span></li>
+      <li><span>Indirect CF: NI ± non-cash items ± working-capital changes; the ending cash must equal the SFP cash. 間接法的期末現金要跟資產負債表一致。</span></li>
+    </ol>
+  </div>
+
+  <!-- ===== Problem A ===== -->
+  <h3><span class="tag">Problem A</span>Paddle-Pro Ltd (FIFO, gain on disposal, accrued expenses, dividends)</h3>
+  <p class="q">Paddle-Pro Ltd is a reseller of kayaks, established on January 1, 2023. On January 1, 2023 the company acquired two warehouses at $120,000 each, depreciated over 10 years straight-line with a residual value of $20,000 per warehouse. It also bought a delivery van for $48,000, depreciated over 4 years straight-line with no residual value. To finance its activities, on January 1, 2023 the company signed an $80,000, 9%, three-year note maturing January 1, 2026, with interest paid annually on January 1.</p>
+  <div class="sheet scroll"><table>
+    <tr><th colspan="2">Paddle-Pro Ltd — Statement of Financial Position, December 31, 2023</th></tr>
+    <tr><td><b>Property, plant, and equipment</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Buildings (2 warehouses)</td><td class="r">$240,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Accumulated depreciation—buildings</td><td class="r">(20,000)</td></tr>
+    <tr><td>&nbsp;&nbsp;Equipment (1 delivery van)</td><td class="r">48,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Accumulated depreciation—equipment</td><td class="r">(12,000)</td></tr>
+    <tr><td><b>Current assets</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Inventory (150 kayaks @ $300)</td><td class="r">45,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Accounts receivable, net</td><td class="r">22,400</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Accounts receivable</td><td class="r">24,000</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Allowance for doubtful accounts</td><td class="r">1,600</td></tr>
+    <tr><td>&nbsp;&nbsp;Cash</td><td class="r">40,000</td></tr>
+    <tr class="total dbl"><td>Total assets</td><td class="r">$363,400</td></tr>
+    <tr><td><b>Equity</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Share capital—ordinary</td><td class="r">$220,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Retained earnings</td><td class="r">38,200</td></tr>
+    <tr><td><b>Non-current liabilities</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Notes payable (9%, maturing 2026/01/01)</td><td class="r">80,000</td></tr>
+    <tr><td><b>Current liabilities</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Accounts payable</td><td class="r">18,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Interest payable</td><td class="r">7,200</td></tr>
+    <tr class="total dbl"><td>Total</td><td class="r">$363,400</td></tr>
+  </table></div>
+  <p><b>Additional information (January 1 – March 31, 2024):</b></p>
+  <ol>
+    <li>On January 15 the company bought 120 kayaks at $320 each on account (to be paid in 4 months), FOB shipping point; the freight cost of $1,100 was paid in cash. 10 of these kayaks were defective and were returned to the supplier. On March 10 it bought another 60 kayaks at $350 each on account (to be paid in 4 months), FOB destination. The company uses the <b>periodic FIFO</b> method. Assign the freight-in only to the January kayaks that were kept.</li>
+    <li>During the quarter the company sold 230 kayaks at $600 each: 140 on account (to be collected in 4 months) and 90 for cash. 6 of the kayaks sold for cash were returned and the customers were refunded in cash; the kayaks went back into inventory. A physical count on March 31 confirms the number of kayaks on hand.</li>
+    <li>The company paid $15,000 cash to suppliers for accounts payable from the previous period and collected $19,000 cash from customers for kayaks sold in the previous period. It wrote off one $1,000 customer account as uncollectible. The aging schedule at March 31, 2024 is:
+      <div class="scroll"><table>
+        <tr><th>Age of accounts</th><th class="r">Balance, March 31</th><th class="r">Estimated % uncollectible</th></tr>
+        <tr><td>Current</td><td class="r">$78,000</td><td class="r">2%</td></tr>
+        <tr><td>1–60 days past due</td><td class="r">6,000</td><td class="r">10%</td></tr>
+        <tr><td>Over 60 days past due</td><td class="r">4,000</td><td class="r">40%</td></tr>
+        <tr class="total"><td></td><td class="r">$88,000</td><td></td></tr>
+      </table></div></li>
+    <li>On January 1, 2024 the company paid the annual note interest. Operating expenses for the quarter (excluding depreciation and bad debt expense) were $31,500, of which $28,000 was paid in cash; the remaining $3,500 is salaries still unpaid at March 31.</li>
+    <li>On March 1, 2024 the company sold the delivery van for $36,000 cash and, on the same day, bought a new van for $54,000 cash (5-year life, $6,000 residual value, straight-line).</li>
+    <li>The corporate income tax rate is 20%. Income taxes were paid on March 31, 2024.</li>
+    <li>On March 31, 2024 the company declared and paid a cash dividend of $5,000.</li>
+  </ol>
+  <p><b>Instructions:</b> (a) Prepare an income statement for the three-month period ended March 31, 2024. (b) Prepare a statement of financial position as of March 31, 2024. (c) Prepare a statement of cash flows for the three-month period ended March 31, 2024 using the indirect method.</p>
+
+  <details class="sol"><summary>Problem A — workings 計算過程</summary><div class="in">
+    <p><b>Depreciation 折舊</b></p>
+    <ul>
+      <li>Warehouses: (120,000 − 20,000) ÷ 10 = 10,000/yr each → 2 × 10,000 × 3/12 = <b>5,000</b></li>
+      <li>Old van: 48,000 ÷ 4 = 12,000/yr = 1,000/month × 2 months (Jan–Feb) = <b>2,000</b></li>
+      <li>New van: (54,000 − 6,000) ÷ 5 ÷ 12 = 800/month × 1 month (March) = <b>800</b></li>
+      <li>Total depreciation expense = <b>7,800</b></li>
+    </ul>
+    <p><b>Disposal of old van 處分舊車</b>: accumulated depreciation = 12,000 + 2,000 = 14,000; book value = 48,000 − 14,000 = 34,000; cash 36,000 → <b>gain 2,000</b>.</p>
+    <p><b>Inventory (periodic FIFO) 存貨</b></p>
+    <ul>
+      <li>Units: 150 + (120 − 10) + 60 = 320 available; sold 230 − 6 returned = 224 net → <b>96 on hand</b></li>
+      <li>January unit cost incl. freight: 320 + 1,100 ÷ 110 = <b>$330</b></li>
+      <li>Ending inventory (latest first): 60 × 350 = 21,000 + 36 × 330 = 11,880 → <b>32,880</b></li>
+      <li>COGS = 45,000 + 38,400 + 21,000 − 3,200 + 1,100 − 32,880 = <b>69,420</b> (check: 150 × 300 + 74 × 330 = 69,420)</li>
+    </ul>
+    <p><b>Receivables 應收帳款</b></p>
+    <ul>
+      <li>Credit sales 140 × 600 = 84,000; A/R = 24,000 − 19,000 − 1,000 + 84,000 = <b>88,000</b> ✓ (matches the aging)</li>
+      <li>Required allowance = 78,000 × 2% + 6,000 × 10% + 4,000 × 40% = 1,560 + 600 + 1,600 = <b>3,760</b></li>
+      <li>Allowance before adjustment = 1,600 − 1,000 = 600 credit → bad debt expense = 3,760 − 600 = <b>3,160</b></li>
+    </ul>
+    <p><b>Interest 利息</b>: 80,000 × 9% × 3/12 = <b>1,800</b> (Jan 1 payment of 7,200 clears last year's payable).</p>
+  </div></details>
+
+  <details class="sol"><summary>(a) Income statement 損益表</summary><div class="in scroll">
+    <table>
+      <tr><th colspan="2">Paddle-Pro Ltd — Income Statement, three months ended March 31, 2024</th></tr>
+      <tr><td>Sales revenue (230 × 600)</td><td class="r">$138,000</td></tr>
+      <tr><td>Less: Sales returns and allowances (6 × 600)</td><td class="r">3,600</td></tr>
+      <tr class="total"><td>Net sales revenue</td><td class="r">134,400</td></tr>
+      <tr><td>Cost of goods sold</td><td class="r">69,420</td></tr>
+      <tr class="total"><td>Gross profit</td><td class="r">64,980</td></tr>
+      <tr><td>Operating expenses (excl. depreciation)</td><td class="r">31,500</td></tr>
+      <tr><td>Depreciation expense</td><td class="r">7,800</td></tr>
+      <tr><td>Bad debt expense</td><td class="r">3,160</td></tr>
+      <tr class="total"><td>Income from operations</td><td class="r">22,520</td></tr>
+      <tr><td>Gain on disposal of plant asset</td><td class="r">2,000</td></tr>
+      <tr><td>Interest expense</td><td class="r">(1,800)</td></tr>
+      <tr class="total"><td>Income before income tax</td><td class="r">22,720</td></tr>
+      <tr><td>Income tax expense (20%)</td><td class="r">4,544</td></tr>
+      <tr class="total dbl"><td>Net income</td><td class="r">$18,176</td></tr>
+    </table>
+  </div></details>
+
+  <details class="sol"><summary>(b) Statement of financial position 財務狀況表</summary><div class="in scroll">
+    <table>
+      <tr><th>Paddle-Pro Ltd — March 31, 2024</th><th class="r">Amount</th><th>Working</th></tr>
+      <tr><td>Buildings</td><td class="r">$240,000</td><td></td></tr>
+      <tr><td>Accumulated depreciation—buildings</td><td class="r">(25,000)</td><td>20,000 + 5,000</td></tr>
+      <tr><td>Equipment (new van)</td><td class="r">54,000</td><td>old van removed</td></tr>
+      <tr><td>Accumulated depreciation—equipment</td><td class="r">(800)</td><td>old van's 14,000 removed</td></tr>
+      <tr><td>Inventory (96 kayaks)</td><td class="r">32,880</td><td>FIFO</td></tr>
+      <tr><td>Accounts receivable, net</td><td class="r">84,240</td><td>88,000 − 3,760</td></tr>
+      <tr><td>Cash</td><td class="r">30,556</td><td>see cash list below</td></tr>
+      <tr class="total dbl"><td>Total assets</td><td class="r">$415,876</td><td></td></tr>
+      <tr><td>Share capital—ordinary</td><td class="r">$220,000</td><td></td></tr>
+      <tr><td>Retained earnings</td><td class="r">51,376</td><td>38,200 + 18,176 − 5,000</td></tr>
+      <tr><td>Notes payable (non-current)</td><td class="r">80,000</td><td>matures 2026</td></tr>
+      <tr><td>Accounts payable</td><td class="r">59,200</td><td>18,000 − 15,000 + 38,400 − 3,200 + 21,000</td></tr>
+      <tr><td>Salaries payable</td><td class="r">3,500</td><td>31,500 − 28,000</td></tr>
+      <tr><td>Interest payable</td><td class="r">1,800</td><td>7,200 − 7,200 + 1,800</td></tr>
+      <tr class="total dbl"><td>Total equity and liabilities</td><td class="r">$415,876</td><td></td></tr>
+    </table>
+    <p><b>Cash</b> = 40,000 − 1,100 freight + 50,400 cash sales (84 × 600) − 15,000 A/P + 19,000 A/R − 7,200 interest − 28,000 opex + 36,000 old van − 54,000 new van − 4,544 tax − 5,000 dividends = <b>30,556</b></p>
+  </div></details>
+
+  <details class="sol"><summary>(c) Statement of cash flows — indirect 間接法現金流量表</summary><div class="in scroll">
+    <table>
+      <tr><th colspan="2">Paddle-Pro Ltd — three months ended March 31, 2024</th></tr>
+      <tr><td><b>Cash flows from operating activities</b></td><td></td></tr>
+      <tr><td>Net income</td><td class="r">$18,176</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Depreciation expense</td><td class="r">7,800</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Gain on disposal of plant asset</td><td class="r">(2,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Bad debt expense</td><td class="r">3,160</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Increase in A/R = 88,000 − (24,000 − 1,000)</td><td class="r">(65,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Decrease in inventory = 45,000 − 32,880</td><td class="r">12,120</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Increase in A/P = 59,200 − 18,000</td><td class="r">41,200</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Increase in salaries payable</td><td class="r">3,500</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Decrease in interest payable = 7,200 − 1,800</td><td class="r">(5,400)</td></tr>
+      <tr class="total"><td>Net cash provided by operating activities</td><td class="r">13,556</td></tr>
+      <tr><td><b>Cash flows from investing activities</b></td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Sale of delivery van</td><td class="r">36,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Purchase of delivery van</td><td class="r">(54,000)</td></tr>
+      <tr class="total"><td>Net cash used by investing activities</td><td class="r">(18,000)</td></tr>
+      <tr><td><b>Cash flows from financing activities</b></td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Payment of cash dividends</td><td class="r">(5,000)</td></tr>
+      <tr class="total"><td>Net cash used by financing activities</td><td class="r">(5,000)</td></tr>
+      <tr class="total"><td>Net decrease in cash</td><td class="r">(9,444)</td></tr>
+      <tr><td>Cash, January 1, 2024</td><td class="r">40,000</td></tr>
+      <tr class="total dbl"><td>Cash, March 31, 2024</td><td class="r">$30,556</td></tr>
+    </table>
+    <p>Shortcut for A/R: using the net balance gives the same answer: −(84,240 − 22,400) = −61,840 = 3,160 − 65,000. Use only one approach; don't add back bad debt expense if you use net A/R.<span class="zh">應收帳款可用淨額變動（不再加回呆帳費用），或用總額變動＋加回呆帳費用，兩種結果相同，但不要重複。</span></p>
+    <p class="zh">陷阱：處分利益要「減」回（現金 36,000 整筆放投資活動）；股利付現是籌資活動；應付薪資增加要加回。</p>
+  </div></details>
+
+  <!-- ===== Problem B ===== -->
+  <h3><span class="tag">Problem B</span>Brew-Masters Ltd (average-cost, purchase discount, prepaid, debit allowance, non-cash dividends)</h3>
+  <p class="q">Brew-Masters Ltd is a reseller of espresso machines, established on January 1, 2022. On January 1, 2022 it acquired an office-warehouse building for $300,000, depreciated over 20 years straight-line with a residual value of $60,000, and two delivery trucks at $40,000 each, depreciated over 5 years straight-line with a residual value of $4,000 per truck. On the same day it signed a $100,000, 6%, five-year note maturing January 1, 2027, with interest paid annually on January 1.</p>
+  <div class="sheet scroll"><table>
+    <tr><th colspan="2">Brew-Masters Ltd — Statement of Financial Position, December 31, 2022</th></tr>
+    <tr><td><b>Property, plant, and equipment</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Building</td><td class="r">$300,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Accumulated depreciation—building</td><td class="r">(12,000)</td></tr>
+    <tr><td>&nbsp;&nbsp;Equipment (2 trucks)</td><td class="r">80,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Accumulated depreciation—equipment</td><td class="r">(14,400)</td></tr>
+    <tr><td><b>Current assets</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Inventory (100 machines @ $400)</td><td class="r">40,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Accounts receivable, net</td><td class="r">28,000</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Accounts receivable</td><td class="r">30,000</td></tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Allowance for doubtful accounts</td><td class="r">2,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Cash</td><td class="r">50,000</td></tr>
+    <tr class="total dbl"><td>Total assets</td><td class="r">$471,600</td></tr>
+    <tr><td><b>Equity</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Share capital—ordinary</td><td class="r">$300,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Retained earnings</td><td class="r">44,600</td></tr>
+    <tr><td><b>Non-current liabilities</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Notes payable (6%, maturing 2027/01/01)</td><td class="r">100,000</td></tr>
+    <tr><td><b>Current liabilities</b></td><td></td></tr>
+    <tr><td>&nbsp;&nbsp;Accounts payable</td><td class="r">21,000</td></tr>
+    <tr><td>&nbsp;&nbsp;Interest payable</td><td class="r">6,000</td></tr>
+    <tr class="total dbl"><td>Total</td><td class="r">$471,600</td></tr>
+  </table></div>
+  <p><b>Additional information (January 1 – March 31, 2023):</b></p>
+  <ol>
+    <li>On February 1 the company bought 150 machines at $400 each on account, terms 1/10, n/30, FOB shipping point; freight of $1,160 was paid in cash. 10 machines were defective and returned before payment. The remaining balance was paid within the discount period. On March 5 it bought 60 machines at $440 each on account (to be paid in 3 months). The company uses the <b>periodic weighted-average cost</b> method.</li>
+    <li>During the quarter it sold 220 machines at $800 each: 160 on account (to be collected in 4 months) and 60 for cash. 4 machines sold on account were returned (the customers' accounts were credited) and restocked.</li>
+    <li>The company paid the beginning accounts payable in full and collected $26,000 of the beginning accounts receivable. It wrote off $2,500 of customer accounts as uncollectible. The aging schedule at March 31, 2023 is:
+      <div class="scroll"><table>
+        <tr><th>Age of accounts</th><th class="r">Balance, March 31</th><th class="r">Estimated % uncollectible</th></tr>
+        <tr><td>Current</td><td class="r">$110,000</td><td class="r">2%</td></tr>
+        <tr><td>1–30 days past due</td><td class="r">10,000</td><td class="r">5%</td></tr>
+        <tr><td>31–90 days past due</td><td class="r">4,300</td><td class="r">20%</td></tr>
+        <tr><td>Over 90 days past due</td><td class="r">2,000</td><td class="r">50%</td></tr>
+        <tr class="total"><td></td><td class="r">$126,300</td><td></td></tr>
+      </table></div></li>
+    <li>On January 1, 2023 the company paid the annual note interest and paid $4,800 for a one-year insurance policy starting January 1 (debited Prepaid Insurance). Other operating expenses for the quarter (excluding depreciation, insurance and bad debt expense) were $30,000, all paid in cash.</li>
+    <li>On February 1 the company issued ordinary shares for $40,000 cash and bought land for $60,000 cash. On March 31 it sold one truck for $30,000 cash.</li>
+    <li>The corporate income tax rate is 20%. Income taxes for the quarter will be paid in April 2023.</li>
+    <li>On March 31, 2023 the board declared a cash dividend of $8,000, payable on April 15, 2023.</li>
+  </ol>
+  <p><b>Instructions:</b> (a) Prepare an income statement for the three-month period ended March 31, 2023. (b) Prepare a statement of financial position as of March 31, 2023. (c) Prepare a statement of cash flows for the three-month period ended March 31, 2023 using the indirect method.</p>
+
+  <details class="sol"><summary>Problem B — workings 計算過程</summary><div class="in">
+    <p><b>Depreciation 折舊</b></p>
+    <ul>
+      <li>Building: (300,000 − 60,000) ÷ 20 = 12,000/yr = 1,000/month × 3 = <b>3,000</b></li>
+      <li>Trucks: (40,000 − 4,000) ÷ 5 = 7,200/yr = 600/month each; both trucks were used for all 3 months (sold on March 31) → 2 × 600 × 3 = <b>3,600</b></li>
+      <li>Total depreciation expense = <b>6,600</b></li>
+    </ul>
+    <p><b>Disposal of truck 處分卡車</b>: accumulated depreciation = 7,200 + 1,800 = 9,000; book value = 31,000; cash 30,000 → <b>loss 1,000</b>.</p>
+    <p><b>Inventory (periodic weighted average) 存貨</b></p>
+    <ul>
+      <li>Feb purchase 150 × 400 = 60,000; returns 10 × 400 = 4,000; discount (60,000 − 4,000) × 1% = 560; cash paid = 55,440</li>
+      <li>Cost of goods available = 40,000 + 60,000 − 4,000 − 560 + 1,160 + 26,400 = <b>123,000</b></li>
+      <li>Units available = 100 + 140 + 60 = 300 → average cost = <b>$410</b></li>
+      <li>Units sold net = 220 − 4 = 216 → ending units = <b>84</b></li>
+      <li>Ending inventory = 84 × 410 = <b>34,440</b>; COGS = 216 × 410 = <b>88,560</b></li>
+    </ul>
+    <p><b>Receivables 應收帳款</b></p>
+    <ul>
+      <li>Net credit sales = (160 − 4) × 800 = 124,800; A/R = 30,000 − 26,000 − 2,500 + 124,800 = <b>126,300</b> ✓</li>
+      <li>Required allowance = 2,200 + 500 + 860 + 1,000 = <b>4,560</b></li>
+      <li>Allowance before adjustment = 2,000 − 2,500 = <b>500 debit</b> → bad debt expense = 4,560 + 500 = <b>5,060</b></li>
+    </ul>
+    <p><b>Other 其他</b>: interest 100,000 × 6% × 3/12 = <b>1,500</b>; insurance 4,800 × 3/12 = <b>1,200</b> (prepaid left 3,600).</p>
+  </div></details>
+
+  <details class="sol"><summary>(a) Income statement 損益表</summary><div class="in scroll">
+    <table>
+      <tr><th colspan="2">Brew-Masters Ltd — Income Statement, three months ended March 31, 2023</th></tr>
+      <tr><td>Sales revenue (220 × 800)</td><td class="r">$176,000</td></tr>
+      <tr><td>Less: Sales returns and allowances (4 × 800)</td><td class="r">3,200</td></tr>
+      <tr class="total"><td>Net sales revenue</td><td class="r">172,800</td></tr>
+      <tr><td>Cost of goods sold</td><td class="r">88,560</td></tr>
+      <tr class="total"><td>Gross profit</td><td class="r">84,240</td></tr>
+      <tr><td>Operating expenses (other)</td><td class="r">30,000</td></tr>
+      <tr><td>Insurance expense</td><td class="r">1,200</td></tr>
+      <tr><td>Depreciation expense</td><td class="r">6,600</td></tr>
+      <tr><td>Bad debt expense</td><td class="r">5,060</td></tr>
+      <tr class="total"><td>Income from operations</td><td class="r">41,380</td></tr>
+      <tr><td>Loss on disposal of plant asset</td><td class="r">(1,000)</td></tr>
+      <tr><td>Interest expense</td><td class="r">(1,500)</td></tr>
+      <tr class="total"><td>Income before income tax</td><td class="r">38,880</td></tr>
+      <tr><td>Income tax expense (20%)</td><td class="r">7,776</td></tr>
+      <tr class="total dbl"><td>Net income</td><td class="r">$31,104</td></tr>
+    </table>
+    <p class="zh">進貨折扣 560 是減少進貨成本（進 COGS 計算），不是收入。股利不是費用，不進損益表。</p>
+  </div></details>
+
+  <details class="sol"><summary>(b) Statement of financial position 財務狀況表</summary><div class="in scroll">
+    <table>
+      <tr><th>Brew-Masters Ltd — March 31, 2023</th><th class="r">Amount</th><th>Working</th></tr>
+      <tr><td>Land</td><td class="r">$60,000</td><td>new</td></tr>
+      <tr><td>Building</td><td class="r">300,000</td><td></td></tr>
+      <tr><td>Accumulated depreciation—building</td><td class="r">(15,000)</td><td>12,000 + 3,000</td></tr>
+      <tr><td>Equipment (1 truck)</td><td class="r">40,000</td><td>80,000 − 40,000</td></tr>
+      <tr><td>Accumulated depreciation—equipment</td><td class="r">(9,000)</td><td>14,400 + 3,600 − 9,000</td></tr>
+      <tr><td>Prepaid insurance</td><td class="r">3,600</td><td>4,800 − 1,200</td></tr>
+      <tr><td>Inventory (84 machines)</td><td class="r">34,440</td><td>84 × 410</td></tr>
+      <tr><td>Accounts receivable, net</td><td class="r">121,740</td><td>126,300 − 4,560</td></tr>
+      <tr><td>Cash</td><td class="r">15,600</td><td>see cash list below</td></tr>
+      <tr class="total dbl"><td>Total assets</td><td class="r">$551,380</td><td></td></tr>
+      <tr><td>Share capital—ordinary</td><td class="r">$340,000</td><td>300,000 + 40,000</td></tr>
+      <tr><td>Retained earnings</td><td class="r">67,704</td><td>44,600 + 31,104 − 8,000</td></tr>
+      <tr><td>Notes payable (non-current)</td><td class="r">100,000</td><td>matures 2027</td></tr>
+      <tr><td>Accounts payable</td><td class="r">26,400</td><td>March purchase 60 × 440</td></tr>
+      <tr><td>Interest payable</td><td class="r">1,500</td><td>6,000 − 6,000 + 1,500</td></tr>
+      <tr><td>Income tax payable</td><td class="r">7,776</td><td>paid in April</td></tr>
+      <tr><td>Dividends payable</td><td class="r">8,000</td><td>declared, not paid</td></tr>
+      <tr class="total dbl"><td>Total equity and liabilities</td><td class="r">$551,380</td><td></td></tr>
+    </table>
+    <p><b>Cash</b> = 50,000 − 1,160 freight + 48,000 cash sales + 26,000 A/R − 21,000 old A/P − 55,440 Feb purchase − 6,000 interest − 4,800 insurance − 30,000 opex + 40,000 shares − 60,000 land + 30,000 truck = <b>15,600</b></p>
+  </div></details>
+
+  <details class="sol"><summary>(c) Statement of cash flows — indirect 間接法現金流量表</summary><div class="in scroll">
+    <table>
+      <tr><th colspan="2">Brew-Masters Ltd — three months ended March 31, 2023</th></tr>
+      <tr><td><b>Cash flows from operating activities</b></td><td></td></tr>
+      <tr><td>Net income</td><td class="r">$31,104</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Depreciation expense</td><td class="r">6,600</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Loss on disposal of plant asset</td><td class="r">1,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Bad debt expense</td><td class="r">5,060</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Increase in A/R = 126,300 − (30,000 − 2,500)</td><td class="r">(98,800)</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Decrease in inventory = 40,000 − 34,440</td><td class="r">5,560</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Increase in prepaid insurance</td><td class="r">(3,600)</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Increase in A/P = 26,400 − 21,000</td><td class="r">5,400</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Decrease in interest payable = 6,000 − 1,500</td><td class="r">(4,500)</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Increase in income tax payable</td><td class="r">7,776</td></tr>
+      <tr class="total"><td>Net cash used by operating activities</td><td class="r">(44,400)</td></tr>
+      <tr><td><b>Cash flows from investing activities</b></td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Sale of truck</td><td class="r">30,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Purchase of land</td><td class="r">(60,000)</td></tr>
+      <tr class="total"><td>Net cash used by investing activities</td><td class="r">(30,000)</td></tr>
+      <tr><td><b>Cash flows from financing activities</b></td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Issuance of ordinary shares</td><td class="r">40,000</td></tr>
+      <tr class="total"><td>Net cash provided by financing activities</td><td class="r">40,000</td></tr>
+      <tr class="total"><td>Net decrease in cash</td><td class="r">(34,400)</td></tr>
+      <tr><td>Cash, January 1, 2023</td><td class="r">50,000</td></tr>
+      <tr class="total dbl"><td>Cash, March 31, 2023</td><td class="r">$15,600</td></tr>
+    </table>
+    <p><b>Check (direct method):</b> 48,000 + 26,000 − 1,160 − 21,000 − 55,440 − 6,000 − 4,800 − 30,000 = −44,400 ✓</p>
+    <p class="zh">陷阱：宣告但未發放的股利（8,000）不是現金流量，籌資活動不列。所得稅未付 → 應付所得稅增加要加回。營業現金流量是負的，因為大部分銷貨是賒銷、還沒收現，所以淨利高不代表現金多。</p>
+  </div></details>
+
+  <div class="trap"><b class="h">Exam checklist:</b> (1) Count units first: returns from customers go <i>back</i> into inventory; returns to suppliers reduce purchases and A/P. (2) Freight-in → inventory cost; purchase discount → reduces cost. (3) Allowance: credit balance → subtract; debit balance → add. (4) A disposed asset's cost <i>and</i> its accumulated depreciation both leave the SFP; depreciate it up to the sale date. (5) Interest payable at year-end is paid on Jan 1 → decrease in payable on the cash flow statement. (6) The cash on the cash flow statement must equal the cash on the SFP.<span class="zh">考前檢查：數量先對、運費進成本、備抵貸減借加、處分要沖成本與累折、利息應付減少、現金三表一致。</span></div>
+
+  <label class="done-row"><input type="checkbox" id="done-u12" data-unit="u12"> Both problems done 兩題都做完了</label>
 </section>
 
 </main>
