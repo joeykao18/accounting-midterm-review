@@ -163,13 +163,18 @@ select.ans{max-width:15em}
     <li><a href="#u5"><span class="n">5</span>FIFO / LIFO / Average-cost</a></li>
     <li><a href="#u6"><span class="n">6</span>Sales Discounts &amp; Days in Inventory</a></li>
     <li><a href="#u7"><span class="n">7</span>Receivables &amp; Bad Debts</a></li>
-    <li><a href="#u8"><span class="n">8</span>Formula Sheet</a></li>
-    <li><a href="#u9"><span class="n">9</span>Exam Traps</a></li>
-    <li><a href="#u10"><span class="n">10</span>Glossary 中英詞彙</a></li>
-    <li><a href="#u11"><span class="n">11</span>Mock Exam (20 Qs)</a></li>
-    <li><a href="#u12"><span class="n">12</span>Comprehensive Problems (IS/SFP/CF)</a></li>
+    <li><a href="#u13"><span class="n">8</span>Trial Balance, Closing &amp; SFP</a></li>
+    <li><a href="#u14"><span class="n">9</span>Inventory Extras &amp; Errors</a></li>
+    <li><a href="#u15"><span class="n">10</span>Plant Assets (Ch9)</a></li>
+    <li><a href="#u16"><span class="n">11</span>Liabilities (Ch10–11)</a></li>
+    <li><a href="#u17"><span class="n">12</span>Cash &amp; Cash Flows (Ch7, 14)</a></li>
+    <li><a href="#u8"><span class="n">13</span>Formula Sheet</a></li>
+    <li><a href="#u9"><span class="n">14</span>Exam Traps</a></li>
+    <li><a href="#u10"><span class="n">15</span>Glossary 中英詞彙</a></li>
+    <li><a href="#u11"><span class="n">16</span>Mock Exam (28 Qs)</a></li>
+    <li><a href="#u12"><span class="n">17</span>Comprehensive Problems (IS/SFP/CF)</a></li>
   </ol>
-  <div class="progress"><span id="progTxt">Done 0 / 12</span><div class="bar"><i id="progBar"></i></div></div>
+  <div class="progress"><span id="progTxt">Done 0 / 17</span><div class="bar"><i id="progBar"></i></div></div>
 </nav>
 
 <main>
@@ -786,14 +791,387 @@ select.ans{max-width:15em}
     </div>
   </div>
 
+  <h3><span class="tag">Definitions</span>Sale of receivables (factoring) <span class="en">(W4 slides)</span></h3>
+  <p>To shorten the cash-to-cash operating cycle, a company can sell receivables to a <b>factor</b> (a finance company or bank) that collects directly from customers and charges a commission (usually 1–3% of the receivables). Reasons: it may be the only reasonable source of cash, and billing/collecting is time-consuming and costly.<span class="zh">應收帳款讓售：賣給 factor 換現金，付 1–3% 手續費。</span></p>
+  <div class="je"><table>
+    <caption>Example: sell €200,000 of receivables to a factor charging 2%</caption>
+    <tr><td>Cash</td><td class="dr-amt">196,000</td><td></td></tr>
+    <tr><td>Service Charge Expense (200,000 × 2%)</td><td class="dr-amt">4,000</td><td></td></tr>
+    <tr><td class="cr">Accounts Receivable</td><td></td><td class="cr-amt">200,000</td></tr>
+  </table></div>
+  <p>The service charge is a selling expense if factoring is frequent, otherwise other income and expense.<span class="zh">經常讓售列銷售費用，偶爾發生列其他收益及費損。</span></p>
+
   <h3><span class="tag">Quiz</span></h3>
   <div class="quiz" data-set="u7"></div>
   <label class="done-row"><input type="checkbox" id="done-u7" data-unit="u7"> I've got this unit 這單元我會了</label>
 </section>
 
+
+<!-- ============ UNIT 13 (display 08): Ch1–4 extras ============ -->
+<section class="unit" id="u13">
+  <div class="unit-head"><span class="src">Source: W1 slides Ch1–4</span></div>
+  <h2 class="u"><span class="num">08</span>Recording Process, Trial Balance, Closing &amp; Classified SFP</h2>
+
+  <h3><span class="tag">Concept</span>The accounting information system</h3>
+  <p>An accounting information system <b>identifies, records, and communicates</b> the economic events of an organization to interested users. <b>External users</b> (investors, creditors, tax authorities) use financial accounting; <b>internal users</b> (managers) use managerial accounting.<span class="zh">會計資訊系統：辨認 → 記錄 → 溝通。外部使用者看財務會計，內部使用者看管理會計。</span></p>
+  <p>Not every activity is a transaction: first ask whether the event <b>changes the financial position</b> (assets, liabilities, or equity). Hiring an employee or signing a contract for future work is <b>not</b> recorded yet.<span class="zh">先判斷有沒有改變財務狀況；雇用員工、簽約但尚未履行都不入帳。</span></p>
+
+  <h3><span class="tag">Steps</span>The recording process</h3>
+  <ol class="steps">
+    <li><span><b>Analyze</b> each transaction from business documents: does it exist, which accounts, how much to debit/credit? 分析交易</span></li>
+    <li><span><b>Journalize</b>: enter it in the journal (date; debit account first on the left; credit account indented below). 記日記帳</span></li>
+    <li><span><b>Post</b>: transfer journal entries to the ledger accounts in chronological order. 過帳到分類帳</span></li>
+    <li><span>Prepare the <b>trial balance</b> from the ledger balances. 編試算表</span></li>
+  </ol>
+
+  <h3><span class="tag">Definitions</span>Trial balance and its limitations</h3>
+  <p>A <b>trial balance</b> lists accounts and their balances at a given time, in ledger order, in two columns (debit and credit). It proves that <b>total debits = total credits</b>, may uncover journalizing/posting errors, and is used to prepare financial statements.<span class="zh">試算表驗證借貸相等，可以抓到部分錯誤，也是編報表的基礎。</span></p>
+  <div class="trap"><b class="h">Trap — the trial balance still balances when:</b>
+    <ol>
+      <li>a transaction is <b>not journalized</b> at all;</li>
+      <li>a correct journal entry is <b>not posted</b>;</li>
+      <li>a journal entry is <b>posted twice</b>;</li>
+      <li><b>incorrect accounts</b> are used in journalizing or posting (e.g., debit Supplies instead of Equipment);</li>
+      <li><b>offsetting errors</b> are made in recording the amount.</li>
+    </ol>
+    <span class="zh">只要借貸「同時」錯（漏記、重複記、記錯科目、互相抵銷的錯誤），試算表照樣平衡。只有借貸一邊錯（例如只過了借方，或借方金額打錯）才會不平衡。</span></div>
+
+  <h3><span class="tag">Format</span>Classified statement of financial position (IFRS order)</h3>
+  <div class="grid2">
+    <div class="box"><h4>Assets (least liquid first)</h4><ul><li>Intangible assets</li><li>Property, plant, and equipment</li><li>Long-term investments</li><li>Current assets (inventory, prepaid, receivables, cash)</li></ul></div>
+    <div class="box"><h4>Equity and liabilities</h4><ul><li>Equity (share capital—ordinary, retained earnings)</li><li>Non-current liabilities</li><li>Current liabilities</li></ul></div>
+  </div>
+  <p class="zh">IFRS 的排法：非流動資產在前、流動資產在後；權益在前、負債在後（跟考題 Bikes-Are-Us 的格式一樣）。</p>
+
+  <h3><span class="tag">Concept</span>How the statements connect</h3>
+  <ol class="steps">
+    <li><span><b>Income statement</b> → net income is needed for the retained earnings statement. 淨利 → 保留盈餘表</span></li>
+    <li><span><b>Retained earnings statement</b>: Beginning RE + NI − Dividends = Ending RE → goes to the SFP. 期末保留盈餘 → 資產負債表</span></li>
+    <li><span><b>SFP + income statement</b> are needed to prepare the <b>statement of cash flows</b>; its ending cash equals the cash on the SFP. 現金流量表的期末現金 = 資產負債表的現金</span></li>
+  </ol>
+  <p>On day 1 of a business you only have data for the <b>statement of financial position</b>. Profitability is shown by the <b>income statement</b>.<span class="zh">第一天只有資產負債表；看獲利能力看損益表。</span></p>
+
+  <h3><span class="tag">Entries</span>Closing the books</h3>
+  <p>At period end, <b>temporary accounts</b> (revenues, expenses, dividends) are closed so they start the next period at zero. <b>Permanent accounts</b> (assets, liabilities, share capital, retained earnings) carry their balances forward. <b>Income Summary</b> is a temporary account: revenues and expenses are closed to it, its balance equals net income (loss), and it is then closed to Retained Earnings.<span class="zh">結帳：收入、費用 → 本期損益（Income Summary）→ 保留盈餘；股利直接結到保留盈餘。資產、負債、權益是永久帳戶，不結清。</span></p>
+  <div class="je"><table>
+    <caption>Example: Service Revenue 10,600; Salaries Expense 5,200; Rent Expense 900; Dividends 500</caption>
+    <tr><td>1 Service Revenue</td><td class="dr-amt">10,600</td><td></td></tr><tr><td class="cr">Income Summary</td><td></td><td class="cr-amt">10,600</td></tr>
+    <tr><td>2 Income Summary</td><td class="dr-amt">6,100</td><td></td></tr><tr><td class="cr">Salaries Expense</td><td></td><td class="cr-amt">5,200</td></tr><tr><td class="cr">Rent Expense</td><td></td><td class="cr-amt">900</td></tr>
+    <tr><td>3 Income Summary (NI 10,600 − 6,100)</td><td class="dr-amt">4,500</td><td></td></tr><tr><td class="cr">Retained Earnings</td><td></td><td class="cr-amt">4,500</td></tr>
+    <tr><td>4 Retained Earnings</td><td class="dr-amt">500</td><td></td></tr><tr><td class="cr">Dividends</td><td></td><td class="cr-amt">500</td></tr>
+  </table></div>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u13"></div>
+  <label class="done-row"><input type="checkbox" id="done-u13" data-unit="u13"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ UNIT 14 (display 09): Inventory extras ============ -->
+<section class="unit" id="u14">
+  <div class="unit-head"><span class="src">Source: W2 slides Ch5–6</span></div>
+  <h2 class="u"><span class="num">09</span>Inventory Extras: Classification, Specific ID, Cost-flow Effects &amp; Inventory Errors</h2>
+
+  <h3><span class="tag">Definitions</span>Incoterms and freight</h3>
+  <p>Incoterms® (published by the ICC since 1936) set when <b>ownership and risk</b> transfer and <b>who pays freight</b>, taxes, and insurance. They affect revenue recognition, ownership of inventory, and operating expenses. In this course: <b>FOB shipping point</b> → ownership passes when shipped (buyer pays freight → part of inventory cost). <b>CIF destination</b> → ownership stays with the seller until goods reach the buyer (seller pays freight → operating expense).<span class="zh">FOB 起運點：出貨就歸買方，買方付運費（進存貨成本）。CIF 目的地：送到才歸買方，賣方付運費（營業費用）。</span></p>
+
+  <h3><span class="tag">Definitions</span>Classifying inventory</h3>
+  <div class="grid2">
+    <div class="box"><h4>Merchandising company</h4><p>One classification: <b>merchandise inventory</b> — owned by the company and ready for sale.</p></div>
+    <div class="box"><h4>Manufacturing company</h4><ul><li><b>Raw materials</b>: basic goods not yet in production 原料</li><li><b>Work in process</b>: in production, not completed 在製品</li><li><b>Finished goods</b>: completed and ready for sale 製成品</li></ul></div>
+  </div>
+  <p>Determining quantities takes two steps: (1) a <b>physical count</b>; (2) <b>ownership</b> — do all goods counted belong to us (accuracy)? Do we own goods not counted (completeness)? Check <b>consigned goods</b> and <b>goods in transit</b>.<span class="zh">盤點數量 → 判斷所有權（寄銷品、在途存貨）。</span></p>
+
+  <h3><span class="tag">Example</span>Golden Company and Stallman Company</h3>
+  <p class="q">(1) Golden Company has 20,000 units on hand on Dec 31. In transit: purchases of 2,500 units shipped FOB shipping point on Dec 31, and sales of 1,500 units shipped Dec 31 CIF destination. Total inventory? (2) Stallman counted goods costing €200,000. The count included €15,000 of goods held on consignment. Not counted: €25,000 purchased FOB shipping point (in transit) and goods costing €22,000 sold for €30,000 FOB destination (in transit). Correct inventory?</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <p>(1) 20,000 + 2,500 (we own it once shipped) + 1,500 (still ours until it arrives) = <b>24,000 units</b></p>
+    <p>(2) 200,000 − 15,000 (consigned, not ours) + 25,000 (FOB shipping point purchase) + 22,000 (FOB destination sale, at <b>cost</b>, not selling price) = <b>€232,000</b></p>
+    <p class="zh">在途銷貨用成本 22,000，不是售價 30,000。</p>
+  </div></details>
+
+  <h3><span class="tag">Method</span>Specific identification</h3>
+  <p>Crivitz TV buys three identical TVs at £700, £750 and £800 and sells two at £1,200 each. Under <b>specific identification</b>, COGS could be £1,450, £1,500 or £1,550 depending on which sets are sold, so <b>managers could manipulate net income</b>. It tracks the actual physical flow and suits a limited variety of high-unit-cost items (cars, pianos), but is rare in practice because it requires the cost of every item.<span class="zh">個別認定法：實際追蹤每一件成本，適合高單價、少量商品；但管理者可以挑要賣哪一台來操縱淨利。</span></p>
+  <p>The cost flow <b>assumptions</b> (FIFO, LIFO, average-cost) do <b>not</b> need to match the physical movement of goods. <b>LIFO is not permitted under IFRS</b>. About 60% of IFRS companies use average-cost and 40% use FIFO.<span class="zh">成本流程假設不必和實物流動一致；IFRS 不允許 LIFO。</span></p>
+
+  <h3><span class="tag">Compare</span>Effects of cost-flow methods when prices are rising</h3>
+  <div class="scroll"><table>
+    <tr><th>Rising prices</th><th>COGS</th><th>Ending inventory (SFP)</th><th>Net income</th><th>Income tax</th></tr>
+    <tr><td>FIFO</td><td>Lower</td><td>Higher (close to current cost)</td><td>Higher</td><td>Higher</td></tr>
+    <tr><td>Average-cost</td><td>Higher</td><td>Lower (may be understated vs current cost)</td><td>Lower</td><td>Lower</td></tr>
+  </table></div>
+  <p>When prices are rising (falling), companies tend to prefer FIFO (average-cost) because it gives higher net income. <b>Consistency</b>: use the same method every year for comparability; if a company changes method, it must disclose the change and its effect on net income.<span class="zh">物價上漲 FIFO 淨利高、稅高；平均法淨利低、稅低。一致性原則：方法要年年相同，變更要揭露。</span></p>
+  <p><b>LCNRV</b>: if net realizable value (estimated selling price − estimated costs to sell) falls below cost, write inventory down to NRV — an application of <b>prudence (conservatism)</b>, common in high-tech and fashion industries.<span class="zh">成本與淨變現價值孰低，屬於穩健原則。</span></p>
+
+  <h3><span class="tag">Rules</span>Inventory errors</h3>
+  <p>Causes: failing to count or price inventory correctly, or not recognizing the transfer of title for goods in transit. Use <b>BI + Purchases − EI = COGS</b> and <b>Net sales − COGS − Opex = NI</b>.<span class="zh">存貨錯誤：用 COGS 公式推。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Error</th><th>COGS</th><th>Net income</th></tr>
+    <tr><td>Ending inventory <b>understated</b></td><td>Overstated</td><td>Understated</td></tr>
+    <tr><td>Ending inventory <b>overstated</b></td><td>Understated</td><td>Overstated</td></tr>
+    <tr><td>Beginning inventory <b>understated</b></td><td>Understated</td><td>Overstated</td></tr>
+    <tr><td>Beginning inventory <b>overstated</b></td><td>Overstated</td><td>Understated</td></tr>
+  </table></div>
+  <p>This year's ending inventory is next year's beginning inventory, so the error <b>reverses</b> next year: over the two years <b>total net income is correct</b> (the errors offset). On the SFP, an ending-inventory error makes <b>assets and equity (retained earnings)</b> wrong at the end of year 1, but they are correct at the end of year 2.<span class="zh">期末存貨錯誤會在下一年反轉，兩年合計淨利正確；第一年底資產、權益錯，第二年底就正確了。</span></p>
+  <p class="q">Example (slide): 2025 ending inventory reported at €12,000 instead of €15,000. 2025 sales 80,000; BI 20,000; purchases 40,000; opex 10,000. 2026 sales 90,000; purchases 68,000; EI 23,000; opex 20,000. Find reported vs correct net income.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in scroll">
+    <table>
+      <tr><th></th><th class="r">2025 incorrect</th><th class="r">2025 correct</th><th class="r">2026 incorrect</th><th class="r">2026 correct</th></tr>
+      <tr><td>Sales</td><td class="r">80,000</td><td class="r">80,000</td><td class="r">90,000</td><td class="r">90,000</td></tr>
+      <tr><td>Beginning inventory</td><td class="r">20,000</td><td class="r">20,000</td><td class="r">12,000</td><td class="r">15,000</td></tr>
+      <tr><td>Purchases</td><td class="r">40,000</td><td class="r">40,000</td><td class="r">68,000</td><td class="r">68,000</td></tr>
+      <tr><td>Ending inventory</td><td class="r">12,000</td><td class="r">15,000</td><td class="r">23,000</td><td class="r">23,000</td></tr>
+      <tr><td>COGS</td><td class="r">48,000</td><td class="r">45,000</td><td class="r">57,000</td><td class="r">60,000</td></tr>
+      <tr><td>Gross profit</td><td class="r">32,000</td><td class="r">35,000</td><td class="r">33,000</td><td class="r">30,000</td></tr>
+      <tr><td>Operating expenses</td><td class="r">10,000</td><td class="r">10,000</td><td class="r">20,000</td><td class="r">20,000</td></tr>
+      <tr class="total"><td>Net income</td><td class="r">22,000</td><td class="r">25,000</td><td class="r">13,000</td><td class="r">10,000</td></tr>
+    </table>
+    <p>2025 NI understated by €3,000; 2026 NI overstated by €3,000; two-year total 35,000 in both cases.</p>
+  </div></details>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u14"></div>
+  <label class="done-row"><input type="checkbox" id="done-u14" data-unit="u14"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ UNIT 15 (display 10): Plant assets ============ -->
+<section class="unit" id="u15">
+  <div class="unit-head"><span class="src">Source: W4 slides Ch9</span></div>
+  <h2 class="u"><span class="num">10</span>Plant Assets: Cost, Depreciation, Revaluation &amp; Disposal</h2>
+
+  <h3><span class="tag">Definitions</span>What is a plant asset?</h3>
+  <p>Plant assets (property, plant, and equipment; fixed assets) have <b>physical substance</b>, are <b>used in operations</b>, provide service for <b>a number of years</b>, and are <b>not intended for sale</b> to customers.<span class="zh">不動產、廠房及設備：有實體、營業使用、耐用多年、不是要賣的。</span></p>
+
+  <h3><span class="tag">Rules</span>Determining cost (historical cost principle)</h3>
+  <p>Cost = all expenditures necessary to acquire the asset and make it <b>ready for its intended use</b>.<span class="zh">成本＝取得並使資產達到可使用狀態的一切必要支出。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Land 土地</th><th>Land improvements 土地改良</th><th>Buildings 房屋</th><th>Equipment 設備</th></tr>
+    <tr><td>Cash price; closing costs (title, attorney's fees); broker's commission; accrued property taxes and liens assumed; clearing, draining, filling, grading; demolition of old building (less salvage proceeds)</td><td>Driveways, parking lots, fences, landscaping, lighting</td><td>Purchase price + closing costs + broker's commission; remodeling, replacing roof/floors/wiring/plumbing. If constructed: contract price + architect's fees, permits, excavation; interest during construction only</td><td>Cash price, sales taxes, freight, insurance in transit paid by buyer, assembling, installing, testing. <b>Not</b>: annual license and accident insurance (recurring → expense / prepaid)</td></tr>
+    <tr><td><b>Unlimited life — not depreciated</b></td><td colspan="3">Limited useful lives — depreciated</td></tr>
+  </table></div>
+  <p class="q">Huang Company buys a delivery truck: cash price HK$420,000; sales taxes 13,200; painting and lettering 5,000; motor vehicle license 800; three-year accident insurance 16,000. Record the purchase.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <div class="je"><table>
+      <tr><td>Equipment — Truck (420,000 + 13,200 + 5,000)</td><td class="dr-amt">438,200</td><td></td></tr>
+      <tr><td>License Expense</td><td class="dr-amt">800</td><td></td></tr>
+      <tr><td>Prepaid Insurance</td><td class="dr-amt">16,000</td><td></td></tr>
+      <tr><td class="cr">Cash</td><td></td><td class="cr-amt">455,000</td></tr>
+    </table></div>
+    <p class="zh">牌照費、保險費每年都會發生、不會讓資產更好用 → 不進資產成本。</p>
+  </div></details>
+
+  <h3><span class="tag">Concept</span>Depreciation</h3>
+  <p>Depreciation allocates the cost of a tangible asset to expense over its useful life in a rational and systematic way (expense recognition / matching). It is <b>cost allocation, not asset valuation</b>: book value (cost − accumulated depreciation) is not fair value. <b>Land is not depreciated.</b> Entry: Dr Depreciation Expense / Cr Accumulated Depreciation (a contra-asset). Factors: <b>cost</b>, <b>useful life</b> (years, machine hours, units of output), <b>residual value</b>.<span class="zh">折舊是成本分攤，不是估價；土地不折舊。三要素：成本、耐用年限、殘值。</span></p>
+
+  <h3><span class="tag">Methods</span>Three methods — Bob's Florist truck</h3>
+  <p class="q">Truck bought Jan 1, 2020: cost €13,000; residual value €1,000; useful life 5 years or 100,000 miles. Miles driven: 2020 15,000; 2021 30,000; 2022 20,000; 2023 25,000; 2024 10,000.</p>
+  <div class="grid2">
+    <div class="box"><h4>(1) Straight-line 直線法</h4><p>(Cost − Residual) ÷ Life = 12,000 ÷ 5 = <b>€2,400 per year</b> (rate 20%). Same every year; suits buildings, furniture; most common.</p></div>
+    <div class="box"><h4>(2) Units-of-activity 生產數量法</h4><p>12,000 ÷ 100,000 miles = <b>€0.12/mile</b>. 2020: 15,000 × 0.12 = <b>€1,800</b>. Suits assets whose use varies a lot (machinery, delivery equipment).</p></div>
+    <div class="box"><h4>(3) Double-declining-balance 倍數餘額遞減法</h4><p>Rate = 1/5 × 2 = 40% × <b>beginning book value</b> (ignore residual value at first). 2020: 13,000 × 40% = <b>€5,200</b>. Stop when BV = residual value.</p></div>
+  </div>
+  <details class="sol"><summary>Full DDB schedule 倍數餘額遞減表</summary><div class="in scroll">
+    <table>
+      <tr><th>Year</th><th class="r">Beginning BV</th><th class="r">× 40%</th><th class="r">Accum. dep.</th><th class="r">Ending BV</th></tr>
+      <tr><td>2020</td><td class="r">13,000</td><td class="r">5,200</td><td class="r">5,200</td><td class="r">7,800</td></tr>
+      <tr><td>2021</td><td class="r">7,800</td><td class="r">3,120</td><td class="r">8,320</td><td class="r">4,680</td></tr>
+      <tr><td>2022</td><td class="r">4,680</td><td class="r">1,872</td><td class="r">10,192</td><td class="r">2,808</td></tr>
+      <tr><td>2023</td><td class="r">2,808</td><td class="r">1,123</td><td class="r">11,315</td><td class="r">1,685</td></tr>
+      <tr><td>2024</td><td class="r">1,685</td><td class="r">685*</td><td class="r">12,000</td><td class="r">1,000</td></tr>
+    </table>
+    <p>* 1,685 × 40% = 674, adjusted to 685 so the ending book value equals the €1,000 residual value. Total depreciation is €12,000 under all three methods; only the timing differs.<span class="zh">最後一年要調整到帳面價值＝殘值；三種方法總折舊都是 12,000。</span></p>
+  </div></details>
+  <div class="trap"><b class="h">Exam tip — partial year:</b> depreciation is by <b>months used</b>. A quarter = 3/12 of annual depreciation; an asset sold on Feb 28 gets 2 months; one bought on March 1 gets 1 month to March 31. Change methods only if justified (<b>consistency</b>).<span class="zh">期中考題都是一季（3 個月），買賣當月要算清楚月份。</span></div>
+
+  <h3><span class="tag">IFRS</span>Revaluation and impairment</h3>
+  <p>IFRS lets companies choose the <b>cost model</b> or the <b>revaluation model</b> (fair value) — not allowed under US GAAP. If revaluation is used it applies to the whole class of assets, and assets with rapid price changes are revalued every year. Fair value above book value → <b>revaluation surplus (OCI)</b>. Fair value below book value → <b>impairment loss (income statement)</b>: Dr Impairment Loss / Cr Accumulated Impairment Loss.<span class="zh">重估增值 → 其他綜合損益；減損 → 損益表的損失。</span></p>
+
+  <h3><span class="tag">Compare</span>Expenditures during useful life</h3>
+  <div class="grid2">
+    <div class="box"><h4>Ordinary repairs → expense</h4><p>Maintain operating efficiency; small and frequent; benefit only the current period. <b>Revenue expenditures</b>: Dr Maintenance and Repairs Expense.</p></div>
+    <div class="box"><h4>Additions and improvements → capitalize</h4><p>Increase operating efficiency or life; significant and infrequent; benefit future periods. <b>Capital expenditures</b>: Dr the plant asset.</p></div>
+  </div>
+
+  <h3><span class="tag">Entries</span>Disposal: sale, retirement, exchange</h3>
+  <ol class="steps">
+    <li><span>Update depreciation <b>to the disposal date</b>. 先補提折舊到處分日</span></li>
+    <li><span>Remove the asset's <b>cost</b> (credit) and its <b>accumulated depreciation</b> (debit). 沖銷成本與累計折舊</span></li>
+    <li><span>Record cash received (debit); difference vs book value = <b>gain</b> (cash &gt; BV) or <b>loss</b> (cash &lt; BV) on the income statement. 現金 vs 帳面價值 → 處分損益</span></li>
+  </ol>
+  <p class="q">Equipment cost €50,000, accumulated depreciation €30,000 at Jan 1, 2025, straight-line €5,000 per year. Sold on July 1, 2025 for €16,000 cash. Record the entries.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <div class="je"><table>
+      <tr><td>Jul 1 Depreciation Expense (5,000 × 6/12)</td><td class="dr-amt">2,500</td><td></td></tr><tr><td class="cr">Accumulated Depreciation—Equipment</td><td></td><td class="cr-amt">2,500</td></tr>
+      <tr><td>Jul 1 Cash</td><td class="dr-amt">16,000</td><td></td></tr>
+      <tr><td>Accumulated Depreciation—Equipment (30,000 + 2,500)</td><td class="dr-amt">32,500</td><td></td></tr>
+      <tr><td>Loss on Disposal of Plant Assets</td><td class="dr-amt">1,500</td><td></td></tr>
+      <tr><td class="cr">Equipment</td><td></td><td class="cr-amt">50,000</td></tr>
+    </table></div>
+    <p>Book value = 50,000 − 32,500 = 17,500; cash 16,000 → loss 1,500. A <b>retirement</b> (no cash) of an asset that is not fully depreciated gives a loss equal to its book value; a fully depreciated asset retires with no gain or loss.<span class="zh">報廢沒有收現：損失＝帳面價值；已提足折舊就沒有損益。</span></p>
+  </div></details>
+
+  <h3><span class="tag">Formula</span>Asset turnover</h3>
+  <p><b>Asset turnover = Net sales ÷ Average total assets.</b> Example: ₩58,140 ÷ [(35,528 + 34,766) ÷ 2] = <b>1.65 times</b>. A higher ratio means more efficient use of assets to generate sales; it varies widely by industry (≥ 2.5 good for retail; 0.25–0.5 good for utilities).<span class="zh">資產週轉率越高，越有效率用資產創造銷貨；不同產業差很多。</span></p>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u15"></div>
+  <label class="done-row"><input type="checkbox" id="done-u15" data-unit="u15"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ UNIT 16 (display 11): Liabilities ============ -->
+<section class="unit" id="u16">
+  <div class="unit-head"><span class="src">Source: W5 slides Ch10–11</span></div>
+  <h2 class="u"><span class="num">11</span>Current &amp; Non-current Liabilities</h2>
+
+  <h3><span class="tag">Definitions</span>Current vs. non-current</h3>
+  <p>Liabilities are existing debts and obligations settled in the future by transferring assets/services or creating other liabilities. Maturity <b>≤ 1 year → current</b>; <b>&gt; 1 year → non-current</b>. Classification matters for liquidity (short-term debt-paying ability) and for the order of payment in bankruptcy (debt holders first, then preferred shareholders, then ordinary shareholders).<span class="zh">一年內到期是流動負債；破產清算時債權人優先受償。</span></p>
+  <p>Current liabilities include accounts payable, notes payable, sales taxes payable, interest payable, <b>unearned revenues</b>, and accrued liabilities (taxes, salaries and wages). The part of long-term debt due within one year is shown as <b>current maturities of long-term debt</b> (Apple splits its term debt into current 12,350 and non-current 78,328).<span class="zh">長期負債一年內到期的部分要轉列流動負債。</span></p>
+
+  <h3><span class="tag">Entries</span>Notes payable</h3>
+  <p>A written promissory note, usually interest-bearing. Three steps: (1) record the liability at face value; (2) accrue interest = <b>Principal × Rate × Time</b>; (3) at maturity pay face value + interest.<span class="zh">應付票據：利息＝本金 × 利率 × 期間。</span></p>
+  <p class="q">On Sept 1, 2025 a company borrows $30,000 by signing a 4-month, 6% note. Year-end Dec 31.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <div class="je"><table>
+      <tr><td>Sep 1 Cash</td><td class="dr-amt">30,000</td><td></td></tr><tr><td class="cr">Notes Payable</td><td></td><td class="cr-amt">30,000</td></tr>
+      <tr><td>Dec 31 Interest Expense (30,000 × 6% × 4/12)</td><td class="dr-amt">600</td><td></td></tr><tr><td class="cr">Interest Payable</td><td></td><td class="cr-amt">600</td></tr>
+      <tr><td>Jan 1 Notes Payable</td><td class="dr-amt">30,000</td><td></td></tr><tr><td>Interest Payable</td><td class="dr-amt">600</td><td></td></tr><tr><td class="cr">Cash</td><td></td><td class="cr-amt">30,600</td></tr>
+    </table></div>
+  </div></details>
+
+  <h3><span class="tag">Concept</span>Deferred (unearned) revenues</h3>
+  <p>Cash received before the revenue is earned is a <b>liability</b>; as the performance obligation is satisfied it becomes revenue (Ch3 adjusting entry). For airlines, unearned ticket revenue is often the largest current liability. Cash flow implication: an increase in deferred revenue is <b>added</b> in the indirect method (cash came in before revenue was recognized).<span class="zh">預收收入是負債；間接法下預收收入增加要加回。</span></p>
+
+  <h3><span class="tag">Rules</span>Provisions and contingent liabilities</h3>
+  <p>A <b>provision</b> is a liability with uncertain timing or amount: it exists because of a past event, and the amount can be reliably estimated (e.g., warranties, lawsuits).<span class="zh">負債準備：過去事件造成、時間或金額不確定、可以可靠估計。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Likelihood</th><th>Measurement</th><th>Accounting treatment</th></tr>
+    <tr><td>Probable</td><td>Estimable</td><td><b>Record</b> and disclose the liability</td></tr>
+    <tr><td>Probable</td><td>Not estimable</td><td>Disclose only</td></tr>
+    <tr><td>Reasonably possible</td><td>—</td><td>Disclose only</td></tr>
+    <tr><td>Remote</td><td>—</td><td>Nothing</td></tr>
+  </table></div>
+  <p><b>Commitments</b> (e.g., Apple's unconditional purchase obligations) are <b>disclosed but not recognized</b> (off-balance-sheet).<span class="zh">很可能＋可估計 → 入帳；其他只揭露或不處理。承諾事項只揭露不入帳。</span></p>
+
+  <h3><span class="tag">Example</span>Product warranties</h3>
+  <p class="q">In 2025 a company sells 10,000 TVs with a one-year warranty. It estimates 2% will be defective at an average repair cost of $50. During 2025, 120 units were repaired at $50 each. Record the entries and find the year-end warranty liability.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <div class="je"><table>
+      <tr><td>Dec 31 Warranty Expense (10,000 × 2% × 50)</td><td class="dr-amt">10,000</td><td></td></tr><tr><td class="cr">Warranty Liability</td><td></td><td class="cr-amt">10,000</td></tr>
+      <tr><td>2025 Warranty Liability (120 × 50)</td><td class="dr-amt">6,000</td><td></td></tr><tr><td class="cr">Repair Parts / Cash</td><td></td><td class="cr-amt">6,000</td></tr>
+    </table></div>
+    <p>Warranty liability at year-end = 10,000 − 6,000 = <b>$4,000</b>. The expense is matched with the sales year, not the repair year. Apple's roll-forward works the same way: beginning 3,354 − claims 2,674 + accruals 2,684 = ending 3,364.<span class="zh">保固費用在銷貨當年估列；實際維修時沖減負債，不再認列費用。</span></p>
+  </div></details>
+
+  <h3><span class="tag">Definitions</span>Bonds (non-current liabilities)</h3>
+  <p>A bond is a form of interest-bearing note used to raise large amounts of long-term capital. Key features: <b>face value</b> (principal), <b>maturity date</b>, <b>contractual (stated) interest rate</b> (cash interest = face × contractual rate; often paid semiannually).<span class="zh">公司債：面額、到期日、票面利率。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Contractual rate vs market rate</th><th>Bonds sell at</th></tr>
+    <tr><td>Contractual &gt; market</td><td><b>Premium</b> (above face value) 溢價</td></tr>
+    <tr><td>Contractual = market</td><td>Face value (par) 平價</td></tr>
+    <tr><td>Contractual &lt; market</td><td><b>Discount</b> (below face value) 折價</td></tr>
+  </table></div>
+  <div class="grid2">
+    <div class="box"><h4>Advantages of bonds over shares</h4><ol><li>Shareholder control not affected (no voting rights)</li><li>Tax savings: interest is deductible</li><li>EPS may be higher</li><li>Small denominations, many features</li></ol></div>
+    <div class="box"><h4>Disadvantages</h4><ol><li>Must pay interest periodically</li><li>Must repay principal at maturity</li></ol><p>Not suitable for companies with fluctuating earnings and a weak cash position.</p></div>
+  </div>
+  <p class="q">EPS example (slide): 100,000 shares outstanding. Plan A issues 200,000 more shares → net income 1,050,000. Plan B issues $5 million of bonds → net income after interest and tax 770,000.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <p>Plan A EPS = 1,050,000 ÷ 300,000 = <b>$3.50</b>. Plan B EPS = 770,000 ÷ 100,000 = <b>$7.70</b>. Net income is lower with bonds (interest expense), but EPS is higher because no new shares are issued.<span class="zh">發債淨利較低（有利息），但股數不變，EPS 反而較高。</span></p>
+  </div></details>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u16"></div>
+  <label class="done-row"><input type="checkbox" id="done-u16" data-unit="u16"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ UNIT 17 (display 12): Cash & SCF ============ -->
+<section class="unit" id="u17">
+  <div class="unit-head"><span class="src">Source: W5 slides Ch7 &amp; Ch14</span></div>
+  <h2 class="u"><span class="num">12</span>Cash &amp; the Statement of Cash Flows</h2>
+
+  <h3><span class="tag">Definitions</span>Cash, cash equivalents, restricted cash</h3>
+  <p><b>Cash equivalents</b> are short-term, highly liquid investments that are (1) readily convertible to known amounts of cash and (2) so near maturity that their market value is relatively insensitive to interest-rate changes. <b>Restricted cash</b> is not available for general use (set aside for a special purpose) and can be classified as non-current. Cash is reported on both the SFP and the statement of cash flows.<span class="zh">約當現金：短期、高流動、到期日近、價值不太受利率影響。受限制現金不能自由動用，可列非流動資產。</span></p>
+  <p><b>Can a profitable company have negative cash flow?</b> Yes. Under accrual accounting, revenues include credit sales not yet collected, and expenses include items not yet paid. Poor cash flow management is the most common reason small businesses fail.<span class="zh">賺錢但現金流量為負：賒銷還沒收現（見 Unit 17 Problem B）。</span></p>
+
+  <h3><span class="tag">Concept</span>Usefulness and classification</h3>
+  <p>The statement of cash flows helps assess: (1) ability to generate <b>future cash flows</b>; (2) ability to pay dividends and meet obligations; (3) reasons for the difference between net income and operating cash flow; (4) cash investing and financing transactions.<span class="zh">現金流量表的四個用途。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Activity</th><th>Related to</th><th>Inflows</th><th>Outflows</th></tr>
+    <tr><td><b>Operating</b></td><td>Income statement items</td><td>Sale of goods/services; interest and dividends received</td><td>Suppliers, employees, taxes, interest, other expenses</td></tr>
+    <tr><td><b>Investing</b></td><td>Investments and non-current assets</td><td>Sale of PP&amp;E; sale of investments; collection of loans made</td><td>Purchase of PP&amp;E; purchase of investments; loans to others</td></tr>
+    <tr><td><b>Financing</b></td><td>Non-current liabilities and equity</td><td>Issuing shares; issuing bonds/notes</td><td>Dividends paid; repaying debt; buying back shares (treasury shares)</td></tr>
+  </table></div>
+  <p class="zh">注意：在這門課（IFRS 教科書）利息收付、股利收入列營業活動；發放股利列籌資活動。</p>
+  <p><b>Life cycle:</b> in the introduction phase operating and investing cash flows are negative and financing is positive; in maturity operating cash flow is strongly positive and financing turns negative (repaying debt, paying dividends).<span class="zh">導入期：營業、投資為負，籌資為正；成熟期：營業大幅正，籌資轉負。</span></p>
+
+  <h3><span class="tag">Method</span>Indirect method — three steps</h3>
+  <p>The SCF is not prepared from the adjusted trial balance; it converts accrual figures to cash. Sources: comparative SFPs, the current income statement, and additional information. <b>Indirect</b>: net income ± adjustments. <b>Direct</b>: cash receipts − cash payments. Both give the same operating cash flow.<span class="zh">間接法：淨利 ± 調整；直接法：現金收入 − 現金支出，兩者結果一樣。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Step 1 — Operating: start with net income, then</th><th>Add (+)</th><th>Subtract (−)</th></tr>
+    <tr><td>Non-cash items</td><td>Depreciation, loss on disposal, (bad debt expense if using gross A/R)</td><td>Gain on disposal</td></tr>
+    <tr><td>Current assets (A/R, inventory, prepaid)</td><td>Decrease</td><td>Increase</td></tr>
+    <tr><td>Current liabilities (A/P, interest/salaries/tax payable, unearned revenue)</td><td>Increase</td><td>Decrease</td></tr>
+    <tr><th>Step 2 — Investing &amp; financing</th><td colspan="2">From changes in non-current assets, non-current liabilities, and equity, plus the additional information (use the cash amount, e.g. sale proceeds, not the gain).</td></tr>
+    <tr><th>Step 3 — Net change</th><td colspan="2">Operating + investing + financing = net change; + beginning cash = ending cash (must match the SFP).</td></tr>
+  </table></div>
+  <div class="trap"><b class="h">Non-cash investing and financing</b> (e.g., issuing bonds directly for land, buying a truck by signing a note, dividends declared but unpaid) are <b>not</b> in the three sections; disclose significant ones in a note.<span class="zh">非現金的投資籌資活動（發債換土地、開票買車）不列在表內，只附註揭露。</span></div>
+
+  <h3><span class="tag">Example</span>Computer Services International (2025)</h3>
+  <p class="q">Income statement: sales 507,000; COGS 150,000; opex (excl. depreciation) 111,000; depreciation 9,000; loss on disposal 3,000; interest expense 42,000; income before tax 192,000; tax 47,000; NI 145,000. SFP changes: A/R 30,000 → 20,000; inventory 10,000 → 15,000; prepaid 1,000 → 5,000; A/P 12,000 → 28,000; income tax payable 8,000 → 6,000; cash 33,000 → 55,000. Additional: issued €110,000 bonds directly for land; bought a building for €120,000 cash and equipment for €25,000 cash; sold equipment (cost 8,000, accumulated depreciation 1,000) for €4,000; issued shares for €20,000; declared and paid dividends of €29,000.</p>
+  <details class="sol"><summary>Solution 解答 (textbook IAS 7 format)</summary><div class="in scroll">
+    <table>
+      <tr><td><b>Operating activities</b></td><td></td><td></td></tr>
+      <tr><td>Income before income tax</td><td></td><td class="r">192,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Depreciation expense</td><td class="r">9,000</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Interest expense</td><td class="r">42,000</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Loss on disposal of plant assets</td><td class="r">3,000</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Decrease in accounts receivable</td><td class="r">10,000</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Increase in inventory</td><td class="r">(5,000)</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Increase in prepaid expenses</td><td class="r">(4,000)</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Increase in accounts payable</td><td class="r">16,000</td><td class="r">71,000</td></tr>
+      <tr class="total"><td>Cash generated from operations</td><td></td><td class="r">263,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Interest paid</td><td class="r">(42,000)</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Income taxes paid (47,000 + 2,000 decrease in payable)</td><td class="r">(49,000)</td><td class="r">(91,000)</td></tr>
+      <tr class="total"><td>Net cash provided by operating activities</td><td></td><td class="r">172,000</td></tr>
+      <tr><td><b>Investing activities</b>: building (120,000), equipment (25,000), disposal 4,000</td><td></td><td class="r">(141,000)</td></tr>
+      <tr><td><b>Financing activities</b>: shares 20,000, dividends (29,000)</td><td></td><td class="r">(9,000)</td></tr>
+      <tr class="total"><td>Net increase in cash</td><td></td><td class="r">22,000</td></tr>
+      <tr><td>Cash, beginning</td><td></td><td class="r">33,000</td></tr>
+      <tr class="total dbl"><td>Cash, ending</td><td></td><td class="r">€55,000</td></tr>
+      <tr><td colspan="3"><b>Note — non-cash investing and financing:</b> issuance of bonds payable to purchase land €110,000</td></tr>
+    </table>
+    <p><b>Starting from net income instead</b> (as in the Bikes-Are-Us answer): 145,000 + 9,000 + 3,000 + 10,000 − 5,000 − 4,000 + 16,000 − 2,000 (decrease in income tax payable) = <b>172,000</b> — same answer. IAS 7 requires separate disclosure of interest and taxes paid, which is why the textbook starts from income before tax.<span class="zh">從淨利開始也可以，結果相同。教科書從稅前淨利開始是因為 IAS 7 要求單獨揭露利息與所得稅支付數。</span></p>
+  </div></details>
+
+  <h3><span class="tag">Formula</span>Free cash flow</h3>
+  <p><b>Free cash flow = Net cash provided by operating activities − Capital expenditures − Cash dividends.</b> It shows the cash left after maintaining operations and satisfying investors. Anheuser-Busch InBev: 17,451 − 3,869 − 6,253 = <b>$7,329</b>. Computer Services International: 172,000 − (120,000 + 25,000) − 29,000 = <b>−€2,000</b>.<span class="zh">自由現金流量＝營業現金流量 − 資本支出 − 現金股利。</span></p>
+
+  <h3><span class="tag">Case</span>Del Carpio SLU (CT14.3)</h3>
+  <p class="q">Del Carpio's "statement of cash flows" for the year ended Jan 31, 2020 lists sources: sales of merchandise €350,000; sale of ordinary shares 405,000; sale of investment 85,000; depreciation 75,000; issuance of note for truck 25,000; interest on investments 6,000. Uses: fixtures and equipment 320,000; merchandise purchased 245,000; operating expenses (including depreciation) 160,000; purchase of investment 75,000; truck purchased by issuing a note 25,000; purchase of ordinary shares 15,000; interest on note payable 5,000. "Net increase in cash" €101,000. Beginning cash €140,000. The only non-cash income statement items are depreciation and the gain on the investment. (a) Prepare a proper indirect-method statement. (b) Norman says it was a superb first year; Sara says it was an operating failure and the statement is wrong. Who is right?</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in scroll">
+    <p>Net income = 350,000 + 6,000 interest revenue + 10,000 gain (85,000 − 75,000) − 245,000 − 160,000 − 5,000 = <b>−€44,000 (net loss)</b></p>
+    <table>
+      <tr><td>Net loss</td><td class="r">(44,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Add: Depreciation</td><td class="r">75,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Less: Gain on sale of investment</td><td class="r">(10,000)</td></tr>
+      <tr class="total"><td>Net cash provided by operating activities</td><td class="r">21,000</td></tr>
+      <tr><td>Investing: sale of investment 85,000; purchase of investment (75,000); fixtures and equipment (320,000)</td><td class="r">(310,000)</td></tr>
+      <tr><td>Financing: sale of shares 405,000; purchase of shares (15,000)</td><td class="r">390,000</td></tr>
+      <tr class="total"><td>Net increase in cash</td><td class="r">101,000</td></tr>
+      <tr><td>Cash, beginning</td><td class="r">140,000</td></tr>
+      <tr class="total dbl"><td>Cash, ending</td><td class="r">€241,000</td></tr>
+      <tr><td colspan="2">Note: non-cash — truck purchased by issuing a €25,000 note</td></tr>
+    </table>
+    <p>(b) <b>Sara is right about the substance</b>: the company had a net loss of €44,000 and operations generated only €21,000; the cash increase came from selling shares (€405,000), not from operations. The original statement is also presented incorrectly: depreciation is not a source of cash, and the truck/note is a non-cash transaction. The net increase of €101,000 happens to be the same only because the errors offset (depreciation and the note appear on both sides).<span class="zh">Sara 對：本業虧損、營業現金只有 21,000，現金增加主要靠發股票。原表把折舊當現金來源、把非現金交易列入，格式錯；101,000 剛好相同是因為錯誤互相抵銷。</span></p>
+  </div></details>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u17"></div>
+  <label class="done-row"><input type="checkbox" id="done-u17" data-unit="u17"> I've got this unit 這單元我會了</label>
+</section>
+
 <!-- ============ UNIT 8 ============ -->
 <section class="unit" id="u8">
-  <h2 class="u"><span class="num">08</span>Formula Sheet</h2>
+  <h2 class="u"><span class="num">13</span>Formula Sheet</h2>
   <div class="sheet scroll"><table class="formula">
     <tr><th>Item</th><th>Formula</th></tr>
     <tr><td>Accounting equation</td><td>Assets = Liabilities + Equity</td></tr>
@@ -817,13 +1195,24 @@ select.ans{max-width:15em}
     <tr><td>Bad debt expense (aging)</td><td>Required Allowance − unadjusted Cr balance (+ if Dr balance)</td></tr>
     <tr><td>A/R turnover</td><td>Net Credit Sales ÷ Average Net A/R</td></tr>
     <tr><td>Average collection period</td><td>365 ÷ A/R Turnover</td></tr>
+    <tr><td>Straight-line depreciation</td><td>(Cost − Residual value) ÷ Useful life × months/12</td></tr>
+    <tr><td>Units-of-activity</td><td>(Cost − Residual) ÷ Total units × Units this period</td></tr>
+    <tr><td>Double-declining-balance</td><td>Beginning book value × (2 ÷ Useful life); stop at residual value</td></tr>
+    <tr><td>Book value</td><td>Cost − Accumulated depreciation</td></tr>
+    <tr><td>Gain / loss on disposal</td><td>Cash received − Book value (after updating depreciation)</td></tr>
+    <tr><td>Asset turnover</td><td>Net Sales ÷ Average Total Assets</td></tr>
+    <tr><td>Interest on a note</td><td>Principal × Annual rate × Months/12</td></tr>
+    <tr><td>Warranty expense</td><td>Units sold × % expected defective × Cost per repair</td></tr>
+    <tr><td>EPS</td><td>Net income ÷ Shares outstanding</td></tr>
+    <tr><td>Operating CF (indirect)</td><td>NI + Depreciation + Loss − Gain − ↑Current assets + ↓Current assets + ↑Current liabilities − ↓Current liabilities</td></tr>
+    <tr><td>Free cash flow</td><td>Operating CF − Capital expenditures − Cash dividends</td></tr>
   </table></div>
   <label class="done-row"><input type="checkbox" id="done-u8" data-unit="u8"> Formulas memorized 公式背好了</label>
 </section>
 
 <!-- ============ UNIT 9 ============ -->
 <section class="unit" id="u9">
-  <h2 class="u"><span class="num">09</span>Exam Traps</h2>
+  <h2 class="u"><span class="num">14</span>Exam Traps</h2>
   <div class="scroll"><table>
     <tr><th>If the question says…</th><th>Correct thinking</th><th class="zh-col">中文</th></tr>
     <tr><td>Payment of an account payable</td><td>Assets ↓, liabilities ↓; not an expense</td><td><span class="zh inl">付應付帳款不是費用</span></td></tr>
@@ -843,13 +1232,27 @@ select.ans{max-width:15em}
     <tr><td>A/R turnover</td><td>Net <b>credit</b> sales ÷ average <b>net</b> A/R</td><td><span class="zh inl">賒銷淨額 ÷ 平均淨應收</span></td></tr>
     <tr><td>Write-off under the allowance method</td><td>Net A/R unchanged; no expense</td><td><span class="zh inl">淨應收不變</span></td></tr>
     <tr><td>Allowance has a debit balance before adjustment</td><td>Bad debt expense = required balance + debit balance</td><td><span class="zh inl">借餘要加</span></td></tr>
+    <tr><td>Trial balance balances</td><td>Does NOT prove there are no errors (omitted, duplicated, wrong-account, offsetting errors)</td><td><span class="zh inl">試算表平衡不代表沒錯</span></td></tr>
+    <tr><td>Ending inventory understated</td><td>COGS overstated, NI understated this year; reverses next year</td><td><span class="zh inl">期末存貨低估 → 淨利低估，次年反轉</span></td></tr>
+    <tr><td>Goods sold FOB destination, in transit</td><td>Include in seller's inventory at <b>cost</b></td><td><span class="zh inl">用成本不是售價</span></td></tr>
+    <tr><td>Truck license / annual insurance</td><td>Expense or prepaid — not part of the asset's cost</td><td><span class="zh inl">每年發生的不進資產成本</span></td></tr>
+    <tr><td>Depreciation of land</td><td>None — land is never depreciated</td><td><span class="zh inl">土地不折舊</span></td></tr>
+    <tr><td>DDB first year</td><td>Ignore residual value: cost × rate</td><td><span class="zh inl">第一年不扣殘值</span></td></tr>
+    <tr><td>Asset sold mid-year</td><td>Depreciate up to the sale date first, then compute gain/loss</td><td><span class="zh inl">先補提折舊</span></td></tr>
+    <tr><td>Revaluation up / down</td><td>Up → revaluation surplus (OCI); down → impairment loss (IS)</td><td><span class="zh inl">增值進 OCI，減損進損益</span></td></tr>
+    <tr><td>Contingency reasonably possible</td><td>Disclose only, do not record</td><td><span class="zh inl">只揭露</span></td></tr>
+    <tr><td>Contractual rate &lt; market rate</td><td>Bond sells at a discount</td><td><span class="zh inl">票面利率低 → 折價</span></td></tr>
+    <tr><td>Long-term note due within 12 months</td><td>Reclassify to current liabilities</td><td><span class="zh inl">一年內到期轉流動</span></td></tr>
+    <tr><td>Gain on sale in the indirect method</td><td>Subtract in operating; full cash proceeds in investing</td><td><span class="zh inl">處分利益要減回</span></td></tr>
+    <tr><td>Dividends paid / declared but unpaid</td><td>Paid → financing outflow; unpaid → no cash flow</td><td><span class="zh inl">未付股利不是現金流</span></td></tr>
+    <tr><td>Bonds issued for land</td><td>Non-cash investing &amp; financing → note disclosure only</td><td><span class="zh inl">非現金交易只附註</span></td></tr>
   </table></div>
   <label class="done-row"><input type="checkbox" id="done-u9" data-unit="u9"> Traps reviewed 陷阱看過了</label>
 </section>
 
 <!-- ============ UNIT 10 ============ -->
 <section class="unit" id="u10">
-  <h2 class="u"><span class="num">10</span>Glossary 中英詞彙表</h2>
+  <h2 class="u"><span class="num">15</span>Glossary 中英詞彙表</h2>
   <p>英文考題常見的關鍵字。看到左邊的字，要能馬上想到它是哪一類帳戶、在借方還是貸方。</p>
   <div class="scroll"><table>
     <tr><th>English</th><th>中文</th><th>Type / note</th></tr>
@@ -903,7 +1306,7 @@ select.ans{max-width:15em}
 
 <!-- ============ UNIT 11 ============ -->
 <section class="unit" id="u11">
-  <h2 class="u"><span class="num">11</span>Mock Exam — 20 Questions</h2>
+  <h2 class="u"><span class="num">16</span>Mock Exam — 28 Questions</h2>
   <p>Mixed questions from every unit, in the style of the TA sessions. An explanation appears after each answer.<span class="zh">綜合題，作答後顯示英文解析＋中文說明。</span></p>
   <div class="score"><span id="examScore">Score 0 / 0</span><button class="btn" id="resetExam" type="button">Restart</button></div>
   <div class="quiz" data-set="exam"></div>
@@ -913,7 +1316,7 @@ select.ans{max-width:15em}
 <!-- ============ UNIT 12 ============ -->
 <section class="unit" id="u12">
   <div class="unit-head"><span class="src">Exam-style practice (modelled on Bikes-Are-Us)</span></div>
-  <h2 class="u"><span class="num">12</span>Comprehensive Problems — IS, SFP &amp; Cash Flows</h2>
+  <h2 class="u"><span class="num">17</span>Comprehensive Problems — IS, SFP &amp; Cash Flows</h2>
   <p>Same format as the exam: a company background, last year's statement of financial position, a list of first-quarter events, then (a) income statement, (b) statement of financial position, (c) statement of cash flows (indirect method). Try the whole problem on paper before opening the solution.<span class="zh">跟考試同題型：背景＋去年底資產負債表＋第一季交易，要編 (a) 損益表 (b) 財務狀況表 (c) 間接法現金流量表。先自己在紙上做完再看解答。</span></p>
 
   <div class="callout"><strong>Workflow 解題順序</strong>
@@ -1268,6 +1671,44 @@ u7:[
  {q:"Same, but the Allowance has a $500 debit balance before adjustment. Bad debt expense is:",o:["$3,500","$4,000","$4,500","$500"],a:2,e:"4,000 + 500 = 4,500.",z:"借餘用加的。"},
  {q:"Under the allowance method, writing off a $2,000 customer account causes net accounts receivable to:",o:["Decrease by $2,000","Increase by $2,000","Remain unchanged","Decrease by $4,000"],a:2,e:"A/R and the Allowance both fall by 2,000; net A/R is unchanged.",z:"淨應收不變。"}
 ],
+u13:[
+ {q:"Which error would cause the trial balance NOT to balance?",o:["A transaction was not journalized","A journal entry was posted twice","A $500 debit to Cash was posted as $50, while the credit was posted correctly","Supplies was debited instead of Equipment"],a:2,e:"Only an error affecting one side (debit ≠ credit) unbalances the trial balance; the others affect both sides equally.",z:"只有借貸一邊錯才會不平衡。"},
+ {q:"Which account is NOT closed at the end of the period?",o:["Service Revenue","Dividends","Retained Earnings","Rent Expense"],a:2,e:"Retained Earnings is a permanent account; revenues, expenses and dividends are temporary.",z:"保留盈餘是永久帳戶。"},
+ {q:"After closing revenues (€50,000) and expenses (€38,000) to Income Summary, the entry to close Income Summary is:",o:["Dr Retained Earnings 12,000 / Cr Income Summary 12,000","Dr Income Summary 12,000 / Cr Retained Earnings 12,000","Dr Income Summary 50,000 / Cr Retained Earnings 50,000","Dr Dividends 12,000 / Cr Income Summary 12,000"],a:1,e:"Income Summary has a 12,000 credit balance (net income), so debit it and credit Retained Earnings.",z:"淨利 → 借本期損益、貸保留盈餘。"},
+ {q:"Under IFRS, the first section on a classified statement of financial position is usually:",o:["Current assets","Cash","Intangible assets / non-current assets","Current liabilities"],a:2,e:"IFRS presentation lists the least liquid (non-current) assets first and current assets last.",z:"IFRS 先列非流動資產。"}
+],
+u14:[
+ {q:"Ending inventory for 2025 is understated by $4,000. 2025 net income is ___ and 2026 net income is ___.",o:["Understated; overstated","Overstated; understated","Understated; correct","Correct; overstated"],a:0,e:"Lower EI → higher COGS → lower 2025 NI. 2026 BI is understated → lower COGS → higher 2026 NI.",z:"期末存貨低估：當年淨利低估，次年高估。"},
+ {q:"Same error. At the end of 2026, retained earnings are:",o:["Understated by $4,000","Overstated by $4,000","Correct","Understated by $8,000"],a:2,e:"The errors offset over two years, so retained earnings are correct at the end of 2026.",z:"兩年抵銷，第二年底正確。"},
+ {q:"Counted goods cost €100,000, including €8,000 held on consignment. Not counted: €6,000 purchased FOB shipping point in transit, and goods costing €5,000 (selling price €7,000) sold FOB destination in transit. Correct inventory:",o:["€103,000","€105,000","€111,000","€98,000"],a:0,e:"100,000 − 8,000 + 6,000 + 5,000 = 103,000.",z:"在途銷貨用成本。"},
+ {q:"In a period of rising prices, compared with average-cost, FIFO gives:",o:["Higher COGS and higher NI","Lower COGS and higher NI","Higher ending inventory and lower NI","Lower taxes"],a:1,e:"FIFO assigns older (cheaper) costs to COGS, so COGS is lower and NI and taxes are higher.",z:"物價上漲 FIFO：COGS 低、淨利高、稅高。"},
+ {q:"Which inventory method allows managers to manipulate net income by choosing which identical unit to sell?",o:["FIFO","Average-cost","Specific identification","LIFO"],a:2,e:"Under specific identification, choosing a higher- or lower-cost unit changes COGS.",z:"個別認定法可操縱淨利。"}
+],
+u15:[
+ {q:"Which cost is NOT capitalized as part of a delivery truck?",o:["Sales tax","Painting and lettering","Annual motor vehicle license","Freight to deliver the truck"],a:2,e:"The license is an annual recurring cost with no future benefit → expense.",z:"牌照費是費用。"},
+ {q:"A machine costs $50,000, residual value $5,000, life 5 years. Straight-line depreciation for a quarter (3 months) is:",o:["$2,250","$2,500","$9,000","$10,000"],a:0,e:"(50,000 − 5,000) ÷ 5 = 9,000 per year × 3/12 = 2,250.",z:"年折舊 9,000 × 3/12。"},
+ {q:"Same machine, double-declining-balance. Year 1 depreciation is:",o:["$18,000","$20,000","$9,000","$22,500"],a:1,e:"Rate = 2 × 1/5 = 40%; 50,000 × 40% = 20,000 (residual value ignored).",z:"第一年不扣殘值。"},
+ {q:"Equipment cost $40,000 with accumulated depreciation $28,000 is sold for $10,000. The result is:",o:["Gain $2,000","Loss $2,000","Loss $12,000","Gain $10,000"],a:1,e:"Book value 12,000; cash 10,000 → loss 2,000.",z:"帳面 12,000 − 售價 10,000。"},
+ {q:"Under the IFRS revaluation model, an increase in fair value above book value is recorded as:",o:["A gain on the income statement","Revaluation surplus in other comprehensive income","An impairment loss reversal in sales","No entry"],a:1,e:"Upward revaluation → revaluation surplus (OCI); a decline → impairment loss (income statement).",z:"增值進 OCI。"},
+ {q:"A major engine overhaul that extends a truck's useful life is a:",o:["Revenue expenditure debited to Repairs Expense","Capital expenditure debited to the asset","Contra-asset","Liability"],a:1,e:"Additions and improvements that benefit future periods are capitalized.",z:"延長年限的大修要資本化。"},
+ {q:"Net sales $900,000; total assets $550,000 at the beginning and $650,000 at the end. Asset turnover is:",o:["1.38 times","1.50 times","1.64 times","0.67 times"],a:1,e:"Average total assets 600,000; 900,000 ÷ 600,000 = 1.5.",z:"用平均總資產。"}
+],
+u16:[
+ {q:"On Oct 1 a company signs a $24,000, 9-month, 10% note. Interest payable at Dec 31 is:",o:["$600","$1,800","$2,400","$200"],a:0,e:"24,000 × 10% × 3/12 = 600.",z:"只算 10–12 月三個月。"},
+ {q:"A lawsuit loss is reasonably possible but not probable. The company should:",o:["Record a liability","Disclose it in the notes only","Ignore it","Record a provision and disclose"],a:1,e:"Reasonably possible → disclose only. Probable and estimable → record.",z:"可能但非很可能：只揭露。"},
+ {q:"A company sold 5,000 units with a 1-year warranty; 3% are expected to need repair at $40 each. Repairs this year cost $2,600. Warranty liability at year-end:",o:["$6,000","$3,400","$2,600","$0"],a:1,e:"Expense = 5,000 × 3% × 40 = 6,000; liability = 6,000 − 2,600 = 3,400.",z:"估列 6,000 − 實際 2,600。"},
+ {q:"Bonds with a 6% contractual rate are issued when the market rate is 8%. They sell at:",o:["A premium","Face value","A discount","Cannot be determined"],a:2,e:"Contractual rate below market rate → investors pay less than face value → discount.",z:"票面 < 市場 → 折價。"},
+ {q:"Which is an advantage of issuing bonds instead of ordinary shares?",o:["Interest must be paid even in bad years","Bond interest is tax-deductible","Principal must be repaid","Bondholders get voting rights"],a:1,e:"Bond interest is deductible; shareholder control is not diluted; EPS may be higher.",z:"利息可抵稅。"},
+ {q:"A 5-year note payable has $20,000 of principal due within the next 12 months. On the SFP that $20,000 is:",o:["Non-current liability","Current liability (current maturities of long-term debt)","Equity","Not reported"],a:1,e:"The portion due within one year is reclassified as current.",z:"一年內到期轉流動。"}
+],
+u17:[
+ {q:"Net income $50,000; depreciation $8,000; gain on sale of equipment $3,000; A/R increased $6,000; A/P increased $4,000. Net cash from operating activities:",o:["$53,000","$59,000","$61,000","$47,000"],a:0,e:"50,000 + 8,000 − 3,000 − 6,000 + 4,000 = 53,000.",z:"加折舊、減利益、應收增減、應付增加。"},
+ {q:"Which is a financing activity?",o:["Purchase of equipment","Interest paid on a bank loan","Payment of cash dividends","Collection from customers"],a:2,e:"Dividends paid to shareholders are financing. Interest paid is operating in this course.",z:"發放股利是籌資。"},
+ {q:"A company issues bonds directly in exchange for land. On the statement of cash flows this is:",o:["An investing outflow and a financing inflow","An operating activity","A non-cash investing and financing activity disclosed in a note","Ignored completely"],a:2,e:"No cash changes hands, so it is disclosed separately as a non-cash activity.",z:"非現金交易，附註揭露。"},
+ {q:"Equipment with book value $7,000 is sold for $4,000 cash. In the indirect method:",o:["Add $3,000 loss in operating; $4,000 inflow in investing","Subtract $3,000 in operating; $7,000 inflow in investing","Add $4,000 in operating","Investing inflow $3,000"],a:0,e:"The loss is non-cash (add back); the actual cash proceeds go to investing.",z:"損失加回；投資活動放實收現金。"},
+ {q:"Operating cash flow $120,000; purchases of PP&E $45,000; dividends paid $15,000; proceeds from issuing shares $30,000. Free cash flow:",o:["$60,000","$90,000","$75,000","$105,000"],a:0,e:"120,000 − 45,000 − 15,000 = 60,000; share issuance is not part of free cash flow.",z:"發股票不影響自由現金流量。"},
+ {q:"Which item is a cash equivalent?",o:["A 3-year bond investment","A 2-month treasury bill","Cash restricted for a plant expansion","Accounts receivable"],a:1,e:"Short-term, highly liquid, near maturity → cash equivalent. Restricted cash is not available for general use.",z:"三個月內到期的國庫券。"}
+],
 exam:[
  {q:"Paying cash dividends:",o:["Decreases assets and decreases liabilities","Decreases assets and decreases equity","Increases liabilities and decreases equity","Has no effect on assets"],a:1,e:"Cash ↓ and Dividends ↑ (equity ↓). Dividends are not an expense.",z:"股利減少權益但不是費用。"},
  {q:"Purchasing additional equipment for cash:",o:["Increases assets and equity","Increases assets and liabilities","Increases one asset and decreases another","Decreases assets and equity"],a:2,e:"Equipment ↑, Cash ↓; total assets unchanged.",z:"資產內部互換。"},
@@ -1288,7 +1729,15 @@ exam:[
  {q:"Under the direct write-off method, collecting an account previously written off is recorded with a credit to:",o:["Allowance for Doubtful Accounts","Accounts Receivable","Bad Debt Recovery (miscellaneous income)","Sales Revenue"],a:2,e:"Dr Cash / Cr Bad Debt Recovery. Under the allowance method you reinstate A/R first, then record the cash.",z:"直接沖銷法貸記呆帳收回。"},
  {q:"Aging buckets of 300/300/350/200/100 with 1%/5%/10%/20%/50% uncollectible; total A/R $1,250. Net receivables are:",o:["$1,250","$1,143","$1,107","$1,000"],a:2,e:"Allowance = 3 + 15 + 35 + 40 + 50 = 143; 1,250 − 143 = 1,107.",z:"Patel 題。"},
  {q:"Net credit sales $600,000; net A/R was $70,000 at the beginning and $50,000 at the end. Average collection period:",o:["30.4 days","36.5 days","42.6 days","60 days"],a:1,e:"Average 60,000; turnover 10; 365 ÷ 10 = 36.5 days.",z:"週轉率 10 次。"},
- {q:"Allowance beginning balance $80,000 Cr; write-offs $90,000; recoveries $29,000; aging requires $115,000. Bad debt expense is:",o:["$115,000","$35,000","$96,000","$125,000"],a:2,e:"Unadjusted = 80,000 − 90,000 + 29,000 = 19,000 Cr; 115,000 − 19,000 = 96,000.",z:"Catu 題。"}
+ {q:"Allowance beginning balance $80,000 Cr; write-offs $90,000; recoveries $29,000; aging requires $115,000. Bad debt expense is:",o:["$115,000","$35,000","$96,000","$125,000"],a:2,e:"Unadjusted = 80,000 − 90,000 + 29,000 = 19,000 Cr; 115,000 − 19,000 = 96,000.",z:"Catu 題。"},
+ {q:"A trial balance that balances proves that:",o:["No errors were made","Total debits equal total credits","All transactions were recorded","Accounts were posted correctly"],a:1,e:"It only proves equality of debits and credits.",z:"只證明借貸相等。"},
+ {q:"2025 ending inventory was overstated by $5,000. Effect on 2026 net income:",o:["Overstated $5,000","Understated $5,000","No effect","Understated $10,000"],a:1,e:"2026 beginning inventory overstated → COGS overstated → NI understated.",z:"次年反轉。"},
+ {q:"A truck costing $60,000 (residual $6,000, 6-year life) is bought on April 1. Straight-line depreciation for the year ended Dec 31:",o:["$9,000","$6,750","$7,500","$6,000"],a:1,e:"54,000 ÷ 6 = 9,000 per year × 9/12 = 6,750.",z:"4–12 月共 9 個月。"},
+ {q:"Fully depreciated equipment (cost $12,000) is retired with no proceeds. The entry:",o:["Dr Loss 12,000 / Cr Equipment 12,000","Dr Accumulated Depreciation 12,000 / Cr Equipment 12,000","No entry","Dr Equipment 12,000 / Cr Gain 12,000"],a:1,e:"Book value is zero, so there is no gain or loss; just remove cost and accumulated depreciation.",z:"已提足折舊報廢無損益。"},
+ {q:"A probable lawsuit loss whose amount can be reasonably estimated should be:",o:["Disclosed only","Recorded as a liability and disclosed","Ignored","Recorded as a contra-asset"],a:1,e:"Probable + estimable → record a provision.",z:"很可能＋可估計 → 入帳。"},
+ {q:"Interest payable decreased from $6,000 to $1,500 during the period. In the indirect method this is:",o:["Added $4,500","Subtracted $4,500","Investing outflow","Ignored"],a:1,e:"A decrease in a current liability means more cash was paid than expensed → subtract.",z:"流動負債減少要減。"},
+ {q:"Declared a $8,000 cash dividend on March 31, payable April 15. Effect on the March statement of cash flows:",o:["Financing outflow $8,000","Operating outflow $8,000","None","Investing outflow $8,000"],a:2,e:"No cash was paid in March; dividends payable is recorded instead.",z:"未付股利沒有現金流量。"},
+ {q:"Which pair is correct for a period of rising prices?",o:["FIFO: higher COGS","Average-cost: higher net income","FIFO: higher ending inventory","Average-cost: higher taxes"],a:2,e:"FIFO leaves the newer (higher) costs in ending inventory.",z:"FIFO 期末存貨較接近現時成本。"}
 ]};
 
 /* ---------- interactive drills ---------- */
