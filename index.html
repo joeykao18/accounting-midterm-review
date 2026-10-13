@@ -142,21 +142,85 @@ select.ans{max-width:15em}
 .explain{margin-top:14px;border-top:1px dashed var(--rule-strong);padding-top:10px}
 .explain h4{margin:0 0 6px;font-size:15px;color:var(--accent)}
 .hint{font-size:13px;color:var(--muted);margin:0 0 6px}
+/* start-here flow */
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0}
+.flow span{background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;padding:4px 10px;font-size:14px}
+.flow i{font-style:normal;color:var(--accent);font-family:var(--mono)}
+.miss-count{font-family:var(--mono);font-size:11px;background:var(--credit);color:var(--sheet);border-radius:9px;padding:0 6px;margin-left:4px}
+.miss-count:empty{display:none}
+/* retryable quiz */
+.qbar{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;font-family:var(--mono);font-size:13.5px}
+.qbar .sc{margin-right:auto}
+.qcard .qn{display:flex;gap:10px;flex-wrap:wrap}
+.qcard .from{color:var(--accent)}
+.qhint{margin-top:10px;font-size:14.5px;background:var(--note);color:var(--note-ink);border-radius:4px;padding:8px 12px}
+.qhint .btn{margin-top:6px;font-size:13px;padding:3px 10px}
+.qfoot{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qfoot .tag1{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.qcard.first-ok{border-left:4px solid var(--accent)}
+.qcard.missed{border-left:4px solid var(--credit)}
+.opts button.wrong{text-decoration:line-through}
+.empty{color:var(--muted);font-size:14.5px}
+.dc-eq{display:grid;grid-template-columns:1fr auto 1fr auto 1.4fr;gap:10px;align-items:stretch;margin:12px 0}
+@media (max-width:700px){.dc-eq{grid-template-columns:1fr}.dc-op{text-align:center}}
+.dc-side{background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;padding:12px 14px;font-size:14.5px;line-height:1.6}
+.dc-side>b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
+.dc-side ul{margin:8px 0 0;padding-left:18px;font-size:13.5px}
+.dc-op{font-family:var(--mono);font-size:26px;align-self:center;color:var(--muted)}
+em.dr,em.cr{font-style:normal;font-weight:700}
+em.dr{color:var(--accent)}em.cr{color:var(--credit)}
+/* gyms */
+.gym{background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;padding:14px 16px;margin:10px 0}
+.gbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13.5px;padding-bottom:10px;border-bottom:1px dashed var(--rule);margin-bottom:12px}
+.gstat{font-family:var(--mono);margin-right:auto}
+.glevel{display:flex;gap:6px;align-items:center;color:var(--muted)}
+.glevel input{accent-color:var(--accent);width:16px;height:16px}
+.seg{display:inline-flex;border:1px solid var(--accent);border-radius:4px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;border:0;background:transparent;color:var(--accent);padding:4px 10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--sheet)}
+.gname{font-family:var(--display);font-size:24px;font-weight:700;margin:2px 0 8px}
+.gq{font-size:16.5px;font-weight:500;margin-bottom:10px}
+.glab{font-size:14px;font-weight:700;margin:10px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:14px;padding:6px 12px;border:1.5px solid var(--rule-strong);background:var(--paper);color:var(--ink);border-radius:18px;cursor:pointer;line-height:1.4}
+.chip:hover:not(:disabled){border-color:var(--accent)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.chip.sel{border-color:var(--ink);background:var(--note);color:var(--note-ink);font-weight:700}
+.chip.ok{border-color:var(--accent);background:var(--accent-soft);color:var(--ink);font-weight:700}
+.chip.bad{border-color:var(--credit);background:var(--credit-soft);color:var(--ink);text-decoration:line-through}
+.chip:disabled{cursor:default}
+.gfb{margin-top:10px;font-size:14.5px}
+.gfb:empty{display:none}
+.gfb.warn{background:var(--note);color:var(--note-ink);border-radius:4px;padding:8px 12px}
+.gfb.good{border-left:3px solid var(--accent);padding-left:12px}
+.grow{border:1px solid var(--rule);border-radius:4px;padding:10px 12px;margin:8px 0}
+.grow>b{display:block;margin-bottom:4px}
+.grow .glab{font-weight:500;font-size:13px;color:var(--muted);margin:6px 0 4px}
+.gact{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.why{margin:6px 0 0;padding-left:18px;font-size:14.5px}
+/* step-by-step solutions */
+.stepbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;padding-top:10px;border-top:1px dashed var(--rule)}
+.stepbar .cnt{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.stepbar .think{flex-basis:100%;font-size:13px;color:var(--muted)}
+.step-new{animation:stepin .35s ease-out}
+@keyframes stepin{from{background:var(--note)}to{background:transparent}}
 </style>
 
 <header class="top">
   <div class="eyebrow">Financial Accounting · Fall 2026 · TA Sessions 9/17 – 10/08</div>
   <h1>Financial Accounting Midterm Review</h1>
-  <p>四次 TA 課的內容，用英文為主、中文輔助重新整理。每單元：English definitions → Step-by-step method → 互動例題（自己填答案、按 Check 對答案、看詳解）→ Quiz。最後有 Formula Sheet、Exam Traps、中英詞彙表和 20 題英文模擬考。</p>
+  <p>TA 課與上課投影片的內容，英文為主、中文輔助。第一次用請先看 <a href="#u0">Start here 怎麼用這個網站</a>：每題都是「先自己做 → 對答案 → 卡住才一步一步看詳解 → 錯的進錯題本再做」。</p>
   <div class="eq"><b>Assets</b>=<b>Liabilities</b>+<b>Share Capital</b>+<b>Revenues − Expenses − Dividends</b></div>
-  <div class="langbar"><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><span class="en">考前練習時切成純英文，測試自己看不看得懂題目</span></div>
+  <div class="langbar"><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><button class="btn" id="stepBtn" type="button" aria-pressed="true">詳解：一步一步看</button><span class="en">考前切成純英文，測試看不看得懂題目</span></div>
 </header>
 
 <div class="wrap">
 <nav class="idx" aria-label="Contents">
   <h2>Contents</h2>
   <ol id="toc">
+    <li><a href="#u0"><span class="n">0</span>Start here 怎麼用</a></li>
     <li><a href="#u1"><span class="n">1</span>Accounting Equation &amp; Debits/Credits</a></li>
+    <li><a href="#dc"><span class="n">1+</span>借貸特訓 Debit/Credit Gym</a></li>
     <li><a href="#u2"><span class="n">2</span>Adjusting Entries</a></li>
     <li><a href="#u3"><span class="n">3</span>Income Statement &amp; COGS</a></li>
     <li><a href="#u4"><span class="n">4</span>Inventory Ownership &amp; Count</a></li>
@@ -173,11 +237,44 @@ select.ans{max-width:15em}
     <li><a href="#u10"><span class="n">15</span>Glossary 中英詞彙</a></li>
     <li><a href="#u11"><span class="n">16</span>Mock Exam (28 Qs)</a></li>
     <li><a href="#u12"><span class="n">17</span>Comprehensive Problems (IS/SFP/CF)</a></li>
+    <li><a href="#review"><span class="n">★</span>錯題本 Mistakes <span class="miss-count" id="missToc"></span></a></li>
   </ol>
   <div class="progress"><span id="progTxt">Done 0 / 17</span><div class="bar"><i id="progBar"></i></div></div>
 </nav>
 
 <main>
+
+<!-- ============ START HERE ============ -->
+<section class="unit" id="u0">
+  <h2 class="u"><span class="num">00</span>Start here — 怎麼用這個網站</h2>
+  <div class="callout"><strong>為什麼「看詳解」學不起來？</strong> 看得懂別人的解答，跟自己做得出來，是兩種不同的能力。詳解一次全攤開，大腦只是在「讀」，沒有在「想」。所以這個網站的詳解預設<b>一次只給一步</b>：看完一步，先自己猜下一步，再按「下一步」對答案。</div>
+
+  <h3><span class="tag">Loop</span>每一題都照這個順序</h3>
+  <ol class="steps">
+    <li><span><b>先自己做。</b>例題在表格裡填數字；選擇題直接選。不會也先猜一個，猜錯比空白學得多。</span></li>
+    <li><span><b>按 Check 對答案。</b>綠色是對的，紅色的再想一次。選擇題答錯會出現<b>提示</b>，可以再選，不會直接告訴你答案。</span></li>
+    <li><span><b>真的卡住才看詳解，一次一步。</b>每看完一步，先蓋住，想想下一步要算什麼，再按「下一步 ▸」。</span></li>
+    <li><span><b>看完詳解後，按 Reset / 再做一次，自己從頭做一遍。</b>這一步最重要，做得出來才算學會。</span></li>
+    <li><span><b>答錯的選擇題會自動進 <a href="#review">錯題本</a>。</b>隔天再做一次，第一次就答對才會從錯題本移除。</span></li>
+  </ol>
+
+  <h3><span class="tag">Map</span>整門課其實只有一條線</h3>
+  <div class="flow" aria-label="From transaction to statements">
+    <span>交易 Transaction</span><i>→</i><span>分錄 Journal entry</span><i>→</i><span>期末調整 Adjusting</span><i>→</i><span>損益表 Income statement</span><i>→</i><span>保留盈餘 Retained earnings</span><i>→</i><span>財務狀況表 SFP</span><i>→</i><span>現金流量表 Cash flows</span>
+  </div>
+  <p>每個單元都是這條線上的一小段：存貨（Unit 3–5、9）決定 <b>COGS</b>；應收帳款（Unit 7）決定<b>呆帳費用</b>；設備（Unit 10）決定<b>折舊與處分損益</b>；負債（Unit 11）決定<b>利息</b>。最後把它們全部放進三張表，就是考試的綜合題（Unit 17）。<span class="zh">所以讀每個單元時都問自己：這個數字最後會出現在哪張表的哪一行？</span></p>
+
+  <h3><span class="tag">Path</span>建議讀的順序（目標：做得出綜合題）</h3>
+  <div class="scroll"><table>
+    <tr><th>階段</th><th>單元</th><th>做到什麼程度</th></tr>
+    <tr><td>1. 打底</td><td><a href="#u1">1</a> → <a href="#dc">借貸特訓</a> → <a href="#u2">2</a> → <a href="#u3">3</a></td><td>借貸特訓連續答對 10 題以上；會做調整分錄、會排損益表。<b>借貸不熟，後面每個單元都會卡</b>，所以每天先練 10 分鐘</td></tr>
+    <tr><td>2. 綜合題三大計算</td><td><a href="#u5">5</a> 存貨成本 → <a href="#u7">7</a> 呆帳 → <a href="#u15">10</a> 折舊／處分</td><td>每個互動例題都能不看詳解做對</td></tr>
+    <tr><td>3. 現金流量表</td><td><a href="#u17">12</a></td><td>會用間接法從淨利推到期末現金</td></tr>
+    <tr><td>4. 綜合題</td><td><a href="#u12">17</a></td><td>先填「關鍵數字」練習表，再在紙上做完三張表</td></tr>
+    <tr><td>5. 觀念題</td><td><a href="#u4">4</a>、<a href="#u6">6</a>、<a href="#u13">8</a>、<a href="#u14">9</a>、<a href="#u16">11</a></td><td>小測驗能答對即可</td></tr>
+    <tr><td>6. 考前</td><td><a href="#u11">模擬考</a> → <a href="#review">錯題本</a> → <a href="#u9">Exam Traps</a></td><td>錯題本清空</td></tr>
+  </table></div>
+</section>
 
 <!-- ============ UNIT 1 ============ -->
 <section class="unit" id="u1">
@@ -206,7 +303,7 @@ select.ans{max-width:15em}
   <div class="scroll"><table>
     <tr><th>Statement</th><th>Shows</th><th>Part of the equation</th></tr>
     <tr><td><b>Income statement</b> <span class="zh inl">損益表</span></td><td>Revenues − Expenses = Net income (loss) for a period</td><td>Revenues − Expenses</td></tr>
-    <tr><td><b>Retained earnings statement</b> <span class="zh inl">保留盈餘表</span></td><td>Beginning RE + Net income − Dividends = Ending RE</td><td>Retained Earnings → Expenses − Dividends</td></tr>
+    <tr><td><b>Retained earnings statement</b> <span class="zh inl">保留盈餘表</span></td><td>Beginning RE + Net income − Dividends = Ending RE</td><td>Retained Earnings (Revenues − Expenses − Dividends)</td></tr>
     <tr><td><b>Statement of financial position</b> <span class="zh inl">財務狀況表（資產負債表）</span></td><td>Assets, liabilities, and equity at a point in time</td><td>Assets = Liabilities + Equity</td></tr>
     <tr><td><b>Statement of cash flows</b> <span class="zh inl">現金流量表</span></td><td>Cash receipts and payments for a period</td><td>Explains the change in Cash (an asset)</td></tr>
   </table></div>
@@ -235,6 +332,7 @@ select.ans{max-width:15em}
     <tr><td>Effect</td><td class="up">+ (normal)</td><td class="down">−</td><td></td><td class="down">−</td><td class="up">+ (normal)</td><td></td><td class="down">−</td><td class="up">+ (normal)</td></tr>
   </table></div>
   <div class="callout"><strong>Mnemonic DEA-LER:</strong> <b>D</b>ividends, <b>E</b>xpenses, <b>A</b>ssets have a normal <b>debit</b> balance; <b>L</b>iabilities, <b>E</b>quity, <b>R</b>evenues have a normal <b>credit</b> balance. In every entry, total debits = total credits.<span class="zh">口訣 DEALER：DEA 在借方、LER 在貸方。每筆分錄借貸相等。</span></div>
+  <div class="callout"><strong>借貸分不清楚？</strong> 先去 <a href="#dc">借貸特訓 Debit &amp; Credit Gym</a>：從等式推出借貸規則，再用無限題庫練到變反射。<span class="zh">這是整門課最重要的基本功。</span></div>
   <p>A <b>compound journal entry</b> has two or more debits and/or credits in a single transaction (e.g. paying several expenses in one payment).<span class="zh">複合分錄：一筆交易有兩個以上的借或貸。</span></p>
 
   <h3><span class="tag">Method</span>How to record any transaction</h3>
@@ -290,16 +388,16 @@ select.ans{max-width:15em}
     <table>
       <tr><th>#</th><th class="r">Cash</th><th class="r">A/R</th><th class="r">Equipment</th><th class="r">Notes Pay.</th><th class="r">A/P</th><th class="r">Share Cap.</th><th class="r">Rev.</th><th class="r">Exp.</th></tr>
       <tr><td>1</td><td class="r">+10,000</td><td></td><td></td><td></td><td></td><td class="r">+10,000</td><td></td><td></td></tr>
-      <tr><td>2</td><td class="r">−800</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r">−800</td></tr>
+      <tr><td>2</td><td class="r">−800</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r">800</td></tr>
       <tr><td>3</td><td></td><td></td><td class="r">+3,000</td><td></td><td class="r">+3,000</td><td></td><td></td><td></td></tr>
       <tr><td>4</td><td class="r">+1,500</td><td></td><td></td><td></td><td></td><td></td><td class="r">+1,500</td><td></td></tr>
       <tr><td>5</td><td class="r">+700</td><td></td><td></td><td class="r">+700</td><td></td><td></td><td></td><td></td></tr>
       <tr><td>6</td><td></td><td class="r">+2,000</td><td></td><td></td><td></td><td></td><td class="r">+2,000</td><td></td></tr>
-      <tr><td>7</td><td class="r">−900</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r">−500 −300 −100</td></tr>
+      <tr><td>7</td><td class="r">−900</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r">500 + 300 + 100</td></tr>
       <tr class="total"><td>Bal.</td><td class="r">10,500</td><td class="r">2,000</td><td class="r">3,000</td><td class="r">700</td><td class="r">3,000</td><td class="r">10,000</td><td class="r">3,500</td><td class="r">1,700</td></tr>
     </table>
     <p>Assets: 10,500 + 2,000 + 3,000 = <b>15,500</b>. Liabilities + equity: 700 + 3,000 + 10,000 + 3,500 − 1,700 = <b>15,500</b>.</p>
-    <p class="zh">每一列左右兩邊的變動要相等（例如 #2：Cash −800，Exp 使權益 −800）。這就是「交易後等式永遠平衡」。</p>
+    <p class="zh">費用欄填正數，但它是「減少權益」。每一列左右兩邊的變動要相等（例如 #2：Cash −800，費用 800 使權益 −800）。這就是「交易後等式永遠平衡」。</p>
     </div>
   </div>
 
@@ -316,6 +414,50 @@ select.ans{max-width:15em}
   <h3><span class="tag">Quiz</span>Check yourself</h3>
   <div class="quiz" data-set="u1"></div>
   <label class="done-row"><input type="checkbox" id="done-u1" data-unit="u1"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ DEBIT & CREDIT GYM ============ -->
+<section class="unit" id="dc">
+  <div class="unit-head"><span class="src">Extra practice · 每天 10 分鐘，練到變反射</span></div>
+  <h2 class="u"><span class="num">1+</span>Debit &amp; Credit Gym 借貸特訓</h2>
+  <p>Debits and credits are not something to memorize as a list. They follow from one equation. Learn the reason once, then drill until it is automatic.<span class="zh">借貸不是硬背的，是從會計等式推出來的。先懂一次「為什麼」，再用下面兩個練習場練到不用想。</span></p>
+
+  <h3><span class="tag">Why</span>借＝左邊，貸＝右邊，從等式推出來</h3>
+  <div class="dc-eq">
+    <div class="dc-side"><b>Assets 資產</b><span>在等號<b>左邊</b><br>增加記 <em class="dr">借 Dr（左）</em><br>減少記 <em class="cr">貸 Cr</em></span></div>
+    <div class="dc-op">=</div>
+    <div class="dc-side"><b>Liabilities 負債</b><span>在等號<b>右邊</b><br>增加記 <em class="cr">貸 Cr（右）</em><br>減少記 <em class="dr">借 Dr</em></span></div>
+    <div class="dc-op">+</div>
+    <div class="dc-side"><b>Equity 權益</b><span>在等號<b>右邊</b><br>增加記 <em class="cr">貸 Cr（右）</em><br>減少記 <em class="dr">借 Dr</em></span>
+      <ul><li><b>Revenues 收入</b> 讓權益 ↑ → 跟權益同方向 → 增加記 <em class="cr">貸</em></li><li><b>Expenses 費用</b>、<b>Dividends 股利</b> 讓權益 ↓ → 跟權益反方向 → 增加記 <em class="dr">借</em></li></ul></div>
+  </div>
+  <p><b>Debit 只是「左邊」、credit 只是「右邊」</b>，跟好壞無關，也不是「錢進來／錢出去」的意思。每一筆分錄借方總額一定等於貸方總額，所以等式永遠平衡。<span class="zh">口訣 DEA-LER：Dividends、Expenses、Assets 增加記借；Liabilities、Equity、Revenues 增加記貸。上面的圖就是這個口訣的原因。</span></p>
+
+  <h3><span class="tag">Method</span>每一筆分錄都問三個問題</h3>
+  <ol class="steps">
+    <li><span><b>哪兩個科目動了？</b>問自己：公司拿到了什麼？付出了什麼、或欠了誰？</span></li>
+    <li><span><b>每個科目是哪一類？增加還是減少？</b>看字尾：-Payable 負債、-Expense 費用、-Revenue 收入、-Receivable 資產、Prepaid 資產、Unearned 負債。</span></li>
+    <li><span><b>套規則：</b>資產、費用、股利<b>增加 → 借</b>；負債、權益、收入<b>增加 → 貸</b>；減少就反過來。最後檢查一借一貸。</span></li>
+  </ol>
+  <div class="callout"><strong>新手捷徑：先找 Cash。</strong> 收到現金 → <b>借 Cash</b>；付出現金 → <b>貸 Cash</b>。現金佔掉一邊，另一個科目就在另一邊，你只需要想它叫什麼名字。沒有現金的交易（賒購、賒銷、調整分錄）才需要完整走三個問題。</div>
+  <div class="trap"><b class="h">最常見的五個誤會</b>
+    <ol>
+      <li>「收入是好事，所以記借」✗ → 收入讓權益增加，記<b>貸</b>。</li>
+      <li>「付錢給供應商就是費用」✗ → 付應付帳款是<b>負債減少（借 A/P）</b>，費用早在賒購時就記了。</li>
+      <li>「Prepaid Insurance 是費用」✗ → 預付是<b>資產</b>（還沒用掉的權利），過期了才轉成 Insurance Expense。</li>
+      <li>「Unearned Revenue 是收入」✗ → 預收是<b>負債</b>（欠客戶服務），做完才轉成 Revenue。</li>
+      <li>「Salaries Payable 跟 Salaries Expense 一樣」✗ → Payable 是<b>負債</b>（還沒付），Expense 是<b>費用</b>（已發生）。</li>
+    </ol>
+  </div>
+
+  <h3><span class="tag">Gym 1</span>科目卡：這是哪一類？增加記哪邊？</h3>
+  <p class="hint">看到科目名稱，先選類別，再選「增加時記借還是貸」（也就是正常餘額）。答錯會給提示。目標：連續答對 20 張。</p>
+  <div class="gym" id="gymCard"></div>
+
+  <h3><span class="tag">Gym 2</span>分錄練習：借誰、貸誰？</h3>
+  <p class="hint"><b>引導模式</b>一步一步帶你走三個問題，先用這個；熟了切<b>快速模式</b>，直接選借方和貸方，像考試一樣。答錯的題目過幾題會再出現一次。</p>
+  <div class="gym" id="gymJE"></div>
+  <label class="done-row"><input type="checkbox" id="done-dc" data-unit="dc"> 快速模式能連續答對 10 題</label>
 </section>
 
 <!-- ============ UNIT 2 ============ -->
@@ -623,7 +765,7 @@ select.ans{max-width:15em}
     <div class="explain" hidden><h4>詳解 Solution</h4>
     <p>Units in ending inventory = 132 − 121 = <b>11</b></p>
     <p><b>FIFO:</b> ending inventory = 11 × 1,050 = <b>$11,550</b>; COGS = 22,310 + 45,900 + 20,800 + 33 × 1,050 (34,650) = <b>$123,660</b></p>
-    <p><b>Average-cost:</b> 135,210 ÷ 132 = <b>$1,024.32</b>; ending inventory = 11 × 1,024.32 ≈ <b>$11,268</b>; COGS = 121 × 1,024.32 ≈ <b>$123,942</b></p>
+    <p><b>Average-cost:</b> 135,210 ÷ 132 = <b>$1,024.32</b>; ending inventory = 11 × 1,024.32 ≈ <b>$11,268</b>; COGS = 135,210 − 11,268 = <b>$123,942</b> (121 × 1,024.32 = 123,942.72 — the 72¢ is just rounding; use GAFS − EI so the two add up exactly)</p>
     <p><b>(b)</b> Both methods total $135,210, which equals the cost of goods available for sale. The method only changes how that fixed pool is split. Since prices were rising, FIFO gives higher ending inventory and lower COGS (so higher net income) than average-cost.</p>
     <p class="zh">FIFO 的 COGS：賣掉的 121 片 = 23 + 45 + 20 + 33（最後一批 44 片賣掉 33 片，剩 11 片）。最快的算法：COGS = 135,210 − 11,550 = 123,660。</p>
     </div>
@@ -1307,8 +1449,7 @@ select.ans{max-width:15em}
 <!-- ============ UNIT 11 ============ -->
 <section class="unit" id="u11">
   <h2 class="u"><span class="num">16</span>Mock Exam — 28 Questions</h2>
-  <p>Mixed questions from every unit, in the style of the TA sessions. An explanation appears after each answer.<span class="zh">綜合題，作答後顯示英文解析＋中文說明。</span></p>
-  <div class="score"><span id="examScore">Score 0 / 0</span><button class="btn" id="resetExam" type="button">Restart</button></div>
+  <p>Mixed questions from every unit, in the style of the TA sessions. Score counts only questions answered right on the <b>first try</b>.<span class="zh">綜合題。答錯會給提示可以再選；分數只算「第一次就答對」的題數。答錯的題目自動進錯題本。</span></p>
   <div class="quiz" data-set="exam"></div>
   <label class="done-row"><input type="checkbox" id="done-u11" data-unit="u11"> Mock exam done 模擬考完成</label>
 </section>
@@ -1375,6 +1516,11 @@ select.ans{max-width:15em}
     <li>On March 31, 2024 the company declared and paid a cash dividend of $5,000.</li>
   </ol>
   <p><b>Instructions:</b> (a) Prepare an income statement for the three-month period ended March 31, 2024. (b) Prepare a statement of financial position as of March 31, 2024. (c) Prepare a statement of cash flows for the three-month period ended March 31, 2024 using the indirect method.</p>
+
+  <div class="drill" data-d="paddle">
+    <p class="hint">先在紙上算，再把<b>關鍵數字</b>填進來對答案。順序就是解題順序：折舊 → 存貨 → 應收 → 損益表 → 現金 → 資產負債表 → 現金流量表。錯的格子先回頭看該單元，再打開下面的詳解一步一步對。</p>
+    <div class="explain" hidden><h4>下一步 Next</h4><p>打開下面「workings」和 (a)(b)(c) 的詳解，一步一步對照自己哪裡算錯。然後按 Reset，不看詳解再填一次。</p></div>
+  </div>
 
   <details class="sol"><summary>Problem A — workings 計算過程</summary><div class="in">
     <p><b>Depreciation 折舊</b></p>
@@ -1473,7 +1619,7 @@ select.ans{max-width:15em}
   </div></details>
 
   <!-- ===== Problem B ===== -->
-  <h3><span class="tag">Problem B</span>Brew-Masters Ltd (average-cost, purchase discount, prepaid, debit allowance, non-cash dividends)</h3>
+  <h3><span class="tag">Problem B</span>Brew-Masters Ltd (average-cost, purchase discount, prepaid, debit allowance, declared-but-unpaid dividends)</h3>
   <p class="q">Brew-Masters Ltd is a reseller of espresso machines, established on January 1, 2022. On January 1, 2022 it acquired an office-warehouse building for $300,000, depreciated over 20 years straight-line with a residual value of $60,000, and two delivery trucks at $40,000 each, depreciated over 5 years straight-line with a residual value of $4,000 per truck. On the same day it signed a $100,000, 6%, five-year note maturing January 1, 2027, with interest paid annually on January 1.</p>
   <div class="sheet scroll"><table>
     <tr><th colspan="2">Brew-Masters Ltd — Statement of Financial Position, December 31, 2022</th></tr>
@@ -1518,6 +1664,11 @@ select.ans{max-width:15em}
     <li>On March 31, 2023 the board declared a cash dividend of $8,000, payable on April 15, 2023.</li>
   </ol>
   <p><b>Instructions:</b> (a) Prepare an income statement for the three-month period ended March 31, 2023. (b) Prepare a statement of financial position as of March 31, 2023. (c) Prepare a statement of cash flows for the three-month period ended March 31, 2023 using the indirect method.</p>
+
+  <div class="drill" data-d="brew">
+    <p class="hint">同樣先在紙上做。這題的陷阱：進貨折扣、預付保險、備抵呆帳調整前是<b>借餘</b>、宣告未付的股利、未付的所得稅。營業現金流量是負數，填 −44,400 或 44,400 都算對。</p>
+    <div class="explain" hidden><h4>下一步 Next</h4><p>打開下面的詳解一步一步對照，然後按 Reset 再做一次。</p></div>
+  </div>
 
   <details class="sol"><summary>Problem B — workings 計算過程</summary><div class="in">
     <p><b>Depreciation 折舊</b></p>
@@ -1624,6 +1775,13 @@ select.ans{max-width:15em}
   <div class="trap"><b class="h">Exam checklist:</b> (1) Count units first: returns from customers go <i>back</i> into inventory; returns to suppliers reduce purchases and A/P. (2) Freight-in → inventory cost; purchase discount → reduces cost. (3) Allowance: credit balance → subtract; debit balance → add. (4) A disposed asset's cost <i>and</i> its accumulated depreciation both leave the SFP; depreciate it up to the sale date. (5) Interest payable at year-end is paid on Jan 1 → decrease in payable on the cash flow statement. (6) The cash on the cash flow statement must equal the cash on the SFP.<span class="zh">考前檢查：數量先對、運費進成本、備抵貸減借加、處分要沖成本與累折、利息應付減少、現金三表一致。</span></div>
 
   <label class="done-row"><input type="checkbox" id="done-u12" data-unit="u12"> Both problems done 兩題都做完了</label>
+</section>
+
+<!-- ============ MISTAKES ============ -->
+<section class="unit" id="review">
+  <h2 class="u"><span class="num">★</span>錯題本 Mistakes to redo</h2>
+  <p>Every quiz or mock-exam question you miss on the first try lands here automatically. Answer it right on the first try and it leaves the list.<span class="zh">任何選擇題第一次答錯（或按了看答案）都會自動收進來。在這裡（或原本的地方）第一次就答對，才會移除。考前把這裡清空。錯題只存在這台裝置的瀏覽器。</span></p>
+  <div class="quiz" data-set="review"></div>
 </section>
 
 </main>
@@ -1875,7 +2033,44 @@ const D={
   ['Net A/R at Dec 31',1595000],
   ['Average net A/R',1237500],
   ['A/R turnover (times)',{n:2.95,tol:0.006}],
-  ['Average collection period (days)',{n:124,tol:0.5}]]}
+  ['Average collection period (days)',{n:124,tol:0.5}]]},
+ paddle:{title:'Paddle-Pro — key numbers 關鍵數字',cols:['Answer ($)'],rows:[
+  ['① Depreciation expense for the quarter',7800],
+  ['① Gain on disposal of the old van',2000],
+  ['② Kayaks on hand at March 31 (units)',96],
+  ['② January kayak cost per unit incl. freight-in',330],
+  ['② Ending inventory (FIFO)',32880],
+  ['② Cost of goods sold',69420],
+  ['③ Accounts receivable (gross) at March 31',88000],
+  ['③ Allowance before adjustment (credit)',600],
+  ['③ Bad debt expense',3160],
+  ['④ Interest expense for the quarter',1800],
+  ['(a) Net sales revenue',134400],
+  ['(a) Income before income tax',22720],
+  ['(a) Net income',18176],
+  ['(b) Cash at March 31',30556],
+  ['(b) Accounts payable at March 31',59200],
+  ['(b) Total assets',415876],
+  ['(c) Net cash provided by operating activities',13556]]},
+ brew:{title:'Brew-Masters — key numbers 關鍵數字',cols:['Answer ($)'],rows:[
+  ['① Depreciation expense for the quarter',6600],
+  ['① Loss on sale of the truck',1000],
+  ['② Purchase discount',560],
+  ['② Cost of goods available for sale',123000],
+  ['② Weighted-average unit cost',410],
+  ['② Ending inventory',34440],
+  ['② Cost of goods sold',88560],
+  ['③ Required allowance (aging)',4560],
+  ['③ Allowance before adjustment (debit)',500],
+  ['③ Bad debt expense',5060],
+  ['④ Insurance expense for the quarter',1200],
+  ['(a) Net sales revenue',172800],
+  ['(a) Income before income tax',38880],
+  ['(a) Net income',31104],
+  ['(b) Cash at March 31',15600],
+  ['(b) Retained earnings at March 31',67704],
+  ['(b) Total assets',551380],
+  ['(c) Net cash from operating activities',-44400]]}
 };
 const parseNum=v=>{const s=String(v).replace(/[^0-9.\-]/g,'');if(s===''||s==='-'||s==='.')return NaN;return Math.abs(parseFloat(s))};
 const fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:2});
@@ -1930,10 +2125,10 @@ function buildDrill(box){
   act.addEventListener('click',e=>{
     const a=e.target.dataset.act;if(!a)return;
     clearFix();
-    if(a==='reset'){fields.forEach(f=>{f.value='';f.classList.remove('ok','bad')});res.textContent='';res.classList.remove('all');ex.hidden=true;return}
+    if(a==='reset'){fields.forEach(f=>{f.value='';f.classList.remove('ok','bad')});res.textContent='';res.classList.remove('all');ex.hidden=true;if(ex._st)ex._st.reset();return}
     let n=0;fields.forEach(f=>{const g=ok(f);f.classList.toggle('ok',g);f.classList.toggle('bad',!g);if(g)n++;else if(a==='show')showFix(f)});
     res.textContent=`${n} / ${fields.length} correct 答對`;res.classList.toggle('all',n===fields.length);
-    if(a==='show'||n===fields.length)ex.hidden=false;
+    if(a==='show'||n===fields.length){ex.hidden=false;if(ex._st)ex._st.open()}
     if(a==='check'&&n<fields.length)res.textContent+='（紅色的再想想，或按看詳解）';
   });
   fields.forEach(f=>f.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();act.querySelector('[data-act="check"]').click()}}));
@@ -1941,34 +2136,332 @@ function buildDrill(box){
 document.querySelectorAll('.drill').forEach(buildDrill);
 
 const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let examRight=0,examDone=0;
-function updExam(){document.getElementById('examScore').textContent=`Score ${examRight} / ${examDone} (of ${Q.exam.length})`}
-function render(set,box){
-  box.innerHTML='';
-  Q[set].forEach((it,i)=>{
-    const c=document.createElement('div');c.className='qcard';
-    c.innerHTML=`<div class="qn">${set==='exam'?'Question '+(i+1):'Q'+(i+1)}</div><div class="qt"></div><div class="opts"></div>`;
-    c.querySelector('.qt').textContent=it.q;
-    const os=c.querySelector('.opts');
-    it.o.forEach((t,j)=>{
-      const b=document.createElement('button');b.type='button';b.textContent=String.fromCharCode(97+j)+'. '+t;
-      b.addEventListener('click',()=>{
-        os.querySelectorAll('button').forEach((x,k)=>{x.disabled=true;if(k===it.a)x.classList.add('right')});
-        if(j!==it.a)b.classList.add('wrong');
-        const ex=document.createElement('div');ex.className='exp';
-        ex.textContent=(j===it.a?'Correct. ':'Incorrect — the answer is '+String.fromCharCode(97+it.a)+'. ')+it.e;
-        const zh=document.createElement('span');zh.className='zh';zh.textContent=it.z;ex.appendChild(zh);
-        c.appendChild(ex);
-        if(set==='exam'){examDone++;if(j===it.a)examRight++;updExam()}
-      });
-      os.appendChild(b);
-    });
-    box.appendChild(c);
+
+/* ---------- step-by-step solutions ---------- */
+let stepMode=store.get('fa-step');if(stepMode===null)stepMode=true;
+const stepBoxes=[];
+function stepify(box){
+  const steps=[];
+  [...box.children].forEach(ch=>{
+    if(ch.tagName==='H4')return;
+    if(ch.tagName==='P'&&ch.classList.contains('zh')&&steps.length){steps[steps.length-1].push(ch);return}
+    if(ch.tagName==='UL'||ch.tagName==='OL'){[...ch.children].forEach((li,i)=>steps.push(i?[li]:[ch,li]));return}
+    const tbl=ch.tagName==='TABLE'?ch:(ch.matches('.scroll,.je')?ch.querySelector(':scope>table'):null);
+    if(tbl&&tbl.rows.length>6&&tbl.querySelector('tr.total')){
+      let cur=[ch];
+      [...tbl.rows].forEach(r=>{cur.push(r);if(r.classList.contains('total')&&!(r.nextElementSibling&&r.nextElementSibling.classList.contains('total'))){steps.push(cur);cur=[]}});
+      if(cur.length)steps.length&&!cur.includes(ch)?steps[steps.length-1].push(...cur):steps.push(cur);
+      return;
+    }
+    steps.push([ch]);
   });
+  if(steps.length<2)return;
+  const bar=document.createElement('div');bar.className='stepbar';
+  bar.innerHTML='<span class="think">先想想下一步要算什麼，再按「下一步」對答案。</span><button type="button" class="btn solid" data-s="next">下一步 Next step ▸</button><button type="button" class="btn" data-s="all">全部顯示</button><button type="button" class="btn" data-s="again" hidden>從頭一步步看</button><span class="cnt"></span>';
+  box.appendChild(bar);
+  const all=steps.flat();
+  let k=0;
+  const show=n=>{
+    k=Math.max(0,Math.min(n,steps.length));
+    all.forEach(el=>el.hidden=true);
+    steps.slice(0,k).forEach((st,i)=>st.forEach(el=>{el.hidden=false;if(i===k-1&&k<steps.length+1){el.classList.remove('step-new');void el.offsetWidth;el.classList.add('step-new')}}));
+    const fin=k>=steps.length;
+    bar.querySelector('[data-s="next"]').hidden=fin;bar.querySelector('[data-s="all"]').hidden=fin;
+    bar.querySelector('.think').hidden=fin;bar.querySelector('[data-s="again"]').hidden=!fin;
+    bar.querySelector('.cnt').textContent=fin?`全部 ${steps.length} 步`:`步驟 ${k} / ${steps.length}`;
+  };
+  bar.addEventListener('click',e=>{const a=e.target.dataset.s;if(a==='next')show(k+1);else if(a==='all')show(steps.length);else if(a==='again')show(1)});
+  const st={open(){if(k===0)show(stepMode?1:steps.length)},reset(){k=0;all.forEach(el=>el.hidden=true)},mode(){if(k>0)show(stepMode?Math.max(k,1):steps.length)}};
+  box._st=st;stepBoxes.push(st);st.reset();
 }
-document.querySelectorAll('.quiz').forEach(b=>render(b.dataset.set,b));
-updExam();
-document.getElementById('resetExam').addEventListener('click',()=>{examRight=0;examDone=0;updExam();render('exam',document.querySelector('.quiz[data-set="exam"]'))});
+document.querySelectorAll('.explain, details.sol>.in').forEach(stepify);
+document.querySelectorAll('details.sol').forEach(d=>d.addEventListener('toggle',()=>{const st=d.querySelector('.in')._st;if(d.open&&st)st.open()}));
+const stepBtn=document.getElementById('stepBtn');
+function setStep(on){stepMode=on;stepBtn.setAttribute('aria-pressed',on?'true':'false');stepBtn.textContent=on?'詳解：一步一步看':'詳解：一次全部顯示';stepBoxes.forEach(s=>s.mode())}
+setStep(stepMode);
+stepBtn.addEventListener('click',()=>{setStep(!stepMode);store.set('fa-step',stepMode)});
+
+/* ---------- retryable quizzes + mistake notebook ---------- */
+const SRC={u1:'Unit 1',u2:'Unit 2',u3:'Unit 3',u4:'Unit 4',u5:'Unit 5',u6:'Unit 6',u7:'Unit 7',u13:'Unit 8',u14:'Unit 9',u15:'Unit 10',u16:'Unit 11',u17:'Unit 12',exam:'Mock exam'};
+const miss=new Set((store.get('fa-miss')||[]).filter(k=>{const [s,i]=k.split(':');return Q[s]&&Q[s][+i]}));
+const updMiss=()=>{store.set('fa-miss',[...miss]);const t=document.getElementById('missToc');if(t)t.textContent=miss.size||''};
+const shuffled=n=>{const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const L=i=>String.fromCharCode(97+i);
+function makeCard(entry,num,mix,report){
+  const {key,it,src}=entry;
+  const c=document.createElement('div');c.className='qcard';
+  c.innerHTML='<div class="qn"><span></span><span class="from"></span></div><div class="qt"></div><div class="opts"></div>';
+  c.querySelector('.qn span').textContent=num;
+  if(src)c.querySelector('.from').textContent='from '+src;
+  c.querySelector('.qt').textContent=it.q;
+  const os=c.querySelector('.opts');
+  const order=mix?shuffled(it.o.length):[...it.o.keys()];
+  let tries=0,done=false,hint=null;
+  const finish=(firstOk,revealed)=>{
+    done=true;
+    os.querySelectorAll('button').forEach(b=>{b.disabled=true;if(+b.dataset.o===it.a)b.classList.add('right')});
+    if(hint)hint.remove();
+    const ex=document.createElement('div');ex.className='exp';
+    ex.textContent=(revealed?'Answer: ':firstOk?'Correct. ':`Correct on try ${tries}. `)+it.e;
+    const zh=document.createElement('span');zh.className='zh';zh.textContent=it.z;ex.appendChild(zh);
+    const ft=document.createElement('div');ft.className='qfoot';
+    ft.innerHTML=`<span class="tag1">${firstOk?'✓ 第一次就答對':'✗ 已收進錯題本，之後再做一次'}</span><button type="button" class="btn">再做一次 Try again</button>`;
+    ft.querySelector('button').addEventListener('click',()=>{const n=makeCard(entry,num,true,report);c.replaceWith(n);n.querySelector('.opts button').focus()});
+    c.append(ex,ft);
+    c.classList.toggle('first-ok',firstOk);c.classList.toggle('missed',!firstOk);
+    if(firstOk)miss.delete(key);else miss.add(key);updMiss();
+    report(key,firstOk);
+  };
+  order.forEach((oi,pos)=>{
+    const b=document.createElement('button');b.type='button';b.dataset.o=oi;b.textContent=L(pos)+'. '+it.o[oi];
+    b.addEventListener('click',()=>{
+      if(done)return;tries++;
+      if(oi===it.a){finish(tries===1,false);return}
+      b.classList.add('wrong');b.disabled=true;
+      if(!hint){
+        hint=document.createElement('div');hint.className='qhint';hint.setAttribute('aria-live','polite');
+        hint.innerHTML='<b>不對，再想一次。</b> 提示：<span></span><br><button type="button" class="btn">還是不會，看答案</button>';
+        hint.querySelector('span').textContent=it.z;
+        hint.querySelector('button').addEventListener('click',()=>finish(false,true));
+        c.appendChild(hint);
+      }
+      const left=[...os.querySelectorAll('button:not(:disabled)')];if(left.length===1)left[0].focus();
+    });
+    os.appendChild(b);
+  });
+  return c;
+}
+function renderSet(box,mix,only){
+  const set=box.dataset.set;
+  let entries=set==='review'
+    ?[...miss].map(k=>{const [s,i]=k.split(':');return {key:k,it:Q[s][+i],src:SRC[s]}})
+    :Q[set].map((it,i)=>({key:set+':'+i,it}));
+  if(only)entries=entries.filter(e=>only.has(e.key));
+  const res=new Map();
+  box.innerHTML='';
+  const bar=document.createElement('div');bar.className='qbar';
+  bar.innerHTML='<span class="sc"></span><button type="button" class="btn" data-q="wrong" hidden>只重做錯的</button><button type="button" class="btn" data-q="all">全部重做（打亂選項）</button>';
+  const sc=bar.querySelector('.sc'),wrongBtn=bar.querySelector('[data-q="wrong"]');
+  const upd=()=>{const ok=[...res.values()].filter(Boolean).length;sc.textContent=`第一次就答對 ${ok} / ${res.size}（共 ${entries.length} 題）`;wrongBtn.hidden=![...res.values()].some(v=>!v)};
+  bar.addEventListener('click',e=>{const a=e.target.dataset.q;if(a==='all')renderSet(box,true);else if(a==='wrong')renderSet(box,true,new Set([...res].filter(([,v])=>!v).map(([k])=>k)))});
+  box.appendChild(bar);
+  if(!entries.length){const p=document.createElement('p');p.className='empty';p.textContent=set==='review'?'錯題本是空的。去做小測驗或模擬考，答錯的題目會出現在這裡。':'沒有題目。';box.appendChild(p)}
+  entries.forEach((e,i)=>box.appendChild(makeCard(e,(set==='exam'?'Question ':'Q')+(i+1),mix,(k,v)=>{if(!res.has(k))res.set(k,v);upd()})));
+  if(set==='review'){const r=document.createElement('button');r.type='button';r.className='btn';r.dataset.q='refresh';r.textContent='載入最新錯題';r.addEventListener('click',()=>renderSet(box,true));bar.appendChild(r)}
+  upd();
+}
+document.querySelectorAll('.quiz').forEach(b=>renderSet(b,false));
+updMiss();
+
+/* ---------- debit & credit gym ---------- */
+const TY={A:['資產','Asset',1],L:['負債','Liability',0],E:['權益','Equity',0],R:['收入','Revenue',0],X:['費用','Expense',1],D:['股利','Dividends',1],CA:['資產減項','Contra-asset',0],CR:['收入減項','Contra-revenue',1]};
+const TYNOTE={A:'資產在等號左邊，增加記借',L:'負債在等號右邊，增加記貸',E:'權益在等號右邊，增加記貸',R:'收入讓權益增加，跟權益同方向，增加記貸',X:'費用讓權益減少，跟權益反方向，增加記借',D:'股利讓權益減少，跟權益反方向，增加記借',CA:'它是資產的減項，方向跟資產相反，增加記貸',CR:'它是收入的減項，方向跟收入相反，增加記借'};
+const ACC={
+ 'Cash':['A','現金'],'Accounts Receivable':['A','應收帳款'],'Notes Receivable':['A','應收票據'],'Supplies':['A','用品'],'Prepaid Insurance':['A','預付保險費'],'Prepaid Rent':['A','預付租金'],'Inventory':['A','存貨'],'Equipment':['A','設備'],'Land':['A','土地'],
+ 'Accounts Payable':['L','應付帳款'],'Notes Payable':['L','應付票據'],'Salaries and Wages Payable':['L','應付薪資'],'Interest Payable':['L','應付利息'],'Unearned Service Revenue':['L','預收服務收入'],'Income Taxes Payable':['L','應付所得稅'],'Dividends Payable':['L','應付股利'],'Warranty Liability':['L','保固負債'],
+ 'Share Capital—Ordinary':['E','普通股股本'],'Retained Earnings':['E','保留盈餘'],
+ 'Service Revenue':['R','服務收入'],'Sales Revenue':['R','銷貨收入'],'Interest Revenue':['R','利息收入'],
+ 'Rent Expense':['X','租金費用'],'Salaries and Wages Expense':['X','薪資費用'],'Utilities Expense':['X','水電費'],'Advertising Expense':['X','廣告費'],'Insurance Expense':['X','保險費'],'Supplies Expense':['X','用品費用'],'Depreciation Expense':['X','折舊費用'],'Bad Debt Expense':['X','呆帳費用'],'Interest Expense':['X','利息費用'],'Cost of Goods Sold':['X','銷貨成本'],'Income Tax Expense':['X','所得稅費用'],'Warranty Expense':['X','保固費用'],
+ 'Dividends':['D','股利'],
+ 'Accumulated Depreciation':['CA','累計折舊'],'Allowance for Doubtful Accounts':['CA','備抵呆帳'],'Sales Returns and Allowances':['CR','銷貨退回與折讓'],'Sales Discounts':['CR','銷貨折扣']
+};
+const advAcc=n=>ACC[n][0]==='CA'||ACC[n][0]==='CR';
+const isDr=(n,ch)=>(TY[ACC[n][0]][2]===1)===(ch>0);
+const tyName=n=>TY[ACC[n][0]][0];
+const why=(n,ch)=>`${n}（${ACC[n][1]}）是${tyName(n)}，${ch>0?'增加':'減少'} → 記${isDr(n,ch)?'借 Dr':'貸 Cr'}。${TYNOTE[ACC[n][0]]}${ch>0?'':'，所以減少記相反邊'}。`;
+const nameHint=n=>/Payable|Liability/.test(n)?'字尾 -Payable／Liability：公司欠別人的。'
+ :/^Unearned/.test(n)?'Unearned：錢先收了、服務還沒做 → 公司欠客戶服務。'
+ :/Returns|Discounts/.test(n)?'它是用來「減少銷貨收入」的科目。'
+ :/^Accumulated|^Allowance/.test(n)?'它是用來「減少某個資產帳面金額」的科目。'
+ :/Expense|Cost of Goods/.test(n)?'為了賺錢已經用掉、花掉的成本。'
+ :/Revenue/.test(n)?'Revenue：公司賺到的。'
+ :/^Prepaid/.test(n)?'Prepaid：先付錢、還沒用掉 → 公司還擁有這個權利。'
+ :/Receivable/.test(n)?'Receivable：別人欠公司的。'
+ :/Share Capital|Retained/.test(n)?'屬於股東的那一份。'
+ :/^Dividends$/.test(n)?'公司把盈餘分給股東，讓權益減少（但不是費用）。'
+ :'公司擁有、未來還用得到的東西。';
+const TX=[
+ ['Shareholders invest cash in the company in exchange for ordinary shares.','股東投入現金，換取普通股。',[['Cash',1],['Share Capital—Ordinary',1]],['Service Revenue','Notes Payable']],
+ ["Paid this month's rent in cash.",'現金支付本月房租。',[['Rent Expense',1],['Cash',-1]],['Prepaid Rent','Accounts Payable']],
+ ['Purchased equipment on account.','賒購設備。',[['Equipment',1],['Accounts Payable',1]],['Cash','Notes Payable']],
+ ['Performed services and received cash immediately.','提供服務，當場收現。',[['Cash',1],['Service Revenue',1]],['Accounts Receivable','Unearned Service Revenue']],
+ ['Performed services on account; the customer will pay next month.','提供服務，客戶下個月才付款。',[['Accounts Receivable',1],['Service Revenue',1]],['Cash','Unearned Service Revenue']],
+ ['Received cash from customers for services billed last month.','收到上個月已開帳單客戶的款項。',[['Cash',1],['Accounts Receivable',-1]],['Service Revenue','Unearned Service Revenue']],
+ ['Paid a supplier for an amount owed (accounts payable).','付清欠供應商的應付帳款。',[['Accounts Payable',-1],['Cash',-1]],['Utilities Expense','Accounts Receivable']],
+ ['Borrowed cash from the bank by signing a note.','向銀行借款，簽發票據。',[['Cash',1],['Notes Payable',1]],['Interest Revenue','Notes Receivable']],
+ ["Paid employees' salaries for the month in cash.",'現金支付本月員工薪資。',[['Salaries and Wages Expense',1],['Cash',-1]],['Salaries and Wages Payable','Accounts Payable']],
+ ['Paid a cash dividend to shareholders.','發放現金股利給股東。',[['Dividends',1],['Cash',-1]],['Share Capital—Ordinary','Interest Expense']],
+ ['Bought supplies for cash.','現金購買用品。',[['Supplies',1],['Cash',-1]],['Supplies Expense','Accounts Payable']],
+ ['Bought supplies on account.','賒購用品。',[['Supplies',1],['Accounts Payable',1]],['Supplies Expense','Cash']],
+ ["Received this month's utility bill; it will be paid next month.",'收到本月水電費帳單，下個月才付。',[['Utilities Expense',1],['Accounts Payable',1]],['Cash','Prepaid Rent']],
+ ['Received cash in advance for services to be performed next month.','預收下個月才要提供服務的款項。',[['Cash',1],['Unearned Service Revenue',1]],['Service Revenue','Accounts Receivable']],
+ ['Paid for a one-year insurance policy in advance.','預付一年期保險費。',[['Prepaid Insurance',1],['Cash',-1]],['Insurance Expense','Accounts Payable']],
+ ['Adjusting entry: part of the prepaid insurance has expired.','調整分錄：預付保險費有一部分已經過期。',[['Insurance Expense',1],['Prepaid Insurance',-1]],['Cash','Unearned Service Revenue']],
+ ['Adjusting entry: supplies were used up during the month.','調整分錄：本月用掉了一些用品。',[['Supplies Expense',1],['Supplies',-1]],['Cash','Accounts Payable']],
+ ['Adjusting entry: part of the cash received in advance has now been earned.','調整分錄：預收的款項有一部分服務已經做完。',[['Unearned Service Revenue',-1],['Service Revenue',1]],['Cash','Accounts Receivable']],
+ ['Adjusting entry: employees earned salaries that will be paid next month.','調整分錄：員工本月薪資已發生，下個月才付。',[['Salaries and Wages Expense',1],['Salaries and Wages Payable',1]],['Cash','Prepaid Rent']],
+ ['Adjusting entry: services were performed but not yet billed or collected.','調整分錄：服務做了，還沒開帳單、也還沒收錢。',[['Accounts Receivable',1],['Service Revenue',1]],['Unearned Service Revenue','Cash']],
+ ['Adjusting entry: interest has built up on a bank note but is not yet paid.','調整分錄：銀行借款的利息已經發生，還沒付。',[['Interest Expense',1],['Interest Payable',1]],['Notes Payable','Interest Revenue']],
+ ['Paid salaries that were accrued at the end of last year.','支付去年底已估列的應付薪資。',[['Salaries and Wages Payable',-1],['Cash',-1]],['Salaries and Wages Expense','Accounts Payable']],
+ ['Bought land for cash.','現金購買土地。',[['Land',1],['Cash',-1]],['Equipment','Notes Payable']],
+ ['Repaid the principal of a bank note.','償還銀行借款本金。',[['Notes Payable',-1],['Cash',-1]],['Interest Expense','Notes Receivable']],
+ ['Sold merchandise on account (record the sale).','賒銷商品（記銷貨收入那一筆）。',[['Accounts Receivable',1],['Sales Revenue',1]],['Inventory','Service Revenue']],
+ ['Perpetual system: record the cost of the merchandise just sold.','永續盤存制：記錄剛賣出商品的成本。',[['Cost of Goods Sold',1],['Inventory',-1]],['Sales Revenue','Accounts Payable']],
+ ['Perpetual system: purchased merchandise on account.','永續盤存制：賒購商品。',[['Inventory',1],['Accounts Payable',1]],['Cost of Goods Sold','Supplies']],
+ ['Paid for advertising in cash.','現金支付廣告費。',[['Advertising Expense',1],['Cash',-1]],['Accounts Payable','Prepaid Rent']],
+ ['Declared a cash dividend that will be paid next month.','宣告現金股利，下個月才發放。',[['Dividends',1],['Dividends Payable',1]],['Cash','Share Capital—Ordinary']],
+ ["Received interest on the company's bank deposit.",'收到銀行存款的利息。',[['Cash',1],['Interest Revenue',1]],['Interest Expense','Interest Payable']],
+ ['Paid income taxes that were owed at the end of last year.','支付去年底欠的所得稅。',[['Income Taxes Payable',-1],['Cash',-1]],['Income Tax Expense','Accounts Payable']],
+ ['Issued ordinary shares directly in exchange for land (no cash).','發行普通股直接換土地（沒有現金）。',[['Land',1],['Share Capital—Ordinary',1]],['Cash','Notes Payable']],
+ ['Collected the principal of a note receivable in cash.','收回應收票據本金的現金。',[['Cash',1],['Notes Receivable',-1]],['Notes Payable','Interest Revenue']],
+ ['Year-end: recorded income tax expense to be paid next year.','年底估列所得稅，明年才付。',[['Income Tax Expense',1],['Income Taxes Payable',1]],['Cash','Retained Earnings']],
+ ['Recorded depreciation on equipment for the year.','提列設備本年度的折舊。',[['Depreciation Expense',1],['Accumulated Depreciation',1]],['Equipment','Cash']],
+ ['Allowance method: estimated bad debts at year-end.','備抵法：年底估計呆帳。',[['Bad Debt Expense',1],['Allowance for Doubtful Accounts',1]],['Accounts Receivable','Cash']],
+ ['Allowance method: wrote off a specific customer account as uncollectible.','備抵法：沖銷某個確定收不回的客戶帳款。',[['Allowance for Doubtful Accounts',-1],['Accounts Receivable',-1]],['Bad Debt Expense','Cash']],
+ ['Allowance method: a written-off customer says they will pay after all; reinstate the account.','備抵法：之前沖銷的客戶說要付款了，先把帳款恢復。',[['Accounts Receivable',1],['Allowance for Doubtful Accounts',1]],['Bad Debt Expense','Cash']],
+ ['A customer returned goods bought on account; reduce what they owe (record the sales side).','客戶退回賒購的商品，減少他的欠款（記銷貨那一側）。',[['Sales Returns and Allowances',1],['Accounts Receivable',-1]],['Sales Revenue','Inventory']],
+ ["Year-end: estimated warranty costs on this year's sales.",'年底估列本年度銷貨的保固費用。',[['Warranty Expense',1],['Warranty Liability',1]],['Cash','Sales Revenue']]
+].map(([t,z,l,d],i)=>({id:i,t,z,l,d,adv:l.some(([n])=>advAcc(n))}));
+const shuf=a=>shuffled(a.length).map(i=>a[i]);
+const mkChip=(label,val)=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=label;b.dataset.v=val;return b};
+const typeChips=adv=>Object.keys(TY).filter(k=>adv||(k!=='CA'&&k!=='CR')).map(k=>mkChip(TY[k][0]+' '+TY[k][1],k));
+function gymStats(el){const s={n:0,ok:0,streak:0,best:0};s.add=good=>{s.n++;if(good){s.ok++;s.streak++;s.best=Math.max(s.best,s.streak)}else s.streak=0;s.show()};s.show=()=>el.textContent=`答對 ${s.ok} / ${s.n}　連續 ${s.streak}（最高 ${s.best}）`;s.show();return s}
+function nextBtn(go){const d=document.createElement('div');d.className='gact';d.innerHTML='<button type="button" class="btn solid">下一題 Next ▸</button>';d.querySelector('button').addEventListener('click',go);return d}
+
+function gymCard(root){
+  if(!root)return;
+  root.innerHTML='<div class="gbar"><span class="gstat"></span><label class="glevel"><input type="checkbox"> 含進階科目（累計折舊、備抵呆帳、銷貨退回…）</label></div><div class="gcard"></div>';
+  const stats=gymStats(root.querySelector('.gstat')),card=root.querySelector('.gcard');
+  let adv=false,deck=[];
+  root.querySelector('.glevel input').addEventListener('change',e=>{adv=e.target.checked;deck=[];next()});
+  function next(){
+    if(!deck.length)deck=shuf(Object.keys(ACC).filter(n=>adv||!advAcc(n)));
+    const n=deck.pop(),ty=ACC[n][0],dr=TY[ty][2]===1;let miss=false;
+    card.innerHTML='<div class="gname"></div><div class="glab">① 這是哪一類？</div><div class="chips" data-g="ty"></div><div class="glab">② 增加的時候記哪邊？（正常餘額）</div><div class="chips" data-g="dc"></div><div class="gfb"></div>';
+    card.querySelector('.gname').textContent=n;
+    const gTy=card.querySelector('[data-g="ty"]'),gDc=card.querySelector('[data-g="dc"]'),fb=card.querySelector('.gfb');
+    typeChips(adv).forEach(c=>gTy.appendChild(c));
+    [mkChip('借 Debit（左）','dr'),mkChip('貸 Credit（右）','cr')].forEach(c=>{c.disabled=true;gDc.appendChild(c)});
+    const done=()=>{
+      stats.add(!miss);
+      fb.className='gfb good';fb.textContent=`${n}（${ACC[n][1]}）：${TY[ty][0]}。${TYNOTE[ty]} → 正常餘額在${dr?'借方':'貸方'}。`;
+      const nb=nextBtn(next);card.appendChild(nb);nb.querySelector('button').focus();
+    };
+    gTy.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.disabled)return;
+      if(b.dataset.v===ty){b.classList.add('ok');gTy.querySelectorAll('.chip').forEach(x=>x.disabled=true);gDc.querySelectorAll('.chip').forEach(x=>x.disabled=false);fb.className='gfb';fb.textContent='';gDc.querySelector('.chip').focus()}
+      else{miss=true;b.classList.add('bad');b.disabled=true;fb.className='gfb warn';fb.textContent='不對，再選一次。提示：'+nameHint(n)}});
+    gDc.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.disabled)return;
+      gDc.querySelectorAll('.chip').forEach(x=>{x.disabled=true;if(x.dataset.v===(dr?'dr':'cr'))x.classList.add('ok')});
+      if(b.dataset.v!==(dr?'dr':'cr')){miss=true;b.classList.add('bad')}
+      done()});
+  }
+  next();
+}
+
+function gymJE(root){
+  if(!root)return;
+  root.innerHTML='<div class="gbar"><span class="gstat"></span><div class="seg" role="group" aria-label="Mode"><button type="button" data-m="g" aria-pressed="true">引導模式</button><button type="button" data-m="f" aria-pressed="false">快速模式</button></div><label class="glevel"><input type="checkbox"> 含進階交易（折舊、呆帳、銷貨退回）</label></div><div class="gcard"></div>';
+  const stats=gymStats(root.querySelector('.gstat')),card=root.querySelector('.gcard');
+  let adv=false,guided=true,deck=[],retry=[];
+  root.querySelector('.glevel input').addEventListener('change',e=>{adv=e.target.checked;deck=[];next()});
+  root.querySelector('.seg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;guided=b.dataset.m==='g';root.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));next()});
+  const draw=()=>{
+    retry.forEach(r=>r.wait--);
+    const due=retry.findIndex(r=>r.wait<=0);
+    if(due>=0)return retry.splice(due,1)[0].tx;
+    if(!deck.length)deck=shuf(TX.filter(x=>adv||!x.adv));
+    return deck.pop();
+  };
+  const candidates=tx=>{const right=tx.l.map(([n])=>n);const pool=shuf(Object.keys(ACC).filter(n=>!right.includes(n)&&!tx.d.includes(n)&&(adv||!advAcc(n))));return shuf([...right,...tx.d,...pool].slice(0,5))};
+  function finish(tx,miss,wrap){
+    stats.add(!miss);
+    if(miss&&!retry.some(r=>r.tx===tx))retry.push({tx,wait:3});
+    const dr=tx.l.filter(([n,c])=>isDr(n,c)),cr=tx.l.filter(([n,c])=>!isDr(n,c));
+    const box=document.createElement('div');box.className='gfb good';
+    box.innerHTML='<b>正確分錄</b><div class="je"><table></table></div><ul class="why"></ul>'+(miss?'<p class="zh">這題過幾題會再出現一次。</p>':'');
+    const tb=box.querySelector('table');
+    dr.forEach(([n])=>{const r=tb.insertRow();r.insertCell().textContent=n;const a=r.insertCell();a.className='dr-amt';a.textContent='借 Dr';r.insertCell()});
+    cr.forEach(([n])=>{const r=tb.insertRow();const c=r.insertCell();c.className='cr';c.textContent=n;r.insertCell();const a=r.insertCell();a.className='cr-amt';a.textContent='貸 Cr'});
+    const ul=box.querySelector('.why');tx.l.forEach(([n,c])=>{const li=document.createElement('li');li.textContent=why(n,c);ul.appendChild(li)});
+    wrap.appendChild(box);const nb=nextBtn(next);wrap.appendChild(nb);nb.querySelector('button').focus();
+  }
+  function head(tx){const q=document.createElement('div');q.className='gq';q.textContent=tx.t;const z=document.createElement('span');z.className='zh';z.textContent=tx.z;q.appendChild(z);return q}
+  function next(){
+    const tx=draw();card.innerHTML='';card.appendChild(head(tx));
+    (guided?guidedQ:fastQ)(tx);
+  }
+  function fastQ(tx){
+    let miss=false;const right={dr:tx.l.find(([n,c])=>isDr(n,c))[0],cr:tx.l.find(([n,c])=>!isDr(n,c))[0]};
+    const cands=candidates(tx);
+    const w=document.createElement('div');
+    w.innerHTML='<div class="glab">借方 Debit（左）</div><div class="chips" data-g="dr"></div><div class="glab">貸方 Credit（右）</div><div class="chips" data-g="cr"></div><div class="gact"><button type="button" class="btn solid" data-a="check">檢查</button><button type="button" class="btn" data-a="show">看答案</button></div><div class="gfb"></div>';
+    card.appendChild(w);
+    const fb=w.querySelector('.gfb');
+    ['dr','cr'].forEach(g=>{const box=w.querySelector(`[data-g="${g}"]`);cands.forEach(n=>box.appendChild(mkChip(n,n)));
+      box.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.disabled)return;box.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel','bad'));b.classList.add('sel')})});
+    const end=()=>{w.querySelectorAll('.chip').forEach(x=>{x.disabled=true;x.classList.remove('sel');if(x.dataset.v===right[x.parentNode.dataset.g])x.classList.add('ok')});w.querySelector('.gact').remove();fb.textContent='';fb.className='gfb';finish(tx,miss,card)};
+    w.querySelector('.gact').addEventListener('click',e=>{const a=e.target.dataset.a;if(!a)return;
+      if(a==='show'){miss=true;end();return}
+      const pick={dr:w.querySelector('[data-g="dr"] .sel')?.dataset.v,cr:w.querySelector('[data-g="cr"] .sel')?.dataset.v};
+      if(!pick.dr||!pick.cr){fb.className='gfb warn';fb.textContent='借方和貸方各選一個科目。';return}
+      if(pick.dr===right.dr&&pick.cr===right.cr){end();return}
+      miss=true;
+      ['dr','cr'].forEach(g=>{if(pick[g]!==right[g])w.querySelector(`[data-g="${g}"] .sel`).classList.add('bad')});
+      fb.className='gfb warn';
+      fb.textContent=(pick.dr===right.cr&&pick.cr===right.dr)?'兩個科目都選對了，但借貸方向反了。用規則再判斷一次：這個科目是哪一類？這筆是增加還是減少？'
+        :(tx.l.some(([n])=>n==='Cash')?'有科目不對。提示：這筆交易有動到現金嗎？收到現金借 Cash，付出現金貸 Cash。':'有科目不對。提示：公司拿到了什麼？付出了什麼、或欠了誰？');
+    });
+  }
+  function guidedQ(tx){
+    let miss=false;const right=tx.l.map(([n])=>n);
+    const s1=document.createElement('div');
+    s1.innerHTML='<div class="glab">① 這筆交易動到哪兩個科目？（選兩個）</div><div class="chips"></div><div class="gfb"></div>';
+    card.appendChild(s1);
+    const box=s1.querySelector('.chips'),fb=s1.querySelector('.gfb');
+    candidates(tx).forEach(n=>box.appendChild(mkChip(n,n)));
+    box.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.disabled)return;
+      b.classList.toggle('sel');
+      const sel=[...box.querySelectorAll('.sel')];
+      if(sel.length<2)return;
+      const bad=sel.filter(x=>!right.includes(x.dataset.v));
+      if(!bad.length){box.querySelectorAll('.chip').forEach(x=>{x.disabled=true;x.classList.remove('sel');if(right.includes(x.dataset.v))x.classList.add('ok')});fb.className='gfb';fb.textContent='';step2();return}
+      miss=true;bad.forEach(x=>{x.classList.remove('sel');x.classList.add('bad');x.disabled=true});
+      fb.className='gfb warn';
+      fb.textContent=(bad.length===2?'兩個都不對。':'有一個不對，再選一個。')+(tx.l.some(([n])=>n==='Cash')?'提示：這筆交易有動到現金嗎？':'提示：公司拿到了什麼？付出了什麼、或欠了誰？')+'（'+bad.map(x=>`${x.dataset.v} 是${tyName(x.dataset.v)}`).join('、')+'）';
+    });
+    function step2(){
+      const s2=document.createElement('div');
+      s2.innerHTML='<div class="glab">② 每個科目：哪一類？增加還是減少？記借還是貸？</div><div class="rows"></div><div class="gact"><button type="button" class="btn solid" data-a="check">檢查</button><button type="button" class="btn" data-a="show">看答案</button></div><div class="gfb"></div>';
+      card.appendChild(s2);
+      const rows=s2.querySelector('.rows'),fb2=s2.querySelector('.gfb');
+      const groups=[];
+      shuf(tx.l).forEach(([n,c])=>{
+        const r=document.createElement('div');r.className='grow';
+        r.innerHTML='<b></b><div class="glab">類別</div><div class="chips" data-g="ty"></div><div class="glab">增加還是減少？</div><div class="chips" data-g="ch"></div><div class="glab">記哪邊？</div><div class="chips" data-g="dc"></div>';
+        r.querySelector('b').textContent=`${n}（${ACC[n][1]}）`;
+        const add=(g,chips,ans)=>{const el=r.querySelector(`[data-g="${g}"]`);chips.forEach(x=>el.appendChild(x));groups.push({el,ans,n,c,g});
+          el.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.disabled)return;el.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel','bad'));b.classList.add('sel')})};
+        add('ty',typeChips(adv||advAcc(n)),ACC[n][0]);
+        add('ch',[mkChip('增加 ↑','1'),mkChip('減少 ↓','-1')],String(c));
+        add('dc',[mkChip('借 Dr','dr'),mkChip('貸 Cr','cr')],isDr(n,c)?'dr':'cr');
+        rows.appendChild(r);
+      });
+      const end=()=>{groups.forEach(({el,ans})=>el.querySelectorAll('.chip').forEach(x=>{x.disabled=true;x.classList.remove('sel','bad');if(x.dataset.v===ans)x.classList.add('ok')}));s2.querySelector('.gact').remove();fb2.textContent='';fb2.className='gfb';finish(tx,miss,card)};
+      s2.querySelector('.gact').addEventListener('click',e=>{const a=e.target.dataset.a;if(!a)return;
+        if(a==='show'){miss=true;end();return}
+        if(groups.some(({el})=>!el.querySelector('.sel'))){fb2.className='gfb warn';fb2.textContent='每一列的三個問題都要選。';return}
+        const wrong=groups.filter(({el,ans})=>el.querySelector('.sel').dataset.v!==ans);
+        if(!wrong.length){end();return}
+        miss=true;wrong.forEach(({el})=>el.querySelector('.sel').classList.add('bad'));
+        const tips=wrong.map(({n,c,g})=>g==='ty'?`${n}：${nameHint(n)}`:g==='ch'?`${n}：這筆交易之後，這個科目的餘額變多還是變少？`:`${n}：${TYNOTE[ACC[n][0]]}，${c>0?'這筆是增加':'這筆是減少，記相反邊'}。`);
+        fb2.className='gfb warn';fb2.textContent='紅色的再想想。'+[...new Set(tips)].join(' ');
+      });
+    }
+  }
+  next();
+}
+gymCard(document.getElementById('gymCard'));
+gymJE(document.getElementById('gymJE'));
 
 const done=store.get('fa-done')||{};
 const boxes=[...document.querySelectorAll('input[data-unit]')];
