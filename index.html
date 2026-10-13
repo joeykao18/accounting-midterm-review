@@ -198,6 +198,36 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
 .grow .glab{font-weight:500;font-size:13px;color:var(--muted);margin:6px 0 4px}
 .gact{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .why{margin:6px 0 0;padding-left:18px;font-size:14.5px}
+/* learning path */
+nav.idx li.stg{margin-top:10px}
+nav.idx li.stg a{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent);font-weight:600;padding:4px 8px}
+nav.idx li.stg.current a{background:var(--accent);color:var(--sheet)}
+nav.idx li.stg a.done::after{content:" ✓"}
+@media (max-width:860px){nav.idx li.stg{grid-column:1/-1}}
+.stage-head{margin-top:40px;background:var(--sheet);border:2px solid var(--accent);border-radius:6px;padding:18px 20px}
+.stage-head.done{border-color:var(--rule-strong)}
+.stage-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.stage-no{color:var(--accent);font-weight:600;letter-spacing:.06em}
+.stage-head.done .stage-no::after{content:"  ✓ 完成"}
+.stage-name{font-family:var(--display);font-size:clamp(24px,3vw,30px);margin:4px 0 6px}
+.stage-goal{margin:0 0 10px;font-weight:500}
+.stage-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 24px}
+.stage-cols h4{margin:8px 0 4px;font-size:14px;color:var(--accent)}
+.stage-todo{margin:0;padding-left:20px;font-size:14.5px}
+.stage-todo li{margin-bottom:4px}
+.stage-pass{margin:0;font-size:14.5px;background:var(--note);color:var(--note-ink);border-radius:4px;padding:6px 10px}
+.stage-units{margin:0;padding-left:18px;font-size:14.5px}
+.stage-units li.done::marker{content:"✓ ";color:var(--accent)}
+.stage-units a,.roadmap a{color:var(--ink)}
+.stage-foot{margin:8px 0 24px;padding:14px 16px;border:1px dashed var(--rule-strong);border-radius:6px}
+.stage-foot.done{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.stage-msg{margin:0;font-size:14.5px}
+.roadmap{list-style:none;padding:0;margin:12px 0;display:grid;gap:6px;counter-reset:r}
+.roadmap li{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:8px 12px;display:grid;gap:2px}
+.roadmap li a{font-weight:700}
+.roadmap li span{font-size:13.5px;color:var(--muted)}
+.roadmap li.current{border:2px solid var(--accent)}
+.roadmap li.done a::after{content:"  ✓";color:var(--accent)}
 /* step-by-step solutions */
 .stepbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;padding-top:10px;border-top:1px dashed var(--rule)}
 .stepbar .cnt{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
@@ -211,40 +241,52 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <h1>Financial Accounting Midterm Review</h1>
   <p>TA 課與上課投影片的內容，英文為主、中文輔助。第一次用請先看 <a href="#u0">Start here 怎麼用這個網站</a>：每題都是「先自己做 → 對答案 → 卡住才一步一步看詳解 → 錯的進錯題本再做」。</p>
   <div class="eq"><b>Assets</b>=<b>Liabilities</b>+<b>Share Capital</b>+<b>Revenues − Expenses − Dividends</b></div>
-  <div class="langbar"><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><button class="btn" id="stepBtn" type="button" aria-pressed="true">詳解：一步一步看</button><span class="en">考前切成純英文，測試看不看得懂題目</span></div>
+  <div class="langbar"><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><button class="btn" id="focusBtn" type="button" aria-pressed="true">專心模式：只顯示這一關</button><button class="btn" id="stepBtn" type="button" aria-pressed="true">詳解：一步一步看</button><span class="en">考前切成純英文，測試看不看得懂題目</span></div>
 </header>
 
 <div class="wrap">
 <nav class="idx" aria-label="Contents">
   <h2>Contents</h2>
   <ol id="toc">
+    <li class="stg"><a href="#stage-0">起點</a></li>
     <li><a href="#u0"><span class="n">0</span>Start here 怎麼用</a></li>
+    <li class="stg"><a href="#stage-1">第 1 關 · 借貸</a></li>
     <li><a href="#u1"><span class="n">1</span>Accounting Equation &amp; Debits/Credits</a></li>
-    <li><a href="#dc"><span class="n">1+</span>借貸特訓 Debit/Credit Gym</a></li>
-    <li><a href="#u2"><span class="n">2</span>Adjusting Entries</a></li>
-    <li><a href="#u3"><span class="n">3</span>Income Statement &amp; COGS</a></li>
-    <li><a href="#u4"><span class="n">4</span>Inventory Ownership &amp; Count</a></li>
-    <li><a href="#u5"><span class="n">5</span>FIFO / LIFO / Average-cost</a></li>
-    <li><a href="#u6"><span class="n">6</span>Sales Discounts &amp; Days in Inventory</a></li>
-    <li><a href="#u7"><span class="n">7</span>Receivables &amp; Bad Debts</a></li>
-    <li><a href="#u13"><span class="n">8</span>Trial Balance, Closing &amp; SFP</a></li>
-    <li><a href="#u14"><span class="n">9</span>Inventory Extras &amp; Errors</a></li>
-    <li><a href="#u15"><span class="n">10</span>Plant Assets (Ch9)</a></li>
-    <li><a href="#u16"><span class="n">11</span>Liabilities (Ch10–11)</a></li>
-    <li><a href="#u17"><span class="n">12</span>Cash &amp; Cash Flows (Ch7, 14)</a></li>
-    <li><a href="#u8"><span class="n">13</span>Formula Sheet</a></li>
-    <li><a href="#u9"><span class="n">14</span>Exam Traps</a></li>
-    <li><a href="#u10"><span class="n">15</span>Glossary 中英詞彙</a></li>
-    <li><a href="#u11"><span class="n">16</span>Mock Exam (28 Qs)</a></li>
-    <li><a href="#u12"><span class="n">17</span>Comprehensive Problems (IS/SFP/CF)</a></li>
-    <li><a href="#review"><span class="n">★</span>錯題本 Mistakes <span class="miss-count" id="missToc"></span></a></li>
+    <li><a href="#dc"><span class="n">2</span>借貸特訓 Debit/Credit Gym</a></li>
+    <li class="stg"><a href="#stage-2">第 2 關 · 調整與結帳</a></li>
+    <li><a href="#u2"><span class="n">3</span>Adjusting Entries</a></li>
+    <li><a href="#u13"><span class="n">4</span>Trial Balance, Closing &amp; SFP</a></li>
+    <li class="stg"><a href="#stage-3">第 3 關 · 損益表</a></li>
+    <li><a href="#u3"><span class="n">5</span>Income Statement &amp; COGS</a></li>
+    <li class="stg"><a href="#stage-4">第 4 關 · 存貨</a></li>
+    <li><a href="#u4"><span class="n">6</span>Inventory Ownership &amp; Count</a></li>
+    <li><a href="#u5"><span class="n">7</span>FIFO / LIFO / Average-cost</a></li>
+    <li><a href="#u14"><span class="n">8</span>Inventory Extras &amp; Errors</a></li>
+    <li><a href="#u6"><span class="n">9</span>Sales Discounts &amp; Days in Inventory</a></li>
+    <li class="stg"><a href="#stage-5">第 5 關 · 應收與呆帳</a></li>
+    <li><a href="#u7"><span class="n">10</span>Receivables &amp; Bad Debts</a></li>
+    <li class="stg"><a href="#stage-6">第 6 關 · 設備與折舊</a></li>
+    <li><a href="#u15"><span class="n">11</span>Plant Assets (Ch9)</a></li>
+    <li class="stg"><a href="#stage-7">第 7 關 · 負債</a></li>
+    <li><a href="#u16"><span class="n">12</span>Liabilities (Ch10–11)</a></li>
+    <li class="stg"><a href="#stage-8">第 8 關 · 現金流量表</a></li>
+    <li><a href="#u17"><span class="n">13</span>Cash &amp; Cash Flows (Ch7, 14)</a></li>
+    <li class="stg"><a href="#stage-9">第 9 關 · 綜合題</a></li>
+    <li><a href="#u12"><span class="n">14</span>Comprehensive Problems</a></li>
+    <li class="stg"><a href="#stage-10">第 10 關 · 考前衝刺</a></li>
+    <li><a href="#u11"><span class="n">15</span>Mock Exam (28 Qs)</a></li>
+    <li><a href="#review"><span class="n">16</span>錯題本 Mistakes <span class="miss-count" id="missToc"></span></a></li>
+    <li><a href="#u9"><span class="n">17</span>Exam Traps</a></li>
+    <li class="stg"><a href="#stage-11">工具箱 · 隨時查</a></li>
+    <li><a href="#u8"><span class="n">18</span>Formula Sheet</a></li>
+    <li><a href="#u10"><span class="n">19</span>Glossary 中英詞彙</a></li>
   </ol>
-  <div class="progress"><span id="progTxt">Done 0 / 17</span><div class="bar"><i id="progBar"></i></div></div>
+  <div class="progress"><span id="stageNow"></span><br><span id="progTxt">Done 0 / 17</span><div class="bar"><i id="progBar"></i></div></div>
 </nav>
 
 <main>
 
-<!-- ============ START HERE ============ -->
+<!-- ============ 00 (u0) ============ -->
 <section class="unit" id="u0">
   <h2 class="u"><span class="num">00</span>Start here — 怎麼用這個網站</h2>
   <div class="callout"><strong>為什麼「看詳解」學不起來？</strong> 看得懂別人的解答，跟自己做得出來，是兩種不同的能力。詳解一次全攤開，大腦只是在「讀」，沒有在「想」。所以這個網站的詳解預設<b>一次只給一步</b>：看完一步，先自己猜下一步，再按「下一步」對答案。</div>
@@ -262,21 +304,15 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <div class="flow" aria-label="From transaction to statements">
     <span>交易 Transaction</span><i>→</i><span>分錄 Journal entry</span><i>→</i><span>期末調整 Adjusting</span><i>→</i><span>損益表 Income statement</span><i>→</i><span>保留盈餘 Retained earnings</span><i>→</i><span>財務狀況表 SFP</span><i>→</i><span>現金流量表 Cash flows</span>
   </div>
-  <p>每個單元都是這條線上的一小段：存貨（Unit 3–5、9）決定 <b>COGS</b>；應收帳款（Unit 7）決定<b>呆帳費用</b>；設備（Unit 10）決定<b>折舊與處分損益</b>；負債（Unit 11）決定<b>利息</b>。最後把它們全部放進三張表，就是考試的綜合題（Unit 17）。<span class="zh">所以讀每個單元時都問自己：這個數字最後會出現在哪張表的哪一行？</span></p>
+  <p>每一關都是這條線上的一小段：存貨（第 4 關）決定 <b>COGS</b>；應收帳款（第 5 關）決定<b>呆帳費用</b>；設備（第 6 關）決定<b>折舊與處分損益</b>；負債（第 7 關）決定<b>利息</b>；第 8 關學現金流量表。最後把它們全部放進三張表，就是考試的綜合題（第 9 關）。<span class="zh">所以讀每個單元時都問自己：這個數字最後會出現在哪張表的哪一行？</span></p>
 
-  <h3><span class="tag">Path</span>建議讀的順序（目標：做得出綜合題）</h3>
-  <div class="scroll"><table>
-    <tr><th>階段</th><th>單元</th><th>做到什麼程度</th></tr>
-    <tr><td>1. 打底</td><td><a href="#u1">1</a> → <a href="#dc">借貸特訓</a> → <a href="#u2">2</a> → <a href="#u3">3</a></td><td>借貸特訓連續答對 10 題以上；會做調整分錄、會排損益表。<b>借貸不熟，後面每個單元都會卡</b>，所以每天先練 10 分鐘</td></tr>
-    <tr><td>2. 綜合題三大計算</td><td><a href="#u5">5</a> 存貨成本 → <a href="#u7">7</a> 呆帳 → <a href="#u15">10</a> 折舊／處分</td><td>每個互動例題都能不看詳解做對</td></tr>
-    <tr><td>3. 現金流量表</td><td><a href="#u17">12</a></td><td>會用間接法從淨利推到期末現金</td></tr>
-    <tr><td>4. 綜合題</td><td><a href="#u12">17</a></td><td>先填「關鍵數字」練習表，再在紙上做完三張表</td></tr>
-    <tr><td>5. 觀念題</td><td><a href="#u4">4</a>、<a href="#u6">6</a>、<a href="#u13">8</a>、<a href="#u14">9</a>、<a href="#u16">11</a></td><td>小測驗能答對即可</td></tr>
-    <tr><td>6. 考前</td><td><a href="#u11">模擬考</a> → <a href="#review">錯題本</a> → <a href="#u9">Exam Traps</a></td><td>錯題本清空</td></tr>
-  </table></div>
+  <h3><span class="tag">Path</span>路線圖：一關一關來，最後做得出綜合題</h3>
+  <p>整個網站已經照學習順序排好，分成 10 關。每一關開頭會告訴你<b>這關的目標、照順序要做哪些事、過關條件</b>。預設是<b>專心模式</b>：畫面只顯示目前這一關，不會被後面的內容嚇到。想看全部，按最上面的「專心模式」切換。<span class="zh">每關最後把單元的「完成」勾起來，就會出現「進下一關」。不一定要照順序，但建議照順序：後面每一關都用到前面的東西。</span></p>
+  <ol class="roadmap" id="roadmap"></ol>
+  <label class="done-row"><input type="checkbox" id="done-u0" data-unit="u0"> 看完了，知道怎麼用 Got it</label>
 </section>
 
-<!-- ============ UNIT 1 ============ -->
+<!-- ============ 01 (u1) ============ -->
 <section class="unit" id="u1">
   <div class="unit-head"><span class="src">Source: TA 9/17</span></div>
   <h2 class="u"><span class="num">01</span>The Accounting Equation &amp; Double-entry Bookkeeping</h2>
@@ -416,10 +452,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u1" data-unit="u1"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ DEBIT & CREDIT GYM ============ -->
+<!-- ============ 02 (dc) ============ -->
 <section class="unit" id="dc">
   <div class="unit-head"><span class="src">Extra practice · 每天 10 分鐘，練到變反射</span></div>
-  <h2 class="u"><span class="num">1+</span>Debit &amp; Credit Gym 借貸特訓</h2>
+  <h2 class="u"><span class="num">02</span>Debit &amp; Credit Gym 借貸特訓</h2>
   <p>Debits and credits are not something to memorize as a list. They follow from one equation. Learn the reason once, then drill until it is automatic.<span class="zh">借貸不是硬背的，是從會計等式推出來的。先懂一次「為什麼」，再用下面兩個練習場練到不用想。</span></p>
 
   <h3><span class="tag">Why</span>借＝左邊，貸＝右邊，從等式推出來</h3>
@@ -460,10 +496,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-dc" data-unit="dc"> 快速模式能連續答對 10 題</label>
 </section>
 
-<!-- ============ UNIT 2 ============ -->
+<!-- ============ 03 (u2) ============ -->
 <section class="unit" id="u2">
   <div class="unit-head"><span class="src">Source: TA 9/24</span></div>
-  <h2 class="u"><span class="num">02</span>Adjusting Entries</h2>
+  <h2 class="u"><span class="num">03</span>Adjusting Entries</h2>
 
   <h3><span class="tag">Definitions</span>Accrual vs. cash basis</h3>
   <dl class="def">
@@ -523,10 +559,69 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u2" data-unit="u2"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 3 ============ -->
+<!-- ============ 04 (u13) ============ -->
+<section class="unit" id="u13">
+  <div class="unit-head"><span class="src">Source: W1 slides Ch1–4</span></div>
+  <h2 class="u"><span class="num">04</span>Recording Process, Trial Balance, Closing &amp; Classified SFP</h2>
+
+  <h3><span class="tag">Concept</span>The accounting information system</h3>
+  <p>An accounting information system <b>identifies, records, and communicates</b> the economic events of an organization to interested users. <b>External users</b> (investors, creditors, tax authorities) use financial accounting; <b>internal users</b> (managers) use managerial accounting.<span class="zh">會計資訊系統：辨認 → 記錄 → 溝通。外部使用者看財務會計，內部使用者看管理會計。</span></p>
+  <p>Not every activity is a transaction: first ask whether the event <b>changes the financial position</b> (assets, liabilities, or equity). Hiring an employee or signing a contract for future work is <b>not</b> recorded yet.<span class="zh">先判斷有沒有改變財務狀況；雇用員工、簽約但尚未履行都不入帳。</span></p>
+
+  <h3><span class="tag">Steps</span>The recording process</h3>
+  <ol class="steps">
+    <li><span><b>Analyze</b> each transaction from business documents: does it exist, which accounts, how much to debit/credit? 分析交易</span></li>
+    <li><span><b>Journalize</b>: enter it in the journal (date; debit account first on the left; credit account indented below). 記日記帳</span></li>
+    <li><span><b>Post</b>: transfer journal entries to the ledger accounts in chronological order. 過帳到分類帳</span></li>
+    <li><span>Prepare the <b>trial balance</b> from the ledger balances. 編試算表</span></li>
+  </ol>
+
+  <h3><span class="tag">Definitions</span>Trial balance and its limitations</h3>
+  <p>A <b>trial balance</b> lists accounts and their balances at a given time, in ledger order, in two columns (debit and credit). It proves that <b>total debits = total credits</b>, may uncover journalizing/posting errors, and is used to prepare financial statements.<span class="zh">試算表驗證借貸相等，可以抓到部分錯誤，也是編報表的基礎。</span></p>
+  <div class="trap"><b class="h">Trap — the trial balance still balances when:</b>
+    <ol>
+      <li>a transaction is <b>not journalized</b> at all;</li>
+      <li>a correct journal entry is <b>not posted</b>;</li>
+      <li>a journal entry is <b>posted twice</b>;</li>
+      <li><b>incorrect accounts</b> are used in journalizing or posting (e.g., debit Supplies instead of Equipment);</li>
+      <li><b>offsetting errors</b> are made in recording the amount.</li>
+    </ol>
+    <span class="zh">只要借貸「同時」錯（漏記、重複記、記錯科目、互相抵銷的錯誤），試算表照樣平衡。只有借貸一邊錯（例如只過了借方，或借方金額打錯）才會不平衡。</span></div>
+
+  <h3><span class="tag">Format</span>Classified statement of financial position (IFRS order)</h3>
+  <div class="grid2">
+    <div class="box"><h4>Assets (least liquid first)</h4><ul><li>Intangible assets</li><li>Property, plant, and equipment</li><li>Long-term investments</li><li>Current assets (inventory, prepaid, receivables, cash)</li></ul></div>
+    <div class="box"><h4>Equity and liabilities</h4><ul><li>Equity (share capital—ordinary, retained earnings)</li><li>Non-current liabilities</li><li>Current liabilities</li></ul></div>
+  </div>
+  <p class="zh">IFRS 的排法：非流動資產在前、流動資產在後；權益在前、負債在後（跟考題 Bikes-Are-Us 的格式一樣）。</p>
+
+  <h3><span class="tag">Concept</span>How the statements connect</h3>
+  <ol class="steps">
+    <li><span><b>Income statement</b> → net income is needed for the retained earnings statement. 淨利 → 保留盈餘表</span></li>
+    <li><span><b>Retained earnings statement</b>: Beginning RE + NI − Dividends = Ending RE → goes to the SFP. 期末保留盈餘 → 資產負債表</span></li>
+    <li><span><b>SFP + income statement</b> are needed to prepare the <b>statement of cash flows</b>; its ending cash equals the cash on the SFP. 現金流量表的期末現金 = 資產負債表的現金</span></li>
+  </ol>
+  <p>On day 1 of a business you only have data for the <b>statement of financial position</b>. Profitability is shown by the <b>income statement</b>.<span class="zh">第一天只有資產負債表；看獲利能力看損益表。</span></p>
+
+  <h3><span class="tag">Entries</span>Closing the books</h3>
+  <p>At period end, <b>temporary accounts</b> (revenues, expenses, dividends) are closed so they start the next period at zero. <b>Permanent accounts</b> (assets, liabilities, share capital, retained earnings) carry their balances forward. <b>Income Summary</b> is a temporary account: revenues and expenses are closed to it, its balance equals net income (loss), and it is then closed to Retained Earnings.<span class="zh">結帳：收入、費用 → 本期損益（Income Summary）→ 保留盈餘；股利直接結到保留盈餘。資產、負債、權益是永久帳戶，不結清。</span></p>
+  <div class="je"><table>
+    <caption>Example: Service Revenue 10,600; Salaries Expense 5,200; Rent Expense 900; Dividends 500</caption>
+    <tr><td>1 Service Revenue</td><td class="dr-amt">10,600</td><td></td></tr><tr><td class="cr">Income Summary</td><td></td><td class="cr-amt">10,600</td></tr>
+    <tr><td>2 Income Summary</td><td class="dr-amt">6,100</td><td></td></tr><tr><td class="cr">Salaries Expense</td><td></td><td class="cr-amt">5,200</td></tr><tr><td class="cr">Rent Expense</td><td></td><td class="cr-amt">900</td></tr>
+    <tr><td>3 Income Summary (NI 10,600 − 6,100)</td><td class="dr-amt">4,500</td><td></td></tr><tr><td class="cr">Retained Earnings</td><td></td><td class="cr-amt">4,500</td></tr>
+    <tr><td>4 Retained Earnings</td><td class="dr-amt">500</td><td></td></tr><tr><td class="cr">Dividends</td><td></td><td class="cr-amt">500</td></tr>
+  </table></div>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u13"></div>
+  <label class="done-row"><input type="checkbox" id="done-u13" data-unit="u13"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ 05 (u3) ============ -->
 <section class="unit" id="u3">
   <div class="unit-head"><span class="src">Source: TA 9/24, 10/01</span></div>
-  <h2 class="u"><span class="num">03</span>Merchandiser's Income Statement &amp; Cost of Goods Sold</h2>
+  <h2 class="u"><span class="num">05</span>Merchandiser's Income Statement &amp; Cost of Goods Sold</h2>
 
   <h3><span class="tag">Format</span>Multiple-step income statement</h3>
   <div class="sheet scroll"><table>
@@ -647,10 +742,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u3" data-unit="u3"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 4 ============ -->
+<!-- ============ 06 (u4) ============ -->
 <section class="unit" id="u4">
   <div class="unit-head"><span class="src">Source: TA 10/01</span></div>
-  <h2 class="u"><span class="num">04</span>Inventory: Freight Terms, Ownership &amp; Count Adjustments</h2>
+  <h2 class="u"><span class="num">06</span>Inventory: Freight Terms, Ownership &amp; Count Adjustments</h2>
 
   <h3><span class="tag">Definitions</span>Shipping terms</h3>
   <div class="scroll"><table>
@@ -708,10 +803,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u4" data-unit="u4"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 5 ============ -->
+<!-- ============ 07 (u5) ============ -->
 <section class="unit" id="u5">
   <div class="unit-head"><span class="src">Source: TA 10/01</span></div>
-  <h2 class="u"><span class="num">05</span>Inventory Costing: FIFO, LIFO, Average-cost</h2>
+  <h2 class="u"><span class="num">07</span>Inventory Costing: FIFO, LIFO, Average-cost</h2>
 
   <h3><span class="tag">Concept</span>One cost pool, split two ways</h3>
   <p>The cost of goods available for sale (GAFS) is fixed. The costing method only changes how that pool is split between <b>ending inventory (statement of financial position)</b> and <b>COGS (income statement)</b>. So <b>Ending Inventory + COGS = GAFS</b> under every method — use it to check your work.<span class="zh">成本法只決定怎麼切同一包成本；期末存貨 + COGS 永遠 = 可售商品成本。</span></p>
@@ -776,10 +871,77 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u5" data-unit="u5"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 6 ============ -->
+<!-- ============ 08 (u14) ============ -->
+<section class="unit" id="u14">
+  <div class="unit-head"><span class="src">Source: W2 slides Ch5–6</span></div>
+  <h2 class="u"><span class="num">08</span>Inventory Extras: Classification, Specific ID, Cost-flow Effects &amp; Inventory Errors</h2>
+
+  <h3><span class="tag">Definitions</span>Incoterms and freight</h3>
+  <p>Incoterms® (published by the ICC since 1936) set when <b>ownership and risk</b> transfer and <b>who pays freight</b>, taxes, and insurance. They affect revenue recognition, ownership of inventory, and operating expenses. In this course: <b>FOB shipping point</b> → ownership passes when shipped (buyer pays freight → part of inventory cost). <b>CIF destination</b> → ownership stays with the seller until goods reach the buyer (seller pays freight → operating expense).<span class="zh">FOB 起運點：出貨就歸買方，買方付運費（進存貨成本）。CIF 目的地：送到才歸買方，賣方付運費（營業費用）。</span></p>
+
+  <h3><span class="tag">Definitions</span>Classifying inventory</h3>
+  <div class="grid2">
+    <div class="box"><h4>Merchandising company</h4><p>One classification: <b>merchandise inventory</b> — owned by the company and ready for sale.</p></div>
+    <div class="box"><h4>Manufacturing company</h4><ul><li><b>Raw materials</b>: basic goods not yet in production 原料</li><li><b>Work in process</b>: in production, not completed 在製品</li><li><b>Finished goods</b>: completed and ready for sale 製成品</li></ul></div>
+  </div>
+  <p>Determining quantities takes two steps: (1) a <b>physical count</b>; (2) <b>ownership</b> — do all goods counted belong to us (accuracy)? Do we own goods not counted (completeness)? Check <b>consigned goods</b> and <b>goods in transit</b>.<span class="zh">盤點數量 → 判斷所有權（寄銷品、在途存貨）。</span></p>
+
+  <h3><span class="tag">Example</span>Golden Company and Stallman Company</h3>
+  <p class="q">(1) Golden Company has 20,000 units on hand on Dec 31. In transit: purchases of 2,500 units shipped FOB shipping point on Dec 31, and sales of 1,500 units shipped Dec 31 CIF destination. Total inventory? (2) Stallman counted goods costing €200,000. The count included €15,000 of goods held on consignment. Not counted: €25,000 purchased FOB shipping point (in transit) and goods costing €22,000 sold for €30,000 FOB destination (in transit). Correct inventory?</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in">
+    <p>(1) 20,000 + 2,500 (we own it once shipped) + 1,500 (still ours until it arrives) = <b>24,000 units</b></p>
+    <p>(2) 200,000 − 15,000 (consigned, not ours) + 25,000 (FOB shipping point purchase) + 22,000 (FOB destination sale, at <b>cost</b>, not selling price) = <b>€232,000</b></p>
+    <p class="zh">在途銷貨用成本 22,000，不是售價 30,000。</p>
+  </div></details>
+
+  <h3><span class="tag">Method</span>Specific identification</h3>
+  <p>Crivitz TV buys three identical TVs at £700, £750 and £800 and sells two at £1,200 each. Under <b>specific identification</b>, COGS could be £1,450, £1,500 or £1,550 depending on which sets are sold, so <b>managers could manipulate net income</b>. It tracks the actual physical flow and suits a limited variety of high-unit-cost items (cars, pianos), but is rare in practice because it requires the cost of every item.<span class="zh">個別認定法：實際追蹤每一件成本，適合高單價、少量商品；但管理者可以挑要賣哪一台來操縱淨利。</span></p>
+  <p>The cost flow <b>assumptions</b> (FIFO, LIFO, average-cost) do <b>not</b> need to match the physical movement of goods. <b>LIFO is not permitted under IFRS</b>. About 60% of IFRS companies use average-cost and 40% use FIFO.<span class="zh">成本流程假設不必和實物流動一致；IFRS 不允許 LIFO。</span></p>
+
+  <h3><span class="tag">Compare</span>Effects of cost-flow methods when prices are rising</h3>
+  <div class="scroll"><table>
+    <tr><th>Rising prices</th><th>COGS</th><th>Ending inventory (SFP)</th><th>Net income</th><th>Income tax</th></tr>
+    <tr><td>FIFO</td><td>Lower</td><td>Higher (close to current cost)</td><td>Higher</td><td>Higher</td></tr>
+    <tr><td>Average-cost</td><td>Higher</td><td>Lower (may be understated vs current cost)</td><td>Lower</td><td>Lower</td></tr>
+  </table></div>
+  <p>When prices are rising (falling), companies tend to prefer FIFO (average-cost) because it gives higher net income. <b>Consistency</b>: use the same method every year for comparability; if a company changes method, it must disclose the change and its effect on net income.<span class="zh">物價上漲 FIFO 淨利高、稅高；平均法淨利低、稅低。一致性原則：方法要年年相同，變更要揭露。</span></p>
+  <p><b>LCNRV</b>: if net realizable value (estimated selling price − estimated costs to sell) falls below cost, write inventory down to NRV — an application of <b>prudence (conservatism)</b>, common in high-tech and fashion industries.<span class="zh">成本與淨變現價值孰低，屬於穩健原則。</span></p>
+
+  <h3><span class="tag">Rules</span>Inventory errors</h3>
+  <p>Causes: failing to count or price inventory correctly, or not recognizing the transfer of title for goods in transit. Use <b>BI + Purchases − EI = COGS</b> and <b>Net sales − COGS − Opex = NI</b>.<span class="zh">存貨錯誤：用 COGS 公式推。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Error</th><th>COGS</th><th>Net income</th></tr>
+    <tr><td>Ending inventory <b>understated</b></td><td>Overstated</td><td>Understated</td></tr>
+    <tr><td>Ending inventory <b>overstated</b></td><td>Understated</td><td>Overstated</td></tr>
+    <tr><td>Beginning inventory <b>understated</b></td><td>Understated</td><td>Overstated</td></tr>
+    <tr><td>Beginning inventory <b>overstated</b></td><td>Overstated</td><td>Understated</td></tr>
+  </table></div>
+  <p>This year's ending inventory is next year's beginning inventory, so the error <b>reverses</b> next year: over the two years <b>total net income is correct</b> (the errors offset). On the SFP, an ending-inventory error makes <b>assets and equity (retained earnings)</b> wrong at the end of year 1, but they are correct at the end of year 2.<span class="zh">期末存貨錯誤會在下一年反轉，兩年合計淨利正確；第一年底資產、權益錯，第二年底就正確了。</span></p>
+  <p class="q">Example (slide): 2025 ending inventory reported at €12,000 instead of €15,000. 2025 sales 80,000; BI 20,000; purchases 40,000; opex 10,000. 2026 sales 90,000; purchases 68,000; EI 23,000; opex 20,000. Find reported vs correct net income.</p>
+  <details class="sol"><summary>Solution 解答</summary><div class="in scroll">
+    <table>
+      <tr><th></th><th class="r">2025 incorrect</th><th class="r">2025 correct</th><th class="r">2026 incorrect</th><th class="r">2026 correct</th></tr>
+      <tr><td>Sales</td><td class="r">80,000</td><td class="r">80,000</td><td class="r">90,000</td><td class="r">90,000</td></tr>
+      <tr><td>Beginning inventory</td><td class="r">20,000</td><td class="r">20,000</td><td class="r">12,000</td><td class="r">15,000</td></tr>
+      <tr><td>Purchases</td><td class="r">40,000</td><td class="r">40,000</td><td class="r">68,000</td><td class="r">68,000</td></tr>
+      <tr><td>Ending inventory</td><td class="r">12,000</td><td class="r">15,000</td><td class="r">23,000</td><td class="r">23,000</td></tr>
+      <tr><td>COGS</td><td class="r">48,000</td><td class="r">45,000</td><td class="r">57,000</td><td class="r">60,000</td></tr>
+      <tr><td>Gross profit</td><td class="r">32,000</td><td class="r">35,000</td><td class="r">33,000</td><td class="r">30,000</td></tr>
+      <tr><td>Operating expenses</td><td class="r">10,000</td><td class="r">10,000</td><td class="r">20,000</td><td class="r">20,000</td></tr>
+      <tr class="total"><td>Net income</td><td class="r">22,000</td><td class="r">25,000</td><td class="r">13,000</td><td class="r">10,000</td></tr>
+    </table>
+    <p>2025 NI understated by €3,000; 2026 NI overstated by €3,000; two-year total 35,000 in both cases.</p>
+  </div></details>
+
+  <h3><span class="tag">Quiz</span></h3>
+  <div class="quiz" data-set="u14"></div>
+  <label class="done-row"><input type="checkbox" id="done-u14" data-unit="u14"> I've got this unit 這單元我會了</label>
+</section>
+
+<!-- ============ 09 (u6) ============ -->
 <section class="unit" id="u6">
   <div class="unit-head"><span class="src">Source: TA 10/08</span></div>
-  <h2 class="u"><span class="num">06</span>Sales Discounts &amp; Days in Inventory</h2>
+  <h2 class="u"><span class="num">09</span>Sales Discounts &amp; Days in Inventory</h2>
 
   <h3><span class="tag">Definitions</span>Credit terms</h3>
   <dl class="def">
@@ -832,10 +994,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u6" data-unit="u6"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 7 ============ -->
+<!-- ============ 10 (u7) ============ -->
 <section class="unit" id="u7">
   <div class="unit-head"><span class="src">Source: TA 10/08</span></div>
-  <h2 class="u"><span class="num">07</span>Accounts Receivable &amp; Bad Debts</h2>
+  <h2 class="u"><span class="num">10</span>Accounts Receivable &amp; Bad Debts</h2>
 
   <h3><span class="tag">Definitions</span>Types of receivables</h3>
   <p>Receivables are amounts due from individuals and companies that are expected to be collected in cash.<span class="zh">應收款項：預期會收到現金的債權。</span></p>
@@ -948,137 +1110,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u7" data-unit="u7"> I've got this unit 這單元我會了</label>
 </section>
 
-
-<!-- ============ UNIT 13 (display 08): Ch1–4 extras ============ -->
-<section class="unit" id="u13">
-  <div class="unit-head"><span class="src">Source: W1 slides Ch1–4</span></div>
-  <h2 class="u"><span class="num">08</span>Recording Process, Trial Balance, Closing &amp; Classified SFP</h2>
-
-  <h3><span class="tag">Concept</span>The accounting information system</h3>
-  <p>An accounting information system <b>identifies, records, and communicates</b> the economic events of an organization to interested users. <b>External users</b> (investors, creditors, tax authorities) use financial accounting; <b>internal users</b> (managers) use managerial accounting.<span class="zh">會計資訊系統：辨認 → 記錄 → 溝通。外部使用者看財務會計，內部使用者看管理會計。</span></p>
-  <p>Not every activity is a transaction: first ask whether the event <b>changes the financial position</b> (assets, liabilities, or equity). Hiring an employee or signing a contract for future work is <b>not</b> recorded yet.<span class="zh">先判斷有沒有改變財務狀況；雇用員工、簽約但尚未履行都不入帳。</span></p>
-
-  <h3><span class="tag">Steps</span>The recording process</h3>
-  <ol class="steps">
-    <li><span><b>Analyze</b> each transaction from business documents: does it exist, which accounts, how much to debit/credit? 分析交易</span></li>
-    <li><span><b>Journalize</b>: enter it in the journal (date; debit account first on the left; credit account indented below). 記日記帳</span></li>
-    <li><span><b>Post</b>: transfer journal entries to the ledger accounts in chronological order. 過帳到分類帳</span></li>
-    <li><span>Prepare the <b>trial balance</b> from the ledger balances. 編試算表</span></li>
-  </ol>
-
-  <h3><span class="tag">Definitions</span>Trial balance and its limitations</h3>
-  <p>A <b>trial balance</b> lists accounts and their balances at a given time, in ledger order, in two columns (debit and credit). It proves that <b>total debits = total credits</b>, may uncover journalizing/posting errors, and is used to prepare financial statements.<span class="zh">試算表驗證借貸相等，可以抓到部分錯誤，也是編報表的基礎。</span></p>
-  <div class="trap"><b class="h">Trap — the trial balance still balances when:</b>
-    <ol>
-      <li>a transaction is <b>not journalized</b> at all;</li>
-      <li>a correct journal entry is <b>not posted</b>;</li>
-      <li>a journal entry is <b>posted twice</b>;</li>
-      <li><b>incorrect accounts</b> are used in journalizing or posting (e.g., debit Supplies instead of Equipment);</li>
-      <li><b>offsetting errors</b> are made in recording the amount.</li>
-    </ol>
-    <span class="zh">只要借貸「同時」錯（漏記、重複記、記錯科目、互相抵銷的錯誤），試算表照樣平衡。只有借貸一邊錯（例如只過了借方，或借方金額打錯）才會不平衡。</span></div>
-
-  <h3><span class="tag">Format</span>Classified statement of financial position (IFRS order)</h3>
-  <div class="grid2">
-    <div class="box"><h4>Assets (least liquid first)</h4><ul><li>Intangible assets</li><li>Property, plant, and equipment</li><li>Long-term investments</li><li>Current assets (inventory, prepaid, receivables, cash)</li></ul></div>
-    <div class="box"><h4>Equity and liabilities</h4><ul><li>Equity (share capital—ordinary, retained earnings)</li><li>Non-current liabilities</li><li>Current liabilities</li></ul></div>
-  </div>
-  <p class="zh">IFRS 的排法：非流動資產在前、流動資產在後；權益在前、負債在後（跟考題 Bikes-Are-Us 的格式一樣）。</p>
-
-  <h3><span class="tag">Concept</span>How the statements connect</h3>
-  <ol class="steps">
-    <li><span><b>Income statement</b> → net income is needed for the retained earnings statement. 淨利 → 保留盈餘表</span></li>
-    <li><span><b>Retained earnings statement</b>: Beginning RE + NI − Dividends = Ending RE → goes to the SFP. 期末保留盈餘 → 資產負債表</span></li>
-    <li><span><b>SFP + income statement</b> are needed to prepare the <b>statement of cash flows</b>; its ending cash equals the cash on the SFP. 現金流量表的期末現金 = 資產負債表的現金</span></li>
-  </ol>
-  <p>On day 1 of a business you only have data for the <b>statement of financial position</b>. Profitability is shown by the <b>income statement</b>.<span class="zh">第一天只有資產負債表；看獲利能力看損益表。</span></p>
-
-  <h3><span class="tag">Entries</span>Closing the books</h3>
-  <p>At period end, <b>temporary accounts</b> (revenues, expenses, dividends) are closed so they start the next period at zero. <b>Permanent accounts</b> (assets, liabilities, share capital, retained earnings) carry their balances forward. <b>Income Summary</b> is a temporary account: revenues and expenses are closed to it, its balance equals net income (loss), and it is then closed to Retained Earnings.<span class="zh">結帳：收入、費用 → 本期損益（Income Summary）→ 保留盈餘；股利直接結到保留盈餘。資產、負債、權益是永久帳戶，不結清。</span></p>
-  <div class="je"><table>
-    <caption>Example: Service Revenue 10,600; Salaries Expense 5,200; Rent Expense 900; Dividends 500</caption>
-    <tr><td>1 Service Revenue</td><td class="dr-amt">10,600</td><td></td></tr><tr><td class="cr">Income Summary</td><td></td><td class="cr-amt">10,600</td></tr>
-    <tr><td>2 Income Summary</td><td class="dr-amt">6,100</td><td></td></tr><tr><td class="cr">Salaries Expense</td><td></td><td class="cr-amt">5,200</td></tr><tr><td class="cr">Rent Expense</td><td></td><td class="cr-amt">900</td></tr>
-    <tr><td>3 Income Summary (NI 10,600 − 6,100)</td><td class="dr-amt">4,500</td><td></td></tr><tr><td class="cr">Retained Earnings</td><td></td><td class="cr-amt">4,500</td></tr>
-    <tr><td>4 Retained Earnings</td><td class="dr-amt">500</td><td></td></tr><tr><td class="cr">Dividends</td><td></td><td class="cr-amt">500</td></tr>
-  </table></div>
-
-  <h3><span class="tag">Quiz</span></h3>
-  <div class="quiz" data-set="u13"></div>
-  <label class="done-row"><input type="checkbox" id="done-u13" data-unit="u13"> I've got this unit 這單元我會了</label>
-</section>
-
-<!-- ============ UNIT 14 (display 09): Inventory extras ============ -->
-<section class="unit" id="u14">
-  <div class="unit-head"><span class="src">Source: W2 slides Ch5–6</span></div>
-  <h2 class="u"><span class="num">09</span>Inventory Extras: Classification, Specific ID, Cost-flow Effects &amp; Inventory Errors</h2>
-
-  <h3><span class="tag">Definitions</span>Incoterms and freight</h3>
-  <p>Incoterms® (published by the ICC since 1936) set when <b>ownership and risk</b> transfer and <b>who pays freight</b>, taxes, and insurance. They affect revenue recognition, ownership of inventory, and operating expenses. In this course: <b>FOB shipping point</b> → ownership passes when shipped (buyer pays freight → part of inventory cost). <b>CIF destination</b> → ownership stays with the seller until goods reach the buyer (seller pays freight → operating expense).<span class="zh">FOB 起運點：出貨就歸買方，買方付運費（進存貨成本）。CIF 目的地：送到才歸買方，賣方付運費（營業費用）。</span></p>
-
-  <h3><span class="tag">Definitions</span>Classifying inventory</h3>
-  <div class="grid2">
-    <div class="box"><h4>Merchandising company</h4><p>One classification: <b>merchandise inventory</b> — owned by the company and ready for sale.</p></div>
-    <div class="box"><h4>Manufacturing company</h4><ul><li><b>Raw materials</b>: basic goods not yet in production 原料</li><li><b>Work in process</b>: in production, not completed 在製品</li><li><b>Finished goods</b>: completed and ready for sale 製成品</li></ul></div>
-  </div>
-  <p>Determining quantities takes two steps: (1) a <b>physical count</b>; (2) <b>ownership</b> — do all goods counted belong to us (accuracy)? Do we own goods not counted (completeness)? Check <b>consigned goods</b> and <b>goods in transit</b>.<span class="zh">盤點數量 → 判斷所有權（寄銷品、在途存貨）。</span></p>
-
-  <h3><span class="tag">Example</span>Golden Company and Stallman Company</h3>
-  <p class="q">(1) Golden Company has 20,000 units on hand on Dec 31. In transit: purchases of 2,500 units shipped FOB shipping point on Dec 31, and sales of 1,500 units shipped Dec 31 CIF destination. Total inventory? (2) Stallman counted goods costing €200,000. The count included €15,000 of goods held on consignment. Not counted: €25,000 purchased FOB shipping point (in transit) and goods costing €22,000 sold for €30,000 FOB destination (in transit). Correct inventory?</p>
-  <details class="sol"><summary>Solution 解答</summary><div class="in">
-    <p>(1) 20,000 + 2,500 (we own it once shipped) + 1,500 (still ours until it arrives) = <b>24,000 units</b></p>
-    <p>(2) 200,000 − 15,000 (consigned, not ours) + 25,000 (FOB shipping point purchase) + 22,000 (FOB destination sale, at <b>cost</b>, not selling price) = <b>€232,000</b></p>
-    <p class="zh">在途銷貨用成本 22,000，不是售價 30,000。</p>
-  </div></details>
-
-  <h3><span class="tag">Method</span>Specific identification</h3>
-  <p>Crivitz TV buys three identical TVs at £700, £750 and £800 and sells two at £1,200 each. Under <b>specific identification</b>, COGS could be £1,450, £1,500 or £1,550 depending on which sets are sold, so <b>managers could manipulate net income</b>. It tracks the actual physical flow and suits a limited variety of high-unit-cost items (cars, pianos), but is rare in practice because it requires the cost of every item.<span class="zh">個別認定法：實際追蹤每一件成本，適合高單價、少量商品；但管理者可以挑要賣哪一台來操縱淨利。</span></p>
-  <p>The cost flow <b>assumptions</b> (FIFO, LIFO, average-cost) do <b>not</b> need to match the physical movement of goods. <b>LIFO is not permitted under IFRS</b>. About 60% of IFRS companies use average-cost and 40% use FIFO.<span class="zh">成本流程假設不必和實物流動一致；IFRS 不允許 LIFO。</span></p>
-
-  <h3><span class="tag">Compare</span>Effects of cost-flow methods when prices are rising</h3>
-  <div class="scroll"><table>
-    <tr><th>Rising prices</th><th>COGS</th><th>Ending inventory (SFP)</th><th>Net income</th><th>Income tax</th></tr>
-    <tr><td>FIFO</td><td>Lower</td><td>Higher (close to current cost)</td><td>Higher</td><td>Higher</td></tr>
-    <tr><td>Average-cost</td><td>Higher</td><td>Lower (may be understated vs current cost)</td><td>Lower</td><td>Lower</td></tr>
-  </table></div>
-  <p>When prices are rising (falling), companies tend to prefer FIFO (average-cost) because it gives higher net income. <b>Consistency</b>: use the same method every year for comparability; if a company changes method, it must disclose the change and its effect on net income.<span class="zh">物價上漲 FIFO 淨利高、稅高；平均法淨利低、稅低。一致性原則：方法要年年相同，變更要揭露。</span></p>
-  <p><b>LCNRV</b>: if net realizable value (estimated selling price − estimated costs to sell) falls below cost, write inventory down to NRV — an application of <b>prudence (conservatism)</b>, common in high-tech and fashion industries.<span class="zh">成本與淨變現價值孰低，屬於穩健原則。</span></p>
-
-  <h3><span class="tag">Rules</span>Inventory errors</h3>
-  <p>Causes: failing to count or price inventory correctly, or not recognizing the transfer of title for goods in transit. Use <b>BI + Purchases − EI = COGS</b> and <b>Net sales − COGS − Opex = NI</b>.<span class="zh">存貨錯誤：用 COGS 公式推。</span></p>
-  <div class="scroll"><table>
-    <tr><th>Error</th><th>COGS</th><th>Net income</th></tr>
-    <tr><td>Ending inventory <b>understated</b></td><td>Overstated</td><td>Understated</td></tr>
-    <tr><td>Ending inventory <b>overstated</b></td><td>Understated</td><td>Overstated</td></tr>
-    <tr><td>Beginning inventory <b>understated</b></td><td>Understated</td><td>Overstated</td></tr>
-    <tr><td>Beginning inventory <b>overstated</b></td><td>Overstated</td><td>Understated</td></tr>
-  </table></div>
-  <p>This year's ending inventory is next year's beginning inventory, so the error <b>reverses</b> next year: over the two years <b>total net income is correct</b> (the errors offset). On the SFP, an ending-inventory error makes <b>assets and equity (retained earnings)</b> wrong at the end of year 1, but they are correct at the end of year 2.<span class="zh">期末存貨錯誤會在下一年反轉，兩年合計淨利正確；第一年底資產、權益錯，第二年底就正確了。</span></p>
-  <p class="q">Example (slide): 2025 ending inventory reported at €12,000 instead of €15,000. 2025 sales 80,000; BI 20,000; purchases 40,000; opex 10,000. 2026 sales 90,000; purchases 68,000; EI 23,000; opex 20,000. Find reported vs correct net income.</p>
-  <details class="sol"><summary>Solution 解答</summary><div class="in scroll">
-    <table>
-      <tr><th></th><th class="r">2025 incorrect</th><th class="r">2025 correct</th><th class="r">2026 incorrect</th><th class="r">2026 correct</th></tr>
-      <tr><td>Sales</td><td class="r">80,000</td><td class="r">80,000</td><td class="r">90,000</td><td class="r">90,000</td></tr>
-      <tr><td>Beginning inventory</td><td class="r">20,000</td><td class="r">20,000</td><td class="r">12,000</td><td class="r">15,000</td></tr>
-      <tr><td>Purchases</td><td class="r">40,000</td><td class="r">40,000</td><td class="r">68,000</td><td class="r">68,000</td></tr>
-      <tr><td>Ending inventory</td><td class="r">12,000</td><td class="r">15,000</td><td class="r">23,000</td><td class="r">23,000</td></tr>
-      <tr><td>COGS</td><td class="r">48,000</td><td class="r">45,000</td><td class="r">57,000</td><td class="r">60,000</td></tr>
-      <tr><td>Gross profit</td><td class="r">32,000</td><td class="r">35,000</td><td class="r">33,000</td><td class="r">30,000</td></tr>
-      <tr><td>Operating expenses</td><td class="r">10,000</td><td class="r">10,000</td><td class="r">20,000</td><td class="r">20,000</td></tr>
-      <tr class="total"><td>Net income</td><td class="r">22,000</td><td class="r">25,000</td><td class="r">13,000</td><td class="r">10,000</td></tr>
-    </table>
-    <p>2025 NI understated by €3,000; 2026 NI overstated by €3,000; two-year total 35,000 in both cases.</p>
-  </div></details>
-
-  <h3><span class="tag">Quiz</span></h3>
-  <div class="quiz" data-set="u14"></div>
-  <label class="done-row"><input type="checkbox" id="done-u14" data-unit="u14"> I've got this unit 這單元我會了</label>
-</section>
-
-<!-- ============ UNIT 15 (display 10): Plant assets ============ -->
+<!-- ============ 11 (u15) ============ -->
 <section class="unit" id="u15">
   <div class="unit-head"><span class="src">Source: W4 slides Ch9</span></div>
-  <h2 class="u"><span class="num">10</span>Plant Assets: Cost, Depreciation, Revaluation &amp; Disposal</h2>
+  <h2 class="u"><span class="num">11</span>Plant Assets: Cost, Depreciation, Revaluation &amp; Disposal</h2>
 
   <h3><span class="tag">Definitions</span>What is a plant asset?</h3>
   <p>Plant assets (property, plant, and equipment; fixed assets) have <b>physical substance</b>, are <b>used in operations</b>, provide service for <b>a number of years</b>, and are <b>not intended for sale</b> to customers.<span class="zh">不動產、廠房及設備：有實體、營業使用、耐用多年、不是要賣的。</span></p>
@@ -1159,10 +1194,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u15" data-unit="u15"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 16 (display 11): Liabilities ============ -->
+<!-- ============ 12 (u16) ============ -->
 <section class="unit" id="u16">
   <div class="unit-head"><span class="src">Source: W5 slides Ch10–11</span></div>
-  <h2 class="u"><span class="num">11</span>Current &amp; Non-current Liabilities</h2>
+  <h2 class="u"><span class="num">12</span>Current &amp; Non-current Liabilities</h2>
 
   <h3><span class="tag">Definitions</span>Current vs. non-current</h3>
   <p>Liabilities are existing debts and obligations settled in the future by transferring assets/services or creating other liabilities. Maturity <b>≤ 1 year → current</b>; <b>&gt; 1 year → non-current</b>. Classification matters for liquidity (short-term debt-paying ability) and for the order of payment in bankruptcy (debt holders first, then preferred shareholders, then ordinary shareholders).<span class="zh">一年內到期是流動負債；破產清算時債權人優先受償。</span></p>
@@ -1225,14 +1260,14 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u16" data-unit="u16"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 17 (display 12): Cash & SCF ============ -->
+<!-- ============ 13 (u17) ============ -->
 <section class="unit" id="u17">
   <div class="unit-head"><span class="src">Source: W5 slides Ch7 &amp; Ch14</span></div>
-  <h2 class="u"><span class="num">12</span>Cash &amp; the Statement of Cash Flows</h2>
+  <h2 class="u"><span class="num">13</span>Cash &amp; the Statement of Cash Flows</h2>
 
   <h3><span class="tag">Definitions</span>Cash, cash equivalents, restricted cash</h3>
   <p><b>Cash equivalents</b> are short-term, highly liquid investments that are (1) readily convertible to known amounts of cash and (2) so near maturity that their market value is relatively insensitive to interest-rate changes. <b>Restricted cash</b> is not available for general use (set aside for a special purpose) and can be classified as non-current. Cash is reported on both the SFP and the statement of cash flows.<span class="zh">約當現金：短期、高流動、到期日近、價值不太受利率影響。受限制現金不能自由動用，可列非流動資產。</span></p>
-  <p><b>Can a profitable company have negative cash flow?</b> Yes. Under accrual accounting, revenues include credit sales not yet collected, and expenses include items not yet paid. Poor cash flow management is the most common reason small businesses fail.<span class="zh">賺錢但現金流量為負：賒銷還沒收現（見 Unit 17 Problem B）。</span></p>
+  <p><b>Can a profitable company have negative cash flow?</b> Yes. Under accrual accounting, revenues include credit sales not yet collected, and expenses include items not yet paid. Poor cash flow management is the most common reason small businesses fail.<span class="zh">賺錢但現金流量為負：賒銷還沒收現（見綜合題 Problem B）。</span></p>
 
   <h3><span class="tag">Concept</span>Usefulness and classification</h3>
   <p>The statement of cash flows helps assess: (1) ability to generate <b>future cash flows</b>; (2) ability to pay dividends and meet obligations; (3) reasons for the difference between net income and operating cash flow; (4) cash investing and financing transactions.<span class="zh">現金流量表的四個用途。</span></p>
@@ -1311,153 +1346,10 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u17" data-unit="u17"> I've got this unit 這單元我會了</label>
 </section>
 
-<!-- ============ UNIT 8 ============ -->
-<section class="unit" id="u8">
-  <h2 class="u"><span class="num">13</span>Formula Sheet</h2>
-  <div class="sheet scroll"><table class="formula">
-    <tr><th>Item</th><th>Formula</th></tr>
-    <tr><td>Accounting equation</td><td>Assets = Liabilities + Equity</td></tr>
-    <tr><td>Equity</td><td>Share Capital—Ordinary + Retained Earnings</td></tr>
-    <tr><td>Retained earnings</td><td>Beginning RE + Net Income − Dividends = Ending RE</td></tr>
-    <tr><td>Net sales</td><td>Sales − Sales Returns &amp; Allowances − Sales Discounts</td></tr>
-    <tr><td>Net purchases</td><td>Purchases − Purchase Returns &amp; Allowances − Purchase Discounts + Freight-in</td></tr>
-    <tr><td>COGS (periodic)</td><td>Beginning Inventory + Net Purchases − Ending Inventory</td></tr>
-    <tr><td>Gross profit</td><td>Net Sales − COGS</td></tr>
-    <tr><td>Gross profit rate</td><td>Gross Profit ÷ Net Sales</td></tr>
-    <tr><td>Income from operations</td><td>Gross Profit − Operating Expenses</td></tr>
-    <tr><td>Net income</td><td>Income from Operations ± Other Income and Expense</td></tr>
-    <tr><td>Comprehensive income</td><td>Net Income + Other Comprehensive Income</td></tr>
-    <tr><td>Adjustment amount</td><td>Total ÷ total months × months elapsed</td></tr>
-    <tr><td>Weighted-average unit cost</td><td>Cost of GAFS ÷ Units available for sale</td></tr>
-    <tr><td>Check</td><td>Ending Inventory + COGS = GAFS</td></tr>
-    <tr><td>Cash received (with discount)</td><td>(Invoice − Returns) × (1 − discount %)</td></tr>
-    <tr><td>Inventory turnover</td><td>COGS ÷ Average Inventory</td></tr>
-    <tr><td>Days in inventory</td><td>365 ÷ Inventory Turnover</td></tr>
-    <tr><td>Net receivables</td><td>A/R − Allowance for Doubtful Accounts</td></tr>
-    <tr><td>Bad debt expense (aging)</td><td>Required Allowance − unadjusted Cr balance (+ if Dr balance)</td></tr>
-    <tr><td>A/R turnover</td><td>Net Credit Sales ÷ Average Net A/R</td></tr>
-    <tr><td>Average collection period</td><td>365 ÷ A/R Turnover</td></tr>
-    <tr><td>Straight-line depreciation</td><td>(Cost − Residual value) ÷ Useful life × months/12</td></tr>
-    <tr><td>Units-of-activity</td><td>(Cost − Residual) ÷ Total units × Units this period</td></tr>
-    <tr><td>Double-declining-balance</td><td>Beginning book value × (2 ÷ Useful life); stop at residual value</td></tr>
-    <tr><td>Book value</td><td>Cost − Accumulated depreciation</td></tr>
-    <tr><td>Gain / loss on disposal</td><td>Cash received − Book value (after updating depreciation)</td></tr>
-    <tr><td>Asset turnover</td><td>Net Sales ÷ Average Total Assets</td></tr>
-    <tr><td>Interest on a note</td><td>Principal × Annual rate × Months/12</td></tr>
-    <tr><td>Warranty expense</td><td>Units sold × % expected defective × Cost per repair</td></tr>
-    <tr><td>EPS</td><td>Net income ÷ Shares outstanding</td></tr>
-    <tr><td>Operating CF (indirect)</td><td>NI + Depreciation + Loss − Gain − ↑Current assets + ↓Current assets + ↑Current liabilities − ↓Current liabilities</td></tr>
-    <tr><td>Free cash flow</td><td>Operating CF − Capital expenditures − Cash dividends</td></tr>
-  </table></div>
-  <label class="done-row"><input type="checkbox" id="done-u8" data-unit="u8"> Formulas memorized 公式背好了</label>
-</section>
-
-<!-- ============ UNIT 9 ============ -->
-<section class="unit" id="u9">
-  <h2 class="u"><span class="num">14</span>Exam Traps</h2>
-  <div class="scroll"><table>
-    <tr><th>If the question says…</th><th>Correct thinking</th><th class="zh-col">中文</th></tr>
-    <tr><td>Payment of an account payable</td><td>Assets ↓, liabilities ↓; not an expense</td><td><span class="zh inl">付應付帳款不是費用</span></td></tr>
-    <tr><td>Received cash from customers billed earlier</td><td>Asset swap (Cash ↑, A/R ↓); not revenue</td><td><span class="zh inl">收回應收不是收入</span></td></tr>
-    <tr><td>Received cash in advance for services</td><td>Liability: Unearned Revenue</td><td><span class="zh inl">預收是負債</span></td></tr>
-    <tr><td>Paid dividends</td><td>Equity ↓, but NOT an expense; not on the income statement</td><td><span class="zh inl">股利不是費用</span></td></tr>
-    <tr><td>Neglected to adjust a prepaid expense</td><td>NI overstated, assets overstated</td><td><span class="zh inl">淨利、資產高估</span></td></tr>
-    <tr><td>Neglected to adjust unearned revenue</td><td>NI understated, liabilities overstated</td><td><span class="zh inl">淨利低估、負債高估</span></td></tr>
-    <tr><td>Gross profit rate</td><td>Divide by <b>net sales</b></td><td><span class="zh inl">分母是銷貨淨額</span></td></tr>
-    <tr><td>Freight-in vs. freight-out</td><td>Freight-in → inventory cost; freight-out → operating expense</td><td><span class="zh inl">進貨運費 vs 銷貨運費</span></td></tr>
-    <tr><td>Goods held on consignment for another company</td><td>Exclude from inventory</td><td><span class="zh inl">別人的寄銷品不算</span></td></tr>
-    <tr><td>Goods on the loading dock, not yet picked up</td><td>Still your inventory (at cost)</td><td><span class="zh inl">還沒出貨仍是我的</span></td></tr>
-    <tr><td>Average-cost unit price</td><td>Total cost ÷ total units, not the average of unit prices</td><td><span class="zh inl">加權平均</span></td></tr>
-    <tr><td>Rising prices: highest net income?</td><td>FIFO</td><td><span class="zh inl">物價上漲 FIFO 淨利最高</span></td></tr>
-    <tr><td>Discount with returns</td><td>Discount on the balance after returns</td><td><span class="zh inl">扣退貨後再算折扣</span></td></tr>
-    <tr><td>Inventory turnover numerator</td><td>COGS, not sales</td><td><span class="zh inl">分子是 COGS</span></td></tr>
-    <tr><td>A/R turnover</td><td>Net <b>credit</b> sales ÷ average <b>net</b> A/R</td><td><span class="zh inl">賒銷淨額 ÷ 平均淨應收</span></td></tr>
-    <tr><td>Write-off under the allowance method</td><td>Net A/R unchanged; no expense</td><td><span class="zh inl">淨應收不變</span></td></tr>
-    <tr><td>Allowance has a debit balance before adjustment</td><td>Bad debt expense = required balance + debit balance</td><td><span class="zh inl">借餘要加</span></td></tr>
-    <tr><td>Trial balance balances</td><td>Does NOT prove there are no errors (omitted, duplicated, wrong-account, offsetting errors)</td><td><span class="zh inl">試算表平衡不代表沒錯</span></td></tr>
-    <tr><td>Ending inventory understated</td><td>COGS overstated, NI understated this year; reverses next year</td><td><span class="zh inl">期末存貨低估 → 淨利低估，次年反轉</span></td></tr>
-    <tr><td>Goods sold FOB destination, in transit</td><td>Include in seller's inventory at <b>cost</b></td><td><span class="zh inl">用成本不是售價</span></td></tr>
-    <tr><td>Truck license / annual insurance</td><td>Expense or prepaid — not part of the asset's cost</td><td><span class="zh inl">每年發生的不進資產成本</span></td></tr>
-    <tr><td>Depreciation of land</td><td>None — land is never depreciated</td><td><span class="zh inl">土地不折舊</span></td></tr>
-    <tr><td>DDB first year</td><td>Ignore residual value: cost × rate</td><td><span class="zh inl">第一年不扣殘值</span></td></tr>
-    <tr><td>Asset sold mid-year</td><td>Depreciate up to the sale date first, then compute gain/loss</td><td><span class="zh inl">先補提折舊</span></td></tr>
-    <tr><td>Revaluation up / down</td><td>Up → revaluation surplus (OCI); down → impairment loss (IS)</td><td><span class="zh inl">增值進 OCI，減損進損益</span></td></tr>
-    <tr><td>Contingency reasonably possible</td><td>Disclose only, do not record</td><td><span class="zh inl">只揭露</span></td></tr>
-    <tr><td>Contractual rate &lt; market rate</td><td>Bond sells at a discount</td><td><span class="zh inl">票面利率低 → 折價</span></td></tr>
-    <tr><td>Long-term note due within 12 months</td><td>Reclassify to current liabilities</td><td><span class="zh inl">一年內到期轉流動</span></td></tr>
-    <tr><td>Gain on sale in the indirect method</td><td>Subtract in operating; full cash proceeds in investing</td><td><span class="zh inl">處分利益要減回</span></td></tr>
-    <tr><td>Dividends paid / declared but unpaid</td><td>Paid → financing outflow; unpaid → no cash flow</td><td><span class="zh inl">未付股利不是現金流</span></td></tr>
-    <tr><td>Bonds issued for land</td><td>Non-cash investing &amp; financing → note disclosure only</td><td><span class="zh inl">非現金交易只附註</span></td></tr>
-  </table></div>
-  <label class="done-row"><input type="checkbox" id="done-u9" data-unit="u9"> Traps reviewed 陷阱看過了</label>
-</section>
-
-<!-- ============ UNIT 10 ============ -->
-<section class="unit" id="u10">
-  <h2 class="u"><span class="num">15</span>Glossary 中英詞彙表</h2>
-  <p>英文考題常見的關鍵字。看到左邊的字，要能馬上想到它是哪一類帳戶、在借方還是貸方。</p>
-  <div class="scroll"><table>
-    <tr><th>English</th><th>中文</th><th>Type / note</th></tr>
-    <tr><td>Statement of financial position (balance sheet)</td><td>財務狀況表（資產負債表）</td><td>A = L + E at a point in time</td></tr>
-    <tr><td>Income statement</td><td>損益表</td><td>Revenues − Expenses for a period</td></tr>
-    <tr><td>Share capital—ordinary</td><td>普通股股本</td><td>Equity, Cr</td></tr>
-    <tr><td>Retained earnings</td><td>保留盈餘</td><td>Equity, Cr</td></tr>
-    <tr><td>Dividends</td><td>股利</td><td>Reduces equity, Dr</td></tr>
-    <tr><td>Accounts receivable (A/R)</td><td>應收帳款</td><td>Asset, Dr</td></tr>
-    <tr><td>Accounts payable (A/P)</td><td>應付帳款</td><td>Liability, Cr</td></tr>
-    <tr><td>Notes payable</td><td>應付票據</td><td>Liability, Cr</td></tr>
-    <tr><td>Salaries and wages payable</td><td>應付薪資</td><td>Liability, Cr</td></tr>
-    <tr><td>Supplies</td><td>用品</td><td>Asset, Dr</td></tr>
-    <tr><td>Prepaid insurance / prepaid expenses</td><td>預付保險費／預付費用</td><td>Asset, Dr</td></tr>
-    <tr><td>Unearned service revenue</td><td>預收服務收入</td><td>Liability, Cr</td></tr>
-    <tr><td>Accrued expenses / accrued revenues</td><td>應計費用／應計收入</td><td>Adjusting entries</td></tr>
-    <tr><td>Deferrals</td><td>遞延項目</td><td>Prepaids and unearned revenues</td></tr>
-    <tr><td>Journalize / post</td><td>作分錄／過帳</td><td>Journal → ledger (T-account)</td></tr>
-    <tr><td>Compound journal entry</td><td>複合分錄</td><td>2+ debits and/or credits</td></tr>
-    <tr><td>On account</td><td>賒帳（賒購／賒銷）</td><td>Creates A/P or A/R</td></tr>
-    <tr><td>Net sales</td><td>銷貨淨額</td><td>Sales − returns − discounts</td></tr>
-    <tr><td>Sales returns and allowances</td><td>銷貨退回與折讓</td><td>Contra-revenue, Dr</td></tr>
-    <tr><td>Sales discounts</td><td>銷貨折扣</td><td>Contra-revenue, Dr</td></tr>
-    <tr><td>Purchase discounts / returns</td><td>進貨折扣／進貨退出</td><td>Reduce purchases</td></tr>
-    <tr><td>Cost of goods sold (COGS)</td><td>銷貨成本</td><td>Expense, Dr</td></tr>
-    <tr><td>Cost of goods available for sale</td><td>可供銷售商品成本</td><td>Beg. inv. + net purchases</td></tr>
-    <tr><td>Gross profit / gross profit rate</td><td>毛利／毛利率</td><td>÷ net sales</td></tr>
-    <tr><td>Operating expenses</td><td>營業費用</td><td>Includes freight-out</td></tr>
-    <tr><td>Other comprehensive income</td><td>其他綜合損益</td><td>Below net income</td></tr>
-    <tr><td>Freight-in / freight-out</td><td>進貨運費／銷貨運費</td><td>Inventory cost / operating expense</td></tr>
-    <tr><td>FOB shipping point / FOB destination</td><td>起運點交貨／目的地交貨</td><td>Ownership timing</td></tr>
-    <tr><td>Consignor / consignee</td><td>寄銷人（貨主）／承銷人（代賣方）</td><td>Goods belong to consignor</td></tr>
-    <tr><td>Goods in transit</td><td>在途存貨</td><td>Depends on FOB terms</td></tr>
-    <tr><td>Periodic / perpetual inventory system</td><td>定期／永續盤存制</td><td></td></tr>
-    <tr><td>Lower-of-cost-or-net realizable value (LCNRV)</td><td>成本與淨變現價值孰低</td><td>IFRS inventory valuation</td></tr>
-    <tr><td>Obsolete</td><td>過時的</td><td>Write down</td></tr>
-    <tr><td>Days in inventory</td><td>存貨週轉天數</td><td>365 ÷ inventory turnover</td></tr>
-    <tr><td>Credit terms 2/10, n/30</td><td>付款條件</td><td>2% within 10 days</td></tr>
-    <tr><td>Allowance for doubtful accounts</td><td>備抵呆帳</td><td>Contra-asset, Cr</td></tr>
-    <tr><td>Bad debt expense</td><td>呆帳費用</td><td>Operating expense, Dr</td></tr>
-    <tr><td>Write off / written off</td><td>沖銷（打銷）</td><td></td></tr>
-    <tr><td>Recovery (of bad debts)</td><td>收回已沖銷帳款</td><td></td></tr>
-    <tr><td>Aging schedule</td><td>帳齡分析表</td><td>% uncollectible by age</td></tr>
-    <tr><td>Net (cash) realizable value</td><td>淨變現價值</td><td>A/R − Allowance</td></tr>
-    <tr><td>Average collection period</td><td>平均收款期間</td><td>365 ÷ A/R turnover</td></tr>
-    <tr><td>Overstated / understated</td><td>高估／低估</td><td>Error effects</td></tr>
-    <tr><td>Contra account</td><td>抵銷科目</td><td>Opposite normal balance</td></tr>
-  </table></div>
-  <label class="done-row"><input type="checkbox" id="done-u10" data-unit="u10"> Glossary reviewed 詞彙看過了</label>
-</section>
-
-<!-- ============ UNIT 11 ============ -->
-<section class="unit" id="u11">
-  <h2 class="u"><span class="num">16</span>Mock Exam — 28 Questions</h2>
-  <p>Mixed questions from every unit, in the style of the TA sessions. Score counts only questions answered right on the <b>first try</b>.<span class="zh">綜合題。答錯會給提示可以再選；分數只算「第一次就答對」的題數。答錯的題目自動進錯題本。</span></p>
-  <div class="quiz" data-set="exam"></div>
-  <label class="done-row"><input type="checkbox" id="done-u11" data-unit="u11"> Mock exam done 模擬考完成</label>
-</section>
-
-<!-- ============ UNIT 12 ============ -->
+<!-- ============ 14 (u12) ============ -->
 <section class="unit" id="u12">
   <div class="unit-head"><span class="src">Exam-style practice (modelled on Bikes-Are-Us)</span></div>
-  <h2 class="u"><span class="num">17</span>Comprehensive Problems — IS, SFP &amp; Cash Flows</h2>
+  <h2 class="u"><span class="num">14</span>Comprehensive Problems — IS, SFP &amp; Cash Flows</h2>
   <p>Same format as the exam: a company background, last year's statement of financial position, a list of first-quarter events, then (a) income statement, (b) statement of financial position, (c) statement of cash flows (indirect method). Try the whole problem on paper before opening the solution.<span class="zh">跟考試同題型：背景＋去年底資產負債表＋第一季交易，要編 (a) 損益表 (b) 財務狀況表 (c) 間接法現金流量表。先自己在紙上做完再看解答。</span></p>
 
   <div class="callout"><strong>Workflow 解題順序</strong>
@@ -1777,11 +1669,155 @@ em.dr{color:var(--accent)}em.cr{color:var(--credit)}
   <label class="done-row"><input type="checkbox" id="done-u12" data-unit="u12"> Both problems done 兩題都做完了</label>
 </section>
 
-<!-- ============ MISTAKES ============ -->
+<!-- ============ 15 (u11) ============ -->
+<section class="unit" id="u11">
+  <h2 class="u"><span class="num">15</span>Mock Exam — 28 Questions</h2>
+  <p>Mixed questions from every unit, in the style of the TA sessions. Score counts only questions answered right on the <b>first try</b>.<span class="zh">綜合題。答錯會給提示可以再選；分數只算「第一次就答對」的題數。答錯的題目自動進錯題本。</span></p>
+  <div class="quiz" data-set="exam"></div>
+  <label class="done-row"><input type="checkbox" id="done-u11" data-unit="u11"> Mock exam done 模擬考完成</label>
+</section>
+
+<!-- ============ 16 (review) ============ -->
 <section class="unit" id="review">
-  <h2 class="u"><span class="num">★</span>錯題本 Mistakes to redo</h2>
+  <h2 class="u"><span class="num">16</span>錯題本 Mistakes to redo</h2>
   <p>Every quiz or mock-exam question you miss on the first try lands here automatically. Answer it right on the first try and it leaves the list.<span class="zh">任何選擇題第一次答錯（或按了看答案）都會自動收進來。在這裡（或原本的地方）第一次就答對，才會移除。考前把這裡清空。錯題只存在這台裝置的瀏覽器。</span></p>
   <div class="quiz" data-set="review"></div>
+  <label class="done-row"><input type="checkbox" id="done-review" data-unit="review"> 錯題本清空了 Mistakes cleared</label>
+</section>
+
+<!-- ============ 17 (u9) ============ -->
+<section class="unit" id="u9">
+  <h2 class="u"><span class="num">17</span>Exam Traps</h2>
+  <div class="scroll"><table>
+    <tr><th>If the question says…</th><th>Correct thinking</th><th class="zh-col">中文</th></tr>
+    <tr><td>Payment of an account payable</td><td>Assets ↓, liabilities ↓; not an expense</td><td><span class="zh inl">付應付帳款不是費用</span></td></tr>
+    <tr><td>Received cash from customers billed earlier</td><td>Asset swap (Cash ↑, A/R ↓); not revenue</td><td><span class="zh inl">收回應收不是收入</span></td></tr>
+    <tr><td>Received cash in advance for services</td><td>Liability: Unearned Revenue</td><td><span class="zh inl">預收是負債</span></td></tr>
+    <tr><td>Paid dividends</td><td>Equity ↓, but NOT an expense; not on the income statement</td><td><span class="zh inl">股利不是費用</span></td></tr>
+    <tr><td>Neglected to adjust a prepaid expense</td><td>NI overstated, assets overstated</td><td><span class="zh inl">淨利、資產高估</span></td></tr>
+    <tr><td>Neglected to adjust unearned revenue</td><td>NI understated, liabilities overstated</td><td><span class="zh inl">淨利低估、負債高估</span></td></tr>
+    <tr><td>Gross profit rate</td><td>Divide by <b>net sales</b></td><td><span class="zh inl">分母是銷貨淨額</span></td></tr>
+    <tr><td>Freight-in vs. freight-out</td><td>Freight-in → inventory cost; freight-out → operating expense</td><td><span class="zh inl">進貨運費 vs 銷貨運費</span></td></tr>
+    <tr><td>Goods held on consignment for another company</td><td>Exclude from inventory</td><td><span class="zh inl">別人的寄銷品不算</span></td></tr>
+    <tr><td>Goods on the loading dock, not yet picked up</td><td>Still your inventory (at cost)</td><td><span class="zh inl">還沒出貨仍是我的</span></td></tr>
+    <tr><td>Average-cost unit price</td><td>Total cost ÷ total units, not the average of unit prices</td><td><span class="zh inl">加權平均</span></td></tr>
+    <tr><td>Rising prices: highest net income?</td><td>FIFO</td><td><span class="zh inl">物價上漲 FIFO 淨利最高</span></td></tr>
+    <tr><td>Discount with returns</td><td>Discount on the balance after returns</td><td><span class="zh inl">扣退貨後再算折扣</span></td></tr>
+    <tr><td>Inventory turnover numerator</td><td>COGS, not sales</td><td><span class="zh inl">分子是 COGS</span></td></tr>
+    <tr><td>A/R turnover</td><td>Net <b>credit</b> sales ÷ average <b>net</b> A/R</td><td><span class="zh inl">賒銷淨額 ÷ 平均淨應收</span></td></tr>
+    <tr><td>Write-off under the allowance method</td><td>Net A/R unchanged; no expense</td><td><span class="zh inl">淨應收不變</span></td></tr>
+    <tr><td>Allowance has a debit balance before adjustment</td><td>Bad debt expense = required balance + debit balance</td><td><span class="zh inl">借餘要加</span></td></tr>
+    <tr><td>Trial balance balances</td><td>Does NOT prove there are no errors (omitted, duplicated, wrong-account, offsetting errors)</td><td><span class="zh inl">試算表平衡不代表沒錯</span></td></tr>
+    <tr><td>Ending inventory understated</td><td>COGS overstated, NI understated this year; reverses next year</td><td><span class="zh inl">期末存貨低估 → 淨利低估，次年反轉</span></td></tr>
+    <tr><td>Goods sold FOB destination, in transit</td><td>Include in seller's inventory at <b>cost</b></td><td><span class="zh inl">用成本不是售價</span></td></tr>
+    <tr><td>Truck license / annual insurance</td><td>Expense or prepaid — not part of the asset's cost</td><td><span class="zh inl">每年發生的不進資產成本</span></td></tr>
+    <tr><td>Depreciation of land</td><td>None — land is never depreciated</td><td><span class="zh inl">土地不折舊</span></td></tr>
+    <tr><td>DDB first year</td><td>Ignore residual value: cost × rate</td><td><span class="zh inl">第一年不扣殘值</span></td></tr>
+    <tr><td>Asset sold mid-year</td><td>Depreciate up to the sale date first, then compute gain/loss</td><td><span class="zh inl">先補提折舊</span></td></tr>
+    <tr><td>Revaluation up / down</td><td>Up → revaluation surplus (OCI); down → impairment loss (IS)</td><td><span class="zh inl">增值進 OCI，減損進損益</span></td></tr>
+    <tr><td>Contingency reasonably possible</td><td>Disclose only, do not record</td><td><span class="zh inl">只揭露</span></td></tr>
+    <tr><td>Contractual rate &lt; market rate</td><td>Bond sells at a discount</td><td><span class="zh inl">票面利率低 → 折價</span></td></tr>
+    <tr><td>Long-term note due within 12 months</td><td>Reclassify to current liabilities</td><td><span class="zh inl">一年內到期轉流動</span></td></tr>
+    <tr><td>Gain on sale in the indirect method</td><td>Subtract in operating; full cash proceeds in investing</td><td><span class="zh inl">處分利益要減回</span></td></tr>
+    <tr><td>Dividends paid / declared but unpaid</td><td>Paid → financing outflow; unpaid → no cash flow</td><td><span class="zh inl">未付股利不是現金流</span></td></tr>
+    <tr><td>Bonds issued for land</td><td>Non-cash investing &amp; financing → note disclosure only</td><td><span class="zh inl">非現金交易只附註</span></td></tr>
+  </table></div>
+  <label class="done-row"><input type="checkbox" id="done-u9" data-unit="u9"> Traps reviewed 陷阱看過了</label>
+</section>
+
+<!-- ============ 18 (u8) ============ -->
+<section class="unit" id="u8">
+  <h2 class="u"><span class="num">18</span>Formula Sheet</h2>
+  <div class="sheet scroll"><table class="formula">
+    <tr><th>Item</th><th>Formula</th></tr>
+    <tr><td>Accounting equation</td><td>Assets = Liabilities + Equity</td></tr>
+    <tr><td>Equity</td><td>Share Capital—Ordinary + Retained Earnings</td></tr>
+    <tr><td>Retained earnings</td><td>Beginning RE + Net Income − Dividends = Ending RE</td></tr>
+    <tr><td>Net sales</td><td>Sales − Sales Returns &amp; Allowances − Sales Discounts</td></tr>
+    <tr><td>Net purchases</td><td>Purchases − Purchase Returns &amp; Allowances − Purchase Discounts + Freight-in</td></tr>
+    <tr><td>COGS (periodic)</td><td>Beginning Inventory + Net Purchases − Ending Inventory</td></tr>
+    <tr><td>Gross profit</td><td>Net Sales − COGS</td></tr>
+    <tr><td>Gross profit rate</td><td>Gross Profit ÷ Net Sales</td></tr>
+    <tr><td>Income from operations</td><td>Gross Profit − Operating Expenses</td></tr>
+    <tr><td>Net income</td><td>Income from Operations ± Other Income and Expense</td></tr>
+    <tr><td>Comprehensive income</td><td>Net Income + Other Comprehensive Income</td></tr>
+    <tr><td>Adjustment amount</td><td>Total ÷ total months × months elapsed</td></tr>
+    <tr><td>Weighted-average unit cost</td><td>Cost of GAFS ÷ Units available for sale</td></tr>
+    <tr><td>Check</td><td>Ending Inventory + COGS = GAFS</td></tr>
+    <tr><td>Cash received (with discount)</td><td>(Invoice − Returns) × (1 − discount %)</td></tr>
+    <tr><td>Inventory turnover</td><td>COGS ÷ Average Inventory</td></tr>
+    <tr><td>Days in inventory</td><td>365 ÷ Inventory Turnover</td></tr>
+    <tr><td>Net receivables</td><td>A/R − Allowance for Doubtful Accounts</td></tr>
+    <tr><td>Bad debt expense (aging)</td><td>Required Allowance − unadjusted Cr balance (+ if Dr balance)</td></tr>
+    <tr><td>A/R turnover</td><td>Net Credit Sales ÷ Average Net A/R</td></tr>
+    <tr><td>Average collection period</td><td>365 ÷ A/R Turnover</td></tr>
+    <tr><td>Straight-line depreciation</td><td>(Cost − Residual value) ÷ Useful life × months/12</td></tr>
+    <tr><td>Units-of-activity</td><td>(Cost − Residual) ÷ Total units × Units this period</td></tr>
+    <tr><td>Double-declining-balance</td><td>Beginning book value × (2 ÷ Useful life); stop at residual value</td></tr>
+    <tr><td>Book value</td><td>Cost − Accumulated depreciation</td></tr>
+    <tr><td>Gain / loss on disposal</td><td>Cash received − Book value (after updating depreciation)</td></tr>
+    <tr><td>Asset turnover</td><td>Net Sales ÷ Average Total Assets</td></tr>
+    <tr><td>Interest on a note</td><td>Principal × Annual rate × Months/12</td></tr>
+    <tr><td>Warranty expense</td><td>Units sold × % expected defective × Cost per repair</td></tr>
+    <tr><td>EPS</td><td>Net income ÷ Shares outstanding</td></tr>
+    <tr><td>Operating CF (indirect)</td><td>NI + Depreciation + Loss − Gain − ↑Current assets + ↓Current assets + ↑Current liabilities − ↓Current liabilities</td></tr>
+    <tr><td>Free cash flow</td><td>Operating CF − Capital expenditures − Cash dividends</td></tr>
+  </table></div>
+  <label class="done-row"><input type="checkbox" id="done-u8" data-unit="u8"> Formulas memorized 公式背好了</label>
+</section>
+
+<!-- ============ 19 (u10) ============ -->
+<section class="unit" id="u10">
+  <h2 class="u"><span class="num">19</span>Glossary 中英詞彙表</h2>
+  <p>英文考題常見的關鍵字。看到左邊的字，要能馬上想到它是哪一類帳戶、在借方還是貸方。</p>
+  <div class="scroll"><table>
+    <tr><th>English</th><th>中文</th><th>Type / note</th></tr>
+    <tr><td>Statement of financial position (balance sheet)</td><td>財務狀況表（資產負債表）</td><td>A = L + E at a point in time</td></tr>
+    <tr><td>Income statement</td><td>損益表</td><td>Revenues − Expenses for a period</td></tr>
+    <tr><td>Share capital—ordinary</td><td>普通股股本</td><td>Equity, Cr</td></tr>
+    <tr><td>Retained earnings</td><td>保留盈餘</td><td>Equity, Cr</td></tr>
+    <tr><td>Dividends</td><td>股利</td><td>Reduces equity, Dr</td></tr>
+    <tr><td>Accounts receivable (A/R)</td><td>應收帳款</td><td>Asset, Dr</td></tr>
+    <tr><td>Accounts payable (A/P)</td><td>應付帳款</td><td>Liability, Cr</td></tr>
+    <tr><td>Notes payable</td><td>應付票據</td><td>Liability, Cr</td></tr>
+    <tr><td>Salaries and wages payable</td><td>應付薪資</td><td>Liability, Cr</td></tr>
+    <tr><td>Supplies</td><td>用品</td><td>Asset, Dr</td></tr>
+    <tr><td>Prepaid insurance / prepaid expenses</td><td>預付保險費／預付費用</td><td>Asset, Dr</td></tr>
+    <tr><td>Unearned service revenue</td><td>預收服務收入</td><td>Liability, Cr</td></tr>
+    <tr><td>Accrued expenses / accrued revenues</td><td>應計費用／應計收入</td><td>Adjusting entries</td></tr>
+    <tr><td>Deferrals</td><td>遞延項目</td><td>Prepaids and unearned revenues</td></tr>
+    <tr><td>Journalize / post</td><td>作分錄／過帳</td><td>Journal → ledger (T-account)</td></tr>
+    <tr><td>Compound journal entry</td><td>複合分錄</td><td>2+ debits and/or credits</td></tr>
+    <tr><td>On account</td><td>賒帳（賒購／賒銷）</td><td>Creates A/P or A/R</td></tr>
+    <tr><td>Net sales</td><td>銷貨淨額</td><td>Sales − returns − discounts</td></tr>
+    <tr><td>Sales returns and allowances</td><td>銷貨退回與折讓</td><td>Contra-revenue, Dr</td></tr>
+    <tr><td>Sales discounts</td><td>銷貨折扣</td><td>Contra-revenue, Dr</td></tr>
+    <tr><td>Purchase discounts / returns</td><td>進貨折扣／進貨退出</td><td>Reduce purchases</td></tr>
+    <tr><td>Cost of goods sold (COGS)</td><td>銷貨成本</td><td>Expense, Dr</td></tr>
+    <tr><td>Cost of goods available for sale</td><td>可供銷售商品成本</td><td>Beg. inv. + net purchases</td></tr>
+    <tr><td>Gross profit / gross profit rate</td><td>毛利／毛利率</td><td>÷ net sales</td></tr>
+    <tr><td>Operating expenses</td><td>營業費用</td><td>Includes freight-out</td></tr>
+    <tr><td>Other comprehensive income</td><td>其他綜合損益</td><td>Below net income</td></tr>
+    <tr><td>Freight-in / freight-out</td><td>進貨運費／銷貨運費</td><td>Inventory cost / operating expense</td></tr>
+    <tr><td>FOB shipping point / FOB destination</td><td>起運點交貨／目的地交貨</td><td>Ownership timing</td></tr>
+    <tr><td>Consignor / consignee</td><td>寄銷人（貨主）／承銷人（代賣方）</td><td>Goods belong to consignor</td></tr>
+    <tr><td>Goods in transit</td><td>在途存貨</td><td>Depends on FOB terms</td></tr>
+    <tr><td>Periodic / perpetual inventory system</td><td>定期／永續盤存制</td><td></td></tr>
+    <tr><td>Lower-of-cost-or-net realizable value (LCNRV)</td><td>成本與淨變現價值孰低</td><td>IFRS inventory valuation</td></tr>
+    <tr><td>Obsolete</td><td>過時的</td><td>Write down</td></tr>
+    <tr><td>Days in inventory</td><td>存貨週轉天數</td><td>365 ÷ inventory turnover</td></tr>
+    <tr><td>Credit terms 2/10, n/30</td><td>付款條件</td><td>2% within 10 days</td></tr>
+    <tr><td>Allowance for doubtful accounts</td><td>備抵呆帳</td><td>Contra-asset, Cr</td></tr>
+    <tr><td>Bad debt expense</td><td>呆帳費用</td><td>Operating expense, Dr</td></tr>
+    <tr><td>Write off / written off</td><td>沖銷（打銷）</td><td></td></tr>
+    <tr><td>Recovery (of bad debts)</td><td>收回已沖銷帳款</td><td></td></tr>
+    <tr><td>Aging schedule</td><td>帳齡分析表</td><td>% uncollectible by age</td></tr>
+    <tr><td>Net (cash) realizable value</td><td>淨變現價值</td><td>A/R − Allowance</td></tr>
+    <tr><td>Average collection period</td><td>平均收款期間</td><td>365 ÷ A/R turnover</td></tr>
+    <tr><td>Overstated / understated</td><td>高估／低估</td><td>Error effects</td></tr>
+    <tr><td>Contra account</td><td>抵銷科目</td><td>Opposite normal balance</td></tr>
+  </table></div>
+  <label class="done-row"><input type="checkbox" id="done-u10" data-unit="u10"> Glossary reviewed 詞彙看過了</label>
 </section>
 
 </main>
@@ -2182,7 +2218,7 @@ setStep(stepMode);
 stepBtn.addEventListener('click',()=>{setStep(!stepMode);store.set('fa-step',stepMode)});
 
 /* ---------- retryable quizzes + mistake notebook ---------- */
-const SRC={u1:'Unit 1',u2:'Unit 2',u3:'Unit 3',u4:'Unit 4',u5:'Unit 5',u6:'Unit 6',u7:'Unit 7',u13:'Unit 8',u14:'Unit 9',u15:'Unit 10',u16:'Unit 11',u17:'Unit 12',exam:'Mock exam'};
+const SRC={};document.querySelectorAll('.quiz').forEach(b=>{const n=b.closest('section').querySelector('.num');SRC[b.dataset.set]=b.dataset.set==='exam'?'Mock exam':'Unit '+(+n.textContent)});
 const miss=new Set((store.get('fa-miss')||[]).filter(k=>{const [s,i]=k.split(':');return Q[s]&&Q[s][+i]}));
 const updMiss=()=>{store.set('fa-miss',[...miss]);const t=document.getElementById('missToc');if(t)t.textContent=miss.size||''};
 const shuffled=n=>{const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
@@ -2467,12 +2503,96 @@ const done=store.get('fa-done')||{};
 const boxes=[...document.querySelectorAll('input[data-unit]')];
 function updProg(){
   const n=boxes.filter(b=>b.checked).length;
-  document.getElementById('progTxt').textContent=`Done ${n} / ${boxes.length}`;
+  document.getElementById('progTxt').textContent=`已完成 ${n} / ${boxes.length} 個單元`;
   document.getElementById('progBar').style.width=(n/boxes.length*100)+'%';
   boxes.forEach(b=>{const a=document.querySelector(`#toc a[href="#${b.dataset.unit}"]`);if(a)a.classList.toggle('done',b.checked)});
 }
 boxes.forEach(b=>{b.checked=!!done[b.dataset.unit];b.addEventListener('change',()=>{done[b.dataset.unit]=b.checked;store.set('fa-done',done);updProg()})});
 updProg();
+
+/* ---------- learning path: stages + focus mode ---------- */
+const STAGES=[
+ {t:'起點',name:'Start here',ids:['u0'],time:'10 分鐘',goal:'知道這個網站怎麼用，看懂整門課的地圖。',
+  todo:['讀「為什麼看詳解學不起來」和「每一題都照這個順序」','看懂「整門課其實只有一條線」那張流程圖','看一下下面的 10 關路線圖'],pass:'勾「看完了」就可以進第 1 關。'},
+ {t:'第 1 關',name:'會計等式與借貸',ids:['u1','dc'],time:'3 天，每天 30 分鐘',goal:'看到一筆交易，能說出動到哪兩個科目、各記借還是貸。這是整門課的地基。',
+  todo:['Unit 1：讀定義和借貸規則表，做 A/L/E 分類、Spring Cruises','Unit 2 借貸特訓：先讀「為什麼」那張等式圖，用自己的話說一遍','Gym 1 科目卡：連續答對 20 張','Gym 2 引導模式 → 快速模式','回 Unit 1 做 Legal Services（分錄＋表格）和小測驗'],pass:'Gym 2 快速模式能連續答對 10 題。'},
+ {t:'第 2 關',name:'調整分錄與會計循環',ids:['u2','u13'],time:'2 天',goal:'會做期末四種調整分錄，知道試算表、結帳、財務狀況表的排法。',
+  todo:['Unit 3：讀「遞延／應計」四格表','做 Major Ltd.（付款方）→ Orlow（收款方），比較兩者是鏡像','Unit 4：試算表的限制、結帳分錄、IFRS 的 SFP 順序','兩個小測驗'],pass:'Major 和 Orlow 不看詳解全對。'},
+ {t:'第 3 關',name:'買賣業損益表與 COGS',ids:['u3'],time:'2 天',goal:'能把一堆科目排成多站式損益表，算出銷貨淨額、COGS、毛利。',
+  todo:['背損益表骨架和 COGS 公式（遮住自己默寫一次）','依序做 PW Audio → Bach → Scott → Athena','小測驗'],pass:'Scott 和 Athena 不看詳解全對。'},
+ {t:'第 4 關',name:'存貨',ids:['u4','u5','u14','u6'],time:'3 天',goal:'判斷哪些貨算自己的存貨，用 FIFO／平均法算期末存貨和 COGS（綜合題第 ② 步）。',
+  todo:['Unit 6：FOB 規則 → Sergei（高頻考題）','Unit 7：Moncada → Tinker Bell → Zhu Boards','Unit 8：成本流程比較、存貨錯誤的兩年對照表','Unit 9：銷貨折扣、存貨週轉天數','四個小測驗'],pass:'Sergei 和 Zhu Boards 不看詳解全對。'},
+ {t:'第 5 關',name:'應收帳款與呆帳',ids:['u7'],time:'2 天',goal:'會用帳齡分析算出備抵呆帳和呆帳費用（綜合題第 ③ 步）。',
+  todo:['讀「直接沖銷法 vs 備抵法」分錄對照表','Patel 帳齡表','Catu Medical（最重要：分錄 → T 字帳 → 比率）','小測驗'],pass:'Catu Medical 不看詳解全對。'},
+ {t:'第 6 關',name:'設備與折舊',ids:['u15'],time:'2 天',goal:'會算折舊（包含只用了幾個月）和處分損益（綜合題第 ① 步）。',
+  todo:['Huang 卡車：哪些支出算成本','Bob\'s Florist：三種折舊方法','處分分錄：先補提折舊，再算損益','小測驗（注意部分年度的月數）'],pass:'小測驗第一次就全對。'},
+ {t:'第 7 關',name:'負債',ids:['u16'],time:'1 天',goal:'會算應付票據利息、保固負債，知道或有負債和公司債折溢價怎麼判斷。',
+  todo:['應付票據利息（本金 × 利率 × 月數/12）','保固負債','或有負債的四格表、公司債折溢價','小測驗'],pass:'小測驗第一次就全對。'},
+ {t:'第 8 關',name:'現金流量表',ids:['u17'],time:'3 天',goal:'用間接法從淨利一路推到期末現金（綜合題 (c)）。',
+  todo:['營業／投資／籌資分類表','間接法三步驟表（加什麼、減什麼）','Computer Services：先自己做，再一步一步對詳解','Del Carpio 個案','小測驗'],pass:'Computer Services 不看詳解算出營業現金流量 172,000。'},
+ {t:'第 9 關',name:'綜合題',ids:['u12'],time:'4 天',goal:'能獨立完成一整題：損益表、財務狀況表、間接法現金流量表。這就是考試題型。',
+  todo:['讀「解題順序」六個步驟','Problem A：先在紙上做 → 填「關鍵數字」表 → 錯的格子一步一步對詳解','隔天不看詳解重做 Problem A','Problem B 照同樣流程'],pass:'Problem B 的關鍵數字表全對。'},
+ {t:'第 10 關',name:'考前衝刺',ids:['u11','review','u9'],time:'考前 2–3 天',goal:'模擬考試，清空錯題本，最後看一次陷阱。',
+  todo:['模擬考 28 題（一次做完，不要中途查）','錯題本：全部重做到清空','Exam Traps 表格看一遍'],pass:'錯題本清空。'},
+ {t:'工具箱',name:'隨時查',ids:['u8','u10'],tool:true,time:'需要時',goal:'公式表和中英詞彙，做題卡住時回來查。',todo:['Formula Sheet','Glossary 中英詞彙表'],pass:'不用過關，隨時查。'}
+];
+const secStage={};STAGES.forEach((st,i)=>st.ids.forEach(id=>secStage[id]=i));
+const secs=id=>document.getElementById(id);
+let curStage=store.get('fa-stage');if(typeof curStage!=='number'||!STAGES[curStage])curStage=0;
+let focus=store.get('fa-focus');if(focus===null)focus=true;
+const unitBoxes=i=>STAGES[i].ids.map(id=>secs(id)?.querySelector('input[data-unit]')).filter(Boolean);
+const stageDone=i=>{const b=unitBoxes(i);return b.length>0&&b.every(x=>x.checked)};
+const unitTitle=id=>{const h=secs(id).querySelector('h2.u');return h?h.textContent.replace(/^\d+/,'').trim():id};
+STAGES.forEach((st,i)=>{
+  const first=secs(st.ids[0]),last=secs(st.ids[st.ids.length-1]);if(!first)return;
+  const h=document.createElement('div');h.className='stage-head';h.id='stage-'+i;h.dataset.stage=i;
+  h.innerHTML=`<div class="stage-top"><span class="stage-no"></span><span class="stage-time"></span></div><h2 class="stage-name"></h2><p class="stage-goal"></p><div class="stage-cols"><div><h4>照這個順序做</h4><ol class="stage-todo"></ol></div><div><h4>過關條件</h4><p class="stage-pass"></p><h4>這關的單元</h4><ul class="stage-units"></ul></div></div>`;
+  h.querySelector('.stage-no').textContent=st.tool?st.t:`${st.t} / 共 10 關`;
+  h.querySelector('.stage-time').textContent='預計 '+st.time;
+  h.querySelector('.stage-name').textContent=st.name;
+  h.querySelector('.stage-goal').textContent=st.goal;
+  st.todo.forEach(t=>{const li=document.createElement('li');li.textContent=t;h.querySelector('.stage-todo').appendChild(li)});
+  h.querySelector('.stage-pass').textContent=st.pass;
+  st.ids.forEach(id=>{const li=document.createElement('li');li.dataset.u=id;const a=document.createElement('a');a.href='#'+id;a.textContent=unitTitle(id);li.appendChild(a);h.querySelector('.stage-units').appendChild(li)});
+  first.before(h);
+  const f=document.createElement('div');f.className='stage-foot';f.dataset.stage=i;
+  f.innerHTML='<p class="stage-msg"></p><div class="gact"><button type="button" class="btn" data-go="-1">◂ 上一關</button><button type="button" class="btn solid" data-go="1">下一關 ▸</button></div>';
+  if(i===0)f.querySelector('[data-go="-1"]').hidden=true;
+  if(i>=STAGES.length-1)f.querySelector('[data-go="1"]').hidden=true;
+  f.addEventListener('click',e=>{const g=e.target.dataset.go;if(g){setStage(i+ +g);document.getElementById('stage-'+curStage).scrollIntoView()}});
+  last.after(f);
+});
+function stageEls(i){const out=[document.getElementById('stage-'+i),...STAGES[i].ids.map(secs),document.querySelector(`.stage-foot[data-stage="${i}"]`)];return out.filter(Boolean)}
+function renderStages(){
+  STAGES.forEach((st,i)=>{
+    const on=!focus||i===curStage;stageEls(i).forEach(el=>el.hidden=!on);
+    const done=stageDone(i);
+    const h=document.getElementById('stage-'+i);h.classList.toggle('done',done);h.classList.toggle('current',i===curStage);
+    h.querySelectorAll('.stage-units li').forEach(li=>li.classList.toggle('done',!!secs(li.dataset.u).querySelector('input[data-unit]')?.checked));
+    const f=document.querySelector(`.stage-foot[data-stage="${i}"]`);const left=unitBoxes(i).filter(b=>!b.checked).map(b=>unitTitle(b.closest('section').id));
+    f.querySelector('.stage-msg').textContent=st.tool?'工具箱不用過關，需要時回來查。':done?`${st.t}完成了！可以進下一關。`:`還沒勾完：${left.join('、')}。確定會了就到單元最下面打勾；也可以先往下一關走。`;
+    f.classList.toggle('done',done);
+    const ta=document.querySelector(`#toc a[href="#stage-${i}"]`);if(ta){ta.classList.toggle('done',done);ta.parentNode.classList.toggle('current',i===curStage)}
+  });
+  const rm=document.getElementById('roadmap');
+  if(rm){rm.innerHTML='';STAGES.forEach((st,i)=>{const li=document.createElement('li');li.className=stageDone(i)?'done':i===curStage?'current':'';const a=document.createElement('a');a.href='#stage-'+i;a.textContent=`${st.t}　${st.name}`;const s2=document.createElement('span');s2.textContent=st.goal;li.append(a,s2);rm.appendChild(li)})}
+  const sb=document.getElementById('stageNow');if(sb)sb.textContent=`目前：${STAGES[curStage].t} ${STAGES[curStage].name}`;
+}
+function setStage(i){curStage=Math.max(0,Math.min(i,STAGES.length-1));store.set('fa-stage',curStage);renderStages()}
+const focusBtn=document.getElementById('focusBtn');
+function setFocus(on){focus=on;store.set('fa-focus',on);focusBtn.setAttribute('aria-pressed',on?'true':'false');focusBtn.textContent=on?'專心模式：只顯示這一關':'顯示全部單元';renderStages()}
+focusBtn.addEventListener('click',()=>{setFocus(!focus);document.getElementById('stage-'+curStage).scrollIntoView()});
+function reveal(hash){
+  const t=hash&&document.getElementById(decodeURIComponent(hash.slice(1)));if(!t)return false;
+  const host=t.matches('.stage-head,.stage-foot')?t:t.closest('section.unit,.stage-head');
+  const i=host?(host.dataset.stage!==undefined?+host.dataset.stage:secStage[host.id]):undefined;
+  if(i!==undefined&&i!==curStage)setStage(i);
+  t.scrollIntoView();return true;
+}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.getAttribute('href').length<2)return;e.preventDefault();if(reveal(a.getAttribute('href')))history.replaceState(null,'',a.getAttribute('href'))});
+document.querySelectorAll('input[data-unit]').forEach(b=>b.addEventListener('change',renderStages));
+setFocus(focus);
+if(location.hash)reveal(location.hash);
 
 const langBtn=document.getElementById('langBtn');
 function setLang(en){document.body.classList.toggle('en-only',en);langBtn.setAttribute('aria-pressed',en?'true':'false');langBtn.textContent=en?'Show Chinese（顯示中文）':'English only（隱藏中文）'}
