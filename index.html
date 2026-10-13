@@ -39,8 +39,29 @@ nav.idx a.done .n::after{content:" ✓"}
 .progress{margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .bar{height:6px;background:var(--rule);border-radius:3px;margin-top:6px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
-@media (max-width:860px){nav.idx{position:static;max-height:none;padding-top:16px;border-bottom:1px solid var(--rule);padding-bottom:16px}
-  nav.idx ol{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+.nav-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.fab,.nav-close,.backdrop{display:none}
+/* phones: sidebar becomes a slide-out drawer opened by a floating button */
+@media (max-width:860px){
+  nav.idx{position:fixed;top:0;left:0;bottom:0;z-index:50;width:min(320px,86vw);height:100dvh;max-height:none;overflow-y:auto;overscroll-behavior:contain;
+    background:var(--sheet);border-right:1px solid var(--rule-strong);box-shadow:4px 0 24px rgba(0,0,0,.2);
+    padding:calc(14px + env(safe-area-inset-top,0px)) 14px calc(28px + env(safe-area-inset-bottom,0px));
+    transform:translateX(-105%);visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s}
+  body.nav-open nav.idx{transform:none;visibility:visible;transition:transform .25s ease}
+  nav.idx ol{grid-template-columns:1fr}
+  nav.idx a{padding:10px;font-size:15px}
+  nav.idx li.stg a{font-size:13px;padding:9px 10px}
+  .nav-head h2{margin:0}
+  .nav-close{display:inline-flex;font:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--rule-strong);border-radius:4px;background:transparent;color:var(--ink);cursor:pointer}
+  .backdrop{display:block;position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s}
+  body.nav-open .backdrop{opacity:1;pointer-events:auto}
+  body.nav-open{overflow:hidden}
+  .fab{display:inline-flex;align-items:center;gap:8px;position:fixed;z-index:30;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    max-width:calc(100vw - 32px);font:inherit;font-size:14.5px;font-weight:700;padding:11px 16px;border:0;border-radius:24px;
+    background:var(--accent);color:var(--sheet);box-shadow:0 4px 14px rgba(0,0,0,.28);cursor:pointer}
+  .fab span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .fab:focus-visible,.nav-close:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+}
 main{min-width:0}
 section.unit{padding-block:40px 8px;border-bottom:1px solid var(--rule-strong)}
 .unit-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
@@ -203,7 +224,6 @@ nav.idx li.stg{margin-top:10px}
 nav.idx li.stg a{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent);font-weight:600;padding:4px 8px}
 nav.idx li.stg.current a{background:var(--accent);color:var(--sheet)}
 nav.idx li.stg a.done::after{content:" ✓"}
-@media (max-width:860px){nav.idx li.stg{grid-column:1/-1}}
 .stage-head{margin-top:40px;background:var(--sheet);border:2px solid var(--accent);border-radius:6px;padding:18px 20px}
 .stage-head.done{border-color:var(--rule-strong)}
 .stage-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
@@ -244,9 +264,11 @@ nav.idx li.stg a.done::after{content:" ✓"}
   <div class="langbar"><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><button class="btn" id="focusBtn" type="button" aria-pressed="true">專心模式：只顯示這一關</button><button class="btn" id="stepBtn" type="button" aria-pressed="true">詳解：一步一步看</button><span class="en">考前切成純英文，測試看不看得懂題目</span></div>
 </header>
 
+<button class="fab" id="fab" type="button" aria-controls="sidebar" aria-expanded="false"><b aria-hidden="true">☰</b><span id="fabStage">關卡</span></button>
+<div class="backdrop" id="backdrop"></div>
 <div class="wrap">
-<nav class="idx" aria-label="Contents">
-  <h2>Contents</h2>
+<nav class="idx" id="sidebar" aria-label="Contents">
+  <div class="nav-head"><h2>Contents</h2><button class="nav-close" id="navClose" type="button">✕ 關閉</button></div>
   <ol id="toc">
     <li class="stg"><a href="#stage-0">起點</a></li>
     <li><a href="#u0"><span class="n">0</span>Start here 怎麼用</a></li>
@@ -2577,6 +2599,7 @@ function renderStages(){
   const rm=document.getElementById('roadmap');
   if(rm){rm.innerHTML='';STAGES.forEach((st,i)=>{const li=document.createElement('li');li.className=stageDone(i)?'done':i===curStage?'current':'';const a=document.createElement('a');a.href='#stage-'+i;a.textContent=`${st.t}　${st.name}`;const s2=document.createElement('span');s2.textContent=st.goal;li.append(a,s2);rm.appendChild(li)})}
   const sb=document.getElementById('stageNow');if(sb)sb.textContent=`目前：${STAGES[curStage].t} ${STAGES[curStage].name}`;
+  const fl=document.getElementById('fabStage');if(fl)fl.textContent=`${STAGES[curStage].t}｜${STAGES[curStage].name}`;
 }
 function setStage(i){curStage=Math.max(0,Math.min(i,STAGES.length-1));store.set('fa-stage',curStage);renderStages()}
 const focusBtn=document.getElementById('focusBtn');
@@ -2593,6 +2616,22 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');i
 document.querySelectorAll('input[data-unit]').forEach(b=>b.addEventListener('change',renderStages));
 setFocus(focus);
 if(location.hash)reveal(location.hash);
+
+/* ---------- phone drawer ---------- */
+const sidebar=document.getElementById('sidebar'),fab=document.getElementById('fab'),phone=matchMedia('(max-width:860px)');
+function setDrawer(open,refocus){
+  document.body.classList.toggle('nav-open',open);fab.setAttribute('aria-expanded',open?'true':'false');
+  sidebar.inert=phone.matches&&!open;
+  if(open)(sidebar.querySelector('li.stg.current a')||sidebar.querySelector('a')).focus();
+  else if(refocus)fab.focus();
+}
+fab.addEventListener('click',()=>setDrawer(true));
+document.getElementById('navClose').addEventListener('click',()=>setDrawer(false,true));
+document.getElementById('backdrop').addEventListener('click',()=>setDrawer(false,true));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('nav-open'))setDrawer(false,true)});
+sidebar.addEventListener('click',e=>{if(e.target.closest('a')&&phone.matches)setDrawer(false)});
+phone.addEventListener('change',()=>setDrawer(false));
+setDrawer(false);
 
 const langBtn=document.getElementById('langBtn');
 function setLang(en){document.body.classList.toggle('en-only',en);langBtn.setAttribute('aria-pressed',en?'true':'false');langBtn.textContent=en?'Show Chinese（顯示中文）':'English only（隱藏中文）'}
