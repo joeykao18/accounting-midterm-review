@@ -264,6 +264,15 @@ nav.idx li.stg a.done::after{content:" ✓"}
 .roadmap li span{font-size:13.5px;color:var(--muted)}
 .roadmap li.current{border:2px solid var(--accent)}
 .roadmap li.done a::after{content:"  ✓";color:var(--accent)}
+/* concept videos */
+.vid{margin:14px 0 6px;border:1px solid var(--rule-strong);border-radius:6px;background:var(--sheet);overflow:hidden}
+.vid button.play{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:14px;align-items:center;width:100%;padding:14px 16px}
+.vid button.play:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.vid .tri{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--sheet);display:grid;place-items:center;font-size:18px}
+.vid .vt{font-weight:700}
+.vid .vs{font-size:13px;color:var(--muted)}
+.vid .frame{position:relative;aspect-ratio:16/9;background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 /* step-by-step solutions */
 .stepbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;padding-top:10px;border-top:1px dashed var(--rule)}
 .stepbar .cnt{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
@@ -273,7 +282,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
 </style>
 
 <header class="top">
-  <div class="eyebrow">Financial Accounting · Fall 2026 · TA Sessions 9/17 – 10/08</div>
+  <div class="eyebrow">Financial Accounting · Fall 2026 · TA Sessions 9/17 – 10/15</div>
   <h1>Financial Accounting Midterm Review</h1>
   <p>TA 課與上課投影片的內容，英文為主、中文輔助。第一次用請先看 <a href="#u0">Start here 怎麼用這個網站</a>，再看 <a href="#exam">考試攻略</a>（期中考題型與配分）：每題都是「先自己做 → 對答案 → 卡住才一步一步看詳解 → 錯的進錯題本再做」。</p>
   <div class="eq"><b>Assets</b>=<b>Liabilities</b>+<b>Share Capital</b>+<b>Revenues − Expenses − Dividends</b></div>
@@ -315,7 +324,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <li><a href="#pb"><span class="n">16</span>Exam Part B Practice ★</a></li>
     <li><a href="#u12"><span class="n">17</span>Comprehensive Problems (進階)</a></li>
     <li class="stg"><a href="#stage-10">第 10 關 · 考前衝刺</a></li>
-    <li><a href="#mb"><span class="n">18</span>Mock Exam B (exam format)</a></li>
+    <li><a href="#mb"><span class="n">18</span>Mock Exams B &amp; C (exam format)</a></li>
     <li><a href="#u11"><span class="n">19</span>Mock Exam A (28 Qs)</a></li>
     <li><a href="#review"><span class="n">20</span>錯題本 Mistakes <span class="miss-count" id="missToc"></span></a></li>
     <li><a href="#u9"><span class="n">21</span>Exam Traps</a></li>
@@ -346,7 +355,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
   <div class="flow" aria-label="From transaction to statements">
     <span>交易 Transaction</span><i>→</i><span>分錄 Journal entry</span><i>→</i><span>期末調整 Adjusting</span><i>→</i><span>損益表 Income statement</span><i>→</i><span>保留盈餘 Retained earnings</span><i>→</i><span>財務狀況表 SFP</span><i>→</i><span>現金流量表 Cash flows</span>
   </div>
-  <p>每一關都是這條線上的一小段：存貨（第 4 關）決定 <b>COGS</b>；應收帳款（第 5 關）決定<b>呆帳費用</b>；設備（第 6 關）決定<b>折舊與處分損益</b>；負債（第 7 關）決定<b>利息</b>；第 8 關學現金流量表。期中考 Part B 的三題（存貨盤點、折舊、更正損益表，共 50%）都在第 9 關用考試格式練。<span class="zh">所以讀每個單元時都問自己：這個數字最後會出現在哪張表的哪一行？</span></p>
+  <p>每一關都是這條線上的一小段：存貨（第 4 關）決定 <b>COGS</b>；應收帳款（第 5 關）決定<b>呆帳費用</b>；設備（第 6 關）決定<b>折舊與處分損益</b>；負債（第 7 關）決定<b>利息</b>；第 8 關學現金流量表。期中考 Part B（存貨、設備折舊、更正損益表或現金流量表，共 50%）的兩年題型都在第 9 關用考試格式練。<span class="zh">所以讀每個單元時都問自己：這個數字最後會出現在哪張表的哪一行？</span></p>
 
   <h3><span class="tag">Path</span>路線圖：一關一關來，最後做得出綜合題</h3>
   <p>整個網站已經照學習順序排好，分成 10 關。每一關開頭會告訴你<b>這關的目標、照順序要做哪些事、過關條件</b>。預設是<b>專心模式</b>：畫面只顯示目前這一關，不會被後面的內容嚇到。想看全部，按最上面的「專心模式」切換。<span class="zh">每關最後把單元的「完成」勾起來，就會出現「進下一關」。不一定要照順序，但建議照順序：後面每一關都用到前面的東西。</span></p>
@@ -356,54 +365,57 @@ nav.idx li.stg a.done::after{content:" ✓"}
 
 <!-- ============ 01 (exam) ============ -->
 <section class="unit" id="exam">
-  <div class="unit-head"><span class="src">Based on the IMBA FA 2023 mock midterm</span></div>
+  <div class="unit-head"><span class="src">Based on the 2023 and 2025 mock midterms + TA 10/15</span></div>
   <h2 class="u"><span class="num">01</span>Exam Blueprint 考試攻略</h2>
-  <p>This is what the 2023 mock midterm looked like. This year's exam may differ, but the professor's question types usually stay similar, so the whole site is now aimed at these question types.<span class="zh">這是 2023 年模擬期中考的結構。今年不一定一模一樣，但出題方向通常相近，所以整個網站的練習都對準這些題型。</span></p>
+  <p>Two years of mock midterms (2023 and 2025) share the same skeleton. Part B changed some topics, so this site prepares you for both versions.<span class="zh">2023 和 2025 兩年的模擬期中考骨架一樣；Part B 換過部分主題，所以這個網站兩種版本都練。</span></p>
 
   <h3><span class="tag">Format</span>題型與配分</h3>
   <div class="scroll"><table>
-    <tr><th>Part</th><th>內容</th><th>配分</th><th>在哪裡練</th></tr>
-    <tr><td><b>A</b></td><td>25 題選擇題（每題 2 分），觀念題＋小計算</td><td>50%</td><td><a href="#mb">Mock Exam B</a>（同題型換數字）、各單元小測驗</td></tr>
-    <tr><td><b>B1</b></td><td>存貨盤點調整：算出正確期末存貨，<b>每一項都要寫理由</b></td><td>10%<br><span class="en">2 pts × 5 items</span></td><td><a href="#d-pbInv">Part B 練習 1</a>、<a href="#d-sergei">Sergei</a></td></tr>
-    <tr><td><b>B2</b></td><td>折舊四小題：生產數量法、直線法、期末帳面價值、倍數餘額遞減＋處分損益</td><td>20%</td><td><a href="#d-pbDep">Part B 練習 2</a>、<a href="#u15">設備單元</a></td></tr>
-    <tr><td><b>B3</b></td><td>更正損益表：把漏掉的調整（應計、用品、折舊、利息、佣金收入）加進去，重編正確的損益表</td><td>20%<br><span class="en">3 pts × 6 items + 2</span></td><td><a href="#d-pbIS">Part B 練習 3</a>、<a href="#u2">調整分錄單元</a></td></tr>
+    <tr><th>Part</th><th>2023</th><th>2025（最新）</th><th>在哪裡練</th></tr>
+    <tr><td><b>A</b> 50%</td><td colspan="2">25 題選擇題，每題 2 分：觀念題＋小計算</td><td><a href="#mb">Mock Exam B（2023 型）、C（2025 型）</a></td></tr>
+    <tr><td><b>B 存貨</b></td><td>盤點調整：算正確期末存貨，每項寫理由（10%）</td><td>成本法：FIFO、<b>LIFO</b>、平均法＋哪種方法省稅、保留較多現金（20%）</td><td><a href="#d-pbInv">練習 1</a>、<a href="#d-pbCost">練習 4</a></td></tr>
+    <tr><td><b>B 設備</b></td><td>生產數量法、直線法、帳面價值、倍數餘額遞減＋處分（20%）</td><td>生產數量法、直線法＋處分利益、<b>估計變動</b>（15%）</td><td><a href="#d-pbDep">練習 2</a>、<a href="#d-pbPPE">練習 5</a></td></tr>
+    <tr><td><b>B 第三題</b></td><td>更正損益表（漏掉的調整）（20%）</td><td>現金流量表：觀念題＋分類代號（15%）</td><td><a href="#d-pbIS">練習 3</a>、<a href="#d-pbSCF">練習 6</a></td></tr>
   </table></div>
-  <div class="callout"><strong>Part B 的 50% 是最穩的分數。</strong>三題的題型固定、全部是計算，沒有模糊的觀念題。練到不看詳解全對，這 50 分幾乎可以全拿。<span class="zh">所以第 9 關「考試題型實戰」是整個網站最重要的一關。</span></div>
+  <div class="callout"><strong>兩年都考：存貨題、設備折舊題。</strong>第三題 2023 是調整分錄／更正損益表，2025 換成現金流量表，所以兩種都要準備。TA 10/15 剛好複習了設備（含估計變動、部分年度）和現金流量表（含直接法），今年很可能考這兩塊。<span class="zh">Part B 題型固定、全是計算或固定答法，練熟幾乎可以全拿，是最穩的 50 分。</span></div>
 
-  <h3><span class="tag">Part A</span>選擇題在考什麼（2023 年 25 題的分布）</h3>
+  <h3><span class="tag">Part A</span>選擇題在考什麼（兩年對照）</h3>
   <div class="scroll"><table>
-    <tr><th>主題</th><th class="r">題數</th><th>2023 題號</th><th>去哪裡練</th></tr>
-    <tr><td>會計等式、交易對 A／L／E 的影響</td><td class="r">3</td><td>3, 8, 9</td><td><a href="#u1">會計等式</a>、<a href="#dc">借貸特訓</a></td></tr>
-    <tr><td>調整分錄沒做的影響（用品）</td><td class="r">1</td><td>6</td><td><a href="#ex-supplies">用品調整</a></td></tr>
-    <tr><td>進貨成本、COGS、毛利率、存貨成本法</td><td class="r">4</td><td>1, 4, 7, 15</td><td><a href="#d-purchase">進貨成本</a>、<a href="#u3">損益表</a>、<a href="#u5">FIFO／平均法</a></td></tr>
-    <tr><td>內部控制</td><td class="r">2</td><td>10, 18</td><td><a href="#ic">內部控制六原則</a></td></tr>
-    <tr><td>應收帳款與呆帳</td><td class="r">2</td><td>12, 20</td><td><a href="#u7">應收與呆帳</a></td></tr>
-    <tr><td>設備成本、資本支出 vs 費用</td><td class="r">2</td><td>17, 19</td><td><a href="#d-land">土地成本</a>、<a href="#u15">設備</a></td></tr>
-    <tr><td>負債：公司債、或有負債、流動／非流動</td><td class="r">4</td><td>2, 11, 21, 22</td><td><a href="#u16">負債</a>、<a href="#d-cls">負債分類</a></td></tr>
-    <tr><td>權益：股票股利、股票分割、特別股、庫藏股</td><td class="r">3</td><td>5, 16, 25</td><td><a href="#eq">權益</a></td></tr>
-    <tr><td>現金流量表</td><td class="r">3</td><td>13, 14, 23</td><td><a href="#u17">現金流量表</a></td></tr>
-    <tr><td>財務比率的種類</td><td class="r">1</td><td>24</td><td><a href="#ratios">三類比率</a></td></tr>
+    <tr><th>主題</th><th>2023 題號</th><th>2025 題號</th><th>去哪裡練</th></tr>
+    <tr><td>會計等式、借貸規則</td><td>3, 8, 9</td><td>1</td><td><a href="#u1">會計等式</a>、<a href="#dc">借貸特訓</a></td></tr>
+    <tr><td>權責基礎淨利、調整分錄沒做的影響、票據利息</td><td>6</td><td>2, 3, 10</td><td><a href="#u2">調整分錄</a>、<a href="#ex-supplies">用品</a></td></tr>
+    <tr><td>試算表：錯誤類型；從試算表算淨利、保留盈餘、總資產</td><td>—</td><td>7, 23, 24, 25</td><td><a href="#d-tb">Riverbend 試算表</a></td></tr>
+    <tr><td>進貨成本、在途存貨、存貨錯誤、成本法</td><td>1, 4, 7, 15</td><td>5, 6, 11, 13, 14, 17</td><td><a href="#u4">存貨各單元</a>、<a href="#d-purchase">進貨成本</a></td></tr>
+    <tr><td>應收帳款與呆帳</td><td>12, 20</td><td>4, 18</td><td><a href="#u7">應收與呆帳</a></td></tr>
+    <tr><td>設備成本、資本支出 vs 費用</td><td>17, 19</td><td>19</td><td><a href="#u15">設備</a></td></tr>
+    <tr><td>負債：公司債、或有負債、保固、分類</td><td>2, 11, 21, 22</td><td>9, 20</td><td><a href="#u16">負債</a></td></tr>
+    <tr><td>權益：股利、分割、庫藏股、發股 vs 發債</td><td>5, 16, 25</td><td>8, 21, 22</td><td><a href="#eq">權益</a></td></tr>
+    <tr><td>現金流量表</td><td>13, 14, 23</td><td>15, 16</td><td><a href="#u17">現金流量表</a></td></tr>
+    <tr><td>內部控制</td><td>10, 18</td><td>—</td><td><a href="#ic">內部控制</a></td></tr>
+    <tr><td>比率種類（流動性等）</td><td>24</td><td>12</td><td><a href="#ratios">三類比率</a></td></tr>
   </table></div>
 
   <h3><span class="tag">Strategy</span>考試當天怎麼寫</h3>
   <ol class="steps">
-    <li><span><b>先寫最有把握的部分。</b>Part B 題型固定、分數多，很多人先寫 Part B 再回來寫選擇題。選擇題不會的先跳過，最後再回來；如果沒有倒扣，不要留空白。</span></li>
-    <li><span><b>Part B 一定要寫算式。</b>解答是分步驟給分：折舊題「每英里折舊率 2 分＋本年折舊 3 分」。只寫答案，錯一個數字整題 0 分；有寫算式就能拿部分分數。</span></li>
-    <li><span><b>存貨盤點題每一項都要寫「加／減／不調整＋理由」。</b>「不調整」的那一項也要寫為什麼，那一項也是 2 分。理由就是一句話：<i>這批貨 12/31 屬於誰</i>。</span></li>
-    <li><span><b>更正損益表照「原數＋調整」的格式寫</b>，例如 <code>Salaries (6,000 + 5,300) 11,300</code>。改考卷的人一眼就看得出你每一項都對。</span></li>
-    <li><span><b>選擇題的計算題，先判斷方向再算。</b>例如有折扣的進貨，存貨一定比發票金額少；用選項回推驗算。</span></li>
+    <li><span><b>先寫最有把握的部分。</b>Part B 題型固定、分數多，很多人先寫 Part B 再回來寫選擇題。選擇題不會的先跳過；如果沒有倒扣，不要留空白。</span></li>
+    <li><span><b>Part B 一定要寫算式。</b>兩年的解答都是分步驟給分（例如折舊率、本年折舊、帳面價值、損益各自給分）。只寫答案，錯一個數字就全錯；有算式能拿部分分數。</span></li>
+    <li><span><b>存貨盤點題每一項都寫「加／減／不調整＋理由」</b>，不調整那一項也要寫理由。</span></li>
+    <li><span><b>成本法題 (d) 要寫比較和結論</b>：三種方法的稅前淨利和所得稅都算出來，再寫「物價上漲時 LIFO 的 COGS 最高、所得稅最少，所以留在公司的現金最多」。</span></li>
+    <li><span><b>現金流量表觀念題用條列寫兩到三點</b>，每點一句話（例如：非現金費用加回；應收帳款減少、應付帳款增加讓現金比淨利多）。</span></li>
   </ol>
 
-  <h3><span class="tag">Traps</span>2023 模擬考裡的陷阱</h3>
+  <h3><span class="tag">Traps</span>兩年模擬考裡的陷阱</h3>
   <ul>
-    <li>進貨折扣用<b>扣掉退貨後</b>的金額算；FOB 起運點的運費<b>加進</b>存貨成本（Q1）。</li>
-    <li>備抵呆帳調整前是<b>借餘</b>，呆帳費用要<b>加</b>（Q12）。</li>
-    <li>拆除舊屋的<b>殘料收入要從土地成本減掉</b>；鋪停車場是土地改良，不是土地（Q17）。</li>
-    <li>抵押借款<b>一年內到期的部分是流動負債</b>（Q22）。</li>
-    <li>累積特別股要<b>先補發積欠的股利</b>，再發當年度（Q16）。</li>
-    <li>寄銷<b>在外</b>的貨還是自己的；FOB 目的地的進貨在途中，<b>還不是</b>自己的（Part B1）。</li>
-    <li>倍數餘額遞減法第二年：<b>期初帳面價值 × 2/年限</b>，殘值先不管（Part B2）。</li>
-    <li>用現金買車子<b>不是費用</b>；本期買的用品也不是費用，用掉的才是（Part B3）。</li>
+    <li>進貨折扣用<b>扣掉退貨後</b>的金額算；買方付的運費<b>加進</b>存貨成本、不打折（2023 Q1、2025 Q14）。</li>
+    <li>買方退貨用<b>買價</b>算，不是賣方的成本（2025 Q11）。</li>
+    <li>在途存貨：<b>銷貨 FOB 目的地</b>、<b>進貨 FOB 起運點</b>算自己的（2025 Q6、Q13）。</li>
+    <li>存貨錯誤：第一年底權益錯，<b>第二年底自動更正</b>（2025 Q5）。</li>
+    <li>權責基礎淨利：用<b>賺到的收入、發生的費用、折舊</b>，現金收付和借款都不算（2025 Q2）。</li>
+    <li>從試算表算總資產：<b>累計折舊要減</b>；股利不是費用（2025 Q23–25）。</li>
+    <li>處分設備的投資活動現金＝<b>帳面價值＋利益</b>（2025 Q15）；沖銷呆帳<b>不影響現金</b>（2025 Q16）。</li>
+    <li>備抵呆帳調整前是借餘，呆帳費用要加（2023 Q12）；殘料收入要從土地成本減掉（2023 Q17）。</li>
+    <li>估計變動：<b>剩餘帳面價值 − 新殘值，除以剩餘年限</b>，不改以前年度（2025 Part B）。</li>
+    <li>物價上漲：<b>LIFO 稅最少、現金留最多；FIFO 期末存貨最接近現時成本</b>（2025 Q17、Part B）。</li>
   </ul>
   <label class="done-row"><input type="checkbox" id="done-exam" data-unit="exam"> 知道考什麼、怎麼寫了</label>
 </section>
@@ -699,6 +711,35 @@ nav.idx li.stg a.done::after{content:" ✓"}
   </div>
   <p class="zh">IFRS 的排法：非流動資產在前、流動資產在後；權益在前、負債在後（跟考題 Bikes-Are-Us 的格式一樣）。</p>
 
+
+  <h3><span class="tag">Practice</span>From a trial balance to the statements <span class="en">(2025 Q23–25 type)</span></h3>
+  <p class="q">Riverbend Tours' trial balance at December 31 (after adjustments):</p>
+  <div class="scroll"><table>
+    <tr><th>Debits</th><th class="r">$</th><th>Credits</th><th class="r">$</th></tr>
+    <tr><td>Cash</td><td class="r">9,400</td><td>Accumulated Depreciation—Equipment</td><td class="r">2,100</td></tr>
+    <tr><td>Accounts Receivable</td><td class="r">1,250</td><td>Notes Payable</td><td class="r">7,000</td></tr>
+    <tr><td>Prepaid Insurance</td><td class="r">900</td><td>Accounts Payable</td><td class="r">1,600</td></tr>
+    <tr><td>Supplies</td><td class="r">1,300</td><td>Salaries and Wages Payable</td><td class="r">450</td></tr>
+    <tr><td>Equipment</td><td class="r">14,000</td><td>Interest Payable</td><td class="r">60</td></tr>
+    <tr><td>Dividends</td><td class="r">800</td><td>Unearned Tour Revenue</td><td class="r">900</td></tr>
+    <tr><td>Salaries and Wages Expense</td><td class="r">6,200</td><td>Share Capital—Ordinary</td><td class="r">8,000</td></tr>
+    <tr><td>Rent Expense</td><td class="r">1,500</td><td>Retained Earnings (beginning)</td><td class="r">2,170</td></tr>
+    <tr><td>Depreciation Expense</td><td class="r">700</td><td>Tour Revenue</td><td class="r">13,800</td></tr>
+    <tr><td>Supplies Expense</td><td class="r">350</td><td>Service Revenue</td><td class="r">800</td></tr>
+    <tr><td>Utilities Expense</td><td class="r">420</td><td></td><td></td></tr>
+    <tr><td>Interest Expense</td><td class="r">60</td><td></td><td></td></tr>
+    <tr class="total"><td>Total debits</td><td class="r">36,880</td><td>Total credits</td><td class="r">36,880</td></tr>
+  </table></div>
+  <div class="drill" data-d="tb" id="d-tb">
+    <p class="hint">Compute net income, ending retained earnings, total assets and total liabilities.</p>
+    <div class="explain" hidden><h4>詳解 Solution</h4>
+    <p>Revenues = 13,800 + 800 = <b>14,600</b>. Expenses = 6,200 + 1,500 + 700 + 350 + 420 + 60 = <b>9,230</b>. Net income = <b>5,370</b>. (Dividends are not an expense.)</p>
+    <p>Ending retained earnings = 2,170 + 5,370 − 800 = <b>6,740</b></p>
+    <p>Total assets = 9,400 + 1,250 + 900 + 1,300 + 14,000 − 2,100 (accumulated depreciation) = <b>24,750</b></p>
+    <p>Total liabilities = 7,000 + 1,600 + 450 + 60 + 900 = <b>10,010</b>. Check: 10,010 + share capital 8,000 + RE 6,740 = 24,750 ✓</p>
+    <p class="zh">三個陷阱：股利不是費用；累計折舊要從資產減掉；預收收入是負債。</p>
+    </div>
+  </div>
   <h3 id="ratios"><span class="tag">Ratios</span>Three families of ratios</h3>
   <div class="scroll"><table>
     <tr><th>Family</th><th>Measures</th><th>Examples</th></tr>
@@ -930,6 +971,9 @@ nav.idx li.stg a.done::after{content:" ✓"}
   </div>
   <div class="callout"><strong>In a period of rising prices:</strong> FIFO → highest ending inventory, lowest COGS, <b>highest net income</b>. LIFO → the opposite. Average-cost is in between.<span class="zh">物價上漲：FIFO 淨利最高，LIFO 最低。</span></div>
 
+
+  <h3><span class="tag">Taxes</span>Which method keeps more cash? <span class="en">(2025 Part B)</span></h3>
+  <p>Cost-flow methods change COGS, so they change taxable income and the income tax actually paid. When prices are rising, <b>LIFO</b> charges the newest, most expensive costs to COGS → lowest income before tax → <b>lowest income tax → most cash kept</b>. FIFO gives the highest net income but the highest tax. LIFO is not allowed under IFRS, but exams still ask you to compute it.<span class="zh">物價上漲：LIFO 淨利最低、稅最少、現金留最多；FIFO 淨利最高、稅最多、期末存貨最接近現時成本。</span></p>
   <h3><span class="tag">Method</span>Periodic ending inventory</h3>
   <ol class="steps">
     <li><span>List each layer (units × unit cost); total GAFS units and cost.<span class="zh">列出每一批，加總數量與成本。</span></span></li>
@@ -1242,7 +1286,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
 
 <!-- ============ 12 (u15) ============ -->
 <section class="unit" id="u15">
-  <div class="unit-head"><span class="src">Source: W4 slides Ch9</span></div>
+  <div class="unit-head"><span class="src">Source: W4 slides Ch9 · TA 10/15</span></div>
   <h2 class="u"><span class="num">12</span>Plant Assets: Cost, Depreciation, Revaluation &amp; Disposal</h2>
 
   <h3><span class="tag">Definitions</span>What is a plant asset?</h3>
@@ -1296,6 +1340,29 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <p>* 1,685 × 40% = 674, adjusted to 685 so the ending book value equals the €1,000 residual value. Total depreciation is €12,000 under all three methods; only the timing differs.<span class="zh">最後一年要調整到帳面價值＝殘值；三種方法總折舊都是 12,000。</span></p>
   </div></details>
   <div class="trap"><b class="h">Exam tip — partial year:</b> depreciation is by <b>months used</b>. A quarter = 3/12 of annual depreciation; an asset sold on Feb 28 gets 2 months; one bought on March 1 gets 1 month to March 31. Change methods only if justified (<b>consistency</b>).<span class="zh">期中考題都是一季（3 個月），買賣當月要算清楚月份。</span></div>
+  <h3><span class="tag">Practice</span>Partial-year depreciation <span class="en">(TA 10/15)</span></h3>
+  <div class="drill" data-d="partial" id="d-partial">
+    <p class="q">Orchid Bakery bought an oven on April 1, 2025 for $84,000. Residual value $4,000; useful life 5 years or 20,000 working hours; year-end December 31. Compute: (a) straight-line depreciation for 2025; (b) units-of-activity depreciation for 2025 if the oven ran 3,500 hours; (c) double-declining-balance depreciation for 2025 and 2026.</p>
+    <div class="explain" hidden><h4>詳解 Solution</h4>
+    <p>(a) (84,000 − 4,000) ÷ 5 = 16,000 per year × 9/12 = <b>$12,000</b> (April–December = 9 months)</p>
+    <p>(b) (84,000 − 4,000) ÷ 20,000 = <b>$4 per hour</b> × 3,500 = <b>$14,000</b> (units-of-activity needs no month fraction — the hours already measure the use)</p>
+    <p>(c) Rate 2 × 1/5 = 40%. 2025: 84,000 × 40% × 9/12 = <b>$25,200</b>. 2026: (84,000 − 25,200) × 40% = <b>$23,520</b> — a full year on the new book value.</p>
+    <p class="zh">只有買進那一年要乘月份比例；倍數餘額遞減法第二年用「期初帳面價值」算整年。</p>
+    </div>
+  </div>
+
+  <h3><span class="tag">Rules</span>Change in estimate <span class="en">(TA 10/15 · 2025 Part B)</span></h3>
+  <p>When a company revises an asset's useful life or residual value, the change is <b>prospective</b>: past depreciation is not restated. Spread what is left over what is left.<span class="zh">估計變動只影響現在和未來，不改以前年度。</span></p>
+  <div class="callout"><strong>New annual depreciation = (Book value at the start of the revision year − New residual value) ÷ Remaining useful life.</strong><span class="zh">「剩餘年限」看題目怎麼說：說「剩餘年限改為 4 年（含今年）」就用 4；說「總年限從 20 年改成 15 年」要先扣掉已經用掉的年數。</span></div>
+  <div class="drill" data-d="estimate" id="d-estimate">
+    <p class="q">Delta Logistics bought a forklift for £90,000 on January 1, 2021, depreciated straight-line over 8 years with a £10,000 residual value. On December 31, 2024, before adjusting entries, it changed the remaining estimated life to 3 years (including 2024) and the residual value to £6,000. What is depreciation expense for 2024?</p>
+    <div class="explain" hidden><h4>詳解 Solution</h4>
+    <p>Old depreciation = (90,000 − 10,000) ÷ 8 = <b>10,000</b> per year. 2021–2023: 3 years × 10,000 = <b>30,000</b>.</p>
+    <p>Book value at January 1, 2024 = 90,000 − 30,000 = <b>60,000</b>. New depreciable amount = 60,000 − 6,000 = 54,000.</p>
+    <p>2024 depreciation = 54,000 ÷ 3 = <b>£18,000</b>.</p>
+    </div>
+  </div>
+
 
   <h3><span class="tag">IFRS</span>Revaluation and impairment</h3>
   <p>IFRS lets companies choose the <b>cost model</b> or the <b>revaluation model</b> (fair value) — not allowed under US GAAP. If revaluation is used it applies to the whole class of assets, and assets with rapid price changes are revalued every year. Fair value above book value → <b>revaluation surplus (OCI)</b>. Fair value below book value → <b>impairment loss (income statement)</b>: Dr Impairment Loss / Cr Accumulated Impairment Loss.<span class="zh">重估增值 → 其他綜合損益；減損 → 損益表的損失。</span></p>
@@ -1324,6 +1391,13 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <p>Book value = 50,000 − 32,500 = 17,500; cash 16,000 → loss 1,500. A <b>retirement</b> (no cash) of an asset that is not fully depreciated gives a loss equal to its book value; a fully depreciated asset retires with no gain or loss.<span class="zh">報廢沒有收現：損失＝帳面價值；已提足折舊就沒有損益。</span></p>
   </div></details>
 
+
+  <h3><span class="tag">Definitions</span>Natural resources and intangible assets <span class="en">(TA 10/15)</span></h3>
+  <div class="grid2">
+    <div class="box"><h4>Natural resources → depletion 折耗</h4><p>Depletion per unit = (Cost − Residual) ÷ Estimated units; × units extracted. Entry: <span class="en">Dr Inventory / Cr Accumulated Depletion</span> — it becomes an expense (COGS) only when the extracted resource is sold.<br><b>Example:</b> a mine costs $12 million and holds 20 million tons; 2 million tons mined → $0.60 per ton × 2,000,000 = <b>$1,200,000</b>.</p></div>
+    <div class="box"><h4>Intangible assets → amortization 攤銷</h4><ul><li>Finite life (patents, copyrights) → straight-line amortization</li><li>Indefinite life (goodwill) → <b>not amortized</b> (tested for impairment)</li><li>Goodwill is recorded only when a whole business is bought</li><li>Research → expense; development → expense until technological feasibility</li></ul></div>
+  </div>
+  <p class="zh">天然資源用「折耗」，跟生產數量法一樣按單位算；無形資產用「攤銷」，商譽不攤銷。</p>
   <h3><span class="tag">Formula</span>Asset turnover</h3>
   <p><b>Asset turnover = Net sales ÷ Average total assets.</b> Example: ₩58,140 ÷ [(35,528 + 34,766) ÷ 2] = <b>1.65 times</b>. A higher ratio means more efficient use of assets to generate sales; it varies widely by industry (≥ 2.5 good for retail; 0.25–0.5 good for utilities).<span class="zh">資產週轉率越高，越有效率用資產創造銷貨；不同產業差很多。</span></p>
 
@@ -1410,9 +1484,9 @@ nav.idx li.stg a.done::after{content:" ✓"}
 
 <!-- ============ 14 (eq) ============ -->
 <section class="unit" id="eq">
-  <div class="unit-head"><span class="src">Ch11 · Corporations: share capital, dividends, treasury shares</span></div>
+  <div class="unit-head"><span class="src">Textbook equity chapter · tested in the 2023 and 2025 mock exams</span></div>
   <h2 class="u"><span class="num">14</span>Equity: Shares, Dividends &amp; Treasury Shares</h2>
-  <p>Three of the 25 multiple-choice questions in 2023 came from here (share dividend vs split, cumulative preference shares, treasury shares). They are concepts or small calculations: learn the three tables below and the points are yours.<span class="zh">2023 年有 3 題選擇題考這裡。都是觀念或小計算，把下面三張表背熟就能拿分。</span></p>
+  <p>Both mock exams test this: 2023 Q5, Q16, Q25 and 2025 Q8, Q21, Q22 (share dividends vs splits, preference shares, treasury shares, EPS dilution). They are concepts or small calculations: learn the three tables below and the points are yours.<span class="zh">2023 和 2025 年各有 3 題選擇題考這裡。都是觀念或小計算，把下面三張表背熟就能拿分。</span></p>
 
   <h3><span class="tag">Definitions</span>Authorized, issued, outstanding</h3>
   <dl class="def">
@@ -1474,7 +1548,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
 
 <!-- ============ 15 (u17) ============ -->
 <section class="unit" id="u17">
-  <div class="unit-head"><span class="src">Source: W5 slides Ch7 &amp; Ch14</span></div>
+  <div class="unit-head"><span class="src">Source: W5 slides Ch7 &amp; Ch14 · TA 10/15</span></div>
   <h2 class="u"><span class="num">15</span>Internal Control, Cash &amp; the Statement of Cash Flows</h2>
 
   <h3><span class="tag">Definitions</span>Cash, cash equivalents, restricted cash</h3>
@@ -1544,6 +1618,33 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <p><b>Starting from net income instead</b> (as in the Bikes-Are-Us answer): 145,000 + 9,000 + 3,000 + 10,000 − 5,000 − 4,000 + 16,000 − 2,000 (decrease in income tax payable) = <b>172,000</b> — same answer. IAS 7 requires separate disclosure of interest and taxes paid, which is why the textbook starts from income before tax.<span class="zh">從淨利開始也可以，結果相同。教科書從稅前淨利開始是因為 IAS 7 要求單獨揭露利息與所得稅支付數。</span></p>
   </div></details>
 
+
+  <h3><span class="tag">Concepts</span>Net income vs operating cash flow <span class="en">(2025 Part B)</span></h3>
+  <div class="grid2">
+    <div class="box"><h4>Net loss, yet positive operating cash flow?</h4><p>Yes. (1) Non-cash expenses — depreciation, amortization, losses on disposal — reduce net income but use no cash, so they are added back. (2) Working capital can release cash: collecting more receivables than this year's sales (A/R ↓), selling inventory bought earlier (inventory ↓), or not yet paying expenses (A/P ↑).<span class="zh">淨損但營業現金流量為正：非現金費用加回＋營運資金變動帶進現金。</span></p></div>
+    <div class="box"><h4>Which better reflects performance?</h4><p><b>Accrual net income</b> matches revenues and expenses to the period, so it better measures profitability and long-term performance. <b>Operating cash flow</b> better shows liquidity — the ability to pay bills, repay debt and reinvest — and is harder to shape with estimates. Look at both; a large, persistent gap is a warning sign.<span class="zh">看獲利能力用淨利；看流動性、付款能力用營業現金流量。兩個都要看。</span></p></div>
+  </div>
+
+  <h3><span class="tag">Method</span>Direct method <span class="en">(TA 10/15)</span></h3>
+  <p>The direct method lists the major classes of operating cash receipts and payments instead of starting from net income. Investing and financing sections are the same under both methods; net cash from operating activities is the same number.<span class="zh">直接法：營業活動直接列「收了多少現金、付了多少現金」。投資、籌資部分兩種方法一樣，營業現金流量總數也一樣。</span></p>
+  <div class="scroll"><table>
+    <tr><th>Operating line</th><th>Formula</th></tr>
+    <tr><td>Cash collected from customers</td><td>Sales − increase in A/R (+ decrease in A/R)</td></tr>
+    <tr><td>Cash paid to suppliers</td><td>COGS + increase in inventory − increase in A/P (reverse for decreases)</td></tr>
+    <tr><td>Cash paid for operating expenses</td><td>Expenses + increase in prepaids − increase in accrued payables (reverse for decreases); remove any loss or gain included in expenses</td></tr>
+    <tr><td>Cash paid for income taxes</td><td>Tax expense − increase in taxes payable (+ decrease)</td></tr>
+  </table></div>
+  <p class="zh">直接法裡永遠不會出現：折舊、處分損益（不是現金或不是營業現金）。</p>
+  <div class="drill" data-d="direct" id="d-direct">
+    <p class="q">Rhein GmbH's 2025 data: sales revenue €3,200,000; accounts receivable increased €120,000; operating expenses (excluding depreciation) €2,450,000, which include a €15,000 loss on the sale of equipment; inventory increased €40,000; accounts payable increased €35,000; depreciation expense €300,000; income tax expense €110,000; income taxes payable decreased €10,000. Using the direct method, compute the operating section. Then compute net income and check with the indirect method.</p>
+    <div class="explain" hidden><h4>詳解 Solution</h4>
+    <p>Collections = 3,200,000 − 120,000 = <b>3,080,000</b></p>
+    <p>Cash paid for operating expenses = 2,450,000 − 15,000 (loss is not cash) + 40,000 (↑ inventory) − 35,000 (↑ A/P) = <b>2,440,000</b></p>
+    <p>Income taxes paid = 110,000 + 10,000 (↓ taxes payable) = <b>120,000</b></p>
+    <p>Net cash from operating activities = 3,080,000 − 2,440,000 − 120,000 = <b>€520,000</b></p>
+    <p>Check: net income = 3,200,000 − 2,450,000 − 300,000 − 110,000 = <b>340,000</b>; indirect: 340,000 + 300,000 + 15,000 − 120,000 − 40,000 + 35,000 − 10,000 = 520,000 ✓</p>
+    </div>
+  </div>
   <h3><span class="tag">Formula</span>Free cash flow</h3>
   <p><b>Free cash flow = Net cash provided by operating activities − Capital expenditures − Cash dividends.</b> It shows the cash left after maintaining operations and satisfying investors. Anheuser-Busch InBev: 17,451 − 3,869 − 6,253 = <b>$7,329</b>. Computer Services International: 172,000 − (120,000 + 25,000) − 29,000 = <b>−€2,000</b>.<span class="zh">自由現金流量＝營業現金流量 − 資本支出 − 現金股利。</span></p>
 
@@ -1574,8 +1675,8 @@ nav.idx li.stg a.done::after{content:" ✓"}
 <!-- ============ 16 (pb) ============ -->
 <section class="unit" id="pb">
   <div class="unit-head"><span class="src">Exam Part B format · original practice problems</span></div>
-  <h2 class="u"><span class="num">16</span>Exam Part B Practice — 3 Problems (50%)</h2>
-  <p>The same three problem types as Part B of the 2023 mock midterm, with new companies and numbers. Write each one on paper in exam format first (with computations), then type the key numbers to check.<span class="zh">跟 2023 模擬考 Part B 三題同題型，換公司、換數字。先在紙上用考試格式寫完（一定要寫算式），再把關鍵數字填進來對答案。做完一輪，隔天按 Reset 再做一次。</span></p>
+  <h2 class="u"><span class="num">16</span>Exam Part B Practice — 6 Problems (2023 &amp; 2025 types)</h2>
+  <p>Practices 1–3 follow the 2023 Part B, practices 4–6 the 2025 Part B, all with new companies and numbers. Write each one on paper in exam format first (with computations), then type the key numbers to check.<span class="zh">練習 1–3 是 2023 年 Part B 題型，練習 4–6 是 2025 年（最新）題型，全部換公司、換數字。建議先做 4–6。先在紙上用考試格式寫完（一定要寫算式），再把關鍵數字填進來對答案。做完一輪，隔天按 Reset 再做一次。</span></p>
 
   <h3><span class="tag">Practice 1 · 10%</span>Harbor Lights Ltd — correct inventory, with explanations</h3>
   <p class="q">An auditor is reviewing Harbor Lights Ltd's inventory on December 31. Management is under pressure to boost reported income. The recorded inventory is $640,000, but the following was not considered:</p>
@@ -1671,7 +1772,71 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <p class="zh">四個陷阱：(2) 收入是 15% 佣金 4,500，不是 30,000；(3) 本月買的 1,900 不是費用，用掉的 3,600 才是；(4) 現金買設備不是費用，只加本月折舊 600；(6) 月報表的利息只算 7 月一個月。</p>
     </div>
   </div>
-  <label class="done-row"><input type="checkbox" id="done-pb" data-unit="pb"> 三題都不看詳解全對</label>
+  
+  <h3><span class="tag">Practice 4 · 20%</span>Northwind Supply — FIFO, LIFO, average-cost and taxes <span class="en">(2025 type)</span></h3>
+  <p class="q">Northwind Supply uses the periodic inventory method. Its 2025 inventory records show:</p>
+  <div class="scroll"><table>
+    <tr><th>Date</th><th>Explanation</th><th class="r">Units</th><th class="r">Unit cost</th><th class="r">Total cost</th></tr>
+    <tr><td>1/1</td><td>Beginning inventory</td><td class="r">200</td><td class="r">$10</td><td class="r">$2,000</td></tr>
+    <tr><td>3/15</td><td>Purchase</td><td class="r">300</td><td class="r">12</td><td class="r">3,600</td></tr>
+    <tr><td>8/20</td><td>Purchase</td><td class="r">400</td><td class="r">13</td><td class="r">5,200</td></tr>
+    <tr><td>11/5</td><td>Purchase</td><td class="r">100</td><td class="r">15</td><td class="r">1,500</td></tr>
+    <tr class="total"><td></td><td>Total</td><td class="r">1,000</td><td></td><td class="r">$12,300</td></tr>
+  </table></div>
+  <p class="q">A physical count on December 31 shows 300 units on hand. Answer the independent questions and show computations: (a) ending inventory under FIFO; (b) ending inventory under LIFO; (c) cost of goods sold under average-cost; (d) sales revenue was $20,000, operating expenses $5,000, and the income tax rate 25%. If Northwind wants to keep more cash in the business, which method should it choose? Show calculations and explain.</p>
+  <div class="drill" data-d="pbCost" id="d-pbCost">
+    <p class="hint">平均單價填到小數兩位。(d) 三種方法的所得稅都要算出來，再選答案。</p>
+    <div class="explain" hidden><h4>Model answer 考卷這樣寫</h4>
+    <p><b>(a) FIFO</b> — the 300 units left are the newest: 100 × $15 = 1,500 + 200 × $13 = 2,600 → <b>$4,100</b></p>
+    <p><b>(b) LIFO</b> — the 300 units left are the oldest: 200 × $10 = 2,000 + 100 × $12 = 1,200 → <b>$3,200</b></p>
+    <p><b>(c) Average-cost</b> — $12,300 ÷ 1,000 = $12.30 per unit × 700 units sold = <b>$8,610</b></p>
+    <div class="scroll"><table>
+      <tr><th>(d)</th><th class="r">FIFO</th><th class="r">LIFO</th><th class="r">Average</th></tr>
+      <tr><td>Sales revenue</td><td class="r">20,000</td><td class="r">20,000</td><td class="r">20,000</td></tr>
+      <tr><td>Cost of goods sold (12,300 − EI)</td><td class="r">8,200</td><td class="r">9,100</td><td class="r">8,610</td></tr>
+      <tr><td>Operating expenses</td><td class="r">5,000</td><td class="r">5,000</td><td class="r">5,000</td></tr>
+      <tr><td>Income before income taxes</td><td class="r">6,800</td><td class="r">5,900</td><td class="r">6,390</td></tr>
+      <tr class="total"><td>Income taxes (25%)</td><td class="r">1,700</td><td class="r">1,475</td><td class="r">1,597.50</td></tr>
+    </table></div>
+    <p><b>Choose LIFO.</b> Prices are rising, so LIFO puts the newest, most expensive costs into COGS. That gives the lowest taxable income and the lowest income tax ($1,475), so the most cash stays in the business ($225 more than FIFO).</p>
+    <p class="zh">注意：IFRS 不允許 LIFO，但 2025 模擬考就是要你算 LIFO。結論要寫原因：物價上漲 → LIFO 的 COGS 最高 → 所得稅最少 → 現金留最多。</p>
+    </div>
+  </div>
+
+  <h3><span class="tag">Practice 5 · 15%</span>SkyLift Cranes — units-of-activity, disposal, change in estimate <span class="en">(2025 type)</span></h3>
+  <p class="q">Before this year's depreciation entry, SkyLift Cranes' records show:</p>
+  <div class="scroll"><table>
+    <tr><th>Crane</th><th class="r">Cost</th><th class="r">Residual value</th><th class="r">Estimated life</th><th class="r">Accum. depr.—beginning of year</th><th class="r">Hours this year</th></tr>
+    <tr><td>A</td><td class="r">$960,000</td><td class="r">$60,000</td><td class="r">15,000 hours</td><td class="r">$270,000</td><td class="r">2,400</td></tr>
+    <tr><td>B</td><td class="r">750,000</td><td class="r">30,000</td><td class="r">12 years</td><td class="r">240,000</td><td class="r">—</td></tr>
+    <tr><td>C</td><td class="r">1,100,000</td><td class="r">100,000</td><td class="r">10 years (originally)</td><td class="r">300,000</td><td class="r">—</td></tr>
+  </table></div>
+  <p class="q">(a) Crane A uses units-of-activity: compute this year's depreciation expense. (b) Crane B uses straight-line and was sold at the end of this year for $470,000: compute the gain or loss. (c) Crane C uses straight-line. During this year (its 4th year), management revised the estimated <b>total</b> useful life from 10 to 8 years; the residual value is unchanged. Compute this year's depreciation and the accumulated depreciation at year-end. (d) A new crane D was bought on October 1 for $400,000 (residual $40,000, 5-year life) and uses double-declining-balance. Compute depreciation for this year and next year.</p>
+  <div class="drill" data-d="pbPPE" id="d-pbPPE">
+    <p class="hint">(c) 先算「這一年開始時」的帳面價值和剩餘年限。(d) 只有第一年按月份比例算。</p>
+    <div class="explain" hidden><h4>Model answer 考卷這樣寫</h4>
+    <p><b>(a)</b> Rate = (960,000 − 60,000) ÷ 15,000 hours = <b>$60 per hour</b>; expense = 2,400 × 60 = <b>$144,000</b></p>
+    <p><b>(b)</b> Annual depreciation = (750,000 − 30,000) ÷ 12 = 60,000; accumulated depreciation = 240,000 + 60,000 = 300,000; book value = 750,000 − 300,000 = 450,000; 470,000 − 450,000 = <b>gain $20,000</b></p>
+    <p><b>(c)</b> Old depreciation (1,100,000 − 100,000) ÷ 10 = 100,000 per year × 3 years = 300,000 (matches the beginning balance). Book value at the start of this year = 1,100,000 − 300,000 = 800,000. Remaining life = 8 − 3 = <b>5 years</b> (including this year). New depreciation = (800,000 − 100,000) ÷ 5 = <b>$140,000</b>; accumulated depreciation at year-end = 300,000 + 140,000 = <b>$440,000</b></p>
+    <p><b>(d)</b> DDB rate = 2 × 1/5 = 40%. This year: 400,000 × 40% × 3/12 = <b>$40,000</b>. Next year (full year on the new book value): (400,000 − 40,000) × 40% = <b>$144,000</b></p>
+    <p class="zh">估計變動不改以前年度：用「現在的帳面價值－新殘值」除以「剩下的年數」。題目說「總年限改成 8 年」要先扣掉已經用的 3 年；如果題目說「剩餘年限改成 X 年（含今年）」就直接用 X。</p>
+    </div>
+  </div>
+
+  <h3><span class="tag">Practice 6 · 15%</span>Statement of cash flows — concepts and classification <span class="en">(2025 type)</span></h3>
+  <p class="q">(a) How can a company report a net income that is much higher than its net cash provided by operating activities? Give two reasons. (b) A company reports a net loss but positive cash flow from operating activities. Is that possible? Explain. (c) Using the codes below, indicate how each item is reported on a statement of cash flows prepared with the indirect method (starting from income before income tax): <b>A</b> added to income before tax; <b>B</b> deducted from income before tax; <b>C</b> investing outflow; <b>D</b> investing inflow; <b>E</b> financing outflow; <b>F</b> financing inflow; <b>G</b> significant non-cash investing and financing activity. (d) Lumen Ltd's net income was $84,000; depreciation $18,000; loss on sale of equipment $3,000; accounts receivable increased $9,000; inventory decreased $6,000; prepaid expenses increased $1,500; accounts payable decreased $4,500; accrued liabilities increased $2,000. Compute net cash provided by operating activities. Lumen bought equipment for $40,000 and paid $25,000 of dividends: compute free cash flow.</p>
+  <div class="drill" data-d="pbSCF" id="d-pbSCF">
+    <p class="hint">(a)(b) 先在紙上寫，再看下方示範答案。(c) 每項選一個代號；(d) 填數字。</p>
+    <div class="explain" hidden><h4>Model answer 考卷這樣寫</h4>
+    <p><b>(a)</b> Net income uses accrual accounting, not cash. Net income exceeds operating cash flow when (1) sales were made on credit and not yet collected (accounts receivable increased), (2) cash was spent building up inventory or prepaying expenses, or (3) liabilities such as accounts payable were paid down, so more cash went out than the expense recorded.</p>
+    <p><b>(b)</b> Yes. (1) Large non-cash expenses such as depreciation, amortization or losses on disposal reduce net income but use no cash, so they are added back. (2) Working-capital changes can bring in cash: collecting more receivables than this year's sales, selling inventory bought last year, or increasing payables (expenses not yet paid).</p>
+    <p><b>Which measure is better?</b> Operating cash flow shows liquidity: whether the company can pay its bills, repay debt and reinvest. Accrual net income matches revenues and expenses to the period, so it better reflects profitability and long-term operating performance. Use both; a large, persistent gap between them is a warning sign.</p>
+    <p><b>(c)</b> 1 A · 2 B · 3 C · 4 F · 5 E · 6 G · 7 A · 8 D · 9 B</p>
+    <p><b>(d)</b> 84,000 + 18,000 + 3,000 − 9,000 + 6,000 − 1,500 − 4,500 + 2,000 = <b>$98,000</b>; free cash flow = 98,000 − 40,000 − 25,000 = <b>$33,000</b></p>
+    <p class="zh">分類口訣：非現金費用、損失、流動資產減少、流動負債增加 → 加（A）；利益、流動資產增加、流動負債減少 → 減（B）。買賣長期資產 → 投資；借還錢、發股、買庫藏股、付股利 → 籌資；沒有現金的交換（債換股、股換土地）→ G。</p>
+    </div>
+  </div>
+  <label class="done-row"><input type="checkbox" id="done-pb" data-unit="pb"> 六題都不看詳解全對</label>
 </section>
 
 <!-- ============ 17 (u12) ============ -->
@@ -2000,7 +2165,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
 <!-- ============ 18 (mb) ============ -->
 <section class="unit" id="mb">
   <div class="unit-head"><span class="src">Exam Part A format · 25 original questions</span></div>
-  <h2 class="u"><span class="num">18</span>Mock Exam B — Part A Format (25 Qs)</h2>
+  <h2 class="u"><span class="num">18</span>Mock Exams B &amp; C — Part A Format (2 × 25 Qs)</h2>
   <p>Same topics and order as the 2023 mock midterm's Part A, with new questions and numbers. Do all 25 in one sitting in about 40 minutes (about 1.5 minutes each) without looking anything up.<span class="zh">跟 2023 模擬考選擇題同主題、同順序，換題目換數字。建議計時 40 分鐘一次做完，中途不要查資料。分數只算第一次就答對的題數，目標 20 題以上。</span></p>
   <div class="quiz" data-set="examB"></div>
 
@@ -2041,7 +2206,49 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <p><b>Problem 3 (20%, 3 points per item + 2 for the complete statement):</b> corrected net income <b>€11,040</b>: revenue +4,000 commission; salaries +5,300; supplies expense 6,300; depreciation +500; utilities 2,000; interest 60 (one month).</p>
     <p class="zh">Part B 三題的完整練習（換數字）在第 9 關。分數是一步一步給的：算式寫出來，就算最後一個數字算錯也能拿大部分分數。</p>
   </div></details>
-  <label class="done-row"><input type="checkbox" id="done-mb" data-unit="mb"> Mock Exam B 第一次答對 20 題以上</label>
+  
+  <h3 id="mockc"><span class="tag">Mock C</span>Mock Exam C — 2025 Part A format (25 Qs)</h3>
+  <p>Same topics and order as the 2025 mock midterm's Part A, with new questions and numbers. Again: 40 minutes, one sitting, no looking things up.<span class="zh">對照 2025 模擬考選擇題的主題和順序，換題目換數字。一樣計時 40 分鐘一次做完。</span></p>
+  <div class="quiz" data-set="examC"></div>
+
+  <h3 id="key2025"><span class="tag">2025</span>The 2025 mock midterm — worked explanations</h3>
+  <p>Do the <b>Mock exam 2025</b> PDF on paper with a timer first, then open these. The official solutions only highlight the multiple-choice answers; here is the reasoning.<span class="zh">官方解答只用黃底標出選擇題答案，沒有解釋；這裡補上每一題為什麼。題目請看 PDF。</span></p>
+  <details class="sol"><summary>Part A — answer and reasoning for each question</summary><div class="in nostep">
+    <ol class="key">
+      <li><b>b</b> — Share capital is equity: credits increase it, debits decrease it. The other three rules are correct.</li>
+      <li><b>b</b> — Accrual net income = revenue earned 660,000 − expenses incurred 400,000 − depreciation 32,000 = 228,000. Cash received/paid and the loan proceeds are ignored.</li>
+      <li><b>d</b> — The earned €2,000 is still sitting in Unearned Service Revenue: revenue (and net income) understated, liabilities overstated.</li>
+      <li><b>c</b> — Receivables are reported at cash (net) realizable value: A/R − allowance.</li>
+      <li><b>b</b> — Ending inventory understated → 2023 COGS overstated, net income and equity understated. The error reverses in 2024, so equity is correct at the end of 2024.</li>
+      <li><b>b</b> — Sales FOB destination still in transit belong to the seller (1); purchases FOB shipping point belong to the buyer once shipped (4).</li>
+      <li><b>d</b> — A transposition error (e.g., 540 written as 450) affects only one side, so the trial balance does not balance. The other errors affect both sides equally.</li>
+      <li><b>b</b> — Issuing more shares increases shares outstanding, so earnings per share may fall (dilution).</li>
+      <li><b>a</b> — A discount means the market rate is higher than the contractual rate, so investors pay less than face value.</li>
+      <li><b>d</b> — Interest accrues with time: accrued at period end (adjusting entry) and paid at maturity.</li>
+      <li><b>c</b> — On the buyer's books returns are at purchase price: 25% × 2,200,000 = 550,000; Inventory ↓ and Accounts Payable ↓. (1,700,000 is the seller's cost.)</li>
+      <li><b>d</b> — Liquidity = short-term ability to pay maturing obligations.</li>
+      <li><b>a</b> — 395,000 + 25,000 (shipped FOB destination, still in transit → still Godchaux's) = 420,000. The FOB destination purchase is not Godchaux's until received.</li>
+      <li><b>c</b> — 2,200,000 + freight 32,500 − return 110,000 (5%) − discount 41,800 (2% × 2,090,000) = 2,080,700. The discount applies to the invoice after the return, not to freight.</li>
+      <li><b>b</b> — Cash received = book value 200,000 + gain 25,000 = 225,000 (investing inflow).</li>
+      <li><b>a</b> — A write-off is Dr Allowance / Cr Accounts Receivable: no cash moves.</li>
+      <li><b>a</b> — FIFO leaves the newest (most current) costs in ending inventory.</li>
+      <li><b>c</b> — 127,500 × 3% + 13,750 × 20% + 3,700 × 25% + 1,050 × 50% = 3,825 + 2,750 + 925 + 525 = 8,025.</li>
+      <li><b>a</b> — Maintaining efficiency and expected life = ordinary repairs → expense.</li>
+      <li><b>d</b> — Expense recognition: estimated warranty cost is expensed in the period of the sale.</li>
+      <li><b>a</b> — Treasury shares are not an asset; they are a contra-equity account.</li>
+      <li><b>b</b> — Split: retained earnings unchanged; share dividend: retained earnings decrease.</li>
+      <li><b>c</b> — Revenues 12,635 + 655 = 13,290 − expenses (7,145 + 1,740 + 665 + 190 + 390 + 45 = 10,175) = 3,115. Dividends are not an expense.</li>
+      <li><b>d</b> — Ending retained earnings = 5,640 + 3,115 − 600 = 8,155.</li>
+      <li><b>c</b> — 8,180 + 810 + 865 + 1,660 + 11,400 − accumulated depreciation 1,340 = 21,575.</li>
+    </ol>
+  </div></details>
+  <details class="sol"><summary>Part B — answers and how to write them</summary><div class="in nostep">
+    <p><b>Problem 1 Inventory (20%):</b> (a) FIFO ending inventory $2,750 (300 × 8 + 50 × 7); (b) LIFO ending inventory $1,650 (100 × 4 + 250 × 5); (c) average-cost COGS $4,030 ($6.20 × 650); (d) LIFO: income taxes are $825 under LIFO vs $1,155 FIFO and $981 average, so LIFO keeps the most cash. Show the three income statements.</p>
+    <p><b>Problem 2 PP&amp;E (15%):</b> (a) (25,455,000 − 2,955,000) ÷ 30,000 = £750 per hour × 2,790 = £2,092,500; (b) straight-line 1,419,000; accumulated 4,739,000; book value 18,046,000; <b>gain £5,594,000</b>; (c) 6th year: book value 23,875,000; remaining life 15 − 5 = 10; new depreciation 2,137,500; accumulated depreciation <b>£9,262,500</b>.</p>
+    <p><b>Problem 3 Cash flows (15%):</b> (a)(b) written answers: non-cash expenses added back and working-capital changes; operating cash flow shows liquidity, accrual income shows profitability. (c) <b>E, A, D, G, B</b>.</p>
+    <p class="zh">換數字的同型練習在第 9 關練習 4–6。</p>
+  </div></details>
+  <label class="done-row"><input type="checkbox" id="done-mb" data-unit="mb"> Mock Exam B、C 第一次都答對 20 題以上</label>
 </section>
 
 <!-- ============ 19 (u11) ============ -->
@@ -2104,6 +2311,10 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <tr><td>Treasury shares</td><td>Outstanding ↓; issued and authorized unchanged</td><td><span class="zh inl">流通在外減少</span></td></tr>
     <tr><td>Cumulative preference shares</td><td>Pay dividends in arrears + this year first, then ordinary</td><td><span class="zh inl">先補積欠</span></td></tr>
     <tr><td>Mortgage with a current portion</td><td>Split: due within 12 months → current; rest → non-current</td><td><span class="zh inl">抵押借款要拆</span></td></tr>
+    <tr><td>Change in useful life or residual value</td><td>Prospective: remaining book value − new residual, over remaining life; never restate prior years</td><td><span class="zh inl">估計變動不改以前</span></td></tr>
+    <tr><td>Buyer's purchase return</td><td>At the purchase price (not the seller's cost): Inventory ↓, A/P ↓</td><td><span class="zh inl">用買價</span></td></tr>
+    <tr><td>Rising prices: which method keeps more cash?</td><td>LIFO — highest COGS, lowest income tax</td><td><span class="zh inl">LIFO 稅最少</span></td></tr>
+    <tr><td>Depreciation in the direct method</td><td>Never appears (non-cash)</td><td><span class="zh inl">直接法沒有折舊</span></td></tr>
     <tr><td>"No adjustment" item in an inventory-count problem</td><td>Still write the reason; every item is graded</td><td><span class="zh inl">不調整也要寫理由</span></td></tr>
   </table></div>
   <label class="done-row"><input type="checkbox" id="done-u9" data-unit="u9"> Traps reviewed 陷阱看過了</label>
@@ -2154,6 +2365,13 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <tr><td>Outstanding shares</td><td>Issued − Treasury shares</td></tr>
     <tr><td>Current ratio (liquidity)</td><td>Current assets ÷ Current liabilities</td></tr>
     <tr><td>Debt to assets ratio (solvency)</td><td>Total liabilities ÷ Total assets</td></tr>
+    <tr><td>Change in estimate</td><td>(Book value at start of revision year − New residual) ÷ Remaining life</td></tr>
+    <tr><td>Partial-year depreciation</td><td>Annual amount × months used ÷ 12 (first year only for DDB)</td></tr>
+    <tr><td>Depletion</td><td>(Cost − Residual) ÷ Estimated units × Units extracted → Dr Inventory</td></tr>
+    <tr><td>Cash from customers (direct)</td><td>Sales − ↑A/R (+ ↓A/R)</td></tr>
+    <tr><td>Cash paid for operating expenses (direct)</td><td>Expenses (excl. gains/losses) + ↑Inventory/Prepaids − ↑A/P/Accrued payables</td></tr>
+    <tr><td>Cash paid for income taxes (direct)</td><td>Tax expense − ↑Taxes payable (+ ↓)</td></tr>
+    <tr><td>Investing inflow from a sale</td><td>Book value + Gain (or − Loss)</td></tr>
   </table></div>
   <label class="done-row"><input type="checkbox" id="done-u8" data-unit="u8"> Formulas memorized 公式背好了</label>
 </section>
@@ -2587,6 +2805,72 @@ Object.assign(D,{
   ['Depreciation expense',2400],['Utilities expense',1450],['Interest expense',150],['Advertising expense',1100],
   ['Total expenses',24500],['Net income',22000]]}
 });
+/* ---------- 2025 mock + TA 10/15 additions ---------- */
+const TB_PV="Pine Valley Rentals' trial balance at December 31: Cash 6,200; Accounts Receivable 1,400; Supplies 700; Equipment 9,000; Accumulated Depreciation 900; Accounts Payable 1,100; Unearned Rental Revenue 600; Notes Payable 4,000; Share Capital—Ordinary 7,000; Retained Earnings (beginning) 1,550; Dividends 500; Rental Revenue 7,500; Salaries Expense 3,100; Rent Expense 1,200; Depreciation Expense 300; Utilities Expense 250.";
+Q.examC=[
+ {q:"Which of the following rules is INCORRECT?",o:["Debits increase expense accounts.","Credits increase the dividends account.","Debits decrease revenue accounts.","Credits increase liability accounts."],a:1,e:"Dividends have a normal debit balance: debits increase them, credits decrease them.",z:"股利增加記借。"},
+ {q:"For the year: cash received from customers $450,000; revenue earned $500,000; cash paid for expenses $280,000; expenses incurred (excluding depreciation) $310,000; equipment bought for $60,000 cash with annual depreciation $12,000; bank loan proceeds $100,000. Accrual-basis net income is:",o:["$178,000","$110,000","$190,000","$170,000"],a:0,e:"Revenue earned 500,000 − expenses incurred 310,000 − depreciation 12,000 = 178,000. Cash flows and the loan are ignored.",z:"用賺到的收入、發生的費用、折舊。"},
+ {q:"A company paid for a one-year insurance policy in advance and debited Prepaid Insurance. At year-end, part of the policy has expired but no adjusting entry is made. This causes:",o:["Net income to be overstated","Assets to be understated","Expenses to be overstated","Liabilities to be understated"],a:0,e:"Insurance Expense is missing → expenses understated, net income overstated; Prepaid Insurance (assets) overstated.",z:"沒調整：費用少記、淨利高估。"},
+ {q:"The Allowance for Doubtful Accounts is reported on the statement of financial position as:",o:["A current liability","A deduction from accounts receivable","An operating expense","Part of equity"],a:1,e:"It is a contra-asset; A/R − allowance = cash realizable value.",z:"備抵呆帳是應收帳款的減項。"},
+ {q:"A company overstated its ending inventory by $8,000 at December 31, 2024 and never corrected it. Its equity was:",o:["Overstated at Dec 31, 2024 and correct at Dec 31, 2025","Understated at Dec 31, 2024 and correct at Dec 31, 2025","Overstated at both dates","Correct at both dates"],a:0,e:"EI overstated → 2024 COGS understated, net income and equity overstated. The error reverses in 2025.",z:"第二年底自動更正。"},
+ {q:"Kessel Co.'s goods in transit at December 31: (1) sales shipped FOB shipping point; (2) sales shipped FOB destination; (3) purchases shipped FOB shipping point; (4) purchases shipped FOB destination. Which belong in Kessel's inventory?",o:["(1) and (4)","(2) and (3)","(1) and (3)","(2) and (4)"],a:1,e:"Sales FOB destination are still the seller's until delivered; purchases FOB shipping point became Kessel's when shipped.",z:"銷貨目的地交貨、進貨起運點交貨。"},
+ {q:"Which error will cause a trial balance NOT to balance?",o:["Supplies was debited instead of Equipment","A transaction was not journalized","A $480 debit to Cash was posted as $840, with the credit posted correctly","A journal entry was posted twice"],a:2,e:"Only an error that affects one side (a transposition on the debit only) unbalances the trial balance.",z:"只有一邊錯才不平衡。"},
+ {q:"Compared with issuing more ordinary shares, financing an expansion with bonds may:",o:["Lower earnings per share because interest is not deductible","Increase earnings per share because no new shares are issued and interest is tax-deductible","Give bondholders voting rights","Eliminate the need to pay interest"],a:1,e:"Issuing shares dilutes EPS; bonds keep shares outstanding unchanged and interest is deductible.",z:"發股票會稀釋 EPS。"},
+ {q:"If bonds are issued at a premium, it means that:",o:["The market interest rate is higher than the contractual rate","The market interest rate is lower than the contractual rate","The company will repay less than face value","Bondholders earn more than the contractual rate"],a:1,e:"Investors pay more than face value when the bond's contractual rate beats the market rate.",z:"溢價：市場利率 < 票面利率。"},
+ {q:"On November 1 a company signs a $30,000, 6-month, 8% note payable. Interest payable at December 31 is:",o:["$400","$1,200","$2,400","$0"],a:0,e:"30,000 × 8% × 2/12 = 400; interest accrues over the life of the note.",z:"只算 11、12 月兩個月。"},
+ {q:"A buyer purchased goods for €800,000 on account and later returned 10% of them for credit. On the buyer's books the return:",o:["Increases assets and liabilities by €80,000","Decreases assets and liabilities by €80,000","Decreases assets by €80,000 and increases equity","Has no effect"],a:1,e:"Dr Accounts Payable 80,000 / Cr Inventory 80,000 (at the purchase price).",z:"退貨：存貨↓、應付帳款↓。"},
+ {q:"A solvency ratio measures:",o:["The short-term ability to pay maturing obligations","The income or operating success over a period","The ability of the company to survive over a long period of time","The number of times inventory is sold"],a:2,e:"Solvency = long-term survival (e.g., debt to assets ratio).",z:"償債能力看長期。"},
+ {q:"A physical count found €250,000 of goods on hand. Not counted: (1) €30,000 of goods purchased FOB shipping point, in transit at year-end; (2) €18,000 of goods sold FOB shipping point and shipped on December 30. Correct inventory:",o:["€280,000","€298,000","€268,000","€250,000"],a:0,e:"Add the FOB shipping point purchase (now ours); the FOB shipping point sale already belongs to the buyer. 250,000 + 30,000 = 280,000.",z:"進貨起運點要加；已出貨的起運點銷貨不加。"},
+ {q:"A buyer (perpetual system) purchases goods for €500,000 on account, terms 2/10, n/30, pays €8,000 of freight, returns 10% of the goods, and pays the balance within the discount period. The inventory balance from this purchase is:",o:["€449,000","€441,000","€458,000","€450,000"],a:0,e:"500,000 + 8,000 − 50,000 = 458,000; discount 2% × 450,000 = 9,000 → 449,000. Freight is not discounted.",z:"折扣用退貨後的發票金額。"},
+ {q:"Equipment with a book value of $80,000 is sold for cash at a $12,000 loss. The investing section reports a cash inflow of:",o:["$68,000","$80,000","$92,000","$12,000"],a:0,e:"Cash received = book value − loss = 68,000. The loss is added back in operating.",z:"收到的現金＝帳面價值－損失。"},
+ {q:"Which transaction does NOT affect cash?",o:["Collecting an account receivable","Recording depreciation expense","Purchasing treasury shares","Repaying a note payable"],a:1,e:"Depreciation is a non-cash expense (Dr Depreciation Expense / Cr Accumulated Depreciation).",z:"折舊不動現金。"},
+ {q:"In a period of rising prices, which method gives the HIGHEST cost of goods sold?",o:["FIFO","LIFO","Average-cost","Specific identification always"],a:1,e:"LIFO charges the newest, most expensive costs to COGS (which also means the lowest income tax).",z:"物價上漲：LIFO 的 COGS 最高。"},
+ {q:"Aging schedule: 1–30 days $60,000 (2% uncollectible); 31–60 days $9,000 (10%); 61–90 days $2,400 (25%); over 90 days $1,600 (50%). Estimated uncollectible accounts are:",o:["$3,500","$73,000","$69,500","$1,200"],a:0,e:"1,200 + 900 + 600 + 800 = 3,500.",z:"各欄 × 比率再加總。"},
+ {q:"A major overhaul that extends a machine's useful life by three years is:",o:["Expensed when incurred","Capitalized as part of the asset's cost","Debited to Repairs Expense","Ignored"],a:1,e:"Expenditures that extend life or increase capacity are capital expenditures.",z:"延長年限 → 資本化。"},
+ {q:"A company sold 2,000 units in 2025 with a two-year warranty. It expects 3% to need repair at $50 each. Repairs made in 2025 cost $1,000. Warranty expense for 2025 is:",o:["$3,000","$1,000","$2,000","$4,000"],a:0,e:"Expense in the period of sale = 2,000 × 3% × 50 = 3,000; the repairs reduce the liability.",z:"保固費用在銷售年度全部估列。"},
+ {q:"Which is NOT a reason for a company to acquire treasury shares?",o:["To reissue shares to employees","To support the market price of its shares","To increase the number of shares outstanding","To have shares available for acquiring other companies"],a:2,e:"Buying treasury shares reduces shares outstanding.",z:"買庫藏股讓流通在外股數減少。"},
+ {q:"A 10% share dividend causes:",o:["Retained earnings ↓, share capital ↑, total equity unchanged","Retained earnings unchanged, total equity ↑","Retained earnings ↓, total equity ↓","No change to any equity account"],a:0,e:"A share dividend moves retained earnings into share capital; total equity is unchanged.",z:"保留盈餘搬到股本。"},
+ {q:TB_PV+" Net income is:",o:["$2,650","$2,150","$3,250","$7,500"],a:0,e:"Revenue 7,500 − expenses (3,100 + 1,200 + 300 + 250 = 4,850) = 2,650. Dividends are not an expense.",z:"股利不是費用。"},
+ {q:TB_PV+" Ending retained earnings are:",o:["$3,700","$4,200","$2,150","$1,050"],a:0,e:"1,550 + 2,650 − 500 = 3,700.",z:"期初＋淨利－股利。"},
+ {q:TB_PV+" Total assets are:",o:["$16,400","$17,300","$16,900","$15,800"],a:0,e:"6,200 + 1,400 + 700 + 9,000 − 900 = 16,400. Accumulated depreciation reduces assets.",z:"累計折舊要減。"}];
+Q.u2.push({q:"For the year: revenue earned $300,000 (cash collected $260,000); expenses incurred excluding depreciation $190,000 (cash paid $170,000); depreciation $15,000; a $50,000 bank loan was received. Accrual-basis net income is:",o:["$95,000","$75,000","$110,000","$145,000"],a:0,e:"300,000 − 190,000 − 15,000 = 95,000. Cash amounts and the loan do not enter net income.",z:"權責基礎不看現金收付。"},
+ {q:"Cash received in advance was credited to Unearned Service Revenue. The service has now been performed, but no adjusting entry is made. Result:",o:["Revenue and net income understated; liabilities overstated","Revenue overstated; liabilities understated","Expenses overstated","No effect"],a:0,e:"The earned amount is still a liability: revenue understated, liabilities overstated.",z:"預收沒轉收入：收入低估、負債高估。"});
+Q.u15.push({q:"A mine costs $9,000,000, has no residual value and is expected to yield 15 million tons. In the first year 1.2 million tons are extracted. The depletion entry is:",o:["Dr Inventory 720,000 / Cr Accumulated Depletion 720,000","Dr Depreciation Expense 900,000 / Cr Mine 900,000","Dr Inventory 600,000 / Cr Accumulated Depletion 600,000","No entry until the coal is sold"],a:0,e:"$9,000,000 ÷ 15,000,000 = $0.60 per ton × 1,200,000 = 720,000, debited to Inventory until sold.",z:"折耗先記存貨。"},
+ {q:"Goodwill is:",o:["Amortized straight-line over 10 years","Not amortized; it has an indefinite life","Expensed immediately","Recorded whenever a company has a good reputation"],a:1,e:"Goodwill has an indefinite life and is only recorded when a whole business is purchased.",z:"商譽不攤銷。"},
+ {q:"A truck cost £60,000; straight-line, 10 years, residual £12,000. After 2 full years the company revises the remaining life to 4 years (including the current year) and the residual to £2,000. Current-year depreciation is:",o:["£12,100","£4,800","£15,000","£6,000"],a:0,e:"Book value 60,000 − 9,600 = 50,400; (50,400 − 2,000) ÷ 4 = 12,100.",z:"剩餘帳面價值－新殘值，除以剩餘年限。"},
+ {q:"A machine bought for $80,000 on January 1, 2020 (straight-line, 10 years, no residual) is sold on June 30, 2024 for $26,000. The result is:",o:["Loss $18,000","Gain $18,000","Loss $22,000","Gain $46,000"],a:0,e:"Accumulated depreciation 8,000 × 4.5 = 36,000; book value 44,000; 26,000 − 44,000 = loss 18,000.",z:"先補提到 6/30 的折舊。"});
+Q.u17.push({q:"Sales revenue €900,000; accounts receivable increased €40,000. Under the direct method, cash collected from customers is:",o:["€860,000","€940,000","€900,000","€40,000"],a:0,e:"Sales − increase in A/R = 860,000.",z:"應收增加：還沒收到。"},
+ {q:"Which item never appears in the operating section under the direct method?",o:["Cash paid to suppliers","Depreciation expense","Cash paid for income taxes","Cash collected from customers"],a:1,e:"Depreciation and gains/losses are non-cash; they only appear in the indirect method's adjustments.",z:"直接法沒有折舊。"},
+ {q:"Writing off an uncollectible account under the allowance method affects the statement of cash flows by:",o:["An operating outflow","An investing outflow","Nothing — no cash is involved","A financing outflow"],a:2,e:"Dr Allowance / Cr Accounts Receivable involves no cash.",z:"沖銷呆帳不動現金。"});
+Object.assign(OPT,{
+ meth:[['fifo','FIFO'],['lifo','LIFO'],['avg','Average-cost']],
+ code:[['A','A Added to income before tax'],['B','B Deducted from income before tax'],['C','C Investing outflow'],['D','D Investing inflow'],['E','E Financing outflow'],['F','F Financing inflow'],['G','G Non-cash investing & financing']]
+});
+Object.assign(D,{
+ partial:{title:'Orchid Bakery — partial-year depreciation',cols:['Answer ($)'],rows:[
+  ['(a) Straight-line, 2025',12000],['(b) Rate per hour',4],['(b) Units-of-activity, 2025',14000],['(c) DDB, 2025',25200],['(c) DDB, 2026',23520]]},
+ estimate:{title:'Delta Logistics — change in estimate',cols:['Answer (£)'],rows:[
+  ['Old annual depreciation',10000],['Accumulated depreciation at Jan 1, 2024',30000],['Book value at Jan 1, 2024',60000],['2024 depreciation expense',18000]]},
+ direct:{title:'Rhein GmbH — direct method',cols:['Answer (€)'],rows:[
+  ['Cash collected from customers',3080000],['Cash paid for operating expenses',2440000],['Cash paid for income taxes',120000],
+  ['Net cash from operating activities',520000],['Net income (for the indirect check)',340000]]},
+ tb:{title:'Riverbend Tours — from the trial balance',cols:['Answer ($)'],rows:[
+  ['Total revenues',14600],['Total expenses',9230],['Net income',5370],['Ending retained earnings',6740],['Total assets',24750],['Total liabilities',10010]]},
+ pbCost:{title:'Practice 4 — Northwind inventory methods',cols:['Answer ($)'],rows:[
+  ['(a) FIFO ending inventory',4100],['(b) LIFO ending inventory',3200],['(c) Average unit cost',{n:12.3,tol:0.006}],['(c) Average-cost COGS',8610],
+  ['(d) Income tax under FIFO',1700],['(d) Income tax under LIFO',1475],['(d) Income tax under average-cost',{n:1597.5,tol:0.6}],
+  ['(d) Method that keeps the most cash',{s:'lifo',o:'meth'}]]},
+ pbPPE:{title:'Practice 5 — SkyLift cranes',cols:['Answer ($)'],rows:[
+  ['(a) Crane A rate per hour',60],['(a) Crane A depreciation',144000],
+  ['(b) Crane B book value when sold',450000],['(b) Gain or loss?',{s:'gain',o:'gl'}],['(b) Amount',20000],
+  ['(c) Crane C book value at the start of this year',800000],['(c) Remaining life (years)',5],['(c) Crane C depreciation this year',140000],['(c) Accumulated depreciation at year-end',440000],
+  ['(d) Crane D depreciation this year',40000],['(d) Crane D depreciation next year',144000]]},
+ pbSCF:{title:'Practice 6 — cash flow classification',cols:['Answer'],rows:[
+  ['1. Depreciation expense',{s:'A',o:'code'}],['2. Gain on sale of equipment',{s:'B',o:'code'}],['3. Purchase of a building for cash',{s:'C',o:'code'}],
+  ['4. Issuance of bonds for cash',{s:'F',o:'code'}],['5. Purchase of treasury shares',{s:'E',o:'code'}],['6. Conversion of bonds payable into ordinary shares',{s:'G',o:'code'}],
+  ['7. Decrease in accounts receivable',{s:'A',o:'code'}],['8. Proceeds from selling a long-term investment',{s:'D',o:'code'}],['9. Decrease in salaries and wages payable',{s:'B',o:'code'}],
+  ['(d) Net cash from operating activities ($)',98000],['(d) Free cash flow ($)',33000]]}
+});
 const parseNum=v=>{const s=String(v).replace(/[^0-9.\-]/g,'');if(s===''||s==='-'||s==='.')return NaN;return Math.abs(parseFloat(s))};
 const fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:2});
 const optLabel=(o,v)=>{const f=OPT[o].find(x=>(Array.isArray(x)?x[0]:x)===v);return Array.isArray(f)?f[1]:f};
@@ -2698,7 +2982,7 @@ setStep(stepMode);
 stepBtn.addEventListener('click',()=>{setStep(!stepMode);store.set('fa-step',stepMode)});
 
 /* ---------- retryable quizzes + mistake notebook ---------- */
-const SRC={};document.querySelectorAll('.quiz').forEach(b=>{const n=b.closest('section').querySelector('.num');SRC[b.dataset.set]=b.dataset.set==='exam'?'Mock exam A':b.dataset.set==='examB'?'Mock exam B':'Unit '+(+n.textContent)});
+const SRC={};document.querySelectorAll('.quiz').forEach(b=>{const n=b.closest('section').querySelector('.num');SRC[b.dataset.set]=b.dataset.set==='exam'?'Mock exam A':b.dataset.set==='examB'?'Mock exam B':b.dataset.set==='examC'?'Mock exam C':'Unit '+(+n.textContent)});
 const miss=new Set((store.get('fa-miss')||[]).filter(k=>{const [s,i]=k.split(':');return Q[s]&&Q[s][+i]}));
 const updMiss=()=>{store.set('fa-miss',[...miss]);const t=document.getElementById('missToc');if(t)t.textContent=miss.size||''};
 const shuffled=n=>{const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
@@ -2993,37 +3277,37 @@ updProg();
 /* ---------- learning path: stages + focus mode ---------- */
 const STAGES=[
  {t:'起點',name:'怎麼用＋考什麼',ids:['u0','exam'],time:'20 分鐘',goal:'知道這個網站怎麼用，以及期中考的題型和配分。',
-  todo:['讀 Start here 的「每一題都照這個順序」','讀<a href="#exam">考試攻略</a>：Part A 25 題選擇題、Part B 三題計算各考什麼','看一下下面的路線圖'],pass:'兩個單元都勾「完成」。'},
- {t:'第 1 關',name:'會計等式與借貸',ids:['u1','dc'],time:'3 天，每天 30 分鐘',goal:'看到一筆交易，能說出動到哪兩個科目、各記借還是貸。選擇題約 3 題直接考這裡，其他每一關也都要用到。',
+  todo:['讀 Start here 的「每一題都照這個順序」','讀<a href="#exam">考試攻略</a>：2023 與 2025 兩年的 Part A、Part B 各考什麼','看一下下面的路線圖'],pass:'兩個單元都勾「完成」。'},
+ {t:'第 1 關',name:'會計等式與借貸',ids:['u1','dc'],time:'3 天，每天 30 分鐘',goal:'看到一筆交易，能說出動到哪兩個科目、各記借還是貸。兩年的選擇題都直接考借貸規則，其他每一關也都要用到。',
   todo:['<a href="#u1">會計等式</a>：讀定義和借貸規則表，做 <a href="#d-classify">A/L/E 分類</a>、<a href="#d-spring">Spring Cruises</a>','<a href="#dc">借貸特訓</a>：先讀「為什麼」那張等式圖','<a href="#gymCard">Gym 1 科目卡</a>：連續答對 20 張','<a href="#gymJE">Gym 2 分錄練習</a>：引導模式 → 快速模式','<a href="#d-legal">Legal Services</a> 分錄＋表格、小測驗'],
   pass:'<a href="#gymJE">Gym 2</a> 快速模式連續答對 10 題。'},
- {t:'第 2 關',name:'調整分錄與會計循環',ids:['u2','u13'],time:'2 天',goal:'會做期末調整分錄，知道沒調整會讓哪些數字錯。這是 Part B 第 3 題（20%）的基礎。',
-  todo:['讀「遞延／應計」四格表','<a href="#d-major">Major Ltd.</a> → <a href="#d-orlow">Orlow</a>（付款方與收款方是鏡像）','<a href="#ex-supplies">用品調整</a>（考試最常考的調整）','試算表、結帳、SFP 排序、<a href="#ratios">三類比率</a>','兩個小測驗'],
-  pass:'<a href="#d-major">Major</a> 和 <a href="#d-orlow">Orlow</a>：不按「看詳解」，按 Check 就全部答對。'},
+ {t:'第 2 關',name:'調整分錄與會計循環',ids:['u2','u13'],time:'2 天',goal:'會做期末調整分錄、知道沒調整的影響，並能從試算表算出淨利、保留盈餘、總資產（2025 選擇題 Q23–25）。',
+  todo:['讀「遞延／應計」四格表','<a href="#d-major">Major Ltd.</a> → <a href="#d-orlow">Orlow</a>（付款方與收款方是鏡像）','<a href="#ex-supplies">用品調整</a>','試算表的限制、結帳、SFP 排序','<a href="#d-tb">Riverbend 試算表</a>：算淨利、保留盈餘、總資產','<a href="#ratios">三類比率</a>、兩個小測驗'],
+  pass:'<a href="#d-major">Major</a>、<a href="#d-orlow">Orlow</a>、<a href="#d-tb">Riverbend</a>：不按「看詳解」，按 Check 就全部答對。'},
  {t:'第 3 關',name:'買賣業損益表與 COGS',ids:['u3'],time:'2 天',goal:'能把一堆科目排成損益表，算出銷貨淨額、COGS、毛利率。',
   todo:['遮住解答默寫一次損益表骨架和 COGS 公式','依序做 <a href="#d-pw">PW Audio</a> → <a href="#d-bach">Bach</a> → <a href="#d-scott">Scott</a> → <a href="#d-athena">Athena</a>','小測驗'],
   pass:'<a href="#d-scott">Scott</a> 和 <a href="#d-athena">Athena</a>：不按「看詳解」，按 Check 就全部答對。'},
- {t:'第 4 關',name:'存貨',ids:['u4','u5','u14','u6'],time:'3 天',goal:'判斷哪些貨算自己的存貨，用 FIFO／平均法算期末存貨。Part B 第 1 題（10%）＋選擇題約 4 題。',
-  todo:['FOB 與寄銷規則 → <a href="#d-sergei">Sergei Group</a>（跟 Part B 第 1 題同題型）','<a href="#d-moncada">Moncada</a> → <a href="#d-tinker">Tinker Bell</a> → <a href="#d-zhu">Zhu Boards</a>','成本流程比較、存貨錯誤','<a href="#d-purchase">進貨成本</a>（退貨、折扣、運費）、銷貨折扣、存貨週轉','四個小測驗'],
+ {t:'第 4 關',name:'存貨',ids:['u4','u5','u14','u6'],time:'3 天',goal:'判斷哪些貨算自己的、用 FIFO／LIFO／平均法算期末存貨與 COGS，知道哪種方法省稅。兩年 Part B 都有存貨題（10–20%），選擇題也有 4–6 題。',
+  todo:['FOB 與寄銷規則 → <a href="#d-sergei">Sergei Group</a>（2023 Part B 題型）','<a href="#d-moncada">Moncada</a> → <a href="#d-tinker">Tinker Bell</a>（含 LIFO）→ <a href="#d-zhu">Zhu Boards</a>','讀「哪種方法留較多現金」（2025 Part B 題型）','成本流程比較、存貨錯誤','<a href="#d-purchase">進貨成本</a>（退貨、折扣、運費）、銷貨折扣、存貨週轉','四個小測驗'],
   pass:'<a href="#d-sergei">Sergei</a>、<a href="#d-zhu">Zhu Boards</a>、<a href="#d-purchase">Lakeside Bikes</a>：按 Check 全部答對。'},
- {t:'第 5 關',name:'應收帳款與呆帳',ids:['u7'],time:'2 天',goal:'會用帳齡分析算備抵呆帳與呆帳費用（貸餘用減、借餘用加）。選擇題約 2 題。',
-  todo:['讀「直接沖銷法 vs 備抵法」分錄表','<a href="#d-patel">Patel 帳齡表</a>（2023 第 20 題就是這題）','<a href="#d-catu">Catu Medical</a>（分錄 → T 字帳 → 比率）','小測驗'],
+ {t:'第 5 關',name:'應收帳款與呆帳',ids:['u7'],time:'2 天',goal:'會用帳齡分析算備抵呆帳與呆帳費用（貸餘用減、借餘用加）。兩年都考帳齡分析。',
+  todo:['讀「直接沖銷法 vs 備抵法」分錄表','<a href="#d-patel">Patel 帳齡表</a>（2023 Q20 原題型）','<a href="#d-catu">Catu Medical</a>（分錄 → T 字帳 → 比率）','小測驗'],
   pass:'<a href="#d-catu">Catu Medical</a>：按 Check 全部答對。'},
- {t:'第 6 關',name:'設備與折舊',ids:['u15'],time:'2 天',goal:'會算三種折舊、期末帳面價值、處分損益。這是 Part B 第 2 題（20%）。',
-  todo:['Huang 卡車與 <a href="#d-land">土地成本</a>：哪些支出算成本','Bob\'s Florist：三種折舊，打開倍數餘額遞減表自己算一遍','處分分錄：先補提折舊，再算損益','小測驗'],
-  pass:'<a href="#d-land">Ridgeway 土地</a>全對，且小測驗第一次就全對。'},
- {t:'第 7 關',name:'負債與權益',ids:['u16','eq'],time:'2 天',goal:'負債分類、利息、保固、公司債折溢價；權益的股票股利、分割、特別股、庫藏股。選擇題約 7 題。',
-  todo:['<a href="#d-cls">流動 vs 非流動分類</a>','應付票據利息、保固、或有負債、公司債','<a href="#eq">權益</a>：三張表（三種股數、股利三個日期、股利 vs 分割）','<a href="#d-pref">累積特別股股利</a>','兩個小測驗'],
+ {t:'第 6 關',name:'設備與折舊',ids:['u15'],time:'3 天',goal:'三種折舊、部分年度、估計變動、處分損益，加上天然資源與無形資產。兩年 Part B 都有設備題（15–20%），TA 10/15 也剛複習。',
+  todo:['Huang 卡車與 <a href="#d-land">土地成本</a>：哪些支出算成本','Bob\'s Florist：三種折舊，打開倍數餘額遞減表自己算','<a href="#d-partial">Orchid Bakery 部分年度折舊</a>','<a href="#d-estimate">Delta Logistics 估計變動</a>','處分分錄、天然資源折耗、無形資產攤銷','小測驗'],
+  pass:'<a href="#d-land">Ridgeway</a>、<a href="#d-partial">Orchid</a>、<a href="#d-estimate">Delta</a> 全對，且小測驗第一次就全對。'},
+ {t:'第 7 關',name:'負債與權益',ids:['u16','eq'],time:'2 天',goal:'負債分類、利息、保固、公司債折溢價；權益的股票股利、分割、特別股、庫藏股。兩年合計約 10 題選擇題。',
+  todo:['<a href="#d-cls">流動 vs 非流動分類</a>','應付票據利息、保固、或有負債、公司債','<a href="#eq">權益</a>：三種股數、股利三個日期、股利 vs 分割','<a href="#d-pref">累積特別股股利</a>','兩個小測驗'],
   pass:'<a href="#d-cls">Marlow</a> 和 <a href="#d-pref">Harbor Co.</a> 全對，兩個小測驗第一次全對。'},
- {t:'第 8 關',name:'內部控制與現金流量表',ids:['u17'],time:'2 天',goal:'內部控制六原則看關鍵字選答案；現金流量表三種活動的分類與間接法。選擇題約 5 題。',
-  todo:['<a href="#ic">內部控制六原則</a>（背關鍵字表）','營業／投資／籌資分類、間接法三步驟','Computer Services：先自己做，再一步一步對詳解','小測驗'],
-  pass:'小測驗第一次就全對。'},
- {t:'第 9 關',name:'考試題型實戰',ids:['pb','u12'],time:'3 天',goal:'Part B 三題（共 50%）用考試格式練到不看詳解全對。這是全站最重要的一關。',
-  todo:['<a href="#d-pbInv">練習 1 存貨盤點</a>：每一項都選理由（10%）','<a href="#d-pbDep">練習 2 折舊與處分</a>（20%）','<a href="#d-pbIS">練習 3 更正損益表</a>（20%）','每題先在紙上照考試格式寫，再填數字對答案；隔天 Reset 重做','進階選做：<a href="#u12">綜合題 A、B</a>'],
-  pass:'三題都不按「看詳解」就全部答對。'},
- {t:'第 10 關',name:'考前衝刺',ids:['mb','u11','review','u9'],time:'考前 2–3 天',goal:'用考試題型模擬，清空錯題本。',
-  todo:['<a href="#mb">Mock Exam B</a>：25 題，計時 40 分鐘一次做完','拿學校的 2023 模擬考 PDF 在紙上計時寫，再看<a href="#key2023">逐題解析</a>','Mock Exam A（TA 課 28 題）','<a href="#review">錯題本</a>全部重做到清空','最後看一次 Exam Traps'],
-  pass:'Mock Exam B 第一次答對 20 題以上，錯題本清空。'},
+ {t:'第 8 關',name:'內控與現金流量表',ids:['u17'],time:'3 天',goal:'現金流量表分類、間接法、直接法、淨利 vs 現金的觀念題（2025 Part B 15%），加上內部控制六原則。',
+  todo:['<a href="#ic">內部控制六原則</a>（背關鍵字表）','營業／投資／籌資分類、間接法三步驟','Computer Services：先自己做，再一步一步對詳解','讀「淨利 vs 營業現金流量」兩個觀念','<a href="#d-direct">Rhein GmbH 直接法</a>','自由現金流量、小測驗'],
+  pass:'<a href="#d-direct">Rhein GmbH</a> 全對，且小測驗第一次就全對。'},
+ {t:'第 9 關',name:'考試題型實戰',ids:['pb','u12'],time:'4 天',goal:'Part B 兩年的六種題型，用考試格式練到不看詳解全對。這是全站最重要的一關。',
+  todo:['2025 題型：<a href="#d-pbCost">練習 4 存貨成本法＋稅</a>、<a href="#d-pbPPE">練習 5 設備＋估計變動</a>、<a href="#d-pbSCF">練習 6 現金流量表</a>','2023 題型：<a href="#d-pbInv">練習 1 存貨盤點</a>、<a href="#d-pbDep">練習 2 折舊與處分</a>、<a href="#d-pbIS">練習 3 更正損益表</a>','每題先在紙上照考試格式寫，再填數字對答案；隔天 Reset 重做','進階選做：<a href="#u12">綜合題 A、B</a>'],
+  pass:'六題都不按「看詳解」就全部答對。'},
+ {t:'第 10 關',name:'考前衝刺',ids:['mb','u11','review','u9'],time:'考前 3 天',goal:'用兩年的考試題型模擬，清空錯題本。',
+  todo:['拿 2025 模擬考 PDF 在紙上計時寫，再看<a href="#key2025">2025 逐題解析</a>','<a href="#mockc">Mock Exam C</a>（2025 型）、<a href="#mb">Mock Exam B</a>（2023 型）：各計時 40 分鐘','2023 模擬考 PDF，再看<a href="#key2023">2023 逐題解析</a>','Mock Exam A（TA 課 28 題）','<a href="#review">錯題本</a>全部重做到清空，最後看一次 Exam Traps'],
+  pass:'Mock Exam B、C 第一次都答對 20 題以上，錯題本清空。'},
  {t:'工具箱',name:'隨時查',ids:['u8','u10'],tool:true,time:'需要時',goal:'公式表和中英詞彙，做題卡住時回來查。',todo:['Formula Sheet','Glossary 中英詞彙表'],pass:'不用過關，隨時查。'}
 ];
 const secStage={};STAGES.forEach((st,i)=>st.ids.forEach(id=>secStage[id]=i));
@@ -3085,6 +3369,35 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');i
 document.querySelectorAll('input[data-unit]').forEach(b=>b.addEventListener('change',renderStages));
 setFocus(focus);
 if(location.hash)reveal(location.hash);
+
+/* ---------- concept videos (YouTube, unlisted) ---------- */
+const YT='GlP8jUS-i5U';   // 財會觀念課（unlisted）；each unit starts at its chapter
+const VIDEOS={
+ u0:{id:YT,start:0,t:'完整版：先懂觀念，再解考題',min:21.5},
+ u1:{id:YT,start:27,t:'01 會計等式',min:2.1},
+ dc:{id:YT,start:151,t:'02 借貸',min:1.3},
+ u2:{id:YT,start:229,t:'03 時間觀念：調整分錄',min:2.4},
+ u13:{id:YT,start:375,t:'04 試算表與三張報表',min:1.6},
+ u3:{id:YT,start:468,t:'05 買賣業',min:1.6},
+ u4:{id:YT,start:563,t:'06 期末存貨：所有權與錯誤',min:1.7},
+ u5:{id:YT,start:664,t:'07 FIFO、LIFO、平均法',min:1.8},
+ u7:{id:YT,start:772,t:'08 應收帳款與呆帳',min:1.2},
+ u15:{id:YT,start:846,t:'09 設備與折舊',min:2.1},
+ u16:{id:YT,start:974,t:'10 負債',min:1.4},
+ eq:{id:YT,start:1056,t:'11 權益',min:1.6},
+ u17:{id:YT,start:1150,t:'12 現金流量表',min:1.8}
+};
+Object.entries(VIDEOS).forEach(([sec,v])=>{
+  const s=document.getElementById(sec);if(!s||!/^[\w-]{11}$/.test(v.id))return;
+  const box=document.createElement('div');box.className='vid';
+  box.innerHTML='<button type="button" class="play"><span class="tri" aria-hidden="true">▶</span><span><span class="vt"></span><br><span class="vs"></span></span></button>';
+  box.querySelector('.vt').textContent='觀念影片 · '+v.t;
+  box.querySelector('.vs').textContent=(v.start?`從 ${Math.floor(v.start/60)}:${String(v.start%60).padStart(2,'0')} 開始播 · `:'')+`約 ${v.min} 分鐘 · 先看影片懂觀念，再做下面的練習`;
+  box.querySelector('button').addEventListener('click',()=>{
+    box.innerHTML=`<div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0&start=${v.start||0}" title="${v.t}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`;
+  });
+  s.querySelector('h2.u').after(box);
+});
 
 /* ---------- phone drawer ---------- */
 const sidebar=document.getElementById('sidebar'),fab=document.getElementById('fab'),phone=matchMedia('(max-width:860px)');
