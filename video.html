@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>財會觀念課 完整版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+[hidden]{display:none!important}
+:root{
+  --paper:#f3f6f4; --sheet:#ffffff; --ink:#1d2b2a; --muted:#5d6e6b; --rule:#d5e1dc; --rule-strong:#a9c2b8;
+  --accent:#1f6b52; --accent-soft:#e2efe9; --note:#fff6d8; --note-ink:#6b5410;
+  --display:"Newsreader",Georgia,"Noto Serif TC",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#111816; --sheet:#18211f; --ink:#e3ebe8; --muted:#9aaba6; --rule:#2a3834; --rule-strong:#3e534c;
+  --accent:#6fc8a4; --accent-soft:#1d3a30; --note:#33301c; --note-ink:#e9d48a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111816; --sheet:#18211f; --ink:#e3ebe8; --muted:#9aaba6; --rule:#2a3834; --rule-strong:#3e534c;
+  --accent:#6fc8a4; --accent-soft:#1d3a30; --note:#33301c; --note-ink:#e9d48a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;padding:0 16px 64px}
+.wrap{max-width:980px;margin:0 auto}
+header{padding:28px 0 18px;border-bottom:2px solid var(--ink);margin-bottom:22px}
+.back{font-size:14px;color:var(--accent);text-decoration:none}
+.back:hover,.back:focus-visible{text-decoration:underline}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+h1{font-family:var(--display);font-size:clamp(30px,5vw,46px);line-height:1.15;margin:.15em 0 .25em}
+header p{margin:0;color:var(--muted);max-width:62ch}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;border:1px solid var(--rule-strong)}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tip{font-size:14px;color:var(--muted);margin:10px 0 0}
+h2{font-size:18px;margin:30px 0 10px}
+ol.ch{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ch li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:10px 12px}
+.ch li.on{border-color:var(--accent);background:var(--accent-soft)}
+.ch button{all:unset;cursor:pointer;display:contents}
+.ch .ts{font-family:var(--mono);font-size:14px;color:var(--accent);min-width:3.4em;cursor:pointer}
+.ch .tt{cursor:pointer}
+.ch .tt b{display:block;font-size:15.5px}
+.ch .tt span{font-size:13px;color:var(--muted)}
+.ch .go{font-size:13px;color:var(--accent);text-decoration:none;white-space:nowrap;border:1px solid var(--accent);border-radius:4px;padding:3px 9px}
+.ch .go:hover,.ch .go:focus-visible{background:var(--accent-soft)}
+.ch button:focus-visible + .ts, .ch .tt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{background:var(--note);color:var(--note-ink);border-radius:6px;padding:12px 14px;margin-top:24px;font-size:14.5px}
+@media (max-width:560px){.ch li{grid-template-columns:auto 1fr}.ch .go{grid-column:2;justify-self:start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="back" href="index.html">← 回練習網站</a>
+  <div class="eyebrow">Financial Accounting · Midterm</div>
+  <h1>財會觀念課 完整版</h1>
+  <p>21 分鐘，13 章。每章先用生活例子講懂觀念，再解 2023／2025 模擬考的真題。點下面的章節可以直接跳到那一段，看完再按「去練習」做對應的題目。</p>
+</header>
+
+<div class="player"><iframe id="yt" src="https://www.youtube-nocookie.com/embed/GlP8jUS-i5U?rel=0" title="財會觀念課 完整版"
+  allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p class="tip">建議一次看 2～3 章就好。第 1～3 章是整門課的地基，先看完。</p>
+
+<h2>章節</h2>
+<ol class="ch" id="chapters"></ol>
+
+<div class="note">影片是「不公開」的 YouTube 影片，只有拿到這個網頁的人看得到，請不要轉貼。</div>
+</div>
+
+<script>
+const ID='GlP8jUS-i5U';
+const CH=[
+ [0,'開場','這支影片怎麼上','u0'],
+ [27,'01 會計等式','店裡的東西，錢從哪裡來','u1'],
+ [151,'02 借貸','把一件事的兩邊同時記下來','dc'],
+ [229,'03 時間觀念','調整分錄：什麼時候算收入和費用','u2'],
+ [375,'04 試算表與三張報表','從試算表算淨利、保留盈餘、總資產','u13'],
+ [468,'05 買賣業','商品怎麼變成銷貨成本','u3'],
+ [563,'06 期末存貨','FOB、寄銷、存貨錯誤','u4'],
+ [664,'07 FIFO、LIFO、平均法','2025 Part B 計算題','u5'],
+ [772,'08 應收帳款與呆帳','備抵呆帳 = 緩衝墊','u7'],
+ [846,'09 設備與折舊','2025 Part B 計算題＋估計變動','u15'],
+ [974,'10 負債','或有負債、公司債折價','u16'],
+ [1056,'11 權益','股票股利、分割、特別股','eq'],
+ [1150,'12 現金流量表','間接法、分類代號 A–G','u17'],
+ [1261,'13 總結','兩個觀念串起整門課','']
+];
+const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+const list=document.getElementById('chapters'), yt=document.getElementById('yt');
+CH.forEach(([t,title,sub,unit],i)=>{
+  const li=document.createElement('li');
+  li.innerHTML=`<span class="ts" role="button" tabindex="0"></span><span class="tt" role="button" tabindex="0"><b></b><span></span></span>`;
+  li.querySelector('.ts').textContent=fmt(t);
+  li.querySelector('.tt b').textContent=title;
+  li.querySelector('.tt span').textContent=sub;
+  if(unit){const a=document.createElement('a');a.className='go';a.href=`index.html#${unit}`;a.textContent='去練習 →';li.appendChild(a)}
+  const play=()=>{
+    yt.src=`https://www.youtube-nocookie.com/embed/${ID}?rel=0&autoplay=1&start=${t}`;
+    list.querySelectorAll('li').forEach(x=>x.classList.toggle('on',x===li));
+    yt.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  li.querySelectorAll('[role=button]').forEach(el=>{el.addEventListener('click',play);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();play()}})});
+  list.appendChild(li);
+});
+</script>
+</body>
+</html>

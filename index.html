@@ -264,6 +264,9 @@ nav.idx li.stg a.done::after{content:" ✓"}
 .roadmap li span{font-size:13.5px;color:var(--muted)}
 .roadmap li.current{border:2px solid var(--accent)}
 .roadmap li.done a::after{content:"  ✓";color:var(--accent)}
+.btn{text-decoration:none}
+.toc-video{display:block;margin:0 0 12px;padding:8px 10px;border-radius:4px;background:var(--accent);color:var(--sheet);text-decoration:none;font-size:14px;font-weight:700}
+.toc-video:hover,.toc-video:focus-visible{opacity:.9}
 /* concept videos */
 .vid{margin:14px 0 6px;border:1px solid var(--rule-strong);border-radius:6px;background:var(--sheet);overflow:hidden}
 .vid button.play{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:14px;align-items:center;width:100%;padding:14px 16px}
@@ -286,7 +289,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
   <h1>Financial Accounting Midterm Review</h1>
   <p>TA 課與上課投影片的內容，英文為主、中文輔助。第一次用請先看 <a href="#u0">Start here 怎麼用這個網站</a>，再看 <a href="#exam">考試攻略</a>（期中考題型與配分）：每題都是「先自己做 → 對答案 → 卡住才一步一步看詳解 → 錯的進錯題本再做」。</p>
   <div class="eq"><b>Assets</b>=<b>Liabilities</b>+<b>Share Capital</b>+<b>Revenues − Expenses − Dividends</b></div>
-  <div class="langbar"><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><button class="btn" id="focusBtn" type="button" aria-pressed="true">專心模式：只顯示這一關</button><button class="btn" id="stepBtn" type="button" aria-pressed="true">詳解：一步一步看</button><span class="en">考前切成純英文，測試看不看得懂題目</span></div>
+  <div class="langbar"><a class="btn solid" href="video.html">▶ 觀念影片完整版（21 分鐘）</a><button class="btn" id="langBtn" type="button" aria-pressed="false">English only（隱藏中文）</button><button class="btn" id="focusBtn" type="button" aria-pressed="true">專心模式：只顯示這一關</button><button class="btn" id="stepBtn" type="button" aria-pressed="true">詳解：一步一步看</button><span class="en">考前切成純英文，測試看不看得懂題目</span></div>
 </header>
 
 <button class="fab" id="fab" type="button" aria-controls="sidebar" aria-expanded="false"><b aria-hidden="true">☰</b><span id="fabStage">關卡</span></button>
@@ -294,6 +297,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
 <div class="wrap">
 <nav class="idx" id="sidebar" aria-label="Contents">
   <div class="nav-head"><h2>Contents</h2><button class="nav-close" id="navClose" type="button">✕ 關閉</button></div>
+  <a class="toc-video" href="video.html">▶ 觀念影片完整版</a>
   <ol id="toc">
     <li class="stg"><a href="#stage-0">起點 · 怎麼用＋考什麼</a></li>
     <li><a href="#u0"><span class="n">0</span>Start here 怎麼用</a></li>
