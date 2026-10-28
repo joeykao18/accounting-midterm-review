@@ -193,6 +193,15 @@ ol.key li{margin-bottom:6px}
 .qhint{margin-top:10px;font-size:14.5px;background:var(--note);color:var(--note-ink);border-radius:4px;padding:8px 12px}
 .qhint .btn{margin-top:6px;font-size:13px;padding:3px 10px}
 .qfoot{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.exp .ctag{display:block;margin-top:6px;font-size:13px;color:var(--accent)}
+.creport{border:1px solid var(--rule-strong);border-radius:4px;padding:12px 14px;margin:0 0 14px;background:var(--sheet)}
+.creport h4{margin:0 0 4px}.cr-sum{margin:0 0 6px}.cr-ok{color:var(--accent)}.cr-weak{color:var(--credit)}.cr-note{font-size:14px;margin:4px 0 8px}
+.cr-list{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:6px}
+.cr-list li{border:1px solid var(--rule);border-left-width:4px;border-radius:3px;padding:4px 8px;font-size:13px;display:grid;grid-template-columns:1fr auto;column-gap:6px}
+.cr-list li span{grid-column:1;color:var(--muted);font-size:12px}.cr-list li em{grid-row:1/3;grid-column:2;align-self:center;font-style:normal;font-family:var(--mono);font-size:12px}
+.cr-list .cr-ok{border-left-color:var(--accent);background:var(--accent-soft)}.cr-list .cr-weak{border-left-color:var(--credit);background:var(--credit-soft)}
+.cr-all{margin-top:8px}.cr-all>summary{cursor:pointer;font-size:14px;color:var(--accent)}
+.toc-sub{font-size:.92em;padding-left:1.6em!important}
 .qfoot .tag1{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .qcard.first-ok{border-left:4px solid var(--accent)}
 .qcard.missed{border-left:4px solid var(--credit)}
@@ -328,7 +337,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <li><a href="#pb"><span class="n">16</span>Exam Part B Practice ★</a></li>
     <li><a href="#u12"><span class="n">17</span>Comprehensive Problems (進階)</a></li>
     <li class="stg"><a href="#stage-10">第 10 關 · 考前衝刺</a></li>
-    <li><a href="#mb"><span class="n">18</span>Mock Exams B &amp; C (exam format)</a></li>
+    <li><a href="#mb"><span class="n">18</span>Mock Exams B–D (exam format)</a></li><li><a href="#mockd" class="toc-sub">★ Mock D 全觀念總檢查</a></li>
     <li><a href="#u11"><span class="n">19</span>Mock Exam A (28 Qs)</a></li>
     <li><a href="#review"><span class="n">20</span>錯題本 Mistakes <span class="miss-count" id="missToc"></span></a></li>
     <li><a href="#u9"><span class="n">21</span>Exam Traps</a></li>
@@ -376,7 +385,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
   <h3><span class="tag">Format</span>題型與配分</h3>
   <div class="scroll"><table>
     <tr><th>Part</th><th>2023</th><th>2025（最新）</th><th>在哪裡練</th></tr>
-    <tr><td><b>A</b> 50%</td><td colspan="2">25 題選擇題，每題 2 分：觀念題＋小計算</td><td><a href="#mb">Mock Exam B（2023 型）、C（2025 型）</a></td></tr>
+    <tr><td><b>A</b> 50%</td><td colspan="2">25 題選擇題，每題 2 分：觀念題＋小計算</td><td><a href="#mb">Mock Exam B（2023 型）、C（2025 型）</a>、<a href="#mockd">Mock D 全觀念</a></td></tr>
     <tr><td><b>B 存貨</b></td><td>盤點調整：算正確期末存貨，每項寫理由（10%）</td><td>成本法：FIFO、<b>LIFO</b>、平均法＋哪種方法省稅、保留較多現金（20%）</td><td><a href="#d-pbInv">練習 1</a>、<a href="#d-pbCost">練習 4</a></td></tr>
     <tr><td><b>B 設備</b></td><td>生產數量法、直線法、帳面價值、倍數餘額遞減＋處分（20%）</td><td>生產數量法、直線法＋處分利益、<b>估計變動</b>（15%）</td><td><a href="#d-pbDep">練習 2</a>、<a href="#d-pbPPE">練習 5</a></td></tr>
     <tr><td><b>B 第三題</b></td><td>更正損益表（漏掉的調整）（20%）</td><td>現金流量表：觀念題＋分類代號（15%）</td><td><a href="#d-pbIS">練習 3</a>、<a href="#d-pbSCF">練習 6</a></td></tr>
@@ -2169,7 +2178,7 @@ nav.idx li.stg a.done::after{content:" ✓"}
 <!-- ============ 18 (mb) ============ -->
 <section class="unit" id="mb">
   <div class="unit-head"><span class="src">Exam Part A format · 25 original questions</span></div>
-  <h2 class="u"><span class="num">18</span>Mock Exams B &amp; C — Part A Format (2 × 25 Qs)</h2>
+  <h2 class="u"><span class="num">18</span>Mock Exams B, C &amp; D — Exam Format + Full Concept Check</h2>
   <p>Same topics and order as the 2023 mock midterm's Part A, with new questions and numbers. Do all 25 in one sitting in about 40 minutes (about 1.5 minutes each) without looking anything up.<span class="zh">跟 2023 模擬考選擇題同主題、同順序，換題目換數字。建議計時 40 分鐘一次做完，中途不要查資料。分數只算第一次就答對的題數，目標 20 題以上。</span></p>
   <div class="quiz" data-set="examB"></div>
 
@@ -2252,7 +2261,151 @@ nav.idx li.stg a.done::after{content:" ✓"}
     <p><b>Problem 3 Cash flows (15%):</b> (a)(b) written answers: non-cash expenses added back and working-capital changes; operating cash flow shows liquidity, accrual income shows profitability. (c) <b>E, A, D, G, B</b>.</p>
     <p class="zh">換數字的同型練習在第 9 關練習 4–6。</p>
   </div></details>
-  <label class="done-row"><input type="checkbox" id="done-mb" data-unit="mb"> Mock Exam B、C 第一次都答對 20 題以上</label>
+  <h3 id="mockd"><span class="tag">Mock D</span>Mock Exam D — 全觀念總檢查（Part A 146 題 + Part B 5 題）</h3>
+  <p>Every concept on the site, in exam order, with no limit on the number of questions. Each question is tagged with one of 57 concepts. The report below shows which concepts you have mastered and which you missed, with a link back to the right unit.<span class="zh">網站上每一個觀念都至少考 1 題（大多 2–4 題），一共 57 個觀念。每做一題，下面的「觀念檢查表」就會更新：第一次就答對的觀念變綠色，答錯的變紅色，還附上回去複習的連結。作答紀錄會存在這台裝置，可以分好幾天做完。目標：57 個觀念全部變綠色。</span></p>
+  <div class="quiz" data-set="examD"></div>
+
+  <h3 id="mockdB"><span class="tag">Mock D · Part B</span>Part B — 5 problems (write on paper, show computations)</h3>
+  <p>The two Part B types from 2023 and 2025, plus the extra items the teacher could add. Write each one on paper in exam format, then open the model answer.<span class="zh">把 2023、2025 兩年所有 Part B 題型放在一起，再加上老師可能變化的地方（銷貨目的地交貨、陳舊品、部分年度的倍數餘額遞減、殘值也一起改的估計變動、預收和預付的調整、現金流量表整張編製）。一定要寫算式。</span></p>
+
+  <h4>Problem 1 — Juniper Ltd: correct inventory (each item: add / subtract / no adjustment + reason)</h4>
+  <p class="q">Juniper Ltd reported inventory of $410,000 on December 31. The following items were not considered correctly:</p>
+  <ol class="q">
+    <li>Goods costing $24,000 were sent on consignment to a dealer and were not counted.</li>
+    <li>The count included $30,000 of goods Juniper holds on consignment for Pine Co.</li>
+    <li>Goods purchased for $16,000, FOB shipping point, were shipped December 29 and arrive January 3. They were not counted.</li>
+    <li>Goods purchased for $11,000, FOB destination, were shipped December 30 and arrive January 4. They were not counted.</li>
+    <li>Goods sold to a customer (cost $14,000), FOB destination, were shipped December 30 and arrive January 2. They were not counted.</li>
+    <li>The count included $3,000 of office supplies.</li>
+    <li>Goods sold (cost $9,000, selling price $13,000), FOB shipping point, were on the loading dock on December 31 and picked up January 2. They were not counted.</li>
+    <li>The count included goods costing $5,000 that are damaged and cannot be sold.</li>
+  </ol>
+  <details class="sol"><summary>Model answer</summary><div class="in nostep">
+    <p>Inventory as reported $410,000</p>
+    <ol>
+      <li><b>Add $24,000.</b> Juniper is the consignor and still owns the goods.</li>
+      <li><b>Subtract $30,000.</b> The goods belong to Pine Co.; Juniper is only the consignee.</li>
+      <li><b>Add $16,000.</b> FOB shipping point: title passed to Juniper when the goods were shipped.</li>
+      <li><b>No adjustment.</b> FOB destination: title does not pass until the goods arrive on January 4.</li>
+      <li><b>Add $14,000.</b> FOB destination sale: Juniper owns the goods until they reach the customer.</li>
+      <li><b>Subtract $3,000.</b> Office supplies are not held for resale.</li>
+      <li><b>Add $9,000</b> (cost, not selling price). The goods are Juniper's until they are picked up.</li>
+      <li><b>Subtract $5,000.</b> Goods that cannot be sold have no value (net realizable value 0).</li>
+    </ol>
+    <p><b>Correct inventory = $435,000</b> (410,000 + 24,000 − 30,000 + 16,000 + 0 + 14,000 − 3,000 + 9,000 − 5,000)</p>
+    <p class="zh">第 5 項和第 8 項是模擬考沒出過的變化：「賣出去、目的地交貨、還在路上」還是我的；「壞掉賣不掉」要扣掉。</p>
+  </div></details>
+
+  <h4>Problem 2 — Oak Trading: FIFO, LIFO, average-cost and income tax</h4>
+  <p class="q">Oak Trading's inventory records for the year:</p>
+  <div class="scroll"><table>
+    <tr><th>Date</th><th>Explanation</th><th class="r">Units</th><th class="r">Unit cost</th><th class="r">Total</th></tr>
+    <tr><td>Jan 1</td><td>Beginning inventory</td><td class="r">200</td><td class="r">$5</td><td class="r">$1,000</td></tr>
+    <tr><td>Mar 10</td><td>Purchase</td><td class="r">400</td><td class="r">6</td><td class="r">2,400</td></tr>
+    <tr><td>Jul 22</td><td>Purchase</td><td class="r">300</td><td class="r">7</td><td class="r">2,100</td></tr>
+    <tr><td>Nov 5</td><td>Purchase</td><td class="r">100</td><td class="r">8</td><td class="r">800</td></tr>
+  </table></div>
+  <p class="q">700 units were sold at $12 each. Operating expenses were $1,500 and the tax rate is 30%. (a) Ending inventory under FIFO. (b) Ending inventory under LIFO. (c) COGS under average-cost. (d) Prepare income statements to income tax under all three methods; which method leaves the most cash, and why? (e) If prices had been <i>falling</i>, which method would give the lowest tax?</p>
+  <details class="sol"><summary>Model answer</summary><div class="in nostep">
+    <p>Goods available: 1,000 units, $6,300. Units left = 1,000 − 700 = <b>300</b>.</p>
+    <p><b>(a) FIFO</b> (newest left): 100 × $8 + 200 × $7 = <b>$2,200</b> → COGS 6,300 − 2,200 = 4,100</p>
+    <p><b>(b) LIFO</b> (oldest left): 200 × $5 + 100 × $6 = <b>$1,600</b> → COGS 4,700</p>
+    <p><b>(c) Average</b>: 6,300 ÷ 1,000 = $6.30; COGS = 700 × 6.30 = <b>$4,410</b> (ending 1,890)</p>
+    <div class="scroll"><table>
+      <tr><th>(d)</th><th class="r">FIFO</th><th class="r">LIFO</th><th class="r">Average</th></tr>
+      <tr><td>Sales (700 × $12)</td><td class="r">8,400</td><td class="r">8,400</td><td class="r">8,400</td></tr>
+      <tr><td>Cost of goods sold</td><td class="r">4,100</td><td class="r">4,700</td><td class="r">4,410</td></tr>
+      <tr><td>Gross profit</td><td class="r">4,300</td><td class="r">3,700</td><td class="r">3,990</td></tr>
+      <tr><td>Operating expenses</td><td class="r">1,500</td><td class="r">1,500</td><td class="r">1,500</td></tr>
+      <tr><td>Income before tax</td><td class="r">2,800</td><td class="r">2,200</td><td class="r">2,490</td></tr>
+      <tr class="total"><td>Income tax (30%)</td><td class="r">840</td><td class="r">660</td><td class="r">747</td></tr>
+    </table></div>
+    <p><b>Choose LIFO.</b> Prices are rising, so LIFO puts the newest, highest costs in COGS → lowest income before tax → lowest tax ($660) → the most cash stays in the company.</p>
+    <p><b>(e)</b> Falling prices reverse it: <b>FIFO</b> puts the older, higher costs in COGS → lowest tax.</p>
+  </div></details>
+
+  <h4>Problem 3 — Willow Co: depreciation, disposal and change in estimate</h4>
+  <p class="q">Before this year's depreciation entry, Willow Co's records show:</p>
+  <div class="scroll"><table>
+    <tr><th>Machine</th><th class="r">Cost</th><th class="r">Residual value</th><th>Method / life</th><th class="r">Accum. depr. — beginning of year</th></tr>
+    <tr><td>#1</td><td class="r">$60,000</td><td class="r">$6,000</td><td>Units-of-activity, 45,000 hours (6,000 hours used this year)</td><td class="r">$12,000</td></tr>
+    <tr><td>#2</td><td class="r">48,000</td><td class="r">3,000</td><td>Straight-line, 5 years</td><td class="r">18,000</td></tr>
+    <tr><td>#3</td><td class="r">32,000</td><td class="r">2,000</td><td>Double-declining-balance, 8 years; bought July 1 last year</td><td class="r">4,000</td></tr>
+    <tr><td>#4</td><td class="r">90,000</td><td class="r">10,000</td><td>Straight-line, originally 10 years</td><td class="r">32,000</td></tr>
+  </table></div>
+  <p class="q">(a) #1: depreciation rate per hour, this year's expense and year-end book value. (b) #2 was sold at the end of this year for $20,000: compute the gain or loss and give the entry. (c) #3: this year's depreciation and year-end book value. (d) #4: at the beginning of this year the total life was revised to 8 years and the residual value to $6,000. Compute this year's depreciation and the year-end accumulated depreciation.</p>
+  <details class="sol"><summary>Model answer</summary><div class="in nostep">
+    <p><b>(a)</b> (60,000 − 6,000) ÷ 45,000 = <b>$1.20 per hour</b>; 6,000 × 1.20 = <b>$7,200</b>; book value = 60,000 − (12,000 + 7,200) = <b>$40,800</b></p>
+    <p><b>(b)</b> This year's depreciation (48,000 − 3,000) ÷ 5 = 9,000 → accumulated 27,000 → book value 21,000. 20,000 − 21,000 = <b>loss $1,000</b>.<br>Dr Cash 20,000; Dr Accumulated Depreciation 27,000; Dr Loss on Disposal 1,000; Cr Equipment 48,000.</p>
+    <p><b>(c)</b> Rate 2 ÷ 8 = 25%. Last year (6 months): 32,000 × 25% × 6/12 = 4,000 ✓ (matches the table). This year: (32,000 − 4,000) × 25% = <b>$7,000</b>; book value = 32,000 − 11,000 = <b>$21,000</b> (still above the $2,000 residual value).</p>
+    <p><b>(d)</b> Old annual = (90,000 − 10,000) ÷ 10 = 8,000 → years used = 32,000 ÷ 8,000 = 4 → remaining = 8 − 4 = 4.<br>New depreciation = (90,000 − 32,000 − 6,000) ÷ 4 = <b>$13,000</b>; ending accumulated depreciation = 32,000 + 13,000 = <b>$45,000</b>.</p>
+    <p class="zh">陷阱：(b) 要先補提今年折舊才算損益；(c) 表上累折已經含去年半年；(d) 殘值也改了，要用新殘值。</p>
+  </div></details>
+
+  <h4>Problem 4 — Maple Design: prepare a correct income statement for March</h4>
+  <p class="q">A clerk prepared this income statement for March: Service revenue €38,000; Salaries and wages expense €8,000; Rent expense €3,000; Advertising expense €1,200; Depreciation expense €1,500; total expenses €13,700; net income €24,300. The clerk did not consider:</p>
+  <ol class="q">
+    <li>A €900 electricity bill for March, received March 31 and not yet paid.</li>
+    <li>Maple arranged a €40,000 contract for a client, billed it, and earns a 10% commission.</li>
+    <li>Supplies on hand March 1 were €1,800; €1,200 more were bought in March; €700 were on hand March 31.</li>
+    <li>On March 1 Maple bought a car for €24,000 cash; it depreciates €4,800 per year.</li>
+    <li>Salaries owed to employees at March 31: €2,100.</li>
+    <li>A €12,000, 6-month, 8% note payable dated February 1.</li>
+    <li>On March 1 Maple received €6,000 for 3 months of services starting in March and credited Unearned Service Revenue.</li>
+    <li>On January 1 Maple paid €3,600 for 12 months of insurance and debited Prepaid Insurance; nothing has been expensed for March.</li>
+  </ol>
+  <details class="sol"><summary>Model answer</summary><div class="in nostep">
+    <div class="sheet scroll"><table>
+      <tr><th colspan="3">Maple Design — Income Statement, month ended March 31</th></tr>
+      <tr><td>Service revenue (38,000 + 4,000 + 2,000)</td><td></td><td class="r">€44,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Salaries and wages expense (8,000 + 2,100)</td><td class="r">10,100</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Rent expense</td><td class="r">3,000</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Supplies expense (1,800 + 1,200 − 700)</td><td class="r">2,300</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Depreciation expense (1,500 + 4,800 ÷ 12)</td><td class="r">1,900</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Advertising expense</td><td class="r">1,200</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Utilities expense</td><td class="r">900</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Insurance expense (3,600 ÷ 12)</td><td class="r">300</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;Interest expense (12,000 × 8% × 1/12)</td><td class="r">80</td><td></td></tr>
+      <tr><td>Total expenses</td><td></td><td class="r">19,780</td></tr>
+      <tr class="total dbl"><td>Net income</td><td></td><td class="r">€24,220</td></tr>
+    </table></div>
+    <p class="zh">陷阱：佣金只算 10%（不是 40,000）；買車的 24,000 不是費用，只加一個月折舊 400；預收的 6,000 只有 1/3 是 3 月賺的；利息只算 3 月一個月。</p>
+  </div></details>
+
+  <h4>Problem 5 — Cedar Ltd: statement of cash flows (indirect method) + concepts + codes</h4>
+  <p class="q">Cedar Ltd for the year: net income $42,000. Accumulated depreciation was $30,000 at the beginning and $33,000 at the end. Equipment costing $20,000 (accumulated depreciation $6,000) was sold for $11,000 cash. Accounts receivable increased $7,000; inventory decreased $4,000; prepaid expenses increased $1,000; accounts payable decreased $5,000; income taxes payable increased $2,000. New equipment was bought for $30,000 cash. Shares were issued for $15,000 cash; a bank loan of $20,000 was repaid. Dividends of $15,000 were declared, of which $3,000 is still payable. Land was acquired by issuing a $25,000 note. Cash at the beginning of the year was $18,000.</p>
+  <p class="q">(a) Compute depreciation expense and the loss on the sale. (b) Prepare the statement of cash flows. (c) Compute free cash flow. (d) Using the codes A added / B deducted / C investing outflow / D investing inflow / E financing outflow / F financing inflow / G non-cash activity, classify: the loss on sale; the increase in A/R; the equipment purchase; the land for a note; the shares issued; the dividends paid. (e) Net income is $42,000; why is it different from operating cash flow, and what does each tell you?</p>
+  <details class="sol"><summary>Model answer</summary><div class="in nostep">
+    <p><b>(a)</b> Depreciation = 33,000 − (30,000 − 6,000) = <b>$9,000</b>. Book value sold = 20,000 − 6,000 = 14,000; 11,000 − 14,000 = <b>loss $3,000</b>.</p>
+    <div class="sheet scroll"><table>
+      <tr><th colspan="2">(b) Cedar Ltd — Statement of Cash Flows</th></tr>
+      <tr><td>Net income</td><td class="r">$42,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Depreciation expense</td><td class="r">9,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Loss on sale of equipment</td><td class="r">3,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Increase in accounts receivable</td><td class="r">(7,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Decrease in inventory</td><td class="r">4,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Increase in prepaid expenses</td><td class="r">(1,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Decrease in accounts payable</td><td class="r">(5,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Increase in income taxes payable</td><td class="r">2,000</td></tr>
+      <tr class="total"><td>Net cash provided by operating activities</td><td class="r">47,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Sale of equipment</td><td class="r">11,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Purchase of equipment</td><td class="r">(30,000)</td></tr>
+      <tr class="total"><td>Net cash used by investing activities</td><td class="r">(19,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Issuance of ordinary shares</td><td class="r">15,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Repayment of bank loan</td><td class="r">(20,000)</td></tr>
+      <tr><td>&nbsp;&nbsp;Payment of dividends (15,000 − 3,000)</td><td class="r">(12,000)</td></tr>
+      <tr class="total"><td>Net cash used by financing activities</td><td class="r">(17,000)</td></tr>
+      <tr class="total"><td>Net increase in cash</td><td class="r">11,000</td></tr>
+      <tr><td>Cash, beginning of year</td><td class="r">18,000</td></tr>
+      <tr class="total dbl"><td>Cash, end of year</td><td class="r">$29,000</td></tr>
+      <tr><td colspan="2">Non-cash investing and financing activity: land acquired by issuing a $25,000 note payable.</td></tr>
+    </table></div>
+    <p><b>(c)</b> Free cash flow = 47,000 − 30,000 − 12,000 = <b>$5,000</b>.</p>
+    <p><b>(d)</b> Loss on sale <b>A</b>; increase in A/R <b>B</b>; equipment purchase <b>C</b>; land for a note <b>G</b>; shares issued <b>F</b>; dividends paid <b>E</b>.</p>
+    <p><b>(e)</b> Net income uses the accrual basis: it includes non-cash items (depreciation, the loss) and revenue not yet collected (A/R ↑). Operating cash flow counts only cash. <b>Net income shows profitability; operating cash flow shows liquidity</b> (the ability to pay bills).</p>
+  </div></details>
+
+  <label class="done-row"><input type="checkbox" id="done-mb" data-unit="mb"> Mock Exam B、C 第一次都答對 20 題以上，Mock D 觀念檢查表全部變綠色</label>
 </section>
 
 <!-- ============ 19 (u11) ============ -->
@@ -2985,8 +3138,156 @@ function setStep(on){stepMode=on;stepBtn.setAttribute('aria-pressed',on?'true':'
 setStep(stepMode);
 stepBtn.addEventListener('click',()=>{setStep(!stepMode);store.set('fa-step',stepMode)});
 
+Q.examD=[{"q":"During the year, total assets increased $60,000 and total liabilities decreased $15,000. Equity must have:","o":["Increased $45,000","Decreased $75,000","Increased $60,000","Increased $75,000"],"a":3,"e":"ΔE = ΔA − ΔL = 60,000 − (−15,000) = 75,000.","z":"負債減少要用負數代入。","c":"eq"},
+{"q":"At year-end, liabilities are €120,000, share capital is €90,000 and retained earnings are €40,000. Total assets are:","o":["€170,000","€250,000","€210,000","€130,000"],"a":1,"e":"A = L + E = 120,000 + (90,000 + 40,000) = 250,000.","z":"權益＝股本＋保留盈餘。","c":"eq"},
+{"q":"Which transaction increases both assets and equity?","o":["Borrowing cash from a bank","Paying an account payable","Collecting an account receivable","Issuing ordinary shares for cash"],"a":3,"e":"Cash ↑ and Share Capital ↑. Borrowing raises liabilities, not equity.","z":"借錢是負債，不是權益。","c":"txn"},
+{"q":"A company collects $5,000 from a customer billed last month. The effect on the accounting equation is:","o":["No change in total assets","Assets ↑ and revenue ↑","Assets ↓ and liabilities ↓","Assets ↑ and equity ↑"],"a":0,"e":"Cash ↑ 5,000 and Accounts Receivable ↓ 5,000: an asset swap. The revenue was recorded last month when the service was performed.","z":"收回應收帳款不是收入。","c":"txn"},
+{"q":"Services of $3,000 are performed on account. The effect is:","o":["Assets ↑ and liabilities ↑","Assets ↑ $3,000 and equity ↑ $3,000","No effect until the cash is collected","Liabilities ↓ and equity ↑"],"a":1,"e":"Accounts Receivable ↑ and Service Revenue ↑ (revenue raises equity). Accrual basis: revenue is recorded when earned.","z":"賒帳做服務：應收↑、收入↑。","c":"txn"},
+{"q":"Beginning retained earnings $50,000; net income $32,000; dividends declared $12,000. Ending retained earnings:","o":["$70,000","$94,000","$82,000","$62,000"],"a":0,"e":"50,000 + 32,000 − 12,000 = 70,000.","z":"期末 RE＝期初＋淨利－股利。","c":"div"},
+{"q":"Which statement about dividends is correct?","o":["They are an operating expense on the income statement","They reduce retained earnings but are not an expense","They increase liabilities when they are paid","They are increased with a credit to Dividends"],"a":1,"e":"Dividends are a distribution to owners, shown on the retained earnings statement, never on the income statement. Dividends increase with a debit.","z":"股利不是費用。","c":"div"},
+{"q":"Under IFRS, a statement of financial position usually lists:","o":["Current assets first, then non-current assets","Liabilities before assets","Non-current assets first, then current assets","Cash first, then equity"],"a":2,"e":"IFRS order: non-current assets → current assets; equity → non-current liabilities → current liabilities.","z":"IFRS 從長期的先列。","c":"sfp"},
+{"q":"Which item is a current liability?","o":["Salaries payable","Bonds payable due in 8 years","Share premium","Accumulated depreciation"],"a":0,"e":"Salaries payable are paid within a year. Share premium is equity; accumulated depreciation is a contra asset.","z":"一年內要付的。","c":"sfp"},
+{"q":"Which account is increased with a debit?","o":["Dividends","Unearned Service Revenue","Share Capital—Ordinary","Accounts Payable"],"a":0,"e":"Debits increase assets, expenses and dividends. The other three are liabilities or equity (credit increases).","z":"DEA：Dividends, Expenses, Assets。","c":"dr"},
+{"q":"Which account normally has a credit balance?","o":["Prepaid Rent","Salaries Expense","Dividends","Accumulated Depreciation"],"a":3,"e":"Accumulated depreciation is a contra-asset: it reduces an asset, so its normal balance is the opposite of assets (credit).","z":"資產的減項，方向和資產相反。","c":"dr"},
+{"q":"A credit to Accounts Receivable means:","o":["Receivables increased","Revenue was earned","Cash decreased","Receivables decreased"],"a":3,"e":"A/R is an asset: debit increases, credit decreases (e.g., when the customer pays).","z":"資產記貸方＝減少。","c":"dr"},
+{"q":"Equipment is bought for $8,000: $2,000 in cash and a note payable for the rest. The entry is:","o":["Dr Equipment 6,000, Dr Cash 2,000 / Cr Notes Payable 8,000","Dr Equipment 8,000 / Cr Cash 2,000, Cr Notes Payable 6,000","Dr Notes Payable 6,000, Dr Cash 2,000 / Cr Equipment 8,000","Dr Equipment 8,000 / Cr Accounts Payable 8,000"],"a":1,"e":"The asset comes in at full cost (debit); cash goes out (credit) and a liability is created (credit).","z":"設備進來記借，現金出去記貸。","c":"je"},
+{"q":"Cash of $4,000 is received in advance for services to be performed next month. The entry is:","o":["Dr Cash / Cr Service Revenue","Dr Cash / Cr Unearned Service Revenue","Dr Unearned Service Revenue / Cr Cash","Dr Accounts Receivable / Cr Unearned Service Revenue"],"a":1,"e":"The service is not done yet, so the company owes it: a liability, not revenue.","z":"還沒做服務 → 負債。","c":"je"},
+{"q":"Salaries of $1,500 accrued at the end of last period (Salaries Payable $1,500) are paid. The entry is:","o":["Dr Salaries Expense / Cr Cash","Dr Cash / Cr Salaries Payable","Dr Salaries Payable / Cr Cash","Dr Salaries Expense / Cr Salaries Payable"],"a":2,"e":"The expense was already recorded last period; paying it removes the liability.","z":"費用上期已記，這次只是還負債。","c":"je"},
+{"q":"For the year: revenue earned $420,000 (cash collected $380,000); expenses incurred excluding depreciation $250,000 (cash paid $230,000); depreciation $20,000; shares issued for $100,000 cash. Accrual-basis net income is:","o":["$130,000","$170,000","$150,000","$250,000"],"a":2,"e":"420,000 − 250,000 − 20,000 = 150,000. Cash amounts and the share issue are ignored.","z":"只看賺到的、發生的、折舊。","c":"accr"},
+{"q":"Under the accrual basis, revenue is recognized when:","o":["The performance obligation is satisfied (the service is performed or goods delivered)","Cash is received","The contract is signed","The budget is approved"],"a":0,"e":"Revenue recognition principle: record revenue when it is earned, regardless of when cash is received.","z":"賺到才記，不看收錢。","c":"accr"},
+{"q":"On September 1 a company paid $9,000 for a 12-month insurance policy and debited Prepaid Insurance. The December 31 adjusting entry is:","o":["Dr Insurance Expense 6,000 / Cr Prepaid Insurance 6,000","Dr Prepaid Insurance 3,000 / Cr Insurance Expense 3,000","Dr Insurance Expense 2,250 / Cr Prepaid Insurance 2,250","Dr Insurance Expense 3,000 / Cr Prepaid Insurance 3,000"],"a":3,"e":"9,000 ÷ 12 = 750 per month × 4 months (Sept–Dec) = 3,000 used up.","z":"9 月到 12 月是 4 個月。","c":"prep"},
+{"q":"$9,000 was paid on September 1 for 12 months of insurance (debited Prepaid Insurance) and the December 31 adjustment was recorded. The Prepaid Insurance balance at December 31 is:","o":["$6,000","$3,000","$9,000","$0"],"a":0,"e":"9,000 − 3,000 = 6,000 remains for the 8 months still to come.","z":"剩下 8 個月還沒用。","c":"prep"},
+{"q":"On November 1 a company received $6,000 for 6 months of services and credited Unearned Service Revenue. The December 31 adjusting entry is:","o":["Dr Service Revenue 2,000 / Cr Unearned Service Revenue 2,000","Dr Cash 2,000 / Cr Service Revenue 2,000","Dr Unearned Service Revenue 4,000 / Cr Service Revenue 4,000","Dr Unearned Service Revenue 2,000 / Cr Service Revenue 2,000"],"a":3,"e":"1,000 per month × 2 months (Nov–Dec) earned: the liability ↓, revenue ↑.","z":"11、12 月共 2 個月。","c":"unearn"},
+{"q":"Unearned revenue is reported as:","o":["Revenue","An asset","Equity","A liability"],"a":3,"e":"The company still owes the service (or a refund).","z":"欠客人服務。","c":"unearn"},
+{"q":"Employees earned $2,400 of salaries in the last week of December, to be paid January 5. The December 31 entry is:","o":["No entry until paid","Dr Salaries Expense 2,400 / Cr Salaries Payable 2,400","Dr Salaries Payable 2,400 / Cr Cash 2,400","Dr Salaries Expense 2,400 / Cr Cash 2,400"],"a":1,"e":"The expense was incurred in December, so it is recorded in December with a liability.","z":"12 月發生就 12 月記。","c":"accrued"},
+{"q":"Services worth $1,800 were performed in December but not billed yet. The adjusting entry is:","o":["Dr Accounts Receivable / Cr Service Revenue","Dr Unearned Service Revenue / Cr Service Revenue","Dr Service Revenue / Cr Accounts Receivable","No entry until billed"],"a":0,"e":"Accrued revenue: earned but not billed or collected → receivable and revenue.","z":"做完了就是賺到了。","c":"accrued"},
+{"q":"Supplies: beginning $700, purchased $2,300, on hand at year-end $900. Supplies expense is:","o":["$2,300","$3,000","$2,100","$1,400"],"a":2,"e":"Used = 700 + 2,300 − 900 = 2,100.","z":"期初＋買的－剩的。","c":"supplies"},
+{"q":"A company did not record $5,000 of depreciation. As a result:","o":["Expenses are overstated and assets understated","Net income and assets are overstated","Net income is understated and liabilities overstated","There is no effect on net income"],"a":1,"e":"Missing expense → net income too high; accumulated depreciation too low → assets (book value) too high.","z":"少記費用 → 淨利高估。","c":"noadj"},
+{"q":"Failing to record accrued interest expense causes:","o":["Net income understated and liabilities overstated","Assets overstated and equity understated","Net income overstated and liabilities understated","Expenses overstated"],"a":2,"e":"Both halves of Dr Interest Expense / Cr Interest Payable are missing.","z":"費用少、負債少。","c":"noadj"},
+{"q":"Failing to record $2,000 of revenue earned but not billed causes:","o":["Liabilities overstated","Assets overstated and net income understated","No effect","Assets and net income understated"],"a":3,"e":"Missing Dr Accounts Receivable / Cr Service Revenue: both an asset and revenue are too low.","z":"應收、收入都少記。","c":"noadj"},
+{"q":"Unearned revenue of $3,000 was earned but not adjusted. As a result:","o":["Revenue understated and liabilities overstated","Revenue overstated and liabilities understated","Assets overstated","No effect on net income"],"a":0,"e":"The earned part still sits in the liability instead of revenue.","z":"還留在負債裡。","c":"noadj"},
+{"q":"Which error will NOT make the trial balance out of balance?","o":["A $650 debit posted as $560","A journal entry posted twice","A debit posted to the credit side of an account","The credit of an entry not posted"],"a":1,"e":"Posting a whole entry twice adds equal debits and credits, so totals still agree.","z":"兩邊一樣多就還是平衡。","c":"tb"},
+{"q":"The trial balance difference is evenly divisible by 9. This often indicates:","o":["An omitted journal entry","An entry posted twice","A transposition error (e.g., 540 written as 450)","Debiting the wrong asset account"],"a":2,"e":"Swapping two digits creates a difference divisible by 9, on one side only.","z":"數字前後顛倒。","c":"tb"},
+{"q":"Adjusted trial balance: Service Revenue $48,000; Salaries Expense $20,000; Rent Expense $6,000; Depreciation Expense $3,000; Dividends $5,000. Net income is:","o":["$14,000","$19,000","$24,000","$22,000"],"a":1,"e":"48,000 − (20,000 + 6,000 + 3,000) = 19,000. Dividends are not deducted.","z":"股利不減。","c":"tbcalc"},
+{"q":"Adjusted trial balance: Cash 9,000; Accounts Receivable 6,000; Supplies 1,000; Equipment 30,000; Accumulated Depreciation 8,000; Accounts Payable 5,000. Total assets are:","o":["$46,000","$38,000","$33,000","$54,000"],"a":1,"e":"9,000 + 6,000 + 1,000 + 30,000 − 8,000 = 38,000. A/P is a liability.","z":"累計折舊要減掉。","c":"tbcalc"},
+{"q":"Which account is NOT closed at year-end?","o":["Service Revenue","Dividends","Accounts Payable","Rent Expense"],"a":2,"e":"Only temporary accounts (revenues, expenses, dividends) are closed to retained earnings. Liabilities are permanent.","z":"負債是永久帳戶。","c":"close"},
+{"q":"After the closing entries, the Retained Earnings account equals:","o":["Beginning RE + revenues","Net income only","Beginning RE + net income − dividends","Beginning RE − dividends"],"a":2,"e":"Closing moves net income in and dividends out.","z":"收入、費用、股利都結進 RE。","c":"close"},
+{"q":"Beginning inventory £30,000; net purchases £150,000; ending inventory £40,000; net sales £200,000. The gross profit rate is:","o":["70%","35%","30%","40%"],"a":2,"e":"COGS = 30,000 + 150,000 − 40,000 = 140,000; gross profit 60,000 ÷ 200,000 = 30%.","z":"先算 COGS，再除以銷貨淨額。","c":"cogs"},
+{"q":"Sales $300,000; sales returns and allowances $10,000; sales discounts $5,000. Net sales are:","o":["$300,000","$315,000","$295,000","$285,000"],"a":3,"e":"300,000 − 10,000 − 5,000 = 285,000.","z":"退回和折扣都要減。","c":"cogs"},
+{"q":"On a multiple-step income statement, interest expense and a loss on disposal of equipment appear in:","o":["Cost of goods sold","Operating expenses","Other comprehensive income","Other income and expense"],"a":3,"e":"They are not part of the main operations.","z":"不是主要營業。","c":"isclass"},
+{"q":"Freight-in paid by the buyer is:","o":["An operating expense","Added to the cost of inventory","Other expense","Deducted from sales"],"a":1,"e":"Freight-in is a cost of getting the goods ready for sale. (Freight-out is an operating expense.)","z":"進貨運費算成本。","c":"isclass"},
+{"q":"Net income plus other comprehensive income equals:","o":["Comprehensive income","Gross profit","Operating income","Retained earnings"],"a":0,"e":"IFRS statement of comprehensive income: NI + OCI (e.g., revaluation surplus).","z":"NI＋OCI。","c":"isclass"},
+{"q":"A buyer purchases goods for $20,000, terms 1/10, n/30, returns $2,000 of them and pays within 10 days. Cash paid:","o":["$17,820","$18,000","$19,800","$17,800"],"a":0,"e":"(20,000 − 2,000) × 99% = 17,820. The discount is taken after the return.","z":"先扣退貨，再打 1%。","c":"disc"},
+{"q":"A buyer purchases goods for $20,000, terms 1/10, n/30, returns $2,000 of them and pays after 25 days. Cash paid:","o":["$17,820","$20,000","$19,800","$18,000"],"a":3,"e":"The 10-day discount period has passed: pay the net amount 18,000.","z":"過了 10 天沒有折扣。","c":"disc"},
+{"q":"In the terms 2/10, n/30, 'n/30' means:","o":["2% interest is charged after 30 days","The full (net) amount is due within 30 days","A 30% discount","The discount lasts 30 days"],"a":1,"e":"2/10 = 2% off if paid within 10 days; n/30 = net amount due in 30 days.","z":"n = net。","c":"disc"},
+{"q":"A seller (perpetual system) sells goods that cost $6,000 for $9,000 on account. The seller records:","o":["Dr A/R 6,000 / Cr Inventory 6,000","Dr A/R 9,000 / Cr Sales 9,000 and Dr COGS 6,000 / Cr Inventory 6,000","Dr Inventory 9,000 / Cr A/P 9,000","Dr A/R 9,000 / Cr Inventory 9,000"],"a":1,"e":"Two entries: one at selling price (revenue), one at cost (COGS).","z":"賣方兩筆：售價一筆、成本一筆。","c":"bs"},
+{"q":"A seller sells goods that cost $6,000 to a buyer for $9,000 on account. The buyer records the goods in inventory at:","o":["$6,000","$9,000","$3,000","$15,000"],"a":1,"e":"The buyer's cost is the price it pays; $6,000 is the seller's cost.","z":"買方用付出去的價錢。","c":"bs"},
+{"q":"A customer returns resalable goods (selling price $1,000, cost $600) to the seller. The seller records:","o":["Dr Sales 1,000 / Cr Inventory 1,000","Dr Sales Returns and Allowances 1,000 / Cr A/R 1,000 and Dr Inventory 600 / Cr COGS 600","Dr A/R 1,000 / Cr Sales Returns and Allowances 1,000","Dr Inventory 1,000 / Cr A/R 1,000"],"a":1,"e":"Reverse the sale at selling price (via the contra-revenue) and put the goods back at cost.","z":"一樣兩筆，反方向。","c":"bs"},
+{"q":"Goods bought FOB destination are still in transit on December 31. They belong to:","o":["The seller","The buyer","The carrier","Both equally"],"a":0,"e":"FOB destination: title passes when the goods arrive at the buyer.","z":"送到才是買方的。","c":"fob"},
+{"q":"Under FOB shipping point, the freight is normally paid by:","o":["The seller","The carrier","The buyer","Split equally"],"a":2,"e":"The buyer owns the goods from the shipping point, so the buyer pays the freight (freight-in).","z":"出貨就是買方的，運費買方付。","c":"fob"},
+{"q":"Company A sends goods to Company B, which will sell them on consignment. Unsold goods at year-end belong in the inventory of:","o":["Company B (the consignee)","Both","Neither","Company A (the consignor)"],"a":3,"e":"Consignment does not transfer ownership; the consignor still owns the goods.","z":"寄出去的還是我的。","c":"consign"},
+{"q":"A count shows $180,000. Not counted: goods out on consignment $12,000; goods bought FOB destination still in transit $8,000. Counted: goods held on consignment for another company $5,000. Correct inventory:","o":["$195,000","$192,000","$187,000","$175,000"],"a":2,"e":"180,000 + 12,000 − 5,000 = 187,000. The FOB destination purchase is not ours yet.","z":"寄出加、代賣減、目的地未到不加。","c":"count"},
+{"q":"Goods that are obsolete and cannot be sold should be reported in inventory at:","o":["Their original cost","Zero (or their net realizable value)","Their selling price","Their replacement cost"],"a":1,"e":"Inventory cannot be carried above what it can be sold for (lower of cost and NRV).","z":"賣不掉就不值錢。","c":"count"},
+{"q":"Goods sold FOB shipping point are still on the seller's loading dock on December 31, not yet picked up. In the seller's inventory they are:","o":["Excluded, because they are sold","Included at cost","Included at selling price","Included in the buyer's inventory"],"a":1,"e":"Not shipped yet → title has not passed; still the seller's, at cost.","z":"還沒出貨，還是賣方的。","c":"count"},
+{"q":"2025 ending inventory was overstated by $10,000. The effect on net income is:","o":["2025 understated; 2026 overstated","Both years overstated","2025 overstated; 2026 correct","2025 overstated; 2026 understated"],"a":3,"e":"EI too high → COGS too low → NI too high. It becomes next year's beginning inventory, so 2026 COGS is too high.","z":"今年跟著 EI 同向，明年反向。","c":"invErr"},
+{"q":"If beginning inventory is understated, then:","o":["COGS is overstated and net income understated","COGS is understated and net income overstated","Both are understated","There is no effect"],"a":1,"e":"COGS = BI + purchases − EI: lower BI → lower COGS → higher NI.","z":"BI 和 NI 反向。","c":"invErr"},
+{"q":"An inventory error at the end of year 1 that is never corrected leaves equity:","o":["Correct at the end of year 2","Wrong forever","Correct at the end of year 1","Wrong only in year 3"],"a":0,"e":"The year-2 error offsets the year-1 error, so retained earnings are correct after two years.","z":"兩年後自動抵銷。","c":"invErr"},
+{"q":"Beginning 100 units @ $10; purchase 200 @ $12; purchase 100 @ $15. 250 units were sold. FIFO ending inventory is:","o":["$1,600","$1,837.50","$2,100","$2,800"],"a":2,"e":"150 units left = the newest: 100 × 15 + 50 × 12 = 2,100.","z":"FIFO 剩最新的。","c":"flow"},
+{"q":"Beginning 100 units @ $10; purchase 200 @ $12; purchase 100 @ $15; 250 units sold. LIFO ending inventory is:","o":["$1,600","$2,100","$1,837.50","$3,300"],"a":0,"e":"150 left = the oldest: 100 × 10 + 50 × 12 = 1,600.","z":"LIFO 剩最舊的。","c":"flow"},
+{"q":"Beginning 100 units @ $10; purchase 200 @ $12; purchase 100 @ $15; 250 units sold. Average-cost COGS is:","o":["$1,837.50","$3,062.50","$2,800","$3,300"],"a":1,"e":"Total cost 1,000 + 2,400 + 1,500 = 4,900 ÷ 400 units = $12.25; COGS = 250 × 12.25 = 3,062.50.","z":"總成本 ÷ 總數量，再乘賣出的。","c":"flow"},
+{"q":"Beginning 100 units @ $10; purchase 200 @ $12; purchase 100 @ $15; 250 units sold. FIFO cost of goods sold is:","o":["$3,300","$2,800","$2,100","$3,062.50"],"a":1,"e":"Goods available 4,900 − FIFO ending 2,100 = 2,800.","z":"COGS＝可售總成本－期末。","c":"flow"},
+{"q":"When prices are rising, which method gives the lowest income tax (and keeps the most cash)?","o":["LIFO","FIFO","Average-cost","They are all the same"],"a":0,"e":"LIFO puts the newest, highest costs into COGS → lowest taxable income.","z":"最貴的進 COGS。","c":"floweff"},
+{"q":"Which method reports ending inventory closest to current cost on the statement of financial position?","o":["LIFO","Average-cost","None of them","FIFO"],"a":3,"e":"FIFO leaves the most recent purchases in ending inventory.","z":"剩下的是最新的。","c":"floweff"},
+{"q":"Under IFRS, which cost-flow method is NOT permitted?","o":["FIFO","Average-cost","LIFO","Specific identification"],"a":2,"e":"IFRS prohibits LIFO (it is still tested for comparison).","z":"IFRS 不准用其中一個。","c":"floweff"},
+{"q":"COGS $480,000; beginning inventory $70,000; ending inventory $90,000. Inventory turnover and days in inventory (365 days) are:","o":["5.3 times; 68.4 days","6 times; 60.8 days","6.9 times; 53 days","4 times; 91 days"],"a":1,"e":"Average inventory = 80,000; 480,000 ÷ 80,000 = 6; 365 ÷ 6 = 60.8 days.","z":"分母用平均存貨。","c":"invratio"},
+{"q":"Aging analysis: required allowance $9,000. Before adjustment the allowance has a $2,000 credit balance. Bad debt expense is:","o":["$9,000","$11,000","$2,000","$7,000"],"a":3,"e":"Credit balance already there: 9,000 − 2,000 = 7,000.","z":"貸餘用減。","c":"allow"},
+{"q":"Aging analysis: required allowance $9,000. Before adjustment the allowance has a $2,000 debit balance. Bad debt expense is:","o":["$7,000","$9,000","$11,000","$2,000"],"a":2,"e":"Debit balance must be filled first: 9,000 + 2,000 = 11,000.","z":"借餘用加。","c":"allow"},
+{"q":"Aging: 0–30 days $50,000 × 2%; 31–60 days $10,000 × 10%; over 60 days $4,000 × 40%. The required allowance is:","o":["$6,400","$3,600","$2,600","$1,600"],"a":1,"e":"1,000 + 1,000 + 1,600 = 3,600.","z":"每一欄乘完再加。","c":"allow"},
+{"q":"Accounts receivable $64,000; allowance after adjustment $3,600. Cash realizable value is:","o":["$60,400","$64,000","$67,600","$3,600"],"a":0,"e":"64,000 − 3,600 = 60,400.","z":"AR－備抵。","c":"allow"},
+{"q":"Under the allowance method, writing off a $700 uncollectible account:","o":["Decreases net income","Increases bad debt expense","Does not change the cash realizable value","Decreases total assets by $700"],"a":2,"e":"Dr Allowance / Cr A/R: both sides of the net figure fall by 700, so net A/R and income are unchanged.","z":"沖銷不影響淨額。","c":"writeoff"},
+{"q":"A $700 account written off earlier is later collected. The entries are:","o":["Dr Cash / Cr Bad Debt Expense","Dr Allowance / Cr A/R; then Dr Cash / Cr A/R","Dr Cash / Cr Service Revenue","Dr A/R / Cr Allowance; then Dr Cash / Cr A/R"],"a":3,"e":"First reverse the write-off, then record the collection.","z":"先恢復，再收現。","c":"writeoff"},
+{"q":"Why is the direct write-off method not acceptable under IFRS when bad debts are material?","o":["It is too complicated","It reduces cash","It does not match the expense with the revenue of the period and overstates receivables","It records too much revenue"],"a":2,"e":"The loss is recorded only when an account is found worthless, often in a later period.","z":"費用和收入不在同一期。","c":"writeoff"},
+{"q":"A company sells $100,000 of receivables to a factor that charges 2%. The $2,000 is recorded as:","o":["A reduction of sales","Service charge expense","Interest revenue","Bad debt expense"],"a":1,"e":"Dr Cash 98,000; Dr Service Charge Expense 2,000; Cr Accounts Receivable 100,000.","z":"手續費是費用。","c":"writeoff"},
+{"q":"Net credit sales $600,000; net receivables: beginning $45,000, ending $55,000. Receivables turnover and average collection period are:","o":["10.9 times; 33.5 days","13.3 times; 27.4 days","12 times; 30.4 days","12 times; 36.5 days"],"a":2,"e":"Average 50,000; 600,000 ÷ 50,000 = 12; 365 ÷ 12 = 30.4 days.","z":"分母用平均應收。","c":"arratio"},
+{"q":"A machine: price $50,000; sales tax $3,000; freight $1,200; installation $800; one-year insurance $600. The cost of the machine is:","o":["$55,600","$50,000","$56,000","$55,000"],"a":3,"e":"All costs to get it ready for use: 50,000 + 3,000 + 1,200 + 800. Annual insurance is an expense.","z":"每年都要付的是費用。","c":"ppecost"},
+{"q":"For a new delivery truck, the license fee and one-year accident insurance are:","o":["Capitalized to the truck","Expensed","Added to land","Recorded as a liability"],"a":1,"e":"They are recurring operating costs, not costs of acquiring the truck.","z":"每年發生 → 費用。","c":"ppecost"},
+{"q":"Land price $200,000; closing costs $5,000; broker's commission $8,000; removal of an old building $12,000; salvage proceeds from the old building $2,000; grading $3,000; parking-lot paving $15,000. The cost of the land is:","o":["$226,000","$241,000","$228,000","$230,000"],"a":0,"e":"200,000 + 5,000 + 8,000 + 12,000 − 2,000 + 3,000 = 226,000. Paving is a land improvement.","z":"停車場不算；殘料收入要減。","c":"land"},
+{"q":"Which is a capital expenditure?","o":["An oil change","Replacing a truck engine, extending its life by 3 years","Repainting the office","Minor repairs"],"a":1,"e":"It increases the asset's useful life → add to the asset's cost.","z":"延長壽命 → 資本化。","c":"capex"},
+{"q":"Ordinary repairs that maintain an asset's efficiency are:","o":["Capitalized","Expensed (revenue expenditures)","Added to accumulated depreciation","Recorded as a liability"],"a":1,"e":"They do not add benefits beyond what was expected.","z":"維持現狀 → 費用。","c":"capex"},
+{"q":"Cost $40,000; residual value $4,000; life 5 years. Straight-line depreciation per year is:","o":["$8,000","$7,200","$16,000","$14,400"],"a":1,"e":"(40,000 − 4,000) ÷ 5 = 7,200.","z":"先減殘值。","c":"dep"},
+{"q":"Cost $40,000; residual value $4,000; life 5 years; double-declining-balance. Year 2 depreciation is:","o":["$16,000","$8,640","$14,400","$9,600"],"a":3,"e":"Rate 2 ÷ 5 = 40%. Y1 40,000 × 40% = 16,000; Y2 (40,000 − 16,000) × 40% = 9,600.","z":"第二年用帳面價值乘率。","c":"dep"},
+{"q":"Cost $40,000; residual value $4,000; units-of-activity with 90,000 expected hours. Used 20,000 hours this year. Depreciation is:","o":["$8,000","$7,200","$8,889","$9,000"],"a":0,"e":"(40,000 − 4,000) ÷ 90,000 = $0.40 per hour × 20,000 = 8,000.","z":"每小時折舊 × 用了幾小時。","c":"dep"},
+{"q":"Under double-declining-balance, residual value:","o":["Is subtracted from cost in year 1","Is added to cost","Is ignored in the rate, but book value may not fall below it","Ends depreciation after two years"],"a":2,"e":"DDB applies the rate to book value; stop when book value reaches residual value.","z":"算的時候不管，但不能折到比它低。","c":"dep"},
+{"q":"Equipment cost $36,000, no residual value, 6-year life, straight-line, bought April 1. Depreciation for the first calendar year is:","o":["$6,000","$4,500","$3,000","$4,000"],"a":1,"e":"6,000 per year × 9/12 (April–December) = 4,500.","z":"4 月到 12 月 9 個月。","c":"partial"},
+{"q":"A DDB asset (cost $32,000, 8-year life) was bought July 1 last year. This year's full-year depreciation is:","o":["$8,000","$4,000","$7,000","$6,000"],"a":2,"e":"Rate 25%. Last year 32,000 × 25% × 6/12 = 4,000. This year (32,000 − 4,000) × 25% = 7,000.","z":"去年只有半年。","c":"partial"},
+{"q":"A machine cost $60,000, residual value $6,000, straight-line over 10 years. After 4 years the total life is revised to 8 years (same residual value). New annual depreciation is:","o":["$8,100","$5,400","$6,750","$9,600"],"a":0,"e":"Old annual 5,400; AD 21,600; book value 38,400. (38,400 − 6,000) ÷ (8 − 4) = 8,100.","z":"剩下的帳面價值除以剩下的年數。","c":"estimate"},
+{"q":"A change in an asset's estimated useful life is applied:","o":["Prospectively, to the current and future years","Retroactively, restating prior years","Only to the prior year","Never; estimates cannot change"],"a":0,"e":"Past depreciation is not corrected; spread the remaining amount over the remaining life.","z":"不改以前，只改以後。","c":"estimate"},
+{"q":"Equipment cost $50,000, accumulated depreciation $38,000 (updated to the sale date), sold for $10,000. The result is:","o":["Loss of $2,000","Gain of $10,000","Gain of $2,000","Loss of $12,000"],"a":0,"e":"Book value 12,000; 10,000 − 12,000 = −2,000 → loss.","z":"售價－帳面價值。","c":"disposal"},
+{"q":"Before recording the mid-year sale of equipment, the company must first:","o":["Record depreciation up to the date of sale","Reverse all prior depreciation","Revalue the asset","Do nothing"],"a":0,"e":"Book value must be up to date, or the gain/loss is wrong.","z":"先補提折舊。","c":"disposal"},
+{"q":"Under the revaluation model, an increase in land's fair value above its carrying amount is credited to:","o":["A gain in net income","Sales revenue","Revaluation surplus (other comprehensive income)","Land expense"],"a":2,"e":"Upward revaluations go to OCI / equity, not to profit.","z":"重估增值 → OCI。","c":"revimp"},
+{"q":"When an asset's recoverable amount falls below its carrying amount, the company records:","o":["An increase in OCI","An impairment loss that lowers net income","No entry","An increase in the asset"],"a":1,"e":"Write the asset down and recognize an impairment loss.","z":"減損 → 損失。","c":"revimp"},
+{"q":"A mine cost $5,000,000, residual value $200,000, estimated 4,000,000 tons. 300,000 tons were extracted. Depletion is:","o":["$375,000","$1,200,000","$360,000","$300,000"],"a":2,"e":"(5,000,000 − 200,000) ÷ 4,000,000 = $1.20 per ton × 300,000 = 360,000.","z":"跟生產數量法一樣。","c":"natint"},
+{"q":"Goodwill:","o":["Is amortized over 10 years","Is not amortized but is tested for impairment","Can be recorded when created internally","Is a current asset"],"a":1,"e":"Goodwill is recorded only when a business is purchased; it has an indefinite life.","z":"不攤銷。","c":"natint"},
+{"q":"A patent costs $30,000 and has a 10-year useful life. Annual amortization is:","o":["$1,500","$30,000","$0","$3,000"],"a":3,"e":"Intangibles with a limited life are amortized straight-line: 30,000 ÷ 10.","z":"有限年限就攤銷。","c":"natint"},
+{"q":"Net sales $900,000; total assets: beginning $500,000, ending $700,000. Asset turnover is:","o":["1.29 times","1.5 times","1.8 times","0.67 times"],"a":1,"e":"Average assets 600,000; 900,000 ÷ 600,000 = 1.5.","z":"分母用平均總資產。","c":"natint"},
+{"q":"A $300,000 mortgage is repaid $50,000 per year. At year-end the SFP reports:","o":["Current $50,000; non-current $250,000","Current $300,000","Non-current $300,000","Current $250,000; non-current $50,000"],"a":0,"e":"The part due within the next year is current.","z":"明年要還的是流動。","c":"curliab"},
+{"q":"Which is NOT a current liability?","o":["Bonds payable due in 6 years","Unearned revenue to be earned in 3 months","Salaries payable","Interest payable"],"a":0,"e":"Due after more than one year → non-current.","z":"超過一年。","c":"curliab"},
+{"q":"A $24,000, 9-month, 10% note payable is signed August 1. Interest payable at December 31 is:","o":["$1,800","$2,400","$1,000","$200"],"a":2,"e":"24,000 × 10% × 5/12 = 1,000 (Aug–Dec).","z":"8 月到 12 月 5 個月。","c":"notes"},
+{"q":"A $24,000, 9-month, 10% note payable is signed August 1. The total paid at maturity is:","o":["$25,800","$26,400","$25,000","$24,000"],"a":0,"e":"Principal 24,000 + interest 24,000 × 10% × 9/12 = 1,800.","z":"本金＋9 個月利息。","c":"notes"},
+{"q":"2,000 units were sold with a 1-year warranty; 5% are expected to need repair at $40 each. Actual repairs this year cost $1,500. Warranty expense and the year-end liability are:","o":["Expense $1,500; liability $2,500","Expense $4,000; liability $4,000","Expense $2,500; liability $1,500","Expense $4,000; liability $2,500"],"a":3,"e":"Expense in the year of sale = 2,000 × 5% × 40 = 4,000; liability = 4,000 − 1,500 = 2,500.","z":"費用在銷售那年全部估計。","c":"warranty"},
+{"q":"A lawsuit loss is probable and can be reliably estimated. The company should:","o":["Only disclose it in the notes","Do nothing","Record a provision (liability) and a loss","Record a gain"],"a":2,"e":"Probable + estimable → record.","z":"很可能＋可估 → 入帳。","c":"conting"},
+{"q":"A possible loss is remote. The company should:","o":["Record it","Neither record nor disclose it","Disclose it","Record half of it"],"a":1,"e":"Remote → nothing.","z":"幾乎不可能 → 不理。","c":"conting"},
+{"q":"A possible loss is reasonably possible. The company should:","o":["Record it","Ignore it","Disclose it in the notes","Record it as a current liability"],"a":2,"e":"Reasonably possible → disclose only.","z":"有可能 → 揭露。","c":"conting"},
+{"q":"Bonds with an 8% contractual rate are issued when the market rate is 6%. They sell at:","o":["A discount","Face value","Zero","A premium"],"a":3,"e":"The bond pays more than the market, so investors pay more than face value.","z":"票面率比較高 → 溢價。","c":"bonds"},
+{"q":"$500,000 of bonds with a 10% contractual rate pay interest annually. Each annual cash interest payment is:","o":["$25,000","$500,000","$50,000","It depends on the market rate"],"a":2,"e":"Cash interest = face × contractual rate. The market rate only changes the issue price.","z":"現金利息用票面利率。","c":"bonds"},
+{"q":"An advantage of issuing bonds instead of ordinary shares is that:","o":["Interest is tax-deductible and shareholder control is not affected","Interest never has to be paid","Bonds never have to be repaid","Bondholders get voting rights"],"a":0,"e":"The disadvantage is that interest and principal must be paid.","z":"債券利息可以抵稅。","c":"bonds"},
+{"q":"10,000 ordinary shares of $1 par are issued for $8 per share. The entry is:","o":["Dr Cash 80,000 / Cr Share Capital—Ordinary 10,000, Cr Share Premium—Ordinary 70,000","Dr Cash 80,000 / Cr Share Capital—Ordinary 80,000","Dr Cash 10,000 / Cr Share Capital—Ordinary 10,000","Dr Cash 80,000 / Cr Retained Earnings 70,000, Cr Share Capital 10,000"],"a":0,"e":"Par goes to share capital; the excess goes to share premium.","z":"面額以上記溢價。","c":"shares"},
+{"q":"Authorized 100,000 shares; issued 60,000; treasury shares 5,000. Shares outstanding are:","o":["60,000","55,000","95,000","40,000"],"a":1,"e":"Outstanding = issued − treasury.","z":"已發行－庫藏。","c":"shares"},
+{"q":"Buying back the company's own shares (treasury shares):","o":["Increases assets","Increases issued shares","Is an expense","Decreases total equity and shares outstanding"],"a":3,"e":"Treasury shares are a contra-equity account, not an asset.","z":"庫藏股不是資產。","c":"treasury"},
+{"q":"A cash dividend becomes a liability on the:","o":["Record date","Payment date","Declaration date","Last day of the year"],"a":2,"e":"Declaration: Dr Dividends (or RE) / Cr Dividends Payable. Record date: no entry.","z":"宣告日就欠股東了。","c":"divdates"},
+{"q":"The entry on the payment date is:","o":["Dr Dividends / Cr Dividends Payable","Dr Dividends Payable / Cr Cash","No entry","Dr Retained Earnings / Cr Dividends Payable"],"a":1,"e":"Paying removes the liability.","z":"付錢還負債。","c":"divdates"},
+{"q":"A 10% share dividend:","o":["Decreases retained earnings and increases share capital; total equity is unchanged","Decreases total equity","Increases total assets","Has no effect on retained earnings"],"a":0,"e":"It moves amounts inside equity; no cash leaves.","z":"權益內部搬家。","c":"sharediv"},
+{"q":"A 2-for-1 share split:","o":["Decreases retained earnings","Increases total equity","Doubles shares outstanding and halves par value; no journal entry","Requires a debit to retained earnings"],"a":2,"e":"Only the number of shares and the par value change.","z":"分割不做分錄。","c":"sharediv"},
+{"q":"4,000 cumulative preference shares, $100 par, 5%. No dividend was paid last year. This year $50,000 is declared. Preference shareholders receive:","o":["$20,000","$40,000","$50,000","$10,000"],"a":1,"e":"Annual = 4,000 × 100 × 5% = 20,000. Arrears 20,000 + current 20,000 = 40,000; ordinary gets 10,000.","z":"累積：先補去年的。","c":"pref"},
+{"q":"4,000 NON-cumulative preference shares, $100 par, 5%. No dividend was paid last year; this year $50,000 is declared. Preference shareholders receive:","o":["$40,000","$50,000","$0","$20,000"],"a":3,"e":"Non-cumulative: missed dividends are lost; only the current 20,000.","z":"非累積不補。","c":"pref"},
+{"q":"Dividends in arrears on cumulative preference shares are:","o":["A current liability","An expense","Deducted from assets","Disclosed in the notes; not a liability until declared"],"a":3,"e":"No obligation exists until the board declares a dividend.","z":"沒宣告就不是負債。","c":"pref"},
+{"q":"Net income $90,000; preference dividends $10,000; weighted-average ordinary shares 40,000. EPS is:","o":["$2.25","$2.00","$2.50","$1.75"],"a":1,"e":"(90,000 − 10,000) ÷ 40,000 = 2.00. EPS is for ordinary shareholders, so preference dividends are subtracted.","z":"先扣特別股股利。","c":"eps"},
+{"q":"Issuing many new ordinary shares, with net income unchanged, will make EPS:","o":["Decrease","Increase","Stay the same","Become negative"],"a":0,"e":"More shares share the same income (dilution).","z":"分母變大。","c":"eps"},
+{"q":"Requiring employees to take vacations and rotating their duties is an example of:","o":["Physical controls","Human resource controls","Documentation procedures","Independent internal verification"],"a":1,"e":"Someone else does the job and may uncover fraud.","z":"跟員工有關。","c":"ic"},
+{"q":"Using prenumbered sales invoices is an example of:","o":["Physical controls","Segregation of duties","Documentation procedures","Human resource controls"],"a":2,"e":"Prenumbering means every document can be accounted for.","z":"單據編號。","c":"ic"},
+{"q":"Keeping cash in a locked safe is an example of:","o":["Physical controls","Establishment of responsibility","Independent internal verification","Documentation procedures"],"a":0,"e":"Physical protection of assets.","z":"鎖起來。","c":"ic"},
+{"q":"A supervisor compares the cash register tape with the cash counted each day. This is:","o":["Segregation of duties","Human resource controls","Independent internal verification","Physical controls"],"a":2,"e":"Another person checks the work.","z":"別人來核對。","c":"ic"},
+{"q":"Only one cashier may use a given cash drawer. This is:","o":["Segregation of duties","Establishment of responsibility","Physical controls","Documentation procedures"],"a":1,"e":"One person is responsible for a task, so shortages can be traced.","z":"一個人負責一件事。","c":"ic"},
+{"q":"The employee who approves purchases should not also pay for them. This is:","o":["Establishment of responsibility","Human resource controls","Physical controls","Segregation of duties"],"a":3,"e":"Separating authorization, custody and record-keeping.","z":"核准與付款分開。","c":"ic"},
+{"q":"In this course, cash paid for interest on a loan is classified as:","o":["Operating","Investing","Financing","Not reported"],"a":0,"e":"Interest paid (and received) is part of operating activities; dividends paid are financing.","z":"利息 → 營業。","c":"cfclass"},
+{"q":"Purchasing land for cash is:","o":["An operating activity","A financing activity","A non-cash activity","An investing activity"],"a":3,"e":"Buying or selling long-term assets is investing.","z":"買長期資產。","c":"cfclass"},
+{"q":"Paying cash dividends to shareholders is:","o":["An operating activity","An investing activity","Not reported","A financing activity"],"a":3,"e":"Transactions with owners and lenders are financing.","z":"跟股東的交易。","c":"cfclass"},
+{"q":"Repaying the principal of a bank loan is:","o":["A financing activity","An operating activity","An investing activity","A non-cash activity"],"a":0,"e":"Borrowing and repaying principal is financing.","z":"還本金。","c":"cfclass"},
+{"q":"Issuing ordinary shares in exchange for land is:","o":["An investing inflow","A significant non-cash activity, disclosed separately","A financing inflow","An operating activity"],"a":1,"e":"No cash moves, but it is disclosed (code G).","z":"沒有現金。","c":"cfclass"},
+{"q":"Net income $50,000; depreciation $8,000; gain on sale of equipment $3,000; A/R increased $4,000; inventory decreased $2,000; A/P increased $5,000. Net cash from operating activities is:","o":["$64,000","$52,000","$58,000","$48,000"],"a":2,"e":"50,000 + 8,000 − 3,000 − 4,000 + 2,000 + 5,000 = 58,000.","z":"利益減、流動資產增加減、流動負債增加加。","c":"indirect"},
+{"q":"Under the indirect method, a decrease in prepaid expenses is:","o":["Deducted from net income","Added to net income","Reported in investing","Ignored"],"a":1,"e":"A current asset fell → cash was freed up (expense recorded without paying cash).","z":"流動資產減少 → 加。","c":"indirect"},
+{"q":"Under the indirect method, a decrease in accounts payable is:","o":["Added to net income","A financing outflow","Ignored","Deducted from net income"],"a":3,"e":"Paying down suppliers used cash beyond the expense recorded.","z":"流動負債減少 → 減。","c":"indirect"},
+{"q":"Under the indirect method, a loss on the sale of equipment is:","o":["Added back to net income","Deducted from net income","Reported as an investing outflow","Ignored"],"a":0,"e":"The loss lowered net income without using cash; the full sale proceeds go in investing.","z":"損失加回。","c":"indirect"},
+{"q":"COGS $300,000; inventory increased $20,000; accounts payable increased $15,000. Cash paid to suppliers is:","o":["$335,000","$285,000","$305,000","$295,000"],"a":2,"e":"Purchases = 300,000 + 20,000 = 320,000; paid = 320,000 − 15,000 (still owed) = 305,000.","z":"先算進貨，再看欠多少。","c":"direct"},
+{"q":"Salaries expense $80,000; salaries payable increased $6,000. Cash paid for salaries is:","o":["$86,000","$80,000","$74,000","$6,000"],"a":2,"e":"6,000 of the expense is still unpaid.","z":"應付增加 → 付得比較少。","c":"direct"},
+{"q":"Under the direct method, depreciation expense is:","o":["Reported as an operating outflow","Reported as an investing outflow","Added to cash receipts","Excluded, because it is not a cash payment"],"a":3,"e":"The direct method lists only actual cash receipts and payments.","z":"直接法只看真的現金。","c":"direct"},
+{"q":"Sales revenue €900,000; accounts receivable decreased €30,000. Cash collected from customers is:","o":["€870,000","€900,000","€30,000","€930,000"],"a":3,"e":"A/R fell, so the company collected old receivables too: 900,000 + 30,000.","z":"應收減少 → 收得比較多。","c":"direct"},
+{"q":"Accumulated depreciation: beginning $40,000, ending $46,000. Equipment with accumulated depreciation of $9,000 was sold during the year. Depreciation expense is:","o":["$6,000","$9,000","$15,000","$3,000"],"a":2,"e":"46,000 − (40,000 − 9,000) = 15,000.","z":"賣掉的累折先拿掉。","c":"cfcalc"},
+{"q":"Equipment (cost $30,000, accumulated depreciation $18,000) was sold at a gain of $4,000. Cash received is:","o":["$12,000","$8,000","$34,000","$16,000"],"a":3,"e":"Book value 12,000 + gain 4,000 = 16,000 (investing inflow).","z":"帳面價值＋利益。","c":"cfcalc"},
+{"q":"Beginning cash $20,000; operating +$35,000; investing −$50,000; financing +$10,000. Ending cash is:","o":["$25,000","$115,000","$15,000","$5,000"],"a":2,"e":"20,000 + 35,000 − 50,000 + 10,000 = 15,000.","z":"期初＋淨變動。","c":"cfcalc"},
+{"q":"Dividends declared $15,000; dividends payable increased $3,000. Dividends paid (financing) are:","o":["$15,000","$18,000","$12,000","$3,000"],"a":2,"e":"3,000 of the dividend is still unpaid.","z":"宣告但未付的不算。","c":"cfcalc"},
+{"q":"Operating cash flow $120,000; capital expenditures $45,000; dividends paid $15,000. Free cash flow is:","o":["$60,000","$75,000","$105,000","$180,000"],"a":0,"e":"120,000 − 45,000 − 15,000 = 60,000.","z":"OCF－資本支出－股利。","c":"fcf"},
+{"q":"Current assets $90,000; current liabilities $60,000. The current ratio is:","o":["1.5 : 1","0.67 : 1","$30,000","2 : 1"],"a":0,"e":"90,000 ÷ 60,000 = 1.5. ($30,000 is working capital.)","z":"流動資產 ÷ 流動負債。","c":"ratios"},
+{"q":"The debt to assets ratio measures:","o":["Liquidity","Solvency","Profitability","Asset efficiency"],"a":1,"e":"Long-term ability to survive and pay debts.","z":"長期。","c":"ratios"},
+{"q":"Profit margin (net income ÷ net sales) measures:","o":["Liquidity","Profitability","Solvency","Turnover"],"a":1,"e":"How much income each dollar of sales produces.","z":"賺錢能力。","c":"ratios"},
+{"q":"Liquidity ratios measure:","o":["Long-term survival","Income over a period","How many shares are outstanding","The short-term ability to pay maturing obligations"],"a":3,"e":"Example: current ratio.","z":"短期。","c":"ratios"},
+{"q":"A company reports a net loss but positive operating cash flow. The most likely reason is:","o":["It sold equipment","It issued shares","Large non-cash expenses such as depreciation, and collections of receivables","It paid dividends"],"a":2,"e":"Depreciation is added back; A/R decreases bring in cash. Selling equipment and issuing shares are not operating.","z":"非現金費用加回。","c":"niocf"},
+{"q":"A company reports high net income but negative operating cash flow. A likely reason is:","o":["Large increases in accounts receivable and inventory","Large depreciation","A large decrease in accounts receivable","A large increase in accounts payable"],"a":0,"e":"Sales on credit not collected and cash tied up in inventory.","z":"錢卡在應收和存貨。","c":"niocf"},
+{"q":"Which statement is best?","o":["Net income shows profitability; operating cash flow shows liquidity","Net income always equals operating cash flow","Operating cash flow includes cash from issuing shares","Depreciation increases cash"],"a":0,"e":"Accrual income measures performance; cash flow measures the ability to pay.","z":"NI 看獲利，OCF 看流動性。","c":"niocf"}];
+const CONCEPTS=[{"id":"eq","zh":"會計等式","en":"Accounting equation","u":"u1"},{"id":"txn","zh":"交易對等式的影響","en":"Transaction effects","u":"u1"},{"id":"div","zh":"股利與保留盈餘","en":"Dividends & retained earnings","u":"u1"},{"id":"sfp","zh":"財務狀況表分類與排列","en":"SFP classification (IFRS order)","u":"u13"},{"id":"dr","zh":"借貸規則與正常餘額","en":"Debit/credit rules","u":"dc"},{"id":"je","zh":"寫分錄","en":"Journal entries","u":"dc"},{"id":"accr","zh":"權責基礎淨利","en":"Accrual-basis net income","u":"u2"},{"id":"prep","zh":"預付費用調整","en":"Prepaid expenses","u":"u2"},{"id":"unearn","zh":"預收收入調整","en":"Unearned revenue","u":"u2"},{"id":"accrued","zh":"應計費用與應計收入","en":"Accrued expenses & revenues","u":"u2"},{"id":"supplies","zh":"用品調整","en":"Supplies adjustment","u":"u2"},{"id":"noadj","zh":"漏做調整的影響","en":"Effects of missing adjustments","u":"u2"},{"id":"tb","zh":"試算表錯誤","en":"Trial balance errors","u":"u13"},{"id":"tbcalc","zh":"從試算表算淨利、總資產","en":"Figures from a trial balance","u":"u13"},{"id":"close","zh":"結帳分錄","en":"Closing entries","u":"u13"},{"id":"cogs","zh":"銷貨成本、銷貨淨額、毛利率","en":"COGS, net sales, gross profit rate","u":"u3"},{"id":"isclass","zh":"損益表分類（運費、其他損益、OCI）","en":"Income statement classification","u":"u3"},{"id":"disc","zh":"進貨折扣、退貨、運費","en":"Purchase discounts, returns, freight","u":"u6"},{"id":"bs","zh":"買方與賣方的分錄","en":"Buyer vs seller entries","u":"u6"},{"id":"fob","zh":"FOB 所有權","en":"FOB ownership","u":"u4"},{"id":"consign","zh":"寄銷品","en":"Consigned goods","u":"u4"},{"id":"count","zh":"盤點調整","en":"Inventory count adjustments","u":"u4"},{"id":"invErr","zh":"存貨錯誤","en":"Inventory errors","u":"u14"},{"id":"flow","zh":"FIFO／LIFO／平均法計算","en":"FIFO / LIFO / average-cost","u":"u5"},{"id":"floweff","zh":"成本法對淨利、稅、現金的影響","en":"Cost-flow effects on tax & cash","u":"u5"},{"id":"invratio","zh":"存貨週轉率","en":"Inventory turnover","u":"u14"},{"id":"allow","zh":"備抵法與帳齡分析","en":"Allowance & aging","u":"u7"},{"id":"writeoff","zh":"沖銷、回收、直接沖銷法、應收帳款出售","en":"Write-off, recovery, factoring","u":"u7"},{"id":"arratio","zh":"應收帳款週轉率","en":"Receivables turnover","u":"u7"},{"id":"ppecost","zh":"設備成本","en":"Cost of equipment","u":"u15"},{"id":"land","zh":"土地成本","en":"Cost of land","u":"u15"},{"id":"capex","zh":"資本支出 vs 費用","en":"Capital vs revenue expenditure","u":"u15"},{"id":"dep","zh":"折舊三法","en":"Depreciation methods","u":"u15"},{"id":"partial","zh":"部分年度折舊","en":"Partial-year depreciation","u":"u15"},{"id":"estimate","zh":"折舊估計變動","en":"Change in estimate","u":"u15"},{"id":"disposal","zh":"處分損益","en":"Disposal gain/loss","u":"u15"},{"id":"revimp","zh":"重估與減損","en":"Revaluation & impairment","u":"u15"},{"id":"natint","zh":"天然資源、無形資產、資產週轉","en":"Depletion, intangibles, asset turnover","u":"u15"},{"id":"curliab","zh":"流動負債分類","en":"Current liabilities","u":"u16"},{"id":"notes","zh":"應付票據利息","en":"Notes payable interest","u":"u16"},{"id":"warranty","zh":"保固負債","en":"Warranties","u":"u16"},{"id":"conting","zh":"或有負債","en":"Contingencies","u":"u16"},{"id":"bonds","zh":"公司債","en":"Bonds","u":"u16"},{"id":"shares","zh":"發行股票與股數","en":"Issuing shares & share counts","u":"eq"},{"id":"treasury","zh":"庫藏股","en":"Treasury shares","u":"eq"},{"id":"divdates","zh":"股利三個日期","en":"Dividend dates","u":"eq"},{"id":"sharediv","zh":"股票股利 vs 分割","en":"Share dividend vs split","u":"eq"},{"id":"pref","zh":"特別股股利","en":"Preference dividends","u":"eq"},{"id":"eps","zh":"每股盈餘","en":"Earnings per share","u":"eq"},{"id":"ic","zh":"內部控制原則","en":"Internal control principles","u":"u17"},{"id":"cfclass","zh":"現金流量三大活動分類","en":"Cash flow classification","u":"u17"},{"id":"indirect","zh":"間接法","en":"Indirect method","u":"u17"},{"id":"direct","zh":"直接法","en":"Direct method","u":"u17"},{"id":"cfcalc","zh":"折舊推算、處分收現、期末現金","en":"Depreciation, sale proceeds, ending cash","u":"u17"},{"id":"fcf","zh":"自由現金流量","en":"Free cash flow","u":"u17"},{"id":"ratios","zh":"流動性、獲利能力、償債能力","en":"Liquidity, profitability, solvency","u":"u13"},{"id":"niocf","zh":"淨利 vs 營業現金流量","en":"Net income vs operating cash flow","u":"u17"}];
+const CMAP={};CONCEPTS.forEach(c=>CMAP[c.id]=c);
 /* ---------- retryable quizzes + mistake notebook ---------- */
-const SRC={};document.querySelectorAll('.quiz').forEach(b=>{const n=b.closest('section').querySelector('.num');SRC[b.dataset.set]=b.dataset.set==='exam'?'Mock exam A':b.dataset.set==='examB'?'Mock exam B':b.dataset.set==='examC'?'Mock exam C':'Unit '+(+n.textContent)});
+const SRC={};document.querySelectorAll('.quiz').forEach(b=>{const n=b.closest('section').querySelector('.num');SRC[b.dataset.set]=b.dataset.set==='exam'?'Mock exam A':b.dataset.set==='examB'?'Mock exam B':b.dataset.set==='examC'?'Mock exam C':b.dataset.set==='examD'?'Mock exam D':'Unit '+(+n.textContent)});
 const miss=new Set((store.get('fa-miss')||[]).filter(k=>{const [s,i]=k.split(':');return Q[s]&&Q[s][+i]}));
 const updMiss=()=>{store.set('fa-miss',[...miss]);const t=document.getElementById('missToc');if(t)t.textContent=miss.size||''};
 const shuffled=n=>{const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
@@ -3008,6 +3309,7 @@ function makeCard(entry,num,mix,report){
     const ex=document.createElement('div');ex.className='exp';
     ex.textContent=(revealed?'Answer: ':firstOk?'Correct. ':`Correct on try ${tries}. `)+it.e;
     const zh=document.createElement('span');zh.className='zh';zh.textContent=it.z;ex.appendChild(zh);
+    if(it.c&&CMAP[it.c]){const cn=CMAP[it.c],ct=document.createElement('a');ct.className='ctag';ct.href='#'+cn.u;ct.textContent=`觀念：${cn.zh} ${cn.en} → 複習`;ex.appendChild(ct)}
     const ft=document.createElement('div');ft.className='qfoot';
     ft.innerHTML=`<span class="tag1">${firstOk?'✓ 第一次就答對':'✗ 已收進錯題本，之後再做一次'}</span><button type="button" class="btn">再做一次 Try again</button>`;
     ft.querySelector('button').addEventListener('click',()=>{const n=makeCard(entry,num,true,report);c.replaceWith(n);n.querySelector('.opts button').focus()});
@@ -3035,6 +3337,25 @@ function makeCard(entry,num,mix,report){
   });
   return c;
 }
+let dRes=store.get('fa-examD')||{};
+function conceptReport(box){
+  const el=document.createElement('div');el.className='creport';box.appendChild(el);
+  const draw=()=>{
+    const st=CONCEPTS.map(c=>{const ks=Q.examD.map((it,i)=>it.c===c.id?'examD:'+i:null).filter(Boolean);
+      const ok=ks.filter(k=>dRes[k]===true).length,bad=ks.filter(k=>dRes[k]===false);
+      return {c,ks,ok,bad,s:bad.length?'weak':ok===ks.length?'ok':'todo'}});
+    const n=s=>st.filter(x=>x.s===s).length,weak=st.filter(x=>x.s==='weak');
+    const li=x=>`<li class="cr-${x.s}"><a href="#${x.c.u}">${x.c.zh}</a><span>${x.c.en}</span><em>${x.ok}/${x.ks.length}</em></li>`;
+    el.innerHTML=`<h4>觀念檢查表 Concept check</h4><p class="cr-sum"><b class="cr-ok">已掌握 ${n('ok')}</b> · <b class="cr-weak">要複習 ${n('weak')}</b> · <span>還沒做完 ${n('todo')}</span>（共 ${CONCEPTS.length} 個觀念）</p>`+
+      (weak.length?`<p class="cr-note">紅色＝第一次答錯過的觀念。先點連結回去讀那一關，再按「重做要複習的觀念」。</p><button type="button" class="btn" data-cr="redo">重做要複習的觀念（${weak.reduce((a,x)=>a+x.ks.length,0)} 題）</button>`:n('todo')?'':'<p class="cr-note">57 個觀念全部第一次就答對。可以去做 Part B 了。</p>')+
+      (weak.length?'<ul class="cr-list">'+weak.map(li).join('')+'</ul>':'')+
+      `<details class="cr-all"${el._open?' open':''}><summary>全部 ${CONCEPTS.length} 個觀念清單</summary><ul class="cr-list">${st.map(li).join('')}</ul></details>`;
+    el.querySelector('.cr-all').addEventListener('toggle',e=>el._open=e.target.open);
+    const b=el.querySelector('[data-cr="redo"]');
+    if(b)b.addEventListener('click',()=>renderSet(box,true,new Set(weak.flatMap(x=>x.ks))));
+  };
+  draw();return draw;
+}
 function renderSet(box,mix,only){
   const set=box.dataset.set;
   let entries=set==='review'
@@ -3047,10 +3368,11 @@ function renderSet(box,mix,only){
   bar.innerHTML='<span class="sc"></span><button type="button" class="btn" data-q="wrong" hidden>只重做錯的</button><button type="button" class="btn" data-q="all">全部重做（打亂選項）</button>';
   const sc=bar.querySelector('.sc'),wrongBtn=bar.querySelector('[data-q="wrong"]');
   const upd=()=>{const ok=[...res.values()].filter(Boolean).length;sc.textContent=`第一次就答對 ${ok} / ${res.size}（共 ${entries.length} 題）`;wrongBtn.hidden=![...res.values()].some(v=>!v)};
-  bar.addEventListener('click',e=>{const a=e.target.dataset.q;if(a==='all')renderSet(box,true);else if(a==='wrong')renderSet(box,true,new Set([...res].filter(([,v])=>!v).map(([k])=>k)))});
+  bar.addEventListener('click',e=>{const a=e.target.dataset.q;if(a==='all'&&set==='examD'){dRes={};store.set('fa-examD',dRes)}if(a==='all')renderSet(box,true);else if(a==='wrong')renderSet(box,true,new Set([...res].filter(([,v])=>!v).map(([k])=>k)))});
   box.appendChild(bar);
   if(!entries.length){const p=document.createElement('p');p.className='empty';p.textContent=set==='review'?'錯題本是空的。去做小測驗或模擬考，答錯的題目會出現在這裡。':'沒有題目。';box.appendChild(p)}
-  entries.forEach((e,i)=>box.appendChild(makeCard(e,(set==='exam'?'Question ':'Q')+(i+1),mix,(k,v)=>{if(!res.has(k))res.set(k,v);upd()})));
+  const rep=set==='examD'?conceptReport(box):null;
+  entries.forEach((e,i)=>box.appendChild(makeCard(e,(set==='exam'?'Question ':'Q')+(Q[set]?Q[set].indexOf(e.it)+1:i+1),mix,(k,v)=>{if(!res.has(k)){res.set(k,v);if(rep){dRes[k]=v;store.set('fa-examD',dRes);rep()}}upd()})));
   if(set==='review'){const r=document.createElement('button');r.type='button';r.className='btn';r.dataset.q='refresh';r.textContent='載入最新錯題';r.addEventListener('click',()=>renderSet(box,true));bar.appendChild(r)}
   upd();
 }
@@ -3310,8 +3632,8 @@ const STAGES=[
   todo:['2025 題型：<a href="#d-pbCost">練習 4 存貨成本法＋稅</a>、<a href="#d-pbPPE">練習 5 設備＋估計變動</a>、<a href="#d-pbSCF">練習 6 現金流量表</a>','2023 題型：<a href="#d-pbInv">練習 1 存貨盤點</a>、<a href="#d-pbDep">練習 2 折舊與處分</a>、<a href="#d-pbIS">練習 3 更正損益表</a>','每題先在紙上照考試格式寫，再填數字對答案；隔天 Reset 重做','進階選做：<a href="#u12">綜合題 A、B</a>'],
   pass:'六題都不按「看詳解」就全部答對。'},
  {t:'第 10 關',name:'考前衝刺',ids:['mb','u11','review','u9'],time:'考前 3 天',goal:'用兩年的考試題型模擬，清空錯題本。',
-  todo:['拿 2025 模擬考 PDF 在紙上計時寫，再看<a href="#key2025">2025 逐題解析</a>','<a href="#mockc">Mock Exam C</a>（2025 型）、<a href="#mb">Mock Exam B</a>（2023 型）：各計時 40 分鐘','2023 模擬考 PDF，再看<a href="#key2023">2023 逐題解析</a>','Mock Exam A（TA 課 28 題）','<a href="#review">錯題本</a>全部重做到清空，最後看一次 Exam Traps'],
-  pass:'Mock Exam B、C 第一次都答對 20 題以上，錯題本清空。'},
+  todo:['<a href="#mockd">Mock Exam D 全觀念總檢查</a>：146 題選擇題＋5 題 Part B，做到 57 個觀念全部變綠色','拿 2025 模擬考 PDF 在紙上計時寫，再看<a href="#key2025">2025 逐題解析</a>','<a href="#mockc">Mock Exam C</a>（2025 型）、<a href="#mb">Mock Exam B</a>（2023 型）：各計時 40 分鐘','2023 模擬考 PDF，再看<a href="#key2023">2023 逐題解析</a>','Mock Exam A（TA 課 28 題）','<a href="#review">錯題本</a>全部重做到清空，最後看一次 Exam Traps'],
+  pass:'Mock Exam B、C 第一次都答對 20 題以上，Mock D 觀念檢查表全綠，錯題本清空。'},
  {t:'工具箱',name:'隨時查',ids:['u8','u10'],tool:true,time:'需要時',goal:'公式表和中英詞彙，做題卡住時回來查。',todo:['Formula Sheet','Glossary 中英詞彙表'],pass:'不用過關，隨時查。'}
 ];
 const secStage={};STAGES.forEach((st,i)=>st.ids.forEach(id=>secStage[id]=i));
